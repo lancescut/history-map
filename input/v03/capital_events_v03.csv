@@ -1,0 +1,34 @@
+capital_event_id,polity_id,capital_name_historical,capital_name_modern,valid_from_year,valid_to_year,longitude,latitude,is_primary,event_type,location_precision,source_titles,source_urls,source_raw,confidence_score,confidence_note
+capital_0001,polity_0129,镐京,陕西西安长安区斗门一带,-1046,-771,108.7500,34.2200,true,initial_capital,region,《史记·周本纪》,https://zh.wikipedia.org/wiki/%E9%95%90%E4%BA%AC,西周都镐京；坐标按今西安市长安区斗门一带近似,82,历史都城明确；遗址坐标按区域近似
+capital_0002,polity_0003,雒邑,河南洛阳,-770,-256,112.4540,34.6197,true,initial_capital,city,《史记·周本纪》,https://zh.wikipedia.org/wiki/%E9%9B%92%E9%82%91,平王东迁后东周都雒邑；坐标按今洛阳城市近似,86,东周迁都年份明确；城市级坐标
+capital_0003,polity_0110,咸阳,陕西咸阳,-221,-206,108.7088,34.3299,true,initial_capital,city,《史记·秦始皇本纪》,https://zh.wikipedia.org/wiki/%E5%92%B8%E9%98%B3%E5%B8%82,秦朝都咸阳；坐标按今咸阳城市近似,88,都城明确；城市级坐标
+capital_0004,polity_0134,长安,陕西西安,-202,8,108.9398,34.3416,true,initial_capital,city,《汉书》,https://zh.wikipedia.org/wiki/%E9%95%BF%E5%AE%89,西汉都长安；坐标按今西安城市近似,88,都城明确；城市级坐标
+capital_0005,polity_0006,洛阳,河南洛阳,25,190,112.4540,34.6197,true,initial_capital,city,《后汉书》,https://zh.wikipedia.org/wiki/%E6%9D%B1%E6%BC%A2,东汉建武定都洛阳；坐标按今洛阳城市近似,86,都城明确；城市级坐标
+capital_0006,polity_0006,许,河南许昌,196,220,113.8526,34.0355,true,relocation,city,《后汉书》/《三国志》,https://zh.wikipedia.org/wiki/%E8%AE%B8%E6%98%8C%E5%B8%82,汉献帝迁许后以许为政治中心；190-195 董卓迁都长安阶段暂未结构化,72,东汉末都城口径复杂；以许都阶段作为结构化迁都事件
+capital_0007,polity_0075,洛阳,河南洛阳,220,265,112.4540,34.6197,true,initial_capital,city,《三国志·魏书》,https://zh.wikipedia.org/wiki/%E6%9B%B9%E9%AD%8F,曹魏都洛阳；坐标按今洛阳城市近似,84,都城明确；城市级坐标
+capital_0008,polity_0127,成都,四川成都,221,263,104.0668,30.5728,true,initial_capital,city,《三国志·蜀书》,https://zh.wikipedia.org/wiki/%E6%88%90%E9%83%BD%E5%B8%82,蜀汉都成都；坐标按今成都城市近似,86,都城明确；城市级坐标
+capital_0009,polity_0002,建业,江苏南京,222,280,118.7969,32.0603,true,initial_capital,city,《三国志·吴书》,https://zh.wikipedia.org/wiki/%E5%BB%BA%E4%B8%9A,东吴都建业；坐标按今南京城市近似,86,都城明确；城市级坐标
+capital_0010,polity_0132,洛阳,河南洛阳,266,313,112.4540,34.6197,true,initial_capital,city,《晋书》,https://zh.wikipedia.org/wiki/%E8%A5%BF%E6%99%89,西晋都洛阳；坐标按今洛阳城市近似,82,西晋末迁徙与战乱阶段复杂；按主要都城记录
+capital_0011,polity_0132,长安,陕西西安,313,316,108.9398,34.3416,true,relocation,city,《晋书·愍帝纪》,https://zh.wikipedia.org/wiki/%E6%99%8B%E6%84%8D%E5%B8%9D,晋愍帝于长安延续西晋政权；坐标按今西安城市近似,70,西晋末短期政权中心；迁都口径需在 UI 标注
+capital_0012,polity_0005,建康,江苏南京,317,420,118.7969,32.0603,true,initial_capital,city,《晋书》,https://zh.wikipedia.org/wiki/%E5%BB%BA%E5%BA%B7_(%E5%8D%97%E4%BA%AC),东晋都建康；坐标按今南京城市近似,86,都城明确；城市级坐标
+capital_0013,polity_0030,盛乐,内蒙古和林格尔,386,397,111.8210,40.3788,true,initial_capital,region,《魏书》/《北史》,https://zh.wikipedia.org/wiki/%E7%9B%9B%E4%B9%90,北魏早期都盛乐；坐标按今和林格尔区域近似,74,早期都城坐标为区域近似
+capital_0014,polity_0030,平城,山西大同,398,493,113.3000,40.0768,true,relocation,city,《魏书》/《北史》,https://zh.wikipedia.org/wiki/%E5%B9%B3%E5%9F%8E,北魏迁都平城；坐标按今大同城市近似,80,迁都年份明确；城市级坐标
+capital_0015,polity_0030,洛阳,河南洛阳,494,534,112.4540,34.6197,true,relocation,city,《魏书》/《北史》,https://zh.wikipedia.org/wiki/%E5%8C%97%E9%AD%8F%E5%AD%9D%E6%96%87%E5%B8%9D%E6%94%B9%E9%9D%A9,北魏孝文帝迁都洛阳；坐标按今洛阳城市近似,88,迁都年份明确；城市级坐标
+capital_0016,polity_0158,大兴,陕西西安,581,618,108.9398,34.3416,true,initial_capital,city,《隋书》,https://zh.wikipedia.org/wiki/%E5%A4%A7%E5%85%B4%E5%9F%8E,隋都大兴；坐标按今西安城市近似,84,都城明确；城市级坐标
+capital_0017,polity_0059,长安,陕西西安,618,907,108.9398,34.3416,true,initial_capital,city,《旧唐书》/《新唐书》,https://zh.wikipedia.org/wiki/%E9%95%BF%E5%AE%89,唐以长安为首都；坐标按今西安城市近似,86,都城明确；城市级坐标
+capital_0018,polity_0059,洛阳,河南洛阳,657,907,112.4540,34.6197,false,co_capital,city,《旧唐书》/《新唐书》,https://zh.wikipedia.org/wiki/%E6%B4%9B%E9%98%B3%E5%B8%82,唐以洛阳为东都；作为陪都同年并存显示,76,陪都时段简化为长期有效区间
+capital_0019,polity_0146,上京临潢府,内蒙古巴林左旗,916,1125,119.3790,43.9800,true,initial_capital,region,《辽史·天祚皇帝本纪》,https://zh.wikipedia.org/wiki/%E4%B8%8A%E4%BA%AC%E4%B8%B4%E6%BD%A2%E5%BA%9C,辽上京临潢府；坐标按今巴林左旗区域近似,78,辽五京制复杂；v1 以主都上京呈现
+capital_0020,polity_0026,东京汴梁,河南开封,960,1127,114.3076,34.7973,true,initial_capital,city,《宋史·钦宗纪》,https://zh.wikipedia.org/wiki/%E5%BC%80%E5%B0%81%E5%B8%82,北宋都东京汴梁；坐标按今开封城市近似,86,都城明确；城市级坐标
+capital_0021,polity_0154,上京会宁府,黑龙江哈尔滨阿城,1115,1152,126.9750,45.5390,true,initial_capital,region,《金史·哀宗本纪》,https://zh.wikipedia.org/wiki/%E4%B8%8A%E4%BA%AC%E4%BC%9A%E5%AE%81%E5%BA%9C,金初都上京会宁府；坐标按今哈尔滨阿城区近似,76,早期都城坐标为区域近似
+capital_0022,polity_0154,中都,北京,1153,1213,116.4074,39.9042,true,relocation,city,《金史》,https://zh.wikipedia.org/wiki/%E4%B8%AD%E9%83%BD,金迁都中都；坐标按今北京城市近似,82,迁都年份明确；城市级坐标
+capital_0023,polity_0154,南京开封府,河南开封,1214,1234,114.3076,34.7973,true,relocation,city,《金史·哀宗本纪》,https://zh.wikipedia.org/wiki/%E9%87%91%E6%9C%9D,金宣宗南迁开封；坐标按今开封城市近似,80,迁都年份明确；城市级坐标
+capital_0024,polity_0034,临安,浙江杭州,1127,1279,120.1551,30.2741,true,initial_capital,city,《宋史·二王本纪》,https://zh.wikipedia.org/wiki/%E4%B8%B4%E5%AE%89%E5%BA%9C,南宋都临安；坐标按今杭州城市近似,86,都城明确；城市级坐标
+capital_0025,polity_0013,大都,北京,1271,1368,116.4074,39.9042,true,initial_capital,city,《元史》/《明史》,https://zh.wikipedia.org/wiki/%E5%85%83%E5%A4%A7%E9%83%BD,元都大都；坐标按今北京城市近似,86,都城明确；城市级坐标
+capital_0026,polity_0072,应天府,江苏南京,1368,1420,118.7969,32.0603,true,initial_capital,city,《明史·庄烈帝本纪》,https://zh.wikipedia.org/wiki/%E5%BA%94%E5%A4%A9%E5%BA%9C,明初都应天府；坐标按今南京城市近似,84,都城明确；城市级坐标
+capital_0027,polity_0072,北京,北京,1421,1644,116.4074,39.9042,true,relocation,city,《明史》,https://zh.wikipedia.org/wiki/%E6%B0%B8%E4%B9%90%E8%BF%81%E9%83%BD,明成祖迁都北京；坐标按今北京城市近似,88,迁都年份明确；城市级坐标
+capital_0028,polity_0096,盛京,辽宁沈阳,1636,1643,123.4315,41.8057,true,initial_capital,city,《清史稿》,https://zh.wikipedia.org/wiki/%E7%9B%9B%E4%BA%AC,清入关前都盛京；坐标按今沈阳城市近似,82,都城明确；城市级坐标
+capital_0029,polity_0096,北京,北京,1644,1912,116.4074,39.9042,true,relocation,city,《清史稿》/《宣统帝退位诏书》,https://zh.wikipedia.org/wiki/%E5%8C%97%E4%BA%AC%E5%B8%82,清入关后以北京为都；坐标按今北京城市近似,86,迁都年份明确；城市级坐标
+capital_0030,polity_0056,梅里,江苏无锡,-1046,-515,120.3119,31.4912,true,initial_capital,region,《史记·吴太伯世家》,https://zh.wikipedia.org/wiki/%E5%90%B3%E5%9C%8B,吴国前都梅里；坐标按今无锡梅村区域近似,68,由现有 capital_modern 文本结构化；早期年份为近似
+capital_0031,polity_0056,吴,江苏苏州,-514,-473,120.5853,31.2989,true,relocation,city,《史记·吴太伯世家》,https://zh.wikipedia.org/wiki/%E5%90%B3%E5%9C%8B,吴王阖闾时期迁都吴；坐标按今苏州城市近似,66,迁都年份按吴王阖闾筑城口径近似
+capital_0032,polity_0063,宿城,山东东平,-1046,-900,116.4703,35.9371,true,initial_capital,region,《春秋·庄公十年》,https://zh.wikipedia.org/wiki/%E5%AE%BF%E5%9B%BD,宿国早期都宿城；坐标按今山东东平宿城村一带近似,58,由现有 capital_modern 文本结构化；年份缺少精确史料
+capital_0033,polity_0063,宿州,安徽宿州,-899,-684,116.9841,33.6339,true,disputed,city,《春秋·庄公十年》,https://zh.wikipedia.org/wiki/%E5%AE%BF%E5%9B%BD,宿国后迁安徽宿州；迁都年份未定，按可视化需要给出近似时段,45,迁都年份争议；UI 必须显式标注

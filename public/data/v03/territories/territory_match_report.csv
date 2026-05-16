@@ -1,0 +1,168 @@
+polity_id,polity_name,territory_status,matched_admin_ids,matched_admin_units,match_source,match_confidence,confidence_note,approx_area_km2,source_text,note
+polity_0145,越国,matched,CN-FJ | CN-SD | CN-ZJ,福建省 | 山东省 | 浙江省,modern_admin_units_raw,72,,372951.9,以浙江省為中心，曾經達到山東省南部和福建省北部 | 浙江省一帶 前222年降秦朝，建閩中郡，秦亡後受漢朝封為閩越、東甌二國,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0056,吴国,matched,CN-AH | CN-JS,安徽省 | 江苏省,modern_admin_units_raw,72,,237171.1,江蘇省、安徽省東部一帶,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0007,东虢国,matched,CN-HA,河南省,modern_admin_units_raw,86,,166286.6,河南省滎陽市,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0014,六国,matched,CN-AH,安徽省,modern_admin_units_raw,86,,139308.5,安徽省六安市北,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0041,原国,matched,CN-HA,河南省,modern_admin_units_raw,86,,166286.6,河南省濟源市原鄉,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0042,召国,matched,CN-SN,陕西省,modern_admin_units_raw,86,,202990.9,陝西省岐山縣西南,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0058,周国,matched,CN-SN,陕西省,modern_admin_units_raw,86,,202990.9,陝西省寶雞市鳳翔縣,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0063,宿国,matched,CN-SD,山东省,modern_admin_units_raw,86,,151119.9,山東省東平縣西南,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0067,巴国,matched,CN-CQ | CN-SC,重庆市 | 四川省,modern_admin_units_raw,72,,564264.7,四川省東部一帶 | 重庆市以及四川省東部部分地区,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0068,应国,matched,CN-HA,河南省,modern_admin_units_raw,86,,166286.6,河南省平頂山市,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0076,杞国,matched,CN-HA | CN-SD,河南省 | 山东省,modern_admin_units_raw,86,,317406.5,河南省杞縣 | 河南省杞縣，後遷山東省昌樂縣，又遷山東省安丘市,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0079,根牟国,matched,CN-SD,山东省,modern_admin_units_raw,72,,151119.9,山東省莒南縣岭泉镇小官莊、墩後村一帶,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0084,楚国,matched_low_confidence,CN-AH | CN-HA | CN-HB | CN-HN | CN-JS | CN-JX | CN-ZJ,安徽省 | 河南省 | 湖北省 | 湖南省 | 江苏省 | 江西省 | 浙江省,modern_admin_units_raw,62,,1072462.2,湖北省、河南省南部、后扩张至安徽省、江西省、湖南省、江苏省、浙江省部分地区 | 湖北省、湖南省北部、安徽省西部、江西省西部、河南省南部一帶，后扩张至江苏省和浙江省,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0089,殷国,matched,CN-HA,河南省,modern_admin_units_raw,86,,166286.6,河南省安陽市,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0090,毕国,matched,CN-SN,陕西省,modern_admin_units_raw,86,,202990.9,陝西省咸陽市,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0091,毛国,matched,CN-HA | CN-SN,河南省 | 陕西省,modern_admin_units_raw,72,,369277.5,陝西岐山縣、扶風縣一帶 後遷河南省宜阳县,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0098,温国,matched,CN-HA,河南省,modern_admin_units_raw,86,,166286.6,河南省溫縣西南,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0099,滕国,matched,CN-SD,山东省,modern_admin_units_raw,86,,151119.9,山東省滕州市,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0101,潘国,matched,CN-HA,河南省,modern_admin_units_raw,86,,166286.6,河南省荥阳市,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0103,焦国,matched,CN-HA,河南省,modern_admin_units_raw,72,,166286.6,河南省三門峡市西十里鋪一帶,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0104,燕国,matched,CN-BJ | CN-HE | CN-LN | CN-TJ,北京市 | 河北省 | 辽宁省 | 天津市,modern_admin_units_raw,72,,363003.5,辽宁省南部、北京市、天津市、河北省北部一带 | 遼寧省南部、北京市、天津市、河北省北部一帶,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0106,祝国,matched,CN-SD,山东省,modern_admin_units_raw,86,,151119.9,山東省济南市長清区東北祝阿故城,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0111,管国,matched,CN-HA,河南省,modern_admin_units_raw,86,,166286.6,河南省鄭州市,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0114,舒国,matched,CN-AH,安徽省,modern_admin_units_raw,86,,139308.5,安徽省舒城縣池鄉,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0115,舒庸国,matched,CN-AH,安徽省,modern_admin_units_raw,86,,139308.5,安徽省舒城縣,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0116,舒蓼国,matched,CN-AH | CN-HA,安徽省 | 河南省,modern_admin_units_raw,72,,305595.1,河南省固始縣、安徽省霍邱縣一帶,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0117,舒鸠国,matched,CN-AH,安徽省,modern_admin_units_raw,86,,139308.5,安徽省舒城縣,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0118,芮国,matched,CN-SN,陕西省,modern_admin_units_raw,86,,202990.9,陕西省韩城市境内梁带村,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0119,英国,matched,CN-AH,安徽省,modern_admin_units_raw,86,,139308.5,安徽省六安市,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0122,莒国,matched,CN-SD,山东省,modern_admin_units_raw,86,,151119.9,山東省膠州市、莒縣 | 山東省莒县,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0124,蔡国,matched,CN-HA,河南省,modern_admin_units_raw,72,,166286.6,河南省新蔡縣 | 河南省新蔡縣、上蔡縣一帶,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0126,虞国,matched,CN-SX,山西省,modern_admin_units_raw,72,,156960.2,山西省平陸縣、夏縣一帶,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0129,西周,matched,CN-HA | CN-SN,河南省 | 陕西省,modern_admin_units_raw,86,,369277.5,統治全國，直接控有首都宗周（今陝西省西安市）、東都成周雒邑（今河南省洛陽市）及周邊的廣大地區,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0137,西虢国,matched,CN-HA | CN-SD | CN-SN | CN-SX,河南省 | 山东省 | 陕西省 | 山西省,modern_admin_units_raw,72,,677357.6,山西省平陸縣東北和河南省三門峽市之間，西到今河南省靈寶市、陝西省華縣、潼關一帶， 南界至今河南省盧氏縣，東西跨度約200公里、南北長約100公里。另有小虢國，為西虢國東遷後殘餘勢力。爵位保留但遷至桃虢（今陝西省寶雞縣東虢鎮），於西元前687年周莊王十年，為秦武王嬴蕩所滅。 另在現今山西省平陸縣東南，曾有宮阝國（讀音：同），傳數世即遭同宗室晉獻公所滅。公卿姬之奇遂改姓宮。並擔任客卿（客居他國的卿相）於旁近的嫽國、虞國，但先後皆遭晉獻公滅國，於是宮之奇離開虞國，率宮家宗族遷至曹國（今山東省定陶縣）。,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0141,许国,matched,CN-HA,河南省,modern_admin_units_raw,86,,166286.6,河南省许昌市，被楚国迁到叶县,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0142,谭国,matched,CN-SD,山东省,modern_admin_units_raw,86,,151119.9,山東省濟南市東南,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0149,邾国,matched,CN-SD,山东省,modern_admin_units_raw,86,,151119.9,山東省鄒城市,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0151,郕国,matched,CN-SD,山东省,modern_admin_units_raw,86,,151119.9,山東省汶上縣北,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0153,酆国,matched,CN-SN,陕西省,modern_admin_units_raw,86,,202990.9,陝西省戶縣東,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0156,陈国,matched,CN-HA,河南省,modern_admin_units_raw,86,,166286.6,河南省淮陽县,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0159,霍国,matched,CN-SX,山西省,modern_admin_units_raw,86,,156960.2,山西省霍州市西南,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0162,顿国,matched,CN-HA,河南省,modern_admin_units_raw,86,,166286.6,河南省項城市、商水縣界,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0166,鲁国,matched,CN-SD,山东省,modern_admin_units_raw,86,,151119.9,山東省曲阜市,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0167,齐国,matched,CN-HE | CN-SD,河北省 | 山东省,modern_admin_units_raw,72,,337044.5,山東省東部、河北省南部一帶,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0074,曹国,matched,CN-SD,山东省,modern_admin_units_raw,86,,151119.9,山東省滕州市,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0040,卫国,matched,CN-HA,河南省,modern_admin_units_raw,72,,166286.6,河南省淇縣、濮陽市一帶,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0061,宋国,matched,CN-HA,河南省,modern_admin_units_raw,72,,166286.6,河南省商丘市、通許縣一帶,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0094,江国,matched,CN-HA,河南省,modern_admin_units_raw,72,,166286.6,河南省正陽縣、息縣一帶,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0095,沈国,matched,CN-AH | CN-HA | CN-SX,安徽省 | 河南省 | 山西省,modern_admin_units_raw,72,,462555.3,山西汾河沿岸 | 河南省平輿縣射桥镇古城村、安徽省臨泉縣一帶,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0107,祭国,matched,CN-HA,河南省,modern_admin_units_raw,86,,166286.6,河南省鄭州市東北祭城村,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0123,蒋国,matched,CN-HA,河南省,modern_admin_units_raw,86,,166286.6,河南省固始縣蔣集鎮,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0148,邢国,matched,CN-HE,河北省,modern_admin_units_raw,86,,185924.7,河北省邢台市,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0073,晋国,matched,CN-HA | CN-HE | CN-SN | CN-SX,河南省 | 河北省 | 陕西省 | 山西省,modern_admin_units_raw,72,,712162.4,山西省、河南省北部、陝西省東部、河北省西部一帶 | 山西省、河南省北部、陝西省東部和河北省東部一帶,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0109,秦国,matched_low_confidence,CN-CQ | CN-GS | CN-HA | CN-HB | CN-SC | CN-SN,重庆市 | 甘肃省 | 河南省 | 湖北省 | 四川省 | 陕西省,modern_admin_units_raw,62,,1542564.4,陝西省中南部、甘肅省東部一帶 后扩张至四川省、重庆市、河南省西部、湖北省西部等地。前221年统一全国。 | 陝西省中南部、甘肅省東部，四川省、重庆市、河南省西部、湖北省西部等地区。前221年统一全国。,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0105,申国,matched,CN-HA,河南省,modern_admin_units_raw,86,,166286.6,河南省南陽市,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0140,詹国,matched,CN-BJ,北京市,modern_admin_units_raw,86,,16296.4,今地不详，据说是于镐京西京筑城，赐土南至于京，北达于燕 | 今地不详，据说是于镐京西京（今西安市长安区西北）筑城，赐土南至于京，北达于燕,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0082,梁国,matched,CN-SN | CN-SX,陕西省 | 山西省,modern_admin_units_raw,72,,359951.1,陝西省渭南市韩城一帶 後遷山西省解县 | 陝西省韓城市南,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0150,郑国,matched,CN-HA | CN-SN,河南省 | 陕西省,modern_admin_units_raw,86,,369277.5,河南省新鄭市 | 陝西省華縣 後遷河南省新鄭市,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0003,东周,matched,CN-HA,河南省,modern_admin_units_raw,86,,166286.6,名義上統治全國，實際上只控制首都雒邑（今河南省洛陽市）周圍的狹小地區,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0064,尹国,matched,CN-HA,河南省,modern_admin_units_raw,86,,166286.6,河南省新安县 | 河南省新安县东南部、宜阳县西北部。,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0029,北虢国沛县,matched,CN-SX,山西省,modern_admin_units_raw,86,,156960.2,山西省平陸縣,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0016,刘国,matched,CN-HA,河南省,modern_admin_units_raw,86,,166286.6,河南省偃師市緱氏鎮西南,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0055,吕国,matched,CN-HA,河南省,modern_admin_units_raw,86,,166286.6,河南省南陽市,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0152,郳国,matched,CN-SD,山东省,modern_admin_units_raw,86,,151119.9,山東省滕州市東,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0100,滥国,matched,CN-SD,山东省,modern_admin_units_raw,86,,151119.9,山东滕州市羊莊镇土城村,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0102,潞氏,matched,CN-SX,山西省,modern_admin_units_raw,86,,156960.2,山西省潞城縣東北,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0066,巩国,matched,CN-HA,河南省,modern_admin_units_raw,86,,166286.6,河南省鞏義市孝義街道西康店村 | 河南省鞏義市孝義鎮西康店村,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0130,西周国,matched,CN-HA,河南省,modern_admin_units_raw,86,,166286.6,河南省地區,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0144,赵国,matched,CN-HE | CN-NM | CN-SX,河北省 | 内蒙古自治区 | 山西省,modern_admin_units_raw,72,,1474723.8,河北省西部、山西省北部、內蒙古自治區南部一帶,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0161,韩国,matched,CN-HA | CN-HE | CN-SN,河南省 | 河北省 | 陕西省,modern_admin_units_raw,72,,555202.2,河南省一帶 | 陝西省韓城市 一說河北省固安縣,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0165,魏国,matched,CN-HA | CN-HE | CN-SN | CN-SX,河南省 | 河北省 | 陕西省 | 山西省,modern_admin_units_raw,72,,712162.4,山西省南部、河南省北部和陝西東部、河北省部分地區 | 山西省芮城縣,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0120,苴国,matched,CN-SC,四川省,modern_admin_units_raw,86,,483983.2,四川省廣元市,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0004,东周国,matched,CN-HA,河南省,modern_admin_units_raw,86,,166286.6,河南省鞏義市西南,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0110,秦朝,matched_low_confidence,CN-SN | CN-GS | CN-SX | CN-HE | CN-HA | CN-SD | CN-HB | CN-HN | CN-SC | CN-CQ,陕西省 | 甘肃省 | 山西省 | 河北省 | 河南省 | 山东省 | 湖北省 | 湖南省 | 四川省 | 重庆市,manual_v1_dynasty_override,58,王朝级现代省级行政区近似拼合，非历史精确边界,2249524.7,秦朝疆域按 v1 展示口径映射到现代省级行政边界拼合。,现代省级行政边界拼合，非历史精确边界；match_source=manual_v1_dynasty_override
+polity_0134,西汉,matched_low_confidence,CN-SN | CN-GS | CN-QH | CN-NX | CN-SX | CN-HE | CN-HA | CN-SD | CN-JS | CN-AH | CN-HB | CN-HN | CN-JX | CN-FJ | CN-GD | CN-GX | CN-SC | CN-CQ,陕西省 | 甘肃省 | 青海省 | 宁夏回族自治区 | 山西省 | 河北省 | 河南省 | 山东省 | 江苏省 | 安徽省 | 湖北省 | 湖南省 | 江西省 | 福建省 | 广东省 | 广西壮族自治区 | 四川省 | 重庆市,manual_v1_dynasty_override,56,王朝级现代省级行政区近似拼合，非历史精确边界,3952952.5,西汉疆域按 v1 展示口径映射到现代省级行政边界拼合。,现代省级行政边界拼合，非历史精确边界；match_source=manual_v1_dynasty_override
+polity_0070,扶余,missing,,,modern_admin_units_raw,0,,,,无法从 modern_admin_units_raw 匹配现代行政区
+polity_0071,新朝,missing,,,modern_admin_units_raw,0,,,,无法从 modern_admin_units_raw 匹配现代行政区
+polity_0006,东汉,matched_low_confidence,CN-SN | CN-GS | CN-SX | CN-HE | CN-HA | CN-SD | CN-JS | CN-AH | CN-HB | CN-HN | CN-JX | CN-FJ | CN-GD | CN-GX | CN-SC | CN-CQ,陕西省 | 甘肃省 | 山西省 | 河北省 | 河南省 | 山东省 | 江苏省 | 安徽省 | 湖北省 | 湖南省 | 江西省 | 福建省 | 广东省 | 广西壮族自治区 | 四川省 | 重庆市,manual_v1_dynasty_override,56,王朝级现代省级行政区近似拼合，非历史精确边界,3197856.9,东汉疆域按 v1 展示口径映射到现代省级行政边界拼合。,现代省级行政边界拼合，非历史精确边界；match_source=manual_v1_dynasty_override
+polity_0011,仇池,missing,,,modern_admin_units_raw,0,,,,无法从 modern_admin_units_raw 匹配现代行政区
+polity_0075,曹魏,matched_low_confidence,CN-BJ | CN-TJ | CN-HE | CN-SX | CN-SN | CN-GS | CN-HA | CN-SD | CN-AH | CN-JS,北京市 | 天津市 | 河北省 | 山西省 | 陕西省 | 甘肃省 | 河南省 | 山东省 | 安徽省 | 江苏省,manual_v1_dynasty_override,58,王朝级现代省级行政区近似拼合，非历史精确边界,1550640.8,曹魏疆域按 v1 展示口径映射到现代省级行政边界拼合。,现代省级行政边界拼合，非历史精确边界；match_source=manual_v1_dynasty_override
+polity_0127,蜀汉,matched_low_confidence,CN-SC | CN-CQ | CN-YN | CN-GZ | CN-SN,四川省 | 重庆市 | 云南省 | 贵州省 | 陕西省,manual_v1_dynasty_override,58,王朝级现代省级行政区近似拼合，非历史精确边界,1337021.1,蜀汉疆域按 v1 展示口径映射到现代省级行政边界拼合。,现代省级行政边界拼合，非历史精确边界；match_source=manual_v1_dynasty_override
+polity_0002,东吴,matched_low_confidence,CN-JS | CN-SH | CN-ZJ | CN-AH | CN-JX | CN-FJ | CN-HB | CN-HN | CN-GD | CN-GX,江苏省 | 上海市 | 浙江省 | 安徽省 | 江西省 | 福建省 | 湖北省 | 湖南省 | 广东省 | 广西壮族自治区,manual_v1_dynasty_override,58,王朝级现代省级行政区近似拼合，非历史精确边界,1454849.7,东吴疆域按 v1 展示口径映射到现代省级行政边界拼合。,现代省级行政边界拼合，非历史精确边界；match_source=manual_v1_dynasty_override
+polity_0132,西晋,matched_low_confidence,CN-BJ | CN-TJ | CN-HE | CN-SX | CN-NM | CN-LN | CN-SN | CN-GS | CN-HA | CN-SD | CN-JS | CN-AH | CN-HB | CN-HN | CN-JX | CN-FJ | CN-GD | CN-GX | CN-SC | CN-CQ,北京市 | 天津市 | 河北省 | 山西省 | 内蒙古自治区 | 辽宁省 | 陕西省 | 甘肃省 | 河南省 | 山东省 | 江苏省 | 安徽省 | 湖北省 | 湖南省 | 江西省 | 福建省 | 广东省 | 广西壮族自治区 | 四川省 | 重庆市,manual_v1_dynasty_override,54,王朝级现代省级行政区近似拼合，非历史精确边界,4506774.7,西晋疆域按 v1 展示口径映射到现代省级行政边界拼合。,现代省级行政边界拼合，非历史精确边界；match_source=manual_v1_dynasty_override
+polity_0018,前仇池,missing,,,modern_admin_units_raw,0,,,武都、阴平,无法从 modern_admin_units_raw 匹配现代行政区
+polity_0060,宇文部,missing,,,modern_admin_units_raw,0,,,辽东塞外,无法从 modern_admin_units_raw 匹配现代行政区
+polity_0088,段部鲜卑,missing,,,modern_admin_units_raw,0,,,,无法从 modern_admin_units_raw 匹配现代行政区
+polity_0069,成汉,matched,CN-GZ | CN-SC | CN-YN,贵州省 | 四川省 | 云南省,modern_admin_units_raw,72,,1053748.7,四川東部、部分雲南、部分貴州,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0093,汉赵,matched_low_confidence,CN-GS | CN-HA | CN-HE | CN-SN | CN-SX,甘肃省 | 河南省 | 河北省 | 陕西省 | 山西省,modern_admin_units_raw,62,,1134287.5,陝西渭水流域、山西、河南、河北、部分甘肅,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0087,段部,matched,CN-HE,河北省,modern_admin_units_raw,86,,185924.7,河北北部,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0019,前凉,matched,CN-GS | CN-NX | CN-XJ,甘肃省 | 宁夏回族自治区 | 新疆维吾尔自治区,modern_admin_units_raw,86,,2098111.4,甘肅、寧夏西部、新疆東部,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0012,代国,matched,CN-NM,内蒙古自治区,modern_admin_units_raw,86,,1131838.9,内蒙古中部,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0005,东晋,matched_low_confidence,CN-JS | CN-SH | CN-ZJ | CN-AH | CN-JX | CN-FJ | CN-HB | CN-HN | CN-GD | CN-GX | CN-SC | CN-CQ,江苏省 | 上海市 | 浙江省 | 安徽省 | 江西省 | 福建省 | 湖北省 | 湖南省 | 广东省 | 广西壮族自治区 | 四川省 | 重庆市,manual_v1_dynasty_override,58,王朝级现代省级行政区近似拼合，非历史精确边界,2019114.4,东晋疆域按 v1 展示口径映射到现代省级行政边界拼合。,现代省级行政边界拼合，非历史精确边界；match_source=manual_v1_dynasty_override
+polity_0053,后赵,matched_low_confidence,CN-AH | CN-GS | CN-HA | CN-HE | CN-JS | CN-LN | CN-SD | CN-SN | CN-SX,安徽省 | 甘肃省 | 河南省 | 河北省 | 江苏省 | 辽宁省 | 山东省 | 陕西省 | 山西省,modern_admin_units_raw,62,,1671595.1,河北、河南、山西、山東、陝西、部分江蘇、部分安徽、部分甘肅、部分遼寧,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0001,丁零,missing,,,modern_admin_units_raw,0,,,,无法从 modern_admin_units_raw 匹配现代行政区
+polity_0020,前燕,matched,CN-AH | CN-GS | CN-HA | CN-HE | CN-JS | CN-LN | CN-SD | CN-SN | CN-SX,安徽省 | 甘肃省 | 河南省 | 河北省 | 江苏省 | 辽宁省 | 山东省 | 陕西省 | 山西省,modern_admin_units_raw,76,,1671595.1,河北、河南、山東、山西、陕西、甘肃、安徽、江蘇、遼寧,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0015,冉魏,matched,CN-HA | CN-HE | CN-SX,河南省 | 河北省 | 山西省,modern_admin_units_raw,86,,509171.4,河南、河北南部、山西南部,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0021,前秦,matched,CN-AH | CN-GS | CN-GZ | CN-HA | CN-HB | CN-HE | CN-JS | CN-LN | CN-NX | CN-SC | CN-SD | CN-SN | CN-SX | CN-XJ,安徽省 | 甘肃省 | 贵州省 | 河南省 | 湖北省 | 河北省 | 江苏省 | 辽宁省 | 宁夏回族自治区 | 四川省 | 山东省 | 陕西省 | 山西省 | 新疆维吾尔自治区,modern_admin_units_raw,76,,4196344.7,河北、河南、山東、山西、安徽、陝西、江蘇、四川、贵州、湖北、遼寧、甘肅、寧夏西部、新疆東部,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0050,后燕,matched_low_confidence,CN-HA | CN-HE | CN-LN | CN-SD | CN-SX,河南省 | 河北省 | 辽宁省 | 山东省 | 山西省,modern_admin_units_raw,62,,809307.9,河北、山東、山西、部分河南、部分遼寧,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0051,后秦,matched,CN-GS | CN-HA | CN-SN | CN-SX,甘肃省 | 河南省 | 陕西省 | 山西省,modern_admin_units_raw,86,,948362.9,甘肅、陝西、山西、河南,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0135,西燕,matched,CN-SN | CN-SX,陕西省 | 山西省,modern_admin_units_raw,86,,359951.1,从陕西转移到山西,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0043,后仇池,missing,,,modern_admin_units_raw,0,,,陇西、汉中、天水一带,无法从 modern_admin_units_raw 匹配现代行政区
+polity_0136,西秦,matched,CN-GS,甘肃省,modern_admin_units_raw,86,,422125.2,甘肅东部,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0030,北魏,missing,,,modern_admin_units_raw,0,,,,无法从 modern_admin_units_raw 匹配现代行政区
+polity_0044,后凉,matched,CN-GS | CN-NX | CN-QH | CN-XJ,甘肃省 | 宁夏回族自治区 | 青海省 | 新疆维吾尔自治区,modern_admin_units_raw,72,,2799957.7,甘肅西部、部分寧夏、部分青海、部分新疆,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0112,翟魏,matched,CN-HA,河南省,modern_admin_units_raw,86,,166286.6,河南局部,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0024,北凉,matched,CN-GS | CN-NX | CN-QH | CN-XJ,甘肃省 | 宁夏回族自治区 | 青海省 | 新疆维吾尔自治区,modern_admin_units_raw,72,,2799957.7,甘肅西部、部分寧夏、部分新疆、部分青海,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0032,南凉,matched,CN-GS | CN-QH,甘肃省 | 青海省,modern_admin_units_raw,86,,1123971.4,青海、甘肃西部,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0037,南燕,matched,CN-HA | CN-SD,河南省 | 山东省,modern_admin_units_raw,72,,317406.5,山東、部分河南,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0128,西凉,matched,CN-GS | CN-XJ,甘肃省 | 新疆维吾尔自治区,modern_admin_units_raw,72,,2044862.0,甘肅西部及部分新疆,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0078,柔然,missing,,,modern_admin_units_raw,0,,,,无法从 modern_admin_units_raw 匹配现代行政区
+polity_0081,桓楚,missing,,,modern_admin_units_raw,0,,,長江中下游地區,无法从 modern_admin_units_raw 匹配现代行政区
+polity_0143,谯蜀,matched,CN-SC,四川省,modern_admin_units_raw,86,,483983.2,四川大部,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0028,北燕,matched,CN-HE | CN-LN,河北省 | 辽宁省,modern_admin_units_raw,86,,334941.3,遼寧、河北,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0113,胡夏,matched,CN-NM | CN-SN,内蒙古自治区 | 陕西省,modern_admin_units_raw,72,,1334829.9,陕西、部分内蒙古,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0017,刘宋,missing,,,modern_admin_units_raw,0,,,,无法从 modern_admin_units_raw 匹配现代行政区
+polity_0147,邓至,matched,CN-SC,四川省,modern_admin_units_raw,86,,483983.2,仇池以西，宕昌以南，約為四川北部。,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0062,宕昌,matched,CN-GS,甘肃省,modern_admin_units_raw,86,,422125.2,甘肅南部,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0038,南齐,missing,,,modern_admin_units_raw,0,,,,无法从 modern_admin_units_raw 匹配现代行政区
+polity_0164,高车,missing,,,modern_admin_units_raw,0,,,,无法从 modern_admin_units_raw 匹配现代行政区
+polity_0083,梁朝,missing,,,modern_admin_units_raw,0,,,,无法从 modern_admin_units_raw 匹配现代行政区
+polity_0008,东魏,missing,,,modern_admin_units_raw,0,,,,无法从 modern_admin_units_raw 匹配现代行政区
+polity_0139,西魏,missing,,,modern_admin_units_raw,0,,,,无法从 modern_admin_units_raw 匹配现代行政区
+polity_0031,北齐,missing,,,modern_admin_units_raw,0,,,,无法从 modern_admin_units_raw 匹配现代行政区
+polity_0092,汉,missing,,,modern_admin_units_raw,0,,,,无法从 modern_admin_units_raw 匹配现代行政区
+polity_0133,西梁,missing,,,modern_admin_units_raw,0,,,,无法从 modern_admin_units_raw 匹配现代行政区
+polity_0025,北周,missing,,,modern_admin_units_raw,0,,,,无法从 modern_admin_units_raw 匹配现代行政区
+polity_0157,陈朝,missing,,,modern_admin_units_raw,0,,,,无法从 modern_admin_units_raw 匹配现代行政区
+polity_0158,隋朝,matched_low_confidence,CN-BJ | CN-TJ | CN-HE | CN-SX | CN-NM | CN-LN | CN-SN | CN-GS | CN-QH | CN-NX | CN-HA | CN-SD | CN-JS | CN-SH | CN-ZJ | CN-AH | CN-HB | CN-HN | CN-JX | CN-FJ | CN-GD | CN-GX | CN-SC | CN-CQ | CN-GZ | CN-YN,北京市 | 天津市 | 河北省 | 山西省 | 内蒙古自治区 | 辽宁省 | 陕西省 | 甘肃省 | 青海省 | 宁夏回族自治区 | 河南省 | 山东省 | 江苏省 | 上海市 | 浙江省 | 安徽省 | 湖北省 | 湖南省 | 江西省 | 福建省 | 广东省 | 广西壮族自治区 | 四川省 | 重庆市 | 贵州省 | 云南省,manual_v1_dynasty_override,54,王朝级现代省级行政区近似拼合，非历史精确边界,5938300.6,隋朝疆域按 v1 展示口径映射到现代省级行政边界拼合。,现代省级行政边界拼合，非历史精确边界；match_source=manual_v1_dynasty_override
+polity_0059,唐朝,matched_low_confidence,CN-BJ | CN-TJ | CN-HE | CN-SX | CN-NM | CN-LN | CN-SN | CN-GS | CN-QH | CN-NX | CN-XJ | CN-HA | CN-SD | CN-JS | CN-SH | CN-ZJ | CN-AH | CN-HB | CN-HN | CN-JX | CN-FJ | CN-GD | CN-GX | CN-SC | CN-CQ | CN-GZ | CN-YN,北京市 | 天津市 | 河北省 | 山西省 | 内蒙古自治区 | 辽宁省 | 陕西省 | 甘肃省 | 青海省 | 宁夏回族自治区 | 新疆维吾尔自治区 | 河南省 | 山东省 | 江苏省 | 上海市 | 浙江省 | 安徽省 | 湖北省 | 湖南省 | 江西省 | 福建省 | 广东省 | 广西壮族自治区 | 四川省 | 重庆市 | 贵州省 | 云南省,manual_v1_dynasty_override,52,王朝级现代省级行政区近似拼合，非历史精确边界,7561037.5,唐朝疆域按 v1 展示口径映射到现代省级行政边界拼合。,现代省级行政边界拼合，非历史精确边界；match_source=manual_v1_dynasty_override
+polity_0085,武周,missing,,,modern_admin_units_raw,0,,,,无法从 modern_admin_units_raw 匹配现代行政区
+polity_0039,卢龙军,missing,,,modern_admin_units_raw,0,,,,无法从 modern_admin_units_raw 匹配现代行政区
+polity_0065,岐,missing,,,modern_admin_units_raw,0,,,,无法从 modern_admin_units_raw 匹配现代行政区
+polity_0077,杨吴,missing,,,modern_admin_units_raw,0,,,,无法从 modern_admin_units_raw 匹配现代行政区
+polity_0160,静海军,missing,,,modern_admin_units_raw,0,,,,无法从 modern_admin_units_raw 匹配现代行政区
+polity_0022,前蜀,missing,,,modern_admin_units_raw,0,,,,无法从 modern_admin_units_raw 匹配现代行政区
+polity_0048,后梁,missing,,,modern_admin_units_raw,0,,,,无法从 modern_admin_units_raw 匹配现代行政区
+polity_0057,吴越,missing,,,modern_admin_units_raw,0,,,,无法从 modern_admin_units_raw 匹配现代行政区
+polity_0163,马楚,missing,,,modern_admin_units_raw,0,,,,无法从 modern_admin_units_raw 匹配现代行政区
+polity_0155,闽,missing,,,modern_admin_units_raw,0,,,,无法从 modern_admin_units_raw 匹配现代行政区
+polity_0080,桀燕,missing,,,modern_admin_units_raw,0,,,,无法从 modern_admin_units_raw 匹配现代行政区
+polity_0146,辽朝,matched_low_confidence,CN-NM | CN-LN | CN-JL | CN-HL | CN-BJ | CN-TJ | CN-HE | CN-SX,内蒙古自治区 | 辽宁省 | 吉林省 | 黑龙江省 | 北京市 | 天津市 | 河北省 | 山西省,manual_v1_dynasty_override,54,王朝级现代省级行政区近似拼合，非历史精确边界,2287587.5,辽朝疆域按 v1 展示口径映射到现代省级行政边界拼合。,现代省级行政边界拼合，非历史精确边界；match_source=manual_v1_dynasty_override
+polity_0036,南汉,missing,,,modern_admin_units_raw,0,,,,无法从 modern_admin_units_raw 匹配现代行政区
+polity_0046,后唐,missing,,,modern_admin_units_raw,0,,,,无法从 modern_admin_units_raw 匹配现代行政区
+polity_0121,荆南,missing,,,modern_admin_units_raw,0,,,,无法从 modern_admin_units_raw 匹配现代行政区
+polity_0052,后蜀,missing,,,modern_admin_units_raw,0,,,,无法从 modern_admin_units_raw 匹配现代行政区
+polity_0047,后晋,missing,,,modern_admin_units_raw,0,,,,无法从 modern_admin_units_raw 匹配现代行政区
+polity_0033,南唐,missing,,,modern_admin_units_raw,0,,,,无法从 modern_admin_units_raw 匹配现代行政区
+polity_0009,中天八国王,missing,,,modern_admin_units_raw,0,,,,无法从 modern_admin_units_raw 匹配现代行政区
+polity_0108,福州/威武军,missing,,,modern_admin_units_raw,0,,,,无法从 modern_admin_units_raw 匹配现代行政区
+polity_0049,后汉,missing,,,modern_admin_units_raw,0,,,,无法从 modern_admin_units_raw 匹配现代行政区
+polity_0097,清源军/平海军,missing,,,modern_admin_units_raw,0,,,,无法从 modern_admin_units_raw 匹配现代行政区
+polity_0027,北汉,missing,,,modern_admin_units_raw,0,,,,无法从 modern_admin_units_raw 匹配现代行政区
+polity_0045,后周,missing,,,modern_admin_units_raw,0,,,,无法从 modern_admin_units_raw 匹配现代行政区
+polity_0086,武平军,missing,,,modern_admin_units_raw,0,,,,无法从 modern_admin_units_raw 匹配现代行政区
+polity_0026,北宋,matched_low_confidence,CN-HE | CN-SX | CN-SN | CN-GS | CN-HA | CN-SD | CN-JS | CN-AH | CN-HB | CN-HN | CN-JX | CN-FJ | CN-GD | CN-GX | CN-SC | CN-CQ,河北省 | 山西省 | 陕西省 | 甘肃省 | 河南省 | 山东省 | 江苏省 | 安徽省 | 湖北省 | 湖南省 | 江西省 | 福建省 | 广东省 | 广西壮族自治区 | 四川省 | 重庆市,manual_v1_dynasty_override,54,王朝级现代省级行政区近似拼合，非历史精确边界,3197856.9,北宋疆域按 v1 展示口径映射到现代省级行政边界拼合。,现代省级行政边界拼合，非历史精确边界；match_source=manual_v1_dynasty_override
+polity_0131,西夏,missing,,,modern_admin_units_raw,0,,,,无法从 modern_admin_units_raw 匹配现代行政区
+polity_0154,金朝,matched_low_confidence,CN-BJ | CN-TJ | CN-HE | CN-SX | CN-NM | CN-LN | CN-JL | CN-HL | CN-HA | CN-SD | CN-SN,北京市 | 天津市 | 河北省 | 山西省 | 内蒙古自治区 | 辽宁省 | 吉林省 | 黑龙江省 | 河南省 | 山东省 | 陕西省,manual_v1_dynasty_override,54,王朝级现代省级行政区近似拼合，非历史精确边界,2807984.9,金朝疆域按 v1 展示口径映射到现代省级行政边界拼合。,现代省级行政边界拼合，非历史精确边界；match_source=manual_v1_dynasty_override
+polity_0138,西辽,missing,,,modern_admin_units_raw,0,,,,无法从 modern_admin_units_raw 匹配现代行政区
+polity_0034,南宋,matched_low_confidence,CN-JS | CN-SH | CN-ZJ | CN-AH | CN-JX | CN-FJ | CN-HB | CN-HN | CN-GD | CN-GX | CN-SC | CN-CQ | CN-GZ | CN-YN,江苏省 | 上海市 | 浙江省 | 安徽省 | 江西省 | 福建省 | 湖北省 | 湖南省 | 广东省 | 广西壮族自治区 | 四川省 | 重庆市 | 贵州省 | 云南省,manual_v1_dynasty_override,56,王朝级现代省级行政区近似拼合，非历史精确边界,2588879.8,南宋疆域按 v1 展示口径映射到现代省级行政边界拼合。,现代省级行政边界拼合，非历史精确边界；match_source=manual_v1_dynasty_override
+polity_0013,元朝,matched_low_confidence,CN-BJ | CN-TJ | CN-HE | CN-SX | CN-NM | CN-LN | CN-JL | CN-HL | CN-SH | CN-JS | CN-ZJ | CN-AH | CN-FJ | CN-JX | CN-SD | CN-HA | CN-HB | CN-HN | CN-GD | CN-GX | CN-HI | CN-CQ | CN-SC | CN-GZ | CN-YN | CN-XZ | CN-SN | CN-GS | CN-QH | CN-NX | CN-XJ,北京市 | 天津市 | 河北省 | 山西省 | 内蒙古自治区 | 辽宁省 | 吉林省 | 黑龙江省 | 上海市 | 江苏省 | 浙江省 | 安徽省 | 福建省 | 江西省 | 山东省 | 河南省 | 湖北省 | 湖南省 | 广东省 | 广西壮族自治区 | 海南省 | 重庆市 | 四川省 | 贵州省 | 云南省 | 西藏自治区 | 陕西省 | 甘肃省 | 青海省 | 宁夏回族自治区 | 新疆维吾尔自治区,manual_v1_dynasty_override,48,王朝级现代省级行政区近似拼合，非历史精确边界,9449916.2,元朝疆域按 v1 展示口径映射到现代省级行政边界拼合。,现代省级行政边界拼合，非历史精确边界；match_source=manual_v1_dynasty_override
+polity_0023,北元,missing,,,modern_admin_units_raw,0,,,,无法从 modern_admin_units_raw 匹配现代行政区
+polity_0072,明朝,matched_low_confidence,CN-BJ | CN-TJ | CN-HE | CN-SX | CN-LN | CN-SH | CN-JS | CN-ZJ | CN-AH | CN-FJ | CN-JX | CN-SD | CN-HA | CN-HB | CN-HN | CN-GD | CN-GX | CN-HI | CN-CQ | CN-SC | CN-GZ | CN-YN | CN-SN | CN-GS | CN-QH | CN-NX,北京市 | 天津市 | 河北省 | 山西省 | 辽宁省 | 上海市 | 江苏省 | 浙江省 | 安徽省 | 福建省 | 江西省 | 山东省 | 河南省 | 湖北省 | 湖南省 | 广东省 | 广西壮族自治区 | 海南省 | 重庆市 | 四川省 | 贵州省 | 云南省 | 陕西省 | 甘肃省 | 青海省 | 宁夏回族自治区,manual_v1_dynasty_override,50,王朝级现代省级行政区近似拼合，非历史精确边界,4841873.8,明朝疆域按 v1 展示口径映射到现代省级行政边界拼合。,现代省级行政边界拼合，非历史精确边界；match_source=manual_v1_dynasty_override
+polity_0054,后金,missing,,,modern_admin_units_raw,0,,,,无法从 modern_admin_units_raw 匹配现代行政区
+polity_0096,清朝,matched_low_confidence,CN-BJ | CN-TJ | CN-HE | CN-SX | CN-NM | CN-LN | CN-JL | CN-HL | CN-SH | CN-JS | CN-ZJ | CN-AH | CN-FJ | CN-JX | CN-SD | CN-HA | CN-HB | CN-HN | CN-GD | CN-GX | CN-HI | CN-CQ | CN-SC | CN-GZ | CN-YN | CN-XZ | CN-SN | CN-GS | CN-QH | CN-NX | CN-XJ | CN-TW,北京市 | 天津市 | 河北省 | 山西省 | 内蒙古自治区 | 辽宁省 | 吉林省 | 黑龙江省 | 上海市 | 江苏省 | 浙江省 | 安徽省 | 福建省 | 江西省 | 山东省 | 河南省 | 湖北省 | 湖南省 | 广东省 | 广西壮族自治区 | 海南省 | 重庆市 | 四川省 | 贵州省 | 云南省 | 西藏自治区 | 陕西省 | 甘肃省 | 青海省 | 宁夏回族自治区 | 新疆维吾尔自治区 | 台湾省,manual_v1_dynasty_override,48,王朝级现代省级行政区近似拼合，非历史精确边界,9486300.7,清朝疆域按 v1 展示口径映射到现代省级行政边界拼合。,现代省级行政边界拼合，非历史精确边界；match_source=manual_v1_dynasty_override
+polity_0035,南明,missing,,,modern_admin_units_raw,0,,,,无法从 modern_admin_units_raw 匹配现代行政区
+polity_0010,中山国,matched,CN-HE | CN-SD,河北省 | 山东省,modern_admin_units_raw,72,,337044.5,河北省中部太行山东麓一带,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw
+polity_0125,薛国,matched,CN-SD,山东省,modern_admin_units_raw,86,,151119.9,山东省枣莊市薛城 | 山東省定陶縣,现代省级行政边界拼合，非历史精确边界；match_source=modern_admin_units_raw

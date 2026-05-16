@@ -1,0 +1,29 @@
+{
+  "name": "history-map",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "prepare:boundaries": "python3 scripts/prepare_admin_boundaries.py",
+    "generate:data": "python3 scripts/prepare_admin_boundaries.py && python3 scripts/generate_public_data.py",
+    "validate:data": "python3 scripts/validate_dynamic_capitals.py"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^5.1.1",
+    "lucide-react": "^0.561.0",
+    "maplibre-gl": "^5.14.1",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "typescript": "^5.9.3",
+    "vite": "^7.2.7"
+  },
+  "devDependencies": {
+    "@types/geojson": "^7946.0.16",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "playwright": "^1.60.0"
+  }
+}

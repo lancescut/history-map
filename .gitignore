@@ -1,0 +1,66 @@
+# Dependencies
+node_modules/
+.pnp*
+
+# Build and test output
+dist/
+build/
+coverage/
+.vite/
+.cache/
+
+# Environment files and local overrides
+.env
+.env.*
+!.env.example
+*.local
+
+# Secrets, credentials, certificates, and private keys
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.csr
+*.der
+*.jks
+*.keystore
+id_rsa*
+id_ed25519*
+*.secret
+*.credentials
+*.credential
+secrets/
+.secrets/
+credentials/
+.credentials/
+service-account*.json
+*service_account*.json
+google-credentials*.json
+firebase-*.json
+aws-credentials*
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Python caches and virtual environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Temporary artifacts
+tmp-*.png
+tmp/
+temp/
+*.tmp
