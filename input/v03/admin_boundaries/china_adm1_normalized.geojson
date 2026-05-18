@@ -1,7 +1,7 @@
 {
   "type": "FeatureCollection",
   "name": "china_adm1_normalized_geoboundaries_v03",
-  "description": "Real modern ADM1 boundaries normalized for v1 modern-admin territory approximation. These boundaries are modern administrative references, not historical territory boundaries.",
+  "description": "Modern ADM1 boundaries normalized for v03 summary matching and territory approximation fallback. These are modern administrative references, not historical territory boundaries.",
   "properties": {
     "source": "geoBoundaries",
     "source_release": "gbOpen",
@@ -32,7 +32,17 @@
         "source_license": "Public Domain",
         "source_attribution": "geoBoundaries / Wikimedia Commons",
         "crs": "WGS84",
-        "coordinate_count": 138
+        "coordinate_count": 138,
+        "bbox": [
+          115.00037873100007,
+          29.48723452300004,
+          119.73999731800006,
+          34.73220183800004
+        ],
+        "centroid": [
+          117.370188,
+          32.109718
+        ]
       },
       "geometry": {
         "type": "Polygon",
@@ -612,7 +622,17 @@
         "source_license": "Public Domain",
         "source_attribution": "geoBoundaries / Wikimedia Commons",
         "crs": "WGS84",
-        "coordinate_count": 46
+        "coordinate_count": 46,
+        "bbox": [
+          115.54020466000009,
+          39.57509420400004,
+          117.50647273100003,
+          41.07550586600007
+        ],
+        "centroid": [
+          116.523339,
+          40.3253
+        ]
       },
       "geometry": {
         "type": "Polygon",
@@ -824,7 +844,17 @@
         "source_license": "Public Domain",
         "source_attribution": "geoBoundaries / Wikimedia Commons",
         "crs": "WGS84",
-        "coordinate_count": 205
+        "coordinate_count": 205,
+        "bbox": [
+          105.37303897000004,
+          28.344423552000023,
+          110.25866772300009,
+          32.29969266300003
+        ],
+        "centroid": [
+          107.815853,
+          30.322058
+        ]
       },
       "geometry": {
         "type": "Polygon",
@@ -1672,7 +1702,17 @@
         "source_license": "Public Domain",
         "source_attribution": "geoBoundaries / Wikimedia Commons",
         "crs": "WGS84",
-        "coordinate_count": 124
+        "coordinate_count": 124,
+        "bbox": [
+          115.90743926300001,
+          23.61636651200007,
+          120.54140008200011,
+          28.390088225000056
+        ],
+        "centroid": [
+          118.22442,
+          26.003227
+        ]
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -2210,7 +2250,17 @@
         "source_license": "Public Domain",
         "source_attribution": "geoBoundaries / Wikimedia Commons",
         "crs": "WGS84",
-        "coordinate_count": 235
+        "coordinate_count": 235,
+        "bbox": [
+          109.68254305100004,
+          20.261775017000048,
+          117.22161590400003,
+          25.585525807000067
+        ],
+        "centroid": [
+          113.452079,
+          22.92365
+        ]
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -3200,7 +3250,17 @@
         "source_license": "Public Domain",
         "source_attribution": "geoBoundaries / Wikimedia Commons",
         "crs": "WGS84",
-        "coordinate_count": 260
+        "coordinate_count": 260,
+        "bbox": [
+          92.61770735400006,
+          32.65425219600007,
+          108.78256399700007,
+          42.65992465800008
+        ],
+        "centroid": [
+          100.700136,
+          37.657088
+        ]
       },
       "geometry": {
         "type": "Polygon",
@@ -4268,7 +4328,17 @@
         "source_license": "Public Domain",
         "source_attribution": "geoBoundaries / Wikimedia Commons",
         "crs": "WGS84",
-        "coordinate_count": 296
+        "coordinate_count": 296,
+        "bbox": [
+          104.54235583900004,
+          21.437599915000078,
+          112.076879082,
+          26.469079374000046
+        ],
+        "centroid": [
+          108.309617,
+          23.95334
+        ]
       },
       "geometry": {
         "type": "Polygon",
@@ -5480,7 +5550,17 @@
         "source_license": "Public Domain",
         "source_attribution": "geoBoundaries / Wikimedia Commons",
         "crs": "WGS84",
-        "coordinate_count": 313
+        "coordinate_count": 313,
+        "bbox": [
+          103.69187770500008,
+          24.779055223000057,
+          109.59644410100009,
+          29.34883176200003
+        ],
+        "centroid": [
+          106.644161,
+          27.063943
+        ]
       },
       "geometry": {
         "type": "Polygon",
@@ -6760,7 +6840,17 @@
         "source_license": "Public Domain",
         "source_attribution": "geoBoundaries / Wikimedia Commons",
         "crs": "WGS84",
-        "coordinate_count": 137
+        "coordinate_count": 137,
+        "bbox": [
+          110.43833766800009,
+          31.51406773700006,
+          116.73244143000011,
+          36.46220698500008
+        ],
+        "centroid": [
+          113.58539,
+          33.988137
+        ]
       },
       "geometry": {
         "type": "Polygon",
@@ -7336,7 +7426,17 @@
         "source_license": "Public Domain",
         "source_attribution": "geoBoundaries / Wikimedia Commons",
         "crs": "WGS84",
-        "coordinate_count": 221
+        "coordinate_count": 221,
+        "bbox": [
+          108.53165476900006,
+          29.19659834600003,
+          116.2457002110001,
+          33.39701725200007
+        ],
+        "centroid": [
+          112.388677,
+          31.296808
+        ]
       },
       "geometry": {
         "type": "Polygon",
@@ -8248,7 +8348,17 @@
         "source_license": "Public Domain",
         "source_attribution": "geoBoundaries / Wikimedia Commons",
         "crs": "WGS84",
-        "coordinate_count": 198
+        "coordinate_count": 198,
+        "bbox": [
+          113.59500164600001,
+          36.20226386400003,
+          119.97126983200008,
+          42.68079652900008
+        ],
+        "centroid": [
+          116.783136,
+          39.44153
+        ]
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -9074,7 +9184,17 @@
         "source_license": "Public Domain",
         "source_attribution": "geoBoundaries / Wikimedia Commons",
         "crs": "WGS84",
-        "coordinate_count": 36
+        "coordinate_count": 36,
+        "bbox": [
+          108.59849978800008,
+          18.17207570000005,
+          110.98406070400006,
+          20.15999338000006
+        ],
+        "centroid": [
+          109.79128,
+          19.166035
+        ]
       },
       "geometry": {
         "type": "Polygon",
@@ -9246,7 +9366,17 @@
         "source_license": "Public Domain",
         "source_attribution": "geoBoundaries / Wikimedia Commons",
         "crs": "WGS84",
-        "coordinate_count": 56
+        "coordinate_count": 56,
+        "bbox": [
+          113.8413328690001,
+          22.193000012000027,
+          114.41427295200003,
+          22.60404713300005
+        ],
+        "centroid": [
+          114.127803,
+          22.398524
+        ]
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -9508,7 +9638,17 @@
         "source_license": "Public Domain",
         "source_attribution": "geoBoundaries / Wikimedia Commons",
         "crs": "WGS84",
-        "coordinate_count": 187
+        "coordinate_count": 187,
+        "bbox": [
+          121.33680561800008,
+          43.428304843000035,
+          134.740415954,
+          53.57096340100003
+        ],
+        "centroid": [
+          128.038611,
+          48.499634
+        ]
       },
       "geometry": {
         "type": "Polygon",
@@ -10284,7 +10424,17 @@
         "source_license": "Public Domain",
         "source_attribution": "geoBoundaries / Wikimedia Commons",
         "crs": "WGS84",
-        "coordinate_count": 271
+        "coordinate_count": 271,
+        "bbox": [
+          108.91291055300007,
+          24.754874366000024,
+          114.3175584600001,
+          30.23649897300004
+        ],
+        "centroid": [
+          111.615235,
+          27.495687
+        ]
       },
       "geometry": {
         "type": "Polygon",
@@ -11396,7 +11546,17 @@
         "source_license": "Public Domain",
         "source_attribution": "geoBoundaries / Wikimedia Commons",
         "crs": "WGS84",
-        "coordinate_count": 141
+        "coordinate_count": 141,
+        "bbox": [
+          121.77456298200002,
+          40.86282897400008,
+          131.32245463700008,
+          46.34939295400005
+        ],
+        "centroid": [
+          126.548509,
+          43.606111
+        ]
       },
       "geometry": {
         "type": "Polygon",
@@ -11988,7 +12148,17 @@
         "source_license": "Public Domain",
         "source_attribution": "geoBoundaries / Wikimedia Commons",
         "crs": "WGS84",
-        "coordinate_count": 110
+        "coordinate_count": 110,
+        "bbox": [
+          116.45645125200008,
+          30.87856105000003,
+          121.98260608400005,
+          35.199699183000064
+        ],
+        "centroid": [
+          119.219529,
+          33.03913
+        ]
       },
       "geometry": {
         "type": "Polygon",
@@ -12456,7 +12626,17 @@
         "source_license": "Public Domain",
         "source_attribution": "geoBoundaries / Wikimedia Commons",
         "crs": "WGS84",
-        "coordinate_count": 136
+        "coordinate_count": 136,
+        "bbox": [
+          113.67845004600008,
+          24.58754335900005,
+          118.59997933500006,
+          30.147835258000043
+        ],
+        "centroid": [
+          116.139215,
+          27.367689
+        ]
       },
       "geometry": {
         "type": "Polygon",
@@ -13028,7 +13208,17 @@
         "source_license": "Public Domain",
         "source_attribution": "geoBoundaries / Wikimedia Commons",
         "crs": "WGS84",
-        "coordinate_count": 128
+        "coordinate_count": 128,
+        "bbox": [
+          118.9562724110001,
+          38.76056710100005,
+          125.8422217320001,
+          43.53805233500003
+        ],
+        "centroid": [
+          122.399247,
+          41.14931
+        ]
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -13574,7 +13764,17 @@
         "source_license": "Public Domain",
         "source_attribution": "geoBoundaries / Wikimedia Commons",
         "crs": "WGS84",
-        "coordinate_count": 5
+        "coordinate_count": 5,
+        "bbox": [
+          113.49713262300008,
+          22.091324835000023,
+          113.62211382400005,
+          22.227362490000075
+        ],
+        "centroid": [
+          113.559623,
+          22.159344
+        ]
       },
       "geometry": {
         "type": "Polygon",
@@ -13622,7 +13822,17 @@
         "source_license": "Public Domain",
         "source_attribution": "geoBoundaries / Wikimedia Commons",
         "crs": "WGS84",
-        "coordinate_count": 393
+        "coordinate_count": 393,
+        "bbox": [
+          97.36665056300006,
+          37.52671813300003,
+          126.10750757000005,
+          53.40578626000007
+        ],
+        "centroid": [
+          111.737079,
+          45.466252
+        ]
       },
       "geometry": {
         "type": "Polygon",
@@ -15222,7 +15432,17 @@
         "source_license": "Public Domain",
         "source_attribution": "geoBoundaries / Wikimedia Commons",
         "crs": "WGS84",
-        "coordinate_count": 58
+        "coordinate_count": 58,
+        "bbox": [
+          104.54273383900005,
+          35.42025567400003,
+          107.58140655100004,
+          39.432229076000056
+        ],
+        "centroid": [
+          106.06207,
+          37.426242
+        ]
       },
       "geometry": {
         "type": "Polygon",
@@ -15482,7 +15702,17 @@
         "source_license": "Public Domain",
         "source_attribution": "geoBoundaries / Wikimedia Commons",
         "crs": "WGS84",
-        "coordinate_count": 243
+        "coordinate_count": 243,
+        "bbox": [
+          89.46694667100007,
+          31.711214959000074,
+          103.07792964900005,
+          39.208353818000035
+        ],
+        "centroid": [
+          96.272438,
+          35.459784
+        ]
       },
       "geometry": {
         "type": "Polygon",
@@ -16482,7 +16712,17 @@
         "source_license": "Public Domain",
         "source_attribution": "geoBoundaries / Wikimedia Commons",
         "crs": "WGS84",
-        "coordinate_count": 347
+        "coordinate_count": 347,
+        "bbox": [
+          97.43043593900006,
+          26.17161581000005,
+          108.75889331500008,
+          34.323977564000074
+        ],
+        "centroid": [
+          103.094665,
+          30.247797
+        ]
       },
       "geometry": {
         "type": "Polygon",
@@ -17898,7 +18138,17 @@
         "source_license": "Public Domain",
         "source_attribution": "geoBoundaries / Wikimedia Commons",
         "crs": "WGS84",
-        "coordinate_count": 101
+        "coordinate_count": 101,
+        "bbox": [
+          114.94853007400002,
+          34.513995805000036,
+          122.65527878400007,
+          38.30339074800003
+        ],
+        "centroid": [
+          118.801904,
+          36.408693
+        ]
       },
       "geometry": {
         "type": "Polygon",
@@ -18330,7 +18580,17 @@
         "source_license": "Public Domain",
         "source_attribution": "geoBoundaries / Wikimedia Commons",
         "crs": "WGS84",
-        "coordinate_count": 35
+        "coordinate_count": 35,
+        "bbox": [
+          121.0018690170001,
+          30.710089537000044,
+          122.0441424600001,
+          31.836917734000053
+        ],
+        "centroid": [
+          121.523006,
+          31.273504
+        ]
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -18508,7 +18768,17 @@
         "source_license": "Public Domain",
         "source_attribution": "geoBoundaries / Wikimedia Commons",
         "crs": "WGS84",
-        "coordinate_count": 149
+        "coordinate_count": 149,
+        "bbox": [
+          105.81978364100007,
+          31.90566657900007,
+          111.27180531600004,
+          39.64571575400004
+        ],
+        "centroid": [
+          108.545794,
+          35.775691
+        ]
       },
       "geometry": {
         "type": "Polygon",
@@ -19132,7 +19402,17 @@
         "source_license": "Public Domain",
         "source_attribution": "geoBoundaries / Wikimedia Commons",
         "crs": "WGS84",
-        "coordinate_count": 88
+        "coordinate_count": 88,
+        "bbox": [
+          110.37033354800008,
+          34.719451615000025,
+          114.622318489,
+          40.79157821800004
+        ],
+        "centroid": [
+          112.496326,
+          37.755515
+        ]
       },
       "geometry": {
         "type": "Polygon",
@@ -19512,7 +19792,17 @@
         "source_license": "Public Domain",
         "source_attribution": "geoBoundaries / Wikimedia Commons",
         "crs": "WGS84",
-        "coordinate_count": 38
+        "coordinate_count": 38,
+        "bbox": [
+          116.79262414000004,
+          38.677459283000076,
+          118.15694307100011,
+          40.30002925500003
+        ],
+        "centroid": [
+          117.474784,
+          39.488744
+        ]
       },
       "geometry": {
         "type": "Polygon",
@@ -19692,7 +19982,17 @@
         "source_license": "Public Domain",
         "source_attribution": "geoBoundaries / Wikimedia Commons",
         "crs": "WGS84",
-        "coordinate_count": 35
+        "coordinate_count": 35,
+        "bbox": [
+          120.02700091500003,
+          21.90161520500004,
+          121.94793223300007,
+          25.281383638000023
+        ],
+        "centroid": [
+          120.987467,
+          23.591499
+        ]
       },
       "geometry": {
         "type": "Polygon",
@@ -19860,7 +20160,17 @@
         "source_license": "Public Domain",
         "source_attribution": "geoBoundaries / Wikimedia Commons",
         "crs": "WGS84",
-        "coordinate_count": 268
+        "coordinate_count": 268,
+        "bbox": [
+          73.60608328100005,
+          34.35575348300006,
+          96.40396180600004,
+          49.15072211000006
+        ],
+        "centroid": [
+          85.005023,
+          41.753238
+        ]
       },
       "geometry": {
         "type": "Polygon",
@@ -20960,7 +21270,17 @@
         "source_license": "Public Domain",
         "source_attribution": "geoBoundaries / Wikimedia Commons",
         "crs": "WGS84",
-        "coordinate_count": 324
+        "coordinate_count": 324,
+        "bbox": [
+          78.46692369700008,
+          26.888238949000026,
+          99.12145406400003,
+          36.54604898300005
+        ],
+        "centroid": [
+          88.794189,
+          31.717144
+        ]
       },
       "geometry": {
         "type": "Polygon",
@@ -22284,7 +22604,17 @@
         "source_license": "Public Domain",
         "source_attribution": "geoBoundaries / Wikimedia Commons",
         "crs": "WGS84",
-        "coordinate_count": 326
+        "coordinate_count": 326,
+        "bbox": [
+          97.58261748200005,
+          21.171143518000065,
+          106.20385541500008,
+          29.340099191000036
+        ],
+        "centroid": [
+          101.893236,
+          25.255621
+        ]
       },
       "geometry": {
         "type": "Polygon",
@@ -23616,7 +23946,17 @@
         "source_license": "Public Domain",
         "source_attribution": "geoBoundaries / Wikimedia Commons",
         "crs": "WGS84",
-        "coordinate_count": 83
+        "coordinate_count": 83,
+        "bbox": [
+          118.16848252900002,
+          27.28741374300006,
+          122.41145226800006,
+          31.22506099000003
+        ],
+        "centroid": [
+          120.289967,
+          29.256237
+        ]
       },
       "geometry": {
         "type": "Polygon",

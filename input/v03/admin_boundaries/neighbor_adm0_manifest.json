@@ -1,0 +1,32 @@
+{
+  "generated_at": "2026-05-17T15:17:56+00:00",
+  "source": "Natural Earth 110m admin_0_countries (public domain)",
+  "source_url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_110m_admin_0_countries.geojson",
+  "license": "Public domain (CC0)",
+  "feature_count": 22,
+  "countries": [
+    "AFG",
+    "BGD",
+    "BTN",
+    "IND",
+    "JPN",
+    "KAZ",
+    "KGZ",
+    "KHM",
+    "KOR",
+    "LAO",
+    "MMR",
+    "MNG",
+    "NPL",
+    "PAK",
+    "PRK",
+    "RUS",
+    "THA",
+    "TJK",
+    "TKM",
+    "TWN",
+    "UZB",
+    "VNM"
+  ],
+  "missing": []
+}

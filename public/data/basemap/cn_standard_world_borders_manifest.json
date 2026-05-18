@@ -1,0 +1,13 @@
+{
+  "generated_at": "2026-05-17T13:07:13+00:00",
+  "base_source": "echarts world.json (jsdelivr CDN)",
+  "base_source_url": "https://cdn.jsdelivr.net/npm/echarts/map/json/world.json",
+  "nine_dash_source": "manual (public Chinese standard maps approximation)",
+  "license": "echarts world map data is MIT-licensed via Apache ECharts. Nine-dash line coordinates are public knowledge.",
+  "alignment_notes": "本数据相对国际通用 NE 边界更接近中国官方主张：\n- 台湾合并入中国 ✓\n- 阿克赛钦归中国 ✓\n- 藏南部分归中国（Tawang/西段对齐，东段如 Itanagar 仍按 NE 印度版）⚠\n- 克什米尔按 echarts 口径\n- 九段线手动补充 ✓\n本文件仅供历史地图教学展示，不代表自然资源部审图号备案产品。",
+  "raw_country_count": 217,
+  "country_border_lines": 1086,
+  "nine_dash_segments": 10,
+  "output_geojson": "cn_standard_world_borders.geojson",
+  "byte_size": 1173493
+}

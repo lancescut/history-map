@@ -1,10 +1,10 @@
 ﻿check_name,status,checked_count,issue_count,details
-year_within_polity_range,PASS,36359,0,
-polity_year_completeness,PASS,167,0,
-partial_polity_boundaries,WARN,167,2,中山国; 薛国
-duplicate_row_id,PASS,36359,0,
-yearly_polity_id_join,PASS,36359,0,
-yearly_ruler_id_join,PASS,36359,0,
-year_sort_order,PASS,36359,0,
-no_year_zero,PASS,36359,0,
-polity_sources_present,PASS,167,0,
+year_within_polity_range,PASS,40433,0,
+polity_year_completeness,PASS,213,0,
+partial_polity_boundaries,WARN,213,5,中山国; 薛国; 大理; 高昌回鹘; 甘州回鹘
+duplicate_row_id,PASS,40433,0,
+yearly_polity_id_join,PASS,40433,0,
+yearly_ruler_id_join,PASS,40433,0,
+year_sort_order,PASS,40433,0,
+no_year_zero,PASS,40433,0,
+polity_sources_present,PASS,213,0,

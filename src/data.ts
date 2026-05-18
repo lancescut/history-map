@@ -1,20 +1,51 @@
-import type { AliasIndex, CapitalsData, Metadata, TerritoryFeatureProperties, YearData } from "./types";
+import type {
+  AliasIndex,
+  CapitalsData,
+  CountyUnitProperties,
+  HistoricalAnecdotesData,
+  HistoricalContextsData,
+  HistoricalEventsData,
+  IssuesData,
+  Metadata,
+  PolityCountyIndex,
+  StoryPresetsData,
+  TerritoryFeatureProperties,
+  ValidationData,
+  YearData
+} from "./types";
 
 const jsonCache = new Map<string, Promise<unknown>>();
 
 async function fetchJson<T>(path: string): Promise<T> {
-  if (!jsonCache.has(path)) {
-    jsonCache.set(
-      path,
-      fetch(path).then((response) => {
-        if (!response.ok) {
-          throw new Error(`Failed to load ${path}: ${response.status}`);
+  let pending = jsonCache.get(path);
+  if (!pending) {
+    pending = fetch(path).then(async (response) => {
+      if (!response.ok) {
+        throw new Error(`Failed to load ${path}: ${response.status}`);
+      }
+      // Vite dev server 会把不存在的静态路径 fallback 到 SPA index.html，content-type
+      // 变成 text/html。强校验避免 JSON.parse 抛 "Unexpected token '<'"。
+      const contentType = response.headers.get("content-type") ?? "";
+      if (!/json|geo\+json/i.test(contentType)) {
+        const peek = await response.text();
+        if (peek.trimStart().startsWith("<")) {
+          throw new Error(
+            `Missing data file: ${path} (server returned HTML fallback, file likely does not exist)`
+          );
         }
-        return response.json() as Promise<T>;
-      })
-    );
+        return JSON.parse(peek) as T;
+      }
+      return (await response.json()) as T;
+    });
+    // 失败时把缓存项剔除，避免后续请求一直拿到失败的 promise
+    pending.catch(() => {
+      if (jsonCache.get(path) === pending) {
+        jsonCache.delete(path);
+      }
+    });
+    jsonCache.set(path, pending);
   }
-  return jsonCache.get(path) as Promise<T>;
+  return pending as Promise<T>;
 }
 
 export function getMetadata(): Promise<Metadata> {
@@ -39,8 +70,42 @@ export function getModernAdminUnits(): Promise<GeoJSON.FeatureCollection> {
   return fetchJson<GeoJSON.FeatureCollection>("/data/v03/territories/modern_admin_units.geojson");
 }
 
+export function getCountyUnits(): Promise<GeoJSON.FeatureCollection<GeoJSON.Geometry, CountyUnitProperties>> {
+  return fetchJson<GeoJSON.FeatureCollection<GeoJSON.Geometry, CountyUnitProperties>>(
+    "/data/v03/territories/county_units.geojson"
+  );
+}
+
+export function getPolityCountyIndex(): Promise<PolityCountyIndex> {
+  return fetchJson<PolityCountyIndex>("/data/v03/territories/polity_county_index.json");
+}
+
 export function getYearData(year: number): Promise<YearData> {
   return fetchJson<YearData>(`/data/v03/years/${year}.json`);
+}
+
+export function getIssues(): Promise<IssuesData> {
+  return fetchJson<IssuesData>("/data/v03/issues.json");
+}
+
+export function getValidation(): Promise<ValidationData> {
+  return fetchJson<ValidationData>("/data/v03/validation.json");
+}
+
+export function getHistoricalEvents(): Promise<HistoricalEventsData> {
+  return fetchJson<HistoricalEventsData>("/data/v03/events.json");
+}
+
+export function getHistoricalAnecdotes(): Promise<HistoricalAnecdotesData> {
+  return fetchJson<HistoricalAnecdotesData>("/data/v03/anecdotes.json");
+}
+
+export function getHistoricalContexts(): Promise<HistoricalContextsData> {
+  return fetchJson<HistoricalContextsData>("/data/v03/contexts.json");
+}
+
+export function getStoryPresets(): Promise<StoryPresetsData> {
+  return fetchJson<StoryPresetsData>("/data/v03/story_presets.json");
 }
 
 export function yearLabel(year: number): string {
@@ -58,6 +123,8 @@ export function previousYear(year: number, minYear: number): number {
 }
 
 export function clampPlayableYear(year: number, minYear: number, maxYear: number): number {
+  // 防御 NaN / Infinity：来源可能是 Number("") 或 Number("abc")
+  if (!Number.isFinite(year)) return minYear < 0 ? minYear : 1;
   const clamped = Math.min(maxYear, Math.max(minYear, Math.trunc(year)));
   return clamped === 0 ? 1 : clamped;
 }

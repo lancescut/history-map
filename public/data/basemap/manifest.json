@@ -1,0 +1,57 @@
+{
+  "generated_at": "2026-05-16T02:21:55+00:00",
+  "source": "Natural Earth (public domain) via nvkelso/natural-earth-vector",
+  "source_url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson",
+  "license": "Public domain (CC0)",
+  "attribution": "Made with Natural Earth",
+  "layers": [
+    {
+      "name": "ne_110m_land",
+      "path": "data/basemap/ne_110m_land.geojson",
+      "feature_count": 127,
+      "bytes": 150746
+    },
+    {
+      "name": "ne_110m_ocean",
+      "path": "data/basemap/ne_110m_ocean.geojson",
+      "feature_count": 2,
+      "bytes": 128002
+    },
+    {
+      "name": "ne_110m_coastline",
+      "path": "data/basemap/ne_110m_coastline.geojson",
+      "feature_count": 134,
+      "bytes": 152589
+    },
+    {
+      "name": "ne_110m_lakes",
+      "path": "data/basemap/ne_110m_lakes.geojson",
+      "feature_count": 24,
+      "bytes": 39656
+    },
+    {
+      "name": "ne_110m_rivers_lake_centerlines",
+      "path": "data/basemap/ne_110m_rivers_lake_centerlines.geojson",
+      "feature_count": 13,
+      "bytes": 41461
+    },
+    {
+      "name": "ne_110m_geographic_lines",
+      "path": "data/basemap/ne_110m_geographic_lines.geojson",
+      "feature_count": 6,
+      "bytes": 65881
+    },
+    {
+      "name": "ne_110m_glaciated_areas",
+      "path": "data/basemap/ne_110m_glaciated_areas.geojson",
+      "feature_count": 11,
+      "bytes": 23586
+    },
+    {
+      "name": "ne_110m_admin_0_boundary_lines_land",
+      "path": "data/basemap/ne_110m_admin_0_boundary_lines_land.geojson",
+      "feature_count": 331,
+      "bytes": 376692
+    }
+  ]
+}
