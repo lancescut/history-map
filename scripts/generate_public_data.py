@@ -42,6 +42,18 @@ CAPITAL_EVENT_TYPES = {
 
 LOCATION_PRECISIONS = {"exact", "city", "region", "approximate", "unknown"}
 
+STRATEGIC_LOCATION_CATEGORIES = {
+    "pass",
+    "battlefield",
+    "river_crossing",
+    "mountain_corridor",
+    "fortress_city",
+    "transport_hub",
+    "frontier_gate",
+    "maritime_port",
+    "cultural_allusion",
+}
+
 # 游牧政权识别：基于族属/家族字段，避免硬编码 polity_name。
 # 命中即标记 is_nomadic=true（MRD §6.3 POLITY-002：游牧政权使用虚线 + 羽化）
 NOMADIC_ETHNIC_KEYWORDS = (
@@ -97,6 +109,31 @@ ADMIN_BOUNDARY_PATH = ADMIN_COUNTY_BOUNDARY_PATH
 ADMIN_BOUNDARY_MANIFEST_PATH = ADMIN_BOUNDARY_DIR / "admin_boundary_source_manifest.json"
 NEIGHBOR_ADM0_PATH = ADMIN_BOUNDARY_DIR / "neighbor_adm0.geojson"
 NEIGHBOR_ADM1_PATH = ADMIN_BOUNDARY_DIR / "neighbor_adm1.geojson"
+TERRITORY_ZONES_PATH = INPUT_DIR / "territory_zones_v03.csv"
+
+TERRITORY_CONTROL_TYPES = {"direct", "influence"}
+TERRITORY_CONTROL_LABELS = {
+    "direct": "实控疆域",
+    "influence": "影响区/非实控范围",
+}
+TERRITORY_CONTROL_AUDIT_MARKERS = (
+    "影响区",
+    "羁縻",
+    "都护",
+    "都護",
+    "长史府",
+    "長史府",
+    "名义",
+    "名義",
+    "阶段性",
+    "階段性",
+    "非整国控制",
+    "非整國控制",
+    "势力",
+    "勢力",
+    "争议",
+    "爭議",
+)
 
 # 跨境关键字 → (level, target_ids)
 # level="adm1": ADM1 ID 列表（精细，优先）；level="adm0": ADM0 ISO-A3 列表（fallback，整国）
@@ -475,6 +512,33 @@ def split_list(value: str) -> list[str]:
     return [clean(piece) for piece in re.split(r"[|；;、,，]", clean(value)) if clean(piece)]
 
 
+def parse_active_years_raw(value: str) -> tuple[list[int], list[dict[str, int]]]:
+    """Parse explicit active years and start:end ranges from the CSV field."""
+    years: set[int] = set()
+    ranges: list[dict[str, int]] = []
+    for token in split_list(value):
+        if ":" in token:
+            start_raw, end_raw = token.split(":", 1)
+            try:
+                start = int(start_raw)
+                end = int(end_raw)
+            except ValueError:
+                continue
+            if start == 0 or end == 0:
+                continue
+            if start > end:
+                start, end = end, start
+            ranges.append({"start_year": start, "end_year": end})
+            continue
+        try:
+            year = int(token)
+        except ValueError:
+            continue
+        if year != 0:
+            years.add(year)
+    return sorted(years), ranges
+
+
 def compact_text(value: str) -> str:
     text = clean(value).translate(TRAD_TO_COMMON)
     return re.sub(r"[\s·・,，、／/()（）\[\]［］「」『』《》<>〈〉\-—－:：;；]", "", text)
@@ -542,6 +606,99 @@ def geometry_coordinate_count(geometry: dict[str, Any]) -> int:
     return count
 
 
+def geometry_bbox(geometry: dict[str, Any]) -> tuple[float, float, float, float]:
+    return polygon_bbox(geometry.get("coordinates", []))
+
+
+def point_in_ring(point: tuple[float, float], ring: list[Any]) -> bool:
+    x, y = point
+    inside = False
+    if len(ring) < 4:
+        return False
+    j = len(ring) - 1
+    for i, current in enumerate(ring):
+        xi, yi = float(current[0]), float(current[1])
+        xj, yj = float(ring[j][0]), float(ring[j][1])
+        intersects = (yi > y) != (yj > y) and x < (xj - xi) * (y - yi) / ((yj - yi) or 1e-12) + xi
+        if intersects:
+            inside = not inside
+        j = i
+    return inside
+
+
+def point_in_polygon(point: tuple[float, float], polygon: list[Any]) -> bool:
+    if not polygon or not point_in_ring(point, polygon[0]):
+        return False
+    return not any(point_in_ring(point, hole) for hole in polygon[1:])
+
+
+def iter_geometry_polygons(geometry: dict[str, Any]) -> list[list[Any]]:
+    if geometry.get("type") == "Polygon":
+        return [geometry["coordinates"]]
+    if geometry.get("type") == "MultiPolygon":
+        return list(geometry["coordinates"])
+    return []
+
+
+def build_hatch_features(
+    territory_features: list[dict[str, Any]],
+    *,
+    spacing_degrees: float = 0.75,
+    dash_degrees: float = 0.52,
+) -> dict[str, Any]:
+    """Build short same-color hatch dashes for influence polygons.
+
+    MapLibre fill-pattern cannot be colored per feature, so the generator emits
+    actual line features. Each dash is fully inside the polygon by checking both
+    endpoints and the center point.
+    """
+    hatch_features: list[dict[str, Any]] = []
+    half = dash_degrees / 2
+    for feature in territory_features:
+        props = feature["properties"]
+        if props.get("control_type") != "influence":
+            continue
+        for polygon_index, polygon in enumerate(iter_geometry_polygons(feature["geometry"])):
+            min_lon, min_lat, max_lon, max_lat = polygon_bbox(polygon)
+            start_lon = math.floor((min_lon - (max_lat - min_lat)) / spacing_degrees) * spacing_degrees
+            end_lon = max_lon + (max_lat - min_lat) + spacing_degrees
+            y = min_lat - spacing_degrees
+            row = 0
+            while y <= max_lat + spacing_degrees:
+                x = start_lon + (row % 2) * spacing_degrees * 0.5
+                while x <= end_lon:
+                    center = (x, y)
+                    p1 = (x - half, y - half)
+                    p2 = (x + half, y + half)
+                    if (
+                        min_lon <= center[0] <= max_lon
+                        and min_lat <= center[1] <= max_lat
+                        and point_in_polygon(center, polygon)
+                        and point_in_polygon(p1, polygon)
+                        and point_in_polygon(p2, polygon)
+                    ):
+                        hatch_features.append(
+                            {
+                                "type": "Feature",
+                                "geometry": {
+                                    "type": "LineString",
+                                    "coordinates": [
+                                        [round(p1[0], 6), round(p1[1], 6)],
+                                        [round(p2[0], 6), round(p2[1], 6)],
+                                    ],
+                                },
+                                "properties": {
+                                    **props,
+                                    "hatch_id": f"{props.get('zone_id', props['polity_id'])}_{polygon_index}_{len(hatch_features)}",
+                                },
+                            }
+                        )
+                    x += spacing_degrees
+                y += spacing_degrees
+                row += 1
+    return {"type": "FeatureCollection", "features": hatch_features}
+
+
 def normalize_parent_ids(value: Any) -> list[str]:
     if isinstance(value, list):
         return [clean(item) for item in value if clean(item)]
@@ -589,6 +746,99 @@ def load_territory_overrides() -> dict[str, dict[str, Any]]:
             "source_raw": clean(row.get("source_raw", "")),
         }
     return overrides
+
+
+def default_territory_zone(polity: dict[str, str]) -> dict[str, Any]:
+    start_year = int_optional(polity.get("polity_start_year")) or int_optional(polity.get("v02_actual_min_year")) or YEAR_MIN
+    end_year = int_optional(polity.get("polity_end_year")) or int_optional(polity.get("v02_actual_max_year")) or YEAR_MAX
+    return {
+        "zone_id": f"{polity['polity_id']}_direct",
+        "polity_id": polity["polity_id"],
+        "polity_name": polity["polity_name"],
+        "control_type": "direct",
+        "control_label": TERRITORY_CONTROL_LABELS["direct"],
+        "zone_start_year": start_year,
+        "zone_end_year": end_year,
+        "zone_geography_raw": clean(polity.get("historical_geography_raw", "")),
+        "zone_modern_admin_units_raw": clean(polity.get("modern_admin_units_raw", "")),
+        "source_titles": clean(polity.get("polity_source_titles", "")),
+        "source_urls": clean(polity.get("polity_source_urls", "")),
+        "source_raw": clean(polity.get("polity_source_raw", "")),
+        "confidence_score": int(clean(polity.get("confidence_score", "")) or 0),
+        "note": "legacy default direct zone generated from chinese_history_polities_master_v03.csv",
+        "is_default_zone": True,
+    }
+
+
+def load_territory_zones(polities_by_id: dict[str, dict[str, str]]) -> dict[str, list[dict[str, Any]]]:
+    if not TERRITORY_ZONES_PATH.exists():
+        return {}
+
+    zones_by_polity: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    seen: set[str] = set()
+    errors: list[str] = []
+    for index, row in enumerate(read_csv(TERRITORY_ZONES_PATH), start=2):
+        try:
+            zone_id = clean(row.get("zone_id", ""))
+            polity_id = clean(row.get("polity_id", ""))
+            control_type = clean(row.get("control_type", ""))
+            if not zone_id:
+                raise ValueError("zone_id is required")
+            if zone_id in seen:
+                raise ValueError(f"duplicate zone_id {zone_id}")
+            seen.add(zone_id)
+            if polity_id not in polities_by_id:
+                raise ValueError(f"unknown polity_id {polity_id}")
+            if control_type not in TERRITORY_CONTROL_TYPES:
+                raise ValueError(f"invalid control_type {control_type}")
+            zone_start_year = int_required(row, "zone_start_year")
+            zone_end_year = int_required(row, "zone_end_year")
+            if zone_start_year == 0 or zone_end_year == 0:
+                raise ValueError("zone years cannot include year 0")
+            if zone_start_year > zone_end_year:
+                raise ValueError("zone_start_year cannot be after zone_end_year")
+            polity = polities_by_id[polity_id]
+            polity_start = int_required(polity, "polity_start_year")
+            polity_end = int_required(polity, "polity_end_year")
+            if zone_start_year < polity_start or zone_end_year > polity_end:
+                raise ValueError(
+                    f"zone range {zone_start_year}..{zone_end_year} outside polity range "
+                    f"{polity_start}..{polity_end}"
+                )
+            confidence_score = int_required(row, "confidence_score")
+            if not 0 <= confidence_score <= 100:
+                raise ValueError("confidence_score must be 0..100")
+            if not clean(row.get("zone_modern_admin_units_raw", "")):
+                raise ValueError("zone_modern_admin_units_raw is required")
+            if not clean(row.get("source_titles", "")):
+                raise ValueError("source_titles is required")
+            zones_by_polity[polity_id].append(
+                {
+                    "zone_id": zone_id,
+                    "polity_id": polity_id,
+                    "polity_name": clean(row.get("polity_name", "")) or polity["polity_name"],
+                    "control_type": control_type,
+                    "control_label": TERRITORY_CONTROL_LABELS[control_type],
+                    "zone_start_year": zone_start_year,
+                    "zone_end_year": zone_end_year,
+                    "zone_geography_raw": clean(row.get("zone_geography_raw", "")),
+                    "zone_modern_admin_units_raw": clean(row.get("zone_modern_admin_units_raw", "")),
+                    "source_titles": clean(row.get("source_titles", "")),
+                    "source_urls": clean(row.get("source_urls", "")),
+                    "source_raw": clean(row.get("source_raw", "")),
+                    "confidence_score": confidence_score,
+                    "note": clean(row.get("note", "")),
+                    "is_default_zone": False,
+                }
+            )
+        except Exception as exc:  # noqa: BLE001 - report every data-row failure together.
+            errors.append(f"row {index}: {exc}")
+
+    if errors:
+        raise SystemExit("territory_zones_v03.csv failed validation:\n" + "\n".join(errors))
+    for zones in zones_by_polity.values():
+        zones.sort(key=lambda item: (item["zone_start_year"], item["control_type"], item["zone_id"]))
+    return dict(zones_by_polity)
 
 
 def build_admin_aliases(features: list[dict[str, Any]]) -> list[tuple[str, str, str]]:
@@ -743,6 +993,487 @@ def coarse_fallback_reason_for_resolution(matched_resolution: str, raw_text: str
     return "未命中可索引的现代县级或省级行政区。"
 
 
+def append_geometry_parts(
+    geometry: dict[str, Any],
+    polygons: list[Any],
+    bboxes: list[tuple[float, float, float, float]],
+) -> tuple[float, int]:
+    if geometry["type"] == "Polygon":
+        polygons.append(geometry["coordinates"])
+    elif geometry["type"] == "MultiPolygon":
+        polygons.extend(geometry["coordinates"])
+    else:
+        return 0.0, 0
+    bboxes.append(polygon_bbox(geometry["coordinates"]))
+    return geometry_area_km2(geometry), geometry_coordinate_count(geometry)
+
+
+def build_zone_territory_feature(
+    polity: dict[str, str],
+    zone: dict[str, Any],
+    *,
+    summary_aliases: dict[str, list[dict[str, str]]],
+    county_aliases: dict[str, list[dict[str, str]]],
+    summary_admin_by_id: dict[str, dict[str, Any]],
+    county_by_id: dict[str, dict[str, Any]],
+    county_ids_by_parent: dict[str, list[str]],
+    territory_overrides: dict[str, dict[str, Any]],
+    neighbor_features: dict[str, dict[str, Any]],
+    neighbor_adm1_features: dict[str, dict[str, Any]],
+    county_features: list[dict[str, Any]],
+    generated_at: str,
+) -> dict[str, Any]:
+    polity_id = polity["polity_id"]
+    zone_id = zone["zone_id"]
+    control_type = zone["control_type"]
+    raw_text = clean(zone.get("zone_modern_admin_units_raw", "")) or clean(polity.get("modern_admin_units_raw", ""))
+    matches: list[dict[str, str]] = []
+    county_ids: list[str] = []
+    override = territory_overrides.get(polity_id) if control_type == "direct" else None
+    match_source = "territory_zones_v03"
+    matched_resolution = "missing"
+    confidence_note = clean(zone.get("note", ""))
+    if override:
+        county_ids = county_ids_for_admin_ids(override["admin_ids"], county_by_id, county_ids_by_parent)
+        direct_county_override = any(admin_id in county_by_id for admin_id in override["admin_ids"])
+        summary_matches = [
+            {
+                "admin_id": admin_id,
+                "name": summary_admin_by_id[admin_id]["properties"]["name"],
+                "matched_alias": summary_admin_by_id[admin_id]["properties"]["name"],
+            }
+            for admin_id in override["admin_ids"]
+            if admin_id in summary_admin_by_id
+        ]
+        parent_matches = summarize_county_parents(county_ids, county_by_id, summary_admin_by_id)
+        matches_by_id = {match["admin_id"]: match for match in [*summary_matches, *parent_matches]}
+        matches = sorted(matches_by_id.values(), key=lambda item: item["admin_id"])
+        match_source = f"territory_zones_v03+{override['match_source']}"
+        matched_resolution = "manual_county_override" if direct_county_override else "manual_province_expanded_to_county"
+        confidence_note = "；".join(piece for piece in [confidence_note, override["note"]] if piece)
+    else:
+        county_matches = match_admin_units(raw_text, county_aliases)
+        if county_matches:
+            county_ids = county_ids_for_admin_ids([match["admin_id"] for match in county_matches], county_by_id, county_ids_by_parent)
+            matches = summarize_county_parents(county_ids, county_by_id, summary_admin_by_id)
+            if not matches:
+                matches = county_matches
+            matched_resolution = "county_text_match"
+        else:
+            matches = match_admin_units(raw_text, summary_aliases)
+            county_ids = county_ids_for_admin_ids([match["admin_id"] for match in matches], county_by_id, county_ids_by_parent)
+            if matches:
+                matched_resolution = "province_expanded_to_county"
+        region_matches, domestic_region_rules = match_domestic_region_units(raw_text, summary_admin_by_id)
+        if region_matches:
+            matches_by_id = {match["admin_id"]: match for match in [*matches, *region_matches]}
+            matches = sorted(matches_by_id.values(), key=lambda item: item["admin_id"])
+            county_ids = county_ids_for_admin_ids([match["admin_id"] for match in matches], county_by_id, county_ids_by_parent)
+            matched_resolution = (
+                "domestic_region_expanded_to_county"
+                if matched_resolution == "missing"
+                else f"{matched_resolution}+domestic_region"
+            )
+            region_note = "宽泛国内区域词近似展开：" + "、".join(domestic_region_rules)
+            confidence_note = "；".join(piece for piece in [confidence_note, region_note] if piece)
+    if matches and not county_ids and matched_resolution in {"manual_province_expanded_to_county", "province_expanded_to_county"}:
+        matched_resolution = "manual_province_only" if override else "province_only"
+
+    matched_ids = [match["admin_id"] for match in matches]
+    matched_names = [match["name"] for match in matches]
+    county_index_ref = f"territories/polity_county_index.json#{polity_id}" if county_ids else None
+    coarse_fallback_reason = coarse_fallback_reason_for_resolution(matched_resolution, raw_text)
+    polygons: list[Any] = []
+    bboxes: list[tuple[float, float, float, float]] = []
+    area = 0.0
+    coordinate_count = 0
+    admin_unit_features: list[dict[str, Any]] = []
+
+    summary_geometry_ids = [admin_id for admin_id in matched_ids if admin_id in summary_admin_by_id]
+    summary_geometry_is_detailed = all(
+        geometry_coordinate_count(summary_admin_by_id[admin_id]["geometry"]) > 20
+        for admin_id in summary_geometry_ids
+    )
+    use_county_geometry = bool(county_ids) and (not summary_geometry_ids or not summary_geometry_is_detailed)
+    geometry_ids = county_ids if use_county_geometry else summary_geometry_ids
+    geometry_by_id = county_by_id if use_county_geometry else summary_admin_by_id
+    geometry_source_path = ADMIN_COUNTY_BOUNDARY_PATH if use_county_geometry else ADMIN_SUMMARY_BOUNDARY_PATH
+    boundary_level = "county" if county_ids else "province"
+    if use_county_geometry:
+        matched_resolution = f"{matched_resolution}+county_geometry"
+    for admin_id in geometry_ids:
+        admin_feature = geometry_by_id[admin_id]
+        added_area, added_count = append_geometry_parts(admin_feature["geometry"], polygons, bboxes)
+        if not added_count:
+            continue
+        area += added_area
+        coordinate_count += added_count
+        admin_unit_features.append(
+            {
+                "type": "Feature",
+                "geometry": admin_feature["geometry"],
+                "properties": {
+                    "zone_id": zone_id,
+                    "control_type": control_type,
+                    "control_label": zone["control_label"],
+                    "polity_id": polity_id,
+                    "polity_name": polity["polity_name"],
+                    "admin_id": admin_id,
+                    "admin_name": admin_feature["properties"]["name"],
+                    "match_source": match_source,
+                    "matched_resolution": matched_resolution,
+                    "county_count": len(county_ids),
+                    "county_index_ref": county_index_ref,
+                },
+            }
+        )
+
+    cross_border_adm1_ids: list[str] = []
+    cross_border_isos: list[str] = []
+    cross_border_names: list[str] = []
+    if neighbor_features or neighbor_adm1_features:
+        cross_border_adm1_ids, cross_border_isos, cross_border_names = match_neighbor_targets(raw_text)
+        domestic_neighbor_isos = {
+            iso for admin_id in matched_ids if (iso := DOMESTIC_ADMIN_ID_TO_NEIGHBOR_ISO.get(admin_id))
+        }
+        if domestic_neighbor_isos:
+            cross_border_isos = [iso for iso in cross_border_isos if iso not in domestic_neighbor_isos]
+            cross_border_names = [NEIGHBOR_ISO_NAMES.get(iso, iso) for iso in cross_border_isos]
+        for adm1_id in cross_border_adm1_ids:
+            feature = neighbor_adm1_features.get(adm1_id)
+            if not feature:
+                continue
+            added_area, added_count = append_geometry_parts(feature["geometry"], polygons, bboxes)
+            area += added_area
+            coordinate_count += added_count
+        for iso in cross_border_isos:
+            feature = neighbor_features.get(iso)
+            if not feature:
+                continue
+            added_area, added_count = append_geometry_parts(feature["geometry"], polygons, bboxes)
+            area += added_area
+            coordinate_count += added_count
+
+    if cross_border_adm1_ids and cross_border_isos:
+        matched_resolution = f"{matched_resolution}+cross_border_adm1+adm0" if matched_resolution != "missing" else "cross_border_adm1+adm0"
+    elif cross_border_adm1_ids:
+        matched_resolution = f"{matched_resolution}+cross_border_adm1" if matched_resolution != "missing" else "cross_border_adm1_only"
+    elif cross_border_isos:
+        matched_resolution = f"{matched_resolution}+cross_border_adm0" if matched_resolution != "missing" else "cross_border_adm0_only"
+
+    zone_confidence = int(zone.get("confidence_score") or 0)
+    confidence = min(
+        zone_confidence or 100,
+        confidence_for_match(raw_text, len(matches), override, matched_resolution),
+    )
+    territory_status = "matched_low_confidence" if confidence < 70 else "matched"
+    if not polygons or not bboxes:
+        territory = {
+            "geometry_ref": None,
+            "territory_status": "missing",
+            "territory_method": "modern_admin_approximation",
+            "approx_area_km2": None,
+            "match_confidence": 0,
+            "matched_admin_ids": [],
+            "matched_admin_units": [],
+            "matched_county_count": 0,
+            "county_index_ref": None,
+            "boundary_level": "missing",
+            "match_resolution": "missing",
+            "coarse_fallback_reason": coarse_fallback_reason,
+            "source_text": raw_text,
+            "match_source": match_source,
+            "confidence_note": confidence_note,
+            "label": TERRITORY_LABEL,
+            "zone_id": zone_id,
+            "control_type": control_type,
+            "control_label": zone["control_label"],
+            "zone_start_year": zone["zone_start_year"],
+            "zone_end_year": zone["zone_end_year"],
+            "zone_geography_raw": zone.get("zone_geography_raw", ""),
+            "zone_note": zone.get("note", ""),
+        }
+        return {
+            "territory": territory,
+            "feature": None,
+            "admin_unit_features": [],
+            "county_ids": [],
+            "report_row": {
+                "zone_id": zone_id,
+                "control_type": control_type,
+                "control_label": zone["control_label"],
+                "zone_start_year": zone["zone_start_year"],
+                "zone_end_year": zone["zone_end_year"],
+                "polity_id": polity_id,
+                "polity_name": polity["polity_name"],
+                "territory_status": "missing",
+                "matched_admin_ids": "",
+                "matched_admin_units": "",
+                "matched_resolution": "missing",
+                "county_count": 0,
+                "county_index_ref": "",
+                "coarse_fallback_reason": coarse_fallback_reason,
+                "match_source": match_source,
+                "match_confidence": 0,
+                "confidence_note": confidence_note,
+                "approx_area_km2": "",
+                "source_text": raw_text,
+                "note": "无法从 zone_modern_admin_units_raw 匹配现代行政区",
+            },
+        }
+
+    min_lon = min(bbox[0] for bbox in bboxes)
+    min_lat = min(bbox[1] for bbox in bboxes)
+    max_lon = max(bbox[2] for bbox in bboxes)
+    max_lat = max(bbox[3] for bbox in bboxes)
+    centroid = [(min_lon + max_lon) / 2, (min_lat + max_lat) / 2]
+    geometry_source_path_for_public = (
+        geometry_source_path
+        if matched_ids
+        else NEIGHBOR_ADM1_PATH if cross_border_adm1_ids and not cross_border_isos else NEIGHBOR_ADM0_PATH
+    )
+    territory = {
+        "geometry_ref": f"territories/approx_polities.geojson#{zone_id}",
+        "territory_status": territory_status,
+        "territory_method": "modern_admin_approximation",
+        "approx_area_km2": round(area, 1),
+        "match_confidence": confidence,
+        "matched_admin_ids": matched_ids,
+        "matched_admin_units": matched_names,
+        "matched_county_count": len(county_ids),
+        "county_index_ref": county_index_ref,
+        "boundary_level": boundary_level if matched_ids else ("province" if cross_border_adm1_ids else "country"),
+        "match_resolution": matched_resolution,
+        "coarse_fallback_reason": coarse_fallback_reason,
+        "source_text": raw_text,
+        "geometry_source": str(geometry_source_path_for_public.relative_to(ROOT)),
+        "geometry_source_license": county_features[0]["properties"].get("source_license", ""),
+        "geometry_source_attribution": (
+            county_features[0]["properties"].get("source_attribution", "")
+            if matched_ids
+            else "Natural Earth admin_0/admin_1"
+        ),
+        "county_geometry_source": str(ADMIN_COUNTY_BOUNDARY_PATH.relative_to(ROOT)) if matched_ids else "",
+        "match_source": match_source,
+        "confidence_note": confidence_note,
+        "geometry_coordinate_count": coordinate_count,
+        "generated_at": generated_at,
+        "label": TERRITORY_LABEL,
+        "centroid": centroid,
+        "cross_border_iso_codes": cross_border_isos,
+        "cross_border_country_names": cross_border_names,
+        "cross_border_adm1_ids": cross_border_adm1_ids,
+        "zone_id": zone_id,
+        "control_type": control_type,
+        "control_label": zone["control_label"],
+        "zone_start_year": zone["zone_start_year"],
+        "zone_end_year": zone["zone_end_year"],
+        "zone_geography_raw": zone.get("zone_geography_raw", ""),
+        "zone_note": zone.get("note", ""),
+    }
+    polity_is_nomadic, polity_is_steppe_origin = classify_polity_steppe(polity)
+    feature = {
+        "type": "Feature",
+        "geometry": {"type": "MultiPolygon", "coordinates": polygons},
+        "properties": {
+            "polity_id": polity_id,
+            "polity_name": polity["polity_name"],
+            "polity_display_name": polity_display_name(polity),
+            "polity_name_disambiguation": clean(polity.get("polity_name_disambiguation", "")),
+            "polity_name_review_status": clean(polity.get("polity_name_review_status", "")),
+            "polity_name_risk_flags": clean(polity.get("polity_name_risk_flags", "")),
+            "macro_period": polity["macro_period"],
+            "dynasty_name": polity["dynasty_name"],
+            "polity_type": polity["polity_type"],
+            "is_nomadic": polity_is_nomadic,
+            "is_steppe_origin": polity_is_steppe_origin,
+            **territory,
+        },
+    }
+    return {
+        "territory": territory,
+        "feature": feature,
+        "admin_unit_features": admin_unit_features,
+        "county_ids": county_ids,
+        "report_row": {
+            "zone_id": zone_id,
+            "control_type": control_type,
+            "control_label": zone["control_label"],
+            "zone_start_year": zone["zone_start_year"],
+            "zone_end_year": zone["zone_end_year"],
+            "polity_id": polity_id,
+            "polity_name": polity["polity_name"],
+            "territory_status": territory_status,
+            "matched_admin_ids": " | ".join(matched_ids),
+            "matched_admin_units": " | ".join(matched_names),
+            "matched_resolution": matched_resolution,
+            "county_count": len(county_ids),
+            "county_index_ref": county_index_ref or "",
+            "coarse_fallback_reason": coarse_fallback_reason,
+            "match_source": match_source,
+            "match_confidence": confidence,
+            "confidence_note": confidence_note,
+            "approx_area_km2": round(area, 1),
+            "source_text": raw_text,
+            "note": f"{TERRITORY_LABEL}；control_type={control_type}；match_source={match_source}",
+        },
+    }
+
+
+def aggregate_zone_territories(
+    polity: dict[str, str],
+    zone_results: list[dict[str, Any]],
+    county_ids: set[str],
+) -> dict[str, Any]:
+    matched = [result["territory"] for result in zone_results if result["territory"]["territory_status"] != "missing"]
+    if not matched:
+        return {
+            "geometry_ref": None,
+            "territory_status": "missing",
+            "territory_method": "modern_admin_approximation",
+            "approx_area_km2": None,
+            "match_confidence": 0,
+            "matched_admin_ids": [],
+            "matched_admin_units": [],
+            "matched_county_count": 0,
+            "county_index_ref": None,
+            "boundary_level": "missing",
+            "match_resolution": "missing",
+            "coarse_fallback_reason": "territory_zones_v03 均未能匹配现代行政区。",
+            "source_text": "",
+            "match_source": "territory_zones_v03",
+            "confidence_note": "",
+            "label": TERRITORY_LABEL,
+            "zones": [result["territory"] for result in zone_results],
+            "zone_count": len(zone_results),
+            "direct_area_km2": 0,
+            "influence_area_km2": 0,
+            "active_control_types": [],
+        }
+    matched_admin_ids = sorted({admin_id for territory in matched for admin_id in territory["matched_admin_ids"]})
+    matched_admin_units = sorted({unit for territory in matched for unit in territory["matched_admin_units"]})
+    direct_area = round(sum(territory["approx_area_km2"] or 0 for territory in matched if territory["control_type"] == "direct"), 1)
+    influence_area = round(sum(territory["approx_area_km2"] or 0 for territory in matched if territory["control_type"] == "influence"), 1)
+    lowest_confidence = min(int(territory["match_confidence"] or 0) for territory in matched)
+    has_low_confidence = any(territory["territory_status"] == "matched_low_confidence" for territory in matched)
+    centroid_source = next((territory for territory in matched if territory["control_type"] == "direct"), matched[0])
+    boundary_rank = {"missing": 0, "country": 1, "province": 2, "county": 3}
+    boundary_level = max((territory["boundary_level"] for territory in matched), key=lambda level: boundary_rank.get(level, 0))
+    return {
+        "geometry_ref": f"territories/approx_polities.geojson#{polity['polity_id']}",
+        "territory_status": "matched_low_confidence" if has_low_confidence else "matched",
+        "territory_method": "modern_admin_approximation",
+        "approx_area_km2": round(direct_area + influence_area, 1),
+        "direct_area_km2": direct_area,
+        "influence_area_km2": influence_area,
+        "match_confidence": lowest_confidence,
+        "matched_admin_ids": matched_admin_ids,
+        "matched_admin_units": matched_admin_units,
+        "matched_county_count": len(county_ids),
+        "county_index_ref": f"territories/polity_county_index.json#{polity['polity_id']}" if county_ids else None,
+        "boundary_level": boundary_level,
+        "match_resolution": "+".join(sorted({territory["match_resolution"] for territory in matched})),
+        "coarse_fallback_reason": "；".join(
+            reason for reason in sorted({territory["coarse_fallback_reason"] for territory in matched}) if reason
+        ),
+        "source_text": " | ".join(territory["source_text"] for territory in matched if territory["source_text"]),
+        "match_source": "territory_zones_v03",
+        "confidence_note": "；".join(note for note in sorted({territory.get("confidence_note", "") for territory in matched}) if note),
+        "geometry_coordinate_count": sum(int(territory.get("geometry_coordinate_count") or 0) for territory in matched),
+        "generated_at": matched[0].get("generated_at"),
+        "label": TERRITORY_LABEL,
+        "centroid": centroid_source.get("centroid"),
+        "cross_border_iso_codes": sorted({iso for territory in matched for iso in territory.get("cross_border_iso_codes", [])}),
+        "cross_border_country_names": sorted(
+            {name for territory in matched for name in territory.get("cross_border_country_names", [])}
+        ),
+        "cross_border_adm1_ids": sorted({adm1 for territory in matched for adm1 in territory.get("cross_border_adm1_ids", [])}),
+        "zones": matched,
+        "zone_count": len(matched),
+        "active_control_types": sorted({territory["control_type"] for territory in matched}),
+    }
+
+
+def territory_for_year(territory: dict[str, Any], year: int) -> dict[str, Any]:
+    zones = territory.get("zones") or []
+    if not zones:
+        return territory
+    active_zones = [
+        zone
+        for zone in zones
+        if int(zone["zone_start_year"]) <= year <= int(zone["zone_end_year"])
+    ]
+    if not active_zones:
+        next_territory = dict(territory)
+        next_territory.update(
+            {
+                "territory_status": "missing",
+                "approx_area_km2": None,
+                "direct_area_km2": 0,
+                "influence_area_km2": 0,
+                "matched_admin_ids": [],
+                "matched_admin_units": [],
+                "matched_county_count": 0,
+                "active_control_types": [],
+                "active_zone_ids": [],
+                "zone_count": 0,
+            }
+        )
+        return next_territory
+    direct_area = round(sum(zone["approx_area_km2"] or 0 for zone in active_zones if zone["control_type"] == "direct"), 1)
+    influence_area = round(sum(zone["approx_area_km2"] or 0 for zone in active_zones if zone["control_type"] == "influence"), 1)
+    next_territory = dict(territory)
+    next_territory.update(
+        {
+            "territory_status": "matched_low_confidence"
+            if any(zone["territory_status"] == "matched_low_confidence" for zone in active_zones)
+            else "matched",
+            "approx_area_km2": round(direct_area + influence_area, 1),
+            "direct_area_km2": direct_area,
+            "influence_area_km2": influence_area,
+            "match_confidence": min(int(zone["match_confidence"] or 0) for zone in active_zones),
+            "matched_admin_ids": sorted({admin_id for zone in active_zones for admin_id in zone["matched_admin_ids"]}),
+            "matched_admin_units": sorted({unit for zone in active_zones for unit in zone["matched_admin_units"]}),
+            "matched_county_count": sum(int(zone.get("matched_county_count") or 0) for zone in active_zones),
+            "active_control_types": sorted({zone["control_type"] for zone in active_zones}),
+            "active_zone_ids": [zone["zone_id"] for zone in active_zones],
+            "zone_count": len(active_zones),
+            "zones": active_zones,
+        }
+    )
+    return next_territory
+
+
+def build_territory_zone_audit(
+    polities: list[dict[str, str]],
+    territory_zones: dict[str, list[dict[str, Any]]],
+) -> list[dict[str, Any]]:
+    rows: list[dict[str, Any]] = []
+    for polity in polities:
+        polity_id = polity["polity_id"]
+        source_text = "；".join(
+            clean(polity.get(field, ""))
+            for field in ("historical_geography_raw", "modern_admin_units_raw")
+            if clean(polity.get(field, ""))
+        )
+        markers = [marker for marker in TERRITORY_CONTROL_AUDIT_MARKERS if marker in source_text]
+        if not markers:
+            continue
+        has_zones = polity_id in territory_zones
+        rows.append(
+            {
+                "polity_id": polity_id,
+                "polity_name": polity["polity_name"],
+                "has_territory_zone_records": "true" if has_zones else "false",
+                "marker_terms": " | ".join(markers),
+                "recommended_action": "ok" if has_zones else "needs_zone_split_or_review",
+                "source_text": source_text,
+                "note": "含影响/都护/羁縻/名义等口径，应使用 territory_zones_v03.csv 标记 direct/influence。",
+            }
+        )
+    return rows
+
+
 def build_polity_territories(
     polities: list[dict[str, str]],
     summary_admin_features: list[dict[str, Any]],
@@ -751,7 +1482,8 @@ def build_polity_territories(
     county_by_id: dict[str, dict[str, Any]],
     county_ids_by_parent: dict[str, list[str]],
     territory_overrides: dict[str, dict[str, Any]],
-) -> tuple[dict[str, dict[str, Any]], dict[str, Any], dict[str, Any], list[dict[str, Any]], dict[str, Any]]:
+    territory_zones: dict[str, list[dict[str, Any]]],
+) -> tuple[dict[str, dict[str, Any]], dict[str, Any], dict[str, Any], dict[str, Any], list[dict[str, Any]], list[dict[str, Any]], dict[str, Any]]:
     summary_aliases = build_admin_aliases(summary_admin_features)
     county_aliases = build_admin_aliases(county_features)
     neighbor_features = load_neighbor_polygons()
@@ -762,6 +1494,8 @@ def build_polity_territories(
     features: list[dict[str, Any]] = []
     admin_unit_features: list[dict[str, Any]] = []
     generated_at = datetime.now(UTC).replace(microsecond=0).isoformat()
+    polities_by_id = {polity["polity_id"]: polity for polity in polities}
+    zoned_polity_ids = set(territory_zones)
 
     for polity in polities:
         polity_id = polity["polity_id"]
@@ -1187,9 +1921,136 @@ def build_polity_territories(
             }
         )
 
+    zone_audit_rows = build_territory_zone_audit(polities, territory_zones)
+    if zoned_polity_ids:
+        features = [feature for feature in features if feature["properties"]["polity_id"] not in zoned_polity_ids]
+        admin_unit_features = [
+            feature for feature in admin_unit_features if feature["properties"]["polity_id"] not in zoned_polity_ids
+        ]
+        report_rows = [row for row in report_rows if row["polity_id"] not in zoned_polity_ids]
+        for polity_id in zoned_polity_ids:
+            territories.pop(polity_id, None)
+            polity_county_index.pop(polity_id, None)
+
+        for polity_id, zones in territory_zones.items():
+            polity = polities_by_id[polity_id]
+            zone_results: list[dict[str, Any]] = []
+            aggregate_county_ids: set[str] = set()
+            aggregate_summary_ids: set[str] = set()
+            aggregate_summary_names: set[str] = set()
+            for zone in zones:
+                zone_result = build_zone_territory_feature(
+                    polity,
+                    zone,
+                    summary_aliases=summary_aliases,
+                    county_aliases=county_aliases,
+                    summary_admin_by_id=summary_admin_by_id,
+                    county_by_id=county_by_id,
+                    county_ids_by_parent=county_ids_by_parent,
+                    territory_overrides=territory_overrides,
+                    neighbor_features=neighbor_features,
+                    neighbor_adm1_features=neighbor_adm1_features,
+                    county_features=county_features,
+                    generated_at=generated_at,
+                )
+                zone_results.append(zone_result)
+                report_rows.append(zone_result["report_row"])
+                aggregate_county_ids.update(zone_result["county_ids"])
+                aggregate_summary_ids.update(zone_result["territory"].get("matched_admin_ids", []))
+                aggregate_summary_names.update(zone_result["territory"].get("matched_admin_units", []))
+                if zone_result["feature"]:
+                    features.append(zone_result["feature"])
+                    admin_unit_features.extend(zone_result["admin_unit_features"])
+
+            territories[polity_id] = aggregate_zone_territories(polity, zone_results, aggregate_county_ids)
+            polity_county_index[polity_id] = {
+                "polity_id": polity_id,
+                "polity_name": polity["polity_name"],
+                "polity_display_name": polity_display_name(polity),
+                "county_ids": sorted(aggregate_county_ids),
+                "county_count": len(aggregate_county_ids),
+                "summary_admin_ids": sorted(aggregate_summary_ids),
+                "summary_admin_units": sorted(aggregate_summary_names),
+                "matched_resolution": territories[polity_id]["match_resolution"],
+                "match_source": "territory_zones_v03",
+                "source_text": territories[polity_id]["source_text"],
+                "zones": [
+                    {
+                        "zone_id": result["territory"]["zone_id"],
+                        "control_type": result["territory"]["control_type"],
+                        "control_label": result["territory"]["control_label"],
+                        "zone_start_year": result["territory"]["zone_start_year"],
+                        "zone_end_year": result["territory"]["zone_end_year"],
+                        "territory_status": result["territory"]["territory_status"],
+                        "county_count": len(result["county_ids"]),
+                    }
+                    for result in zone_results
+                ],
+            }
+
+    # Old rows without explicit zone records are still first-class direct zones.
+    for feature in features:
+        props = feature["properties"]
+        if "zone_id" in props:
+            continue
+        polity_id = props["polity_id"]
+        polity = polities_by_id[polity_id]
+        zone = default_territory_zone(polity)
+        props.update(
+            {
+                "zone_id": zone["zone_id"],
+                "control_type": zone["control_type"],
+                "control_label": zone["control_label"],
+                "zone_start_year": zone["zone_start_year"],
+                "zone_end_year": zone["zone_end_year"],
+                "zone_geography_raw": zone["zone_geography_raw"],
+                "zone_note": zone["note"],
+            }
+        )
+        territory = territories.get(polity_id)
+        if territory and territory["territory_status"] != "missing":
+            territory.update(
+                {
+                    "direct_area_km2": territory["approx_area_km2"],
+                    "influence_area_km2": 0,
+                    "active_control_types": ["direct"],
+                    "zone_count": 1,
+                    "zones": [
+                        {
+                            **territory,
+                            "zone_id": zone["zone_id"],
+                            "control_type": zone["control_type"],
+                            "control_label": zone["control_label"],
+                            "zone_start_year": zone["zone_start_year"],
+                            "zone_end_year": zone["zone_end_year"],
+                            "zone_geography_raw": zone["zone_geography_raw"],
+                            "zone_note": zone["note"],
+                        }
+                    ],
+                }
+            )
+
+    for row in report_rows:
+        if row.get("zone_id"):
+            continue
+        polity = polities_by_id.get(row["polity_id"])
+        if not polity:
+            continue
+        zone = default_territory_zone(polity)
+        row.update(
+            {
+                "zone_id": zone["zone_id"],
+                "control_type": zone["control_type"],
+                "control_label": zone["control_label"],
+                "zone_start_year": zone["zone_start_year"],
+                "zone_end_year": zone["zone_end_year"],
+            }
+        )
+
     feature_collection = {"type": "FeatureCollection", "features": features}
+    hatch_collection = build_hatch_features(features)
     admin_unit_collection = {"type": "FeatureCollection", "features": admin_unit_features}
-    return territories, feature_collection, admin_unit_collection, report_rows, polity_county_index
+    return territories, feature_collection, hatch_collection, admin_unit_collection, report_rows, zone_audit_rows, polity_county_index
 
 
 def validate_and_normalize_capitals(
@@ -1365,7 +2226,124 @@ def capital_quality(active_events: list[dict[str, Any]], all_events: list[dict[s
     }
 
 
-def build_alias_index(polities: list[dict[str, str]], rulers: list[dict[str, str]], capitals: list[dict[str, Any]]) -> dict[str, Any]:
+def normalize_strategic_locations(rows: list[dict[str, str]]) -> list[dict[str, Any]]:
+    locations: list[dict[str, Any]] = []
+    for row in rows:
+        if clean(row.get("review_status", "")) != "verified":
+            continue
+        category = clean(row.get("category", ""))
+        if category not in STRATEGIC_LOCATION_CATEGORIES:
+            continue
+        try:
+            longitude = float(clean(row.get("longitude", "")))
+            latitude = float(clean(row.get("latitude", "")))
+            confidence_score = int(clean(row.get("location_confidence_score", "")))
+        except ValueError:
+            continue
+        if not (-180 <= longitude <= 180 and -90 <= latitude <= 90):
+            continue
+        active_years, active_year_ranges = parse_active_years_raw(row.get("active_years_raw", ""))
+        start_year = int_optional(row.get("start_year", ""))
+        end_year = int_optional(row.get("end_year", ""))
+        importance_level = int_optional(row.get("importance_level", "")) or 3
+        display_priority = int_optional(row.get("display_priority", "")) or 3
+        location = {
+            "location_id": clean(row.get("location_id", "")),
+            "name": clean(row.get("name", "")),
+            "aliases": split_list(row.get("aliases", "")),
+            "category": category,
+            "icon_key": clean(row.get("icon_key", "")),
+            "importance_level": importance_level,
+            "display_priority": display_priority,
+            "start_year": start_year,
+            "end_year": end_year,
+            "active_years_raw": clean(row.get("active_years_raw", "")),
+            "active_years": active_years,
+            "active_year_ranges": active_year_ranges,
+            "related_event_ids": split_list(row.get("related_event_ids", "")),
+            "related_anecdote_ids": split_list(row.get("related_anecdote_ids", "")),
+            "related_polity_ids": split_list(row.get("related_polity_ids", "")),
+            "related_people": split_list(row.get("related_people", "")),
+            "historical_name": clean(row.get("historical_name", "")),
+            "modern_name": clean(row.get("modern_name", "")),
+            "modern_admin_units_raw": clean(row.get("modern_admin_units_raw", "")),
+            "longitude": longitude,
+            "latitude": latitude,
+            "location_precision": clean(row.get("location_precision", "")),
+            "location_confidence_score": confidence_score,
+            "strategic_summary": clean(row.get("strategic_summary", "")),
+            "historical_significance": clean(row.get("historical_significance", "")),
+            "source_titles": split_list(row.get("source_titles", "")),
+            "source_urls": split_list(row.get("source_urls", "")),
+            "source_type": clean(row.get("source_type", "")),
+            "confidence_note": clean(row.get("confidence_note", "")),
+            "review_status": "verified",
+            "review_note": clean(row.get("review_note", "")),
+            "default_visible": confidence_score >= 60,
+            "is_high_importance": importance_level >= 4,
+        }
+        if location["location_id"] and location["name"] and location["strategic_summary"]:
+            locations.append(location)
+    return sorted(locations, key=lambda item: (item["display_priority"], -item["importance_level"], item["name"]))
+
+
+def strategic_locations_geojson(locations: list[dict[str, Any]]) -> dict[str, Any]:
+    features: list[dict[str, Any]] = []
+    for location in locations:
+        properties = {
+            "location_id": location["location_id"],
+            "name": location["name"],
+            "aliases": "|".join(location["aliases"]),
+            "category": location["category"],
+            "icon_key": location["icon_key"],
+            "importance_level": location["importance_level"],
+            "display_priority": location["display_priority"],
+            "start_year": location["start_year"],
+            "end_year": location["end_year"],
+            "active_years_raw": location["active_years_raw"],
+            "active_years": "|".join(str(year) for year in location["active_years"]),
+            "active_year_ranges": "|".join(
+                f"{item['start_year']}:{item['end_year']}" for item in location["active_year_ranges"]
+            ),
+            "related_event_ids": "|".join(location["related_event_ids"]),
+            "related_anecdote_ids": "|".join(location["related_anecdote_ids"]),
+            "related_polity_ids": "|".join(location["related_polity_ids"]),
+            "related_people": "|".join(location["related_people"]),
+            "historical_name": location["historical_name"],
+            "modern_name": location["modern_name"],
+            "modern_admin_units_raw": location["modern_admin_units_raw"],
+            "location_precision": location["location_precision"],
+            "location_confidence_score": location["location_confidence_score"],
+            "strategic_summary": location["strategic_summary"],
+            "historical_significance": location["historical_significance"],
+            "source_titles": "|".join(location["source_titles"]),
+            "source_urls": "|".join(location["source_urls"]),
+            "source_type": location["source_type"],
+            "confidence_note": location["confidence_note"],
+            "review_status": location["review_status"],
+            "review_note": location["review_note"],
+            "default_visible": location["default_visible"],
+            "is_high_importance": location["is_high_importance"],
+        }
+        features.append(
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [location["longitude"], location["latitude"]],
+                },
+                "properties": properties,
+            }
+        )
+    return {"type": "FeatureCollection", "features": features}
+
+
+def build_alias_index(
+    polities: list[dict[str, str]],
+    rulers: list[dict[str, str]],
+    capitals: list[dict[str, Any]],
+    strategic_locations: list[dict[str, Any]] | None = None,
+) -> dict[str, Any]:
     entries: list[dict[str, Any]] = []
 
     def add(alias: str, entity_type: str, entity_id: str, label: str, payload: dict[str, Any]) -> None:
@@ -1418,6 +2396,18 @@ def build_alias_index(polities: list[dict[str, str]], rulers: list[dict[str, str
                 "latitude": capital["latitude"],
             })
 
+    for location in strategic_locations or []:
+        payload = {
+            "strategic_location_id": location["location_id"],
+            "start_year": location["start_year"],
+            "end_year": location["end_year"],
+            "longitude": location["longitude"],
+            "latitude": location["latitude"],
+        }
+        add(location["name"], "strategic_location", location["location_id"], location["name"], payload)
+        for alias in location["aliases"]:
+            add(alias, "strategic_location", location["location_id"], location["name"], payload)
+
     dedup: dict[tuple[str, str, str], dict[str, Any]] = {}
     for entry in entries:
         key = (entry["normalized"], entry["entity_type"], entry["entity_id"])
@@ -1439,6 +2429,8 @@ def main() -> None:
     historical_events_raw = read_csv(events_path) if events_path.exists() else []
     anecdotes_path = INPUT_DIR / "historical_anecdotes_v03.csv"
     historical_anecdotes_raw = read_csv(anecdotes_path) if anecdotes_path.exists() else []
+    strategic_locations_path = INPUT_DIR / "strategic_locations_v03.csv"
+    strategic_locations_raw = read_csv(strategic_locations_path) if strategic_locations_path.exists() else []
     story_presets_path = INPUT_DIR / "story_presets_v03.json"
     story_presets_payload = read_json(story_presets_path) if story_presets_path.exists() else {"data_version": DATA_VERSION, "presets": []}
     (
@@ -1452,6 +2444,7 @@ def main() -> None:
     territory_overrides = load_territory_overrides()
 
     polities_by_id = {row["polity_id"]: row for row in polities}
+    territory_zones = load_territory_zones(polities_by_id)
     steppe_flags_by_id: dict[str, tuple[bool, bool]] = {
         row["polity_id"]: classify_polity_steppe(row) for row in polities
     }
@@ -1484,8 +2477,10 @@ def main() -> None:
     (
         polity_territories,
         territory_geojson,
+        territory_hatch_geojson,
         admin_units_by_polity_geojson,
         territory_report_rows,
+        territory_zone_audit_rows,
         polity_county_index,
     ) = build_polity_territories(
         polities,
@@ -1495,6 +2490,7 @@ def main() -> None:
         county_by_id,
         county_ids_by_parent,
         territory_overrides,
+        territory_zones,
     )
 
     if OUT_DIR.exists():
@@ -1505,6 +2501,29 @@ def main() -> None:
     write_json(OUT_DIR / "rulers.json", {"data_version": DATA_VERSION, "rulers": rulers})
     write_json(OUT_DIR / "issues.json", {"data_version": DATA_VERSION, "issues": issues})
     write_json(OUT_DIR / "validation.json", {"data_version": DATA_VERSION, "checks": validation})
+
+    strategic_locations = normalize_strategic_locations(strategic_locations_raw)
+    strategic_location_category_counts = dict(
+        sorted(
+            {
+                category: sum(1 for location in strategic_locations if location["category"] == category)
+                for category in STRATEGIC_LOCATION_CATEGORIES
+            }.items()
+        )
+    )
+    strategic_location_geojson = strategic_locations_geojson(strategic_locations)
+    write_json(
+        OUT_DIR / "strategic_locations.json",
+        {
+            "data_version": DATA_VERSION,
+            "generated_at": generated_at,
+            "location_count": len(strategic_locations),
+            "default_visible_count": sum(1 for location in strategic_locations if location["default_visible"]),
+            "category_counts": strategic_location_category_counts,
+            "locations": strategic_locations,
+        },
+    )
+    write_json(OUT_DIR / "strategic_locations.geojson", strategic_location_geojson)
 
     # 历史事件层：events.json 只保留真实事件/编年事实/政权起灭。
     # range_anchor 不再作为事件进入播放足迹，而是拆到 historical_contexts。
@@ -1949,6 +2968,7 @@ def main() -> None:
     ]
     write_json(OUT_DIR / "capital_migration_edges.geojson", {"type": "FeatureCollection", "features": migration_features})
     write_json(TERRITORIES_DIR / "approx_polities.geojson", territory_geojson)
+    write_json(TERRITORIES_DIR / "territory_influence_hatches.geojson", territory_hatch_geojson)
     write_json(TERRITORIES_DIR / "admin_units_by_polity.geojson", admin_units_by_polity_geojson)
     write_json(TERRITORIES_DIR / "county_units.geojson", {"type": "FeatureCollection", "features": county_features})
     write_json(
@@ -1965,6 +2985,11 @@ def main() -> None:
         TERRITORIES_DIR / "territory_match_report.csv",
         territory_report_rows,
         [
+            "zone_id",
+            "control_type",
+            "control_label",
+            "zone_start_year",
+            "zone_end_year",
             "polity_id",
             "polity_name",
             "territory_status",
@@ -1978,6 +3003,19 @@ def main() -> None:
             "match_confidence",
             "confidence_note",
             "approx_area_km2",
+            "source_text",
+            "note",
+        ],
+    )
+    write_csv(
+        TERRITORIES_DIR / "territory_zone_audit_report.csv",
+        territory_zone_audit_rows,
+        [
+            "polity_id",
+            "polity_name",
+            "has_territory_zone_records",
+            "marker_terms",
+            "recommended_action",
             "source_text",
             "note",
         ],
@@ -2013,7 +3051,7 @@ def main() -> None:
         ],
     )
 
-    write_json(OUT_DIR / "alias_index.json", build_alias_index(polities, rulers, capital_events))
+    write_json(OUT_DIR / "alias_index.json", build_alias_index(polities, rulers, capital_events, strategic_locations))
 
     for year in all_years:
         rows = yearly_by_year[year]
@@ -2046,7 +3084,7 @@ def main() -> None:
             ]
             active = active_capitals_for_year(events_by_polity.get(polity_id, []), year)
             all_capitals = events_by_polity.get(polity_id, [])
-            territory = polity_territories[polity_id]
+            territory = territory_for_year(polity_territories[polity_id], year)
             is_nomadic_flag, is_steppe_origin_flag = steppe_flags_by_id.get(polity_id, (False, False))
             polities_payload.append(
                 {
@@ -2114,8 +3152,10 @@ def main() -> None:
         INPUT_DIR / "republican_period_sources_v03.csv",
         events_path,
         anecdotes_path,
+        strategic_locations_path,
         activity_report_path,
         INPUT_DIR / "territory_overrides_v03.csv",
+        TERRITORY_ZONES_PATH,
         ADMIN_BOUNDARY_DIR / "china_adm1_geoboundaries_raw.geojson",
         ADMIN_SUMMARY_BOUNDARY_PATH,
         ADMIN_BOUNDARY_DIR / "china_adm3_geoboundaries_raw.geojson",
@@ -2168,7 +3208,19 @@ def main() -> None:
         "historical_context_years": historical_context_years,
         "historical_context_covered_year_count": len(historical_context_years),
         "historical_context_full_year_coverage": len(historical_context_years) == len(all_years),
+        "strategic_location_count": len(strategic_locations),
+        "strategic_location_default_visible_count": sum(
+            1 for location in strategic_locations if location["default_visible"]
+        ),
+        "strategic_location_category_counts": strategic_location_category_counts,
+        "strategic_locations_path": "strategic_locations.json",
+        "strategic_locations_geojson_path": "strategic_locations.geojson",
         "territory_polity_count": len(matched_territories),
+        "territory_zone_count": len(territory_geojson["features"]),
+        "territory_influence_zone_count": sum(
+            1 for feature in territory_geojson["features"] if feature["properties"].get("control_type") == "influence"
+        ),
+        "territory_hatch_feature_count": len(territory_hatch_geojson["features"]),
         "territory_missing_count": len(polities) - len(matched_territories),
         "territory_low_confidence_count": len(low_confidence_territories),
         "territory_coverage_ratio": round(len(matched_territories) / len(polities), 4),
@@ -2183,6 +3235,8 @@ def main() -> None:
         "county_unit_count": len(county_features),
         "county_units_path": "territories/county_units.geojson",
         "county_index_path": "territories/polity_county_index.json",
+        "territory_influence_hatches_path": "territories/territory_influence_hatches.geojson",
+        "territory_zone_audit_report_path": "territories/territory_zone_audit_report.csv",
         "summary_admin_boundary_feature_count": len(summary_admin_features),
         "summary_admin_boundary_path": str(ADMIN_SUMMARY_BOUNDARY_PATH.relative_to(ROOT)),
         "modern_admin_reference_feature_count": len(summary_admin_features),
@@ -2209,6 +3263,7 @@ def main() -> None:
         f"{len(all_years)} years,",
         f"{len(capital_events)} capital events,",
         f"{len(migrations)} migrations,",
+        f"{len(strategic_locations)} strategic locations,",
         f"{len(matched_territories)} territories",
     )
 

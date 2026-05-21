@@ -46,6 +46,24 @@ export function SettingsControls({
           }
         />
       </label>
+      {appState.datasets.active.includes("vIndian") ? (
+        <label className="settings-row settings-row--toggle">
+          <span>
+            播放神话
+            <small>把吠陀/史诗/往世书神话条目加入印度史年份播放</small>
+          </span>
+          <input
+            type="checkbox"
+            checked={appState.ui.show_mythology}
+            onChange={(event) =>
+              setAppState((state) => ({
+                ...state,
+                ui: { ...state.ui, show_mythology: event.target.checked }
+              }))
+            }
+          />
+        </label>
+      ) : null}
       {availablePolityTypes.length ? (
         <div className="type-filter-group">
           <span className="type-filter-group__label">政权类型</span>

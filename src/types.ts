@@ -1,3 +1,8 @@
+// 已知数据源标识。新增数据源在此扩展，同时在 src/data.ts 的 getter / loadDataset 中
+// 加路径解析；StateStore migration 注入默认 `["v03"]`。
+export type DatasetId = "v03" | "vIndian";
+export const DATASET_IDS: readonly DatasetId[] = ["v03", "vIndian"] as const;
+
 export interface Metadata {
   data_version: string;
   generated_at: string;
@@ -13,6 +18,9 @@ export interface Metadata {
   capital_migration_count: number;
   capital_migration_years: number[];
   territory_polity_count: number;
+  territory_zone_count?: number;
+  territory_influence_zone_count?: number;
+  territory_hatch_feature_count?: number;
   territory_missing_count: number;
   territory_low_confidence_count: number;
   territory_coverage_ratio: number;
@@ -27,6 +35,8 @@ export interface Metadata {
   county_unit_count: number;
   county_units_path: string;
   county_index_path: string;
+  territory_influence_hatches_path?: string;
+  territory_zone_audit_report_path?: string;
   summary_admin_boundary_feature_count: number;
   summary_admin_boundary_path: string;
   modern_admin_reference_feature_count: number;
@@ -53,6 +63,11 @@ export interface Metadata {
   historical_context_years?: number[];
   historical_context_covered_year_count?: number;
   historical_context_full_year_coverage?: boolean;
+  strategic_location_count?: number;
+  strategic_location_default_visible_count?: number;
+  strategic_location_category_counts?: Record<string, number>;
+  strategic_locations_path?: string;
+  strategic_locations_geojson_path?: string;
 }
 
 export type CapitalEventType =
@@ -84,6 +99,7 @@ export interface CapitalEvent {
   confidence_score: number;
   confidence_note: string;
   is_disputed: boolean;
+  dataset_id?: DatasetId;
 }
 
 export interface CapitalMigration {
@@ -102,6 +118,7 @@ export interface CapitalMigration {
   is_disputed: boolean;
   confidence_score: number;
   label: string;
+  dataset_id?: DatasetId;
 }
 
 export interface CapitalQuality {
@@ -118,6 +135,8 @@ export interface TerritoryInfo {
   territory_status: "matched" | "matched_low_confidence" | "missing";
   territory_method: "modern_admin_approximation";
   approx_area_km2: number | null;
+  direct_area_km2?: number;
+  influence_area_km2?: number;
   match_confidence: number;
   matched_admin_ids: string[];
   matched_admin_units: string[];
@@ -129,6 +148,18 @@ export interface TerritoryInfo {
   source_text: string;
   cross_border_iso_codes?: string[];
   cross_border_country_names?: string[];
+  cross_border_adm1_ids?: string[];
+  zone_id?: string;
+  control_type?: "direct" | "influence";
+  control_label?: string;
+  zone_start_year?: number;
+  zone_end_year?: number;
+  zone_geography_raw?: string;
+  zone_note?: string;
+  zones?: TerritoryInfo[];
+  zone_count?: number;
+  active_control_types?: Array<"direct" | "influence">;
+  active_zone_ids?: string[];
   geometry_source?: string;
   geometry_source_license?: string;
   geometry_source_attribution?: string;
@@ -193,6 +224,8 @@ export interface YearPolity {
     has_dispute: boolean;
     has_unmatched_ruler: boolean;
   };
+  // 运行时注入（yearData 合并多源时打 tag），磁盘 schema 不动。
+  dataset_id?: DatasetId;
 }
 
 export interface YearData {
@@ -219,16 +252,18 @@ export interface CapitalsData {
 export interface SearchEntry {
   alias: string;
   normalized: string;
-  entity_type: "polity" | "ruler" | "capital";
+  entity_type: "polity" | "ruler" | "capital" | "strategic_location";
   entity_id: string;
   label: string;
   polity_id?: string;
   polity_display_name?: string;
   capital_event_id?: string;
+  strategic_location_id?: string;
   start_year?: number | null;
   end_year?: number | null;
   longitude?: number;
   latitude?: number;
+  dataset_id?: DatasetId;
 }
 
 export interface AliasIndex {
@@ -255,6 +290,7 @@ export interface PolityIssue {
   source_urls: string;
   note: string;
   action_in_v03: string;
+  dataset_id?: DatasetId;
 }
 
 export interface IssuesData {
@@ -268,6 +304,7 @@ export interface ValidationCheck {
   checked_count: string;
   issue_count: string;
   details: string;
+  dataset_id?: DatasetId;
 }
 
 export interface ValidationData {
@@ -344,6 +381,7 @@ export interface HistoricalContext {
   source_type: string;
   confidence_score: number | null;
   confidence_note: string;
+  dataset_id?: DatasetId;
 }
 
 export interface HistoricalEvent {
@@ -399,6 +437,9 @@ export interface HistoricalEvent {
   source_url?: string;
   source_note?: string;
   is_anecdote?: boolean;
+  // 运行时注入，区分该条来源数据源（多国并播时用于 round-robin / dataset badge）。
+  // 磁盘 JSON 不携带，加载层在合并多源时打 tag。
+  dataset_id?: DatasetId;
 }
 
 export interface HistoricalAnecdote extends HistoricalEvent {
@@ -448,6 +489,17 @@ export interface HistoricalContextsData {
   contexts: HistoricalContext[];
 }
 
+// 印度神话 (Vedic/Epic/Puranic) 时代轴；磁盘结构与 HistoricalAnecdotesData 同构，
+// 单独出文件避免与"典故"语义混淆，便于前端独立 toggle。
+export interface MythologyData {
+  data_version: string;
+  generated_at: string;
+  anecdote_count: number;
+  marker_count?: number;
+  covered_year_count?: number;
+  anecdotes: HistoricalAnecdote[];
+}
+
 export interface StoryPresetStep {
   year: number;
   narration: string;
@@ -460,6 +512,7 @@ export interface StoryPreset {
   subtitle: string;
   default_dwell_ms: number;
   steps: StoryPresetStep[];
+  dataset_id?: DatasetId;
 }
 
 export interface StoryPresetsData {
@@ -467,6 +520,103 @@ export interface StoryPresetsData {
   generated_at: string;
   preset_count: number;
   presets: StoryPreset[];
+}
+
+export type StrategicLocationCategory =
+  | "pass"
+  | "battlefield"
+  | "river_crossing"
+  | "mountain_corridor"
+  | "fortress_city"
+  | "transport_hub"
+  | "frontier_gate"
+  | "maritime_port"
+  | "cultural_allusion";
+
+export interface ActiveYearRange {
+  start_year: number;
+  end_year: number;
+}
+
+export interface StrategicLocation {
+  location_id: string;
+  name: string;
+  aliases: string[];
+  category: StrategicLocationCategory;
+  icon_key: string;
+  importance_level: number;
+  display_priority: number;
+  start_year: number | null;
+  end_year: number | null;
+  active_years_raw: string;
+  active_years: number[];
+  active_year_ranges: ActiveYearRange[];
+  related_event_ids: string[];
+  related_anecdote_ids: string[];
+  related_polity_ids: string[];
+  related_people: string[];
+  historical_name: string;
+  modern_name: string;
+  modern_admin_units_raw: string;
+  longitude: number;
+  latitude: number;
+  location_precision: "exact" | "city" | "region" | "approximate" | string;
+  location_confidence_score: number;
+  strategic_summary: string;
+  historical_significance: string;
+  source_titles: string[];
+  source_urls: string[];
+  source_type: string;
+  confidence_note: string;
+  review_status: "verified" | string;
+  review_note: string;
+  default_visible: boolean;
+  is_high_importance: boolean;
+  dataset_id?: DatasetId;
+}
+
+export interface StrategicLocationFeatureProperties {
+  location_id: string;
+  name: string;
+  aliases?: string;
+  category: StrategicLocationCategory | string;
+  icon_key: string;
+  importance_level: number;
+  display_priority: number;
+  start_year?: number | null;
+  end_year?: number | null;
+  active_years_raw?: string;
+  active_years?: string;
+  active_year_ranges?: string;
+  related_event_ids?: string;
+  related_anecdote_ids?: string;
+  related_polity_ids?: string;
+  related_people?: string;
+  historical_name?: string;
+  modern_name?: string;
+  modern_admin_units_raw?: string;
+  location_precision?: string;
+  location_confidence_score?: number;
+  strategic_summary: string;
+  historical_significance?: string;
+  source_titles?: string;
+  source_urls?: string;
+  source_type?: string;
+  confidence_note?: string;
+  review_status?: string;
+  review_note?: string;
+  default_visible?: boolean;
+  is_high_importance?: boolean;
+  active_now?: boolean;
+}
+
+export interface StrategicLocationsData {
+  data_version: string;
+  generated_at: string;
+  location_count: number;
+  default_visible_count: number;
+  category_counts: Record<string, number>;
+  locations: StrategicLocation[];
 }
 
 export interface TerritoryFeatureProperties extends TerritoryInfo {
@@ -483,6 +633,15 @@ export interface TerritoryFeatureProperties extends TerritoryInfo {
   is_steppe_origin?: boolean;
   color?: string;
   selected?: boolean;
+  // 运行时注入，区分多源 territory feature 来源。
+  dataset_id?: DatasetId;
+  // vIndian 来源 feature 直接携带政权起止年（v03 路径里从 yearData.polities 取，这里 fallback）。
+  polity_start_year?: number | null;
+  polity_end_year?: number | null;
+}
+
+export interface TerritoryHatchFeatureProperties extends TerritoryFeatureProperties {
+  hatch_id?: string;
 }
 
 export interface CountyUnitProperties {
@@ -523,6 +682,10 @@ export interface AppState {
   schema_version: string;
   data_version: string;
   updated_at: string;
+  // 当前激活的播放数据源集合，按渲染顺序排序。至少 1 个；sanitize 保底。
+  datasets: {
+    active: DatasetId[];
+  };
   timeline: {
     current_year: number;
     is_playing: boolean;
@@ -548,8 +711,12 @@ export interface AppState {
     physical_lakes: boolean;
     physical_glaciers: boolean;
     geographic_lines: boolean;
+    graticule: boolean;
+    graticule_labels: boolean;
     modern_country_boundaries: boolean;
     cn_border_overlay: boolean;
+    strategic_locations: boolean;
+    strategic_location_labels: boolean;
   };
   filters: {
     polity_types: string[];
@@ -563,6 +730,8 @@ export interface AppState {
     side_panel_open: boolean;
     auto_follow_main_polity: boolean;
     show_historical_anecdotes: boolean;
+    // 印度神话（mythological_timeline）单独 toggle，仅当 active 含 vIndian 时生效。
+    show_mythology: boolean;
     panel_collapsed: {
       layers_polity: boolean;
       layers_physical: boolean;

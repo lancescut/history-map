@@ -29,7 +29,8 @@ export function BottomBar({
   onTriggerImport,
   onImportFile,
   setAppState,
-  importFileRef
+  importFileRef,
+  currentYearEventCount
 }: {
   metadata: Metadata | null;
   appState: StoredAppState;
@@ -42,7 +43,10 @@ export function BottomBar({
   onImportFile: (event: ChangeEvent<HTMLInputElement>) => void;
   setAppState: SetAppState;
   importFileRef: React.RefObject<HTMLInputElement | null>;
+  currentYearEventCount: number;
 }) {
+  // 当前年事件数 + 预计耗时（2000ms/事件，受 playback_speed 缩放）。给用户一个"为什么这一年播这么久"的可读解释。
+  const estimatedSeconds = Math.ceil((currentYearEventCount * 2000) / appState.timeline.playback_speed / 1000);
   const handleSpeedChange = useCallback(
     (event: ChangeEvent<HTMLSelectElement>) => {
       setAppState((state) => ({
@@ -101,6 +105,14 @@ export function BottomBar({
           onChange={(event) => jumpToYear(Number(event.target.value))}
           aria-label="年份输入"
         />
+        {currentYearEventCount > 0 ? (
+          <span
+            className="bottom-bar__year-hint"
+            title={`本年 ${currentYearEventCount} 条事件 · 按 ${appState.timeline.playback_speed}x 速度预计 ${estimatedSeconds} 秒播完才会推进下一年`}
+          >
+            · {currentYearEventCount} 条 · ~{estimatedSeconds}s
+          </span>
+        ) : null}
         <select
           value={appState.timeline.playback_speed}
           onChange={handleSpeedChange}

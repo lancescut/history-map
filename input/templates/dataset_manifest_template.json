@@ -1,0 +1,47 @@
+{
+  "dataset_id": "vIndian",
+  "dataset_name": "古印度与印度史 vIndian",
+  "schema_family": "v03-compatible-world-history",
+  "created_by": "scripts/bootstrap_vindian_dataset.py",
+  "generated_at": "2026-05-19T09:12:57+00:00",
+  "year_min": -3300,
+  "year_max": 1990,
+  "year_zero_policy": "no_year_zero",
+  "space_scope": "Historical South Asia through 1947; Republic of India focus after 1947 with directly related partition/border events.",
+  "files": {
+    "polities_master": "indian_history_polities_master_vIndian.csv",
+    "rulers_master": "indian_history_rulers_master_vIndian.csv",
+    "polities_yearly": "indian_history_polities_yearly_vIndian.csv",
+    "capital_events": "capital_events_vIndian.csv",
+    "historical_events": "historical_events_vIndian.csv",
+    "historical_anecdotes": "historical_anecdotes_vIndian.csv",
+    "mythological_timeline": "mythological_timeline_vIndian.csv",
+    "strategic_locations": "strategic_locations_vIndian.csv",
+    "territory_overrides": "territory_overrides_vIndian.csv",
+    "issues": "indian_history_unresolved_or_disputed_vIndian.csv",
+    "sources": "indian_history_sources_vIndian.csv",
+    "validation_report": "indian_history_validation_report_vIndian.csv"
+  },
+  "template_files": {
+    "polities_master": "world_history_polities_master_template.csv",
+    "rulers_master": "world_history_rulers_master_template.csv",
+    "polities_yearly": "world_history_polities_yearly_template.csv",
+    "capital_events": "capital_events_template.csv",
+    "historical_events": "historical_events_template.csv",
+    "historical_anecdotes": "historical_anecdotes_template.csv",
+    "mythological_timeline": "mythological_timeline_template.csv",
+    "strategic_locations": "strategic_locations_template.csv",
+    "territory_overrides": "territory_overrides_template.csv",
+    "issues": "unresolved_or_disputed_template.csv",
+    "sources": "sources_template.csv",
+    "validation_report": "validation_report_template.csv"
+  },
+  "field_notes": {
+    "macro_period": "Large chronological period, not China-specific.",
+    "dynasty_name": "Dynasty, ruling house, civilization, colonial phase, or republic/administrative phase label.",
+    "modern_admin_units_raw": "Modern country and first-level administrative approximation; not a claim of exact historical borders.",
+    "ruler_temple_name": "East Asian style field; leave empty unless a culture has an equivalent formal name.",
+    "v02_*": "Retained only for v03 compatibility; empty for non-v02 datasets.",
+    "mythological_timeline": "Separate playable layer for epic, Puranic, dynastic-origin, and regional royal-chronicle traditions. These rows must not generate historical polity yearly rows."
+  }
+}

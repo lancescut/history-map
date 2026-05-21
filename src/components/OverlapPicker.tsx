@@ -47,6 +47,7 @@ export function OverlapPicker({
             <small>
               {polity.territory.matched_admin_units.join("、") || "暂无摘要范围"} ·{" "}
               {polity.territory.matched_county_count.toLocaleString()} 县级单元
+              {polity.territory.active_control_types?.includes("influence") ? " · 含影响区" : ""}
             </small>
           </button>
         ))}

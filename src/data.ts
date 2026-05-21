@@ -2,19 +2,29 @@ import type {
   AliasIndex,
   CapitalsData,
   CountyUnitProperties,
+  DatasetId,
   HistoricalAnecdotesData,
   HistoricalContextsData,
   HistoricalEventsData,
   IssuesData,
   Metadata,
+  MythologyData,
   PolityCountyIndex,
+  StrategicLocationsData,
   StoryPresetsData,
   TerritoryFeatureProperties,
+  TerritoryHatchFeatureProperties,
   ValidationData,
   YearData
 } from "./types";
 
 const jsonCache = new Map<string, Promise<unknown>>();
+
+const DEFAULT_DATASET: DatasetId = "v03";
+
+function dataPath(datasetId: DatasetId, subpath: string): string {
+  return `/data/${datasetId}/${subpath}`;
+}
 
 async function fetchJson<T>(path: string): Promise<T> {
   let pending = jsonCache.get(path);
@@ -48,64 +58,180 @@ async function fetchJson<T>(path: string): Promise<T> {
   return pending as Promise<T>;
 }
 
-export function getMetadata(): Promise<Metadata> {
-  return fetchJson<Metadata>("/data/v03/metadata.json");
+export function getMetadata(datasetId: DatasetId = DEFAULT_DATASET): Promise<Metadata> {
+  return fetchJson<Metadata>(dataPath(datasetId, "metadata.json"));
 }
 
-export function getCapitals(): Promise<CapitalsData> {
-  return fetchJson<CapitalsData>("/data/v03/capitals.json");
+export function getCapitals(datasetId: DatasetId = DEFAULT_DATASET): Promise<CapitalsData> {
+  return fetchJson<CapitalsData>(dataPath(datasetId, "capitals.json"));
 }
 
-export function getAliasIndex(): Promise<AliasIndex> {
-  return fetchJson<AliasIndex>("/data/v03/alias_index.json");
+export function getAliasIndex(datasetId: DatasetId = DEFAULT_DATASET): Promise<AliasIndex> {
+  return fetchJson<AliasIndex>(dataPath(datasetId, "alias_index.json"));
 }
 
-export function getTerritories(): Promise<GeoJSON.FeatureCollection<GeoJSON.MultiPolygon, TerritoryFeatureProperties>> {
+export function getTerritories(
+  datasetId: DatasetId = DEFAULT_DATASET
+): Promise<GeoJSON.FeatureCollection<GeoJSON.MultiPolygon, TerritoryFeatureProperties>> {
   return fetchJson<GeoJSON.FeatureCollection<GeoJSON.MultiPolygon, TerritoryFeatureProperties>>(
-    "/data/v03/territories/approx_polities.geojson"
+    dataPath(datasetId, "territories/approx_polities.geojson")
   );
 }
 
-export function getModernAdminUnits(): Promise<GeoJSON.FeatureCollection> {
-  return fetchJson<GeoJSON.FeatureCollection>("/data/v03/territories/modern_admin_units.geojson");
+export function getTerritoryInfluenceHatches(
+  datasetId: DatasetId = DEFAULT_DATASET
+): Promise<GeoJSON.FeatureCollection<GeoJSON.LineString, TerritoryHatchFeatureProperties>> {
+  return fetchJson<GeoJSON.FeatureCollection<GeoJSON.LineString, TerritoryHatchFeatureProperties>>(
+    dataPath(datasetId, "territories/territory_influence_hatches.geojson")
+  );
 }
 
-export function getCountyUnits(): Promise<GeoJSON.FeatureCollection<GeoJSON.Geometry, CountyUnitProperties>> {
+export function getModernAdminUnits(
+  datasetId: DatasetId = DEFAULT_DATASET
+): Promise<GeoJSON.FeatureCollection> {
+  return fetchJson<GeoJSON.FeatureCollection>(
+    dataPath(datasetId, "territories/modern_admin_units.geojson")
+  );
+}
+
+export function getCountyUnits(
+  datasetId: DatasetId = DEFAULT_DATASET
+): Promise<GeoJSON.FeatureCollection<GeoJSON.Geometry, CountyUnitProperties>> {
   return fetchJson<GeoJSON.FeatureCollection<GeoJSON.Geometry, CountyUnitProperties>>(
-    "/data/v03/territories/county_units.geojson"
+    dataPath(datasetId, "territories/county_units.geojson")
   );
 }
 
-export function getPolityCountyIndex(): Promise<PolityCountyIndex> {
-  return fetchJson<PolityCountyIndex>("/data/v03/territories/polity_county_index.json");
+export function getPolityCountyIndex(
+  datasetId: DatasetId = DEFAULT_DATASET
+): Promise<PolityCountyIndex> {
+  return fetchJson<PolityCountyIndex>(dataPath(datasetId, "territories/polity_county_index.json"));
 }
 
-export function getYearData(year: number): Promise<YearData> {
-  return fetchJson<YearData>(`/data/v03/years/${year}.json`);
+export function getYearData(year: number, datasetId: DatasetId = DEFAULT_DATASET): Promise<YearData> {
+  return fetchJson<YearData>(dataPath(datasetId, `years/${year}.json`));
 }
 
-export function getIssues(): Promise<IssuesData> {
-  return fetchJson<IssuesData>("/data/v03/issues.json");
+export function getIssues(datasetId: DatasetId = DEFAULT_DATASET): Promise<IssuesData> {
+  return fetchJson<IssuesData>(dataPath(datasetId, "issues.json"));
 }
 
-export function getValidation(): Promise<ValidationData> {
-  return fetchJson<ValidationData>("/data/v03/validation.json");
+export function getValidation(datasetId: DatasetId = DEFAULT_DATASET): Promise<ValidationData> {
+  return fetchJson<ValidationData>(dataPath(datasetId, "validation.json"));
 }
 
-export function getHistoricalEvents(): Promise<HistoricalEventsData> {
-  return fetchJson<HistoricalEventsData>("/data/v03/events.json");
+export function getHistoricalEvents(
+  datasetId: DatasetId = DEFAULT_DATASET
+): Promise<HistoricalEventsData> {
+  return fetchJson<HistoricalEventsData>(dataPath(datasetId, "events.json"));
 }
 
-export function getHistoricalAnecdotes(): Promise<HistoricalAnecdotesData> {
-  return fetchJson<HistoricalAnecdotesData>("/data/v03/anecdotes.json");
+export function getHistoricalAnecdotes(
+  datasetId: DatasetId = DEFAULT_DATASET
+): Promise<HistoricalAnecdotesData> {
+  return fetchJson<HistoricalAnecdotesData>(dataPath(datasetId, "anecdotes.json"));
 }
 
-export function getHistoricalContexts(): Promise<HistoricalContextsData> {
-  return fetchJson<HistoricalContextsData>("/data/v03/contexts.json");
+export function getHistoricalContexts(
+  datasetId: DatasetId = DEFAULT_DATASET
+): Promise<HistoricalContextsData> {
+  return fetchJson<HistoricalContextsData>(dataPath(datasetId, "contexts.json"));
 }
 
-export function getStoryPresets(): Promise<StoryPresetsData> {
-  return fetchJson<StoryPresetsData>("/data/v03/story_presets.json");
+export function getStoryPresets(
+  datasetId: DatasetId = DEFAULT_DATASET
+): Promise<StoryPresetsData> {
+  return fetchJson<StoryPresetsData>(dataPath(datasetId, "story_presets.json"));
+}
+
+export function getStrategicLocations(
+  datasetId: DatasetId = DEFAULT_DATASET
+): Promise<StrategicLocationsData> {
+  return fetchJson<StrategicLocationsData>(dataPath(datasetId, "strategic_locations.json"));
+}
+
+export function getMythology(datasetId: DatasetId = DEFAULT_DATASET): Promise<MythologyData> {
+  return fetchJson<MythologyData>(dataPath(datasetId, "mythology.json"));
+}
+
+export interface DatasetBundle {
+  datasetId: DatasetId;
+  metadata: Metadata;
+  capitals: CapitalsData | null;
+  aliasIndex: AliasIndex | null;
+  territories: GeoJSON.FeatureCollection<GeoJSON.MultiPolygon, TerritoryFeatureProperties> | null;
+  territoryHatches: GeoJSON.FeatureCollection<GeoJSON.LineString, TerritoryHatchFeatureProperties> | null;
+  modernAdminUnits: GeoJSON.FeatureCollection | null;
+  countyUnits: GeoJSON.FeatureCollection<GeoJSON.Geometry, CountyUnitProperties> | null;
+  polityCountyIndex: PolityCountyIndex | null;
+  issues: IssuesData | null;
+  validation: ValidationData | null;
+  events: HistoricalEventsData | null;
+  anecdotes: HistoricalAnecdotesData | null;
+  contexts: HistoricalContextsData | null;
+  storyPresets: StoryPresetsData | null;
+  strategicLocations: StrategicLocationsData | null;
+  mythology: MythologyData | null;
+}
+
+// 把单源 Promise.all 收敛为一次调用；non-critical 资源缺失（404 / fallback）走 null。
+// metadata 是 dataset 的最小可用前提，缺失则整个 bundle reject。
+export async function loadDataset(datasetId: DatasetId): Promise<DatasetBundle> {
+  const optional = <T>(promise: Promise<T>): Promise<T | null> => promise.catch(() => null);
+  const [
+    metadata,
+    capitals,
+    aliasIndex,
+    territories,
+    territoryHatches,
+    modernAdminUnits,
+    countyUnits,
+    polityCountyIndex,
+    issues,
+    validation,
+    events,
+    anecdotes,
+    contexts,
+    storyPresets,
+    strategicLocations,
+    mythology
+  ] = await Promise.all([
+    getMetadata(datasetId),
+    optional(getCapitals(datasetId)),
+    optional(getAliasIndex(datasetId)),
+    optional(getTerritories(datasetId)),
+    optional(getTerritoryInfluenceHatches(datasetId)),
+    optional(getModernAdminUnits(datasetId)),
+    optional(getCountyUnits(datasetId)),
+    optional(getPolityCountyIndex(datasetId)),
+    optional(getIssues(datasetId)),
+    optional(getValidation(datasetId)),
+    optional(getHistoricalEvents(datasetId)),
+    optional(getHistoricalAnecdotes(datasetId)),
+    optional(getHistoricalContexts(datasetId)),
+    optional(getStoryPresets(datasetId)),
+    optional(getStrategicLocations(datasetId)),
+    optional(getMythology(datasetId))
+  ]);
+  return {
+    datasetId,
+    metadata,
+    capitals,
+    aliasIndex,
+    territories,
+    territoryHatches,
+    modernAdminUnits,
+    countyUnits,
+    polityCountyIndex,
+    issues,
+    validation,
+    events,
+    anecdotes,
+    contexts,
+    storyPresets,
+    strategicLocations,
+    mythology
+  };
 }
 
 export function yearLabel(year: number): string {
@@ -158,4 +284,21 @@ export function normalizeSearch(value: string): string {
     .join("")
     .replace(/[\s·・,，、／/()（）[\]［］「」『』《》<>〈〉\-—－:：;；]/g, "")
     .toLowerCase();
+}
+
+// round-robin 合并多源数组：按 order 顺序逐位取，空源跳过。
+// 例：order=["v03","vIndian"], 输入 {v03:[a,b,c], vIndian:[X,Y]} → [a,X,b,Y,c]
+export function roundRobinInterleave<T>(
+  perDataset: Partial<Record<DatasetId, T[]>>,
+  order: readonly DatasetId[]
+): T[] {
+  const result: T[] = [];
+  const maxLen = Math.max(0, ...order.map((id) => perDataset[id]?.length ?? 0));
+  for (let i = 0; i < maxLen; i++) {
+    for (const id of order) {
+      const arr = perDataset[id];
+      if (arr && i < arr.length) result.push(arr[i]);
+    }
+  }
+  return result;
 }

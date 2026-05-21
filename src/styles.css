@@ -177,106 +177,6 @@ select:disabled {
   overflow: hidden;
 }
 
-.map-context-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 7;
-  pointer-events: none;
-  overflow: hidden;
-}
-
-.map-context-marker {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  translate: -50% -50%;
-  border: 0;
-  background: transparent;
-  pointer-events: auto;
-  cursor: pointer;
-  color: #1e3a8a;
-}
-
-.map-context-marker__dot {
-  position: relative;
-  width: 14px;
-  height: 14px;
-  flex: 0 0 auto;
-  border-radius: 999px;
-  background: #60a5fa;
-  border: 2px solid rgba(255, 255, 255, 0.9);
-  box-shadow: 0 0 14px rgba(96, 165, 250, 0.52);
-}
-
-.map-context-marker__dot::before {
-  content: "";
-  position: absolute;
-  inset: -8px;
-  border-radius: inherit;
-  background: rgba(96, 165, 250, 0.2);
-  animation: map-context-breathe 1.8s ease-out infinite;
-}
-
-.map-context-marker__callout {
-  width: 214px;
-  min-width: 0;
-  display: grid;
-  gap: 3px;
-  padding: 7px 9px;
-  border: 1px solid rgba(37, 99, 235, 0.16);
-  border-radius: 10px;
-  background: rgba(239, 246, 255, 0.9);
-  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.14);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  text-align: left;
-  animation: map-event-enter 260ms cubic-bezier(0.2, 0.84, 0.24, 1) both;
-}
-
-.map-context-marker__meta {
-  display: flex;
-  justify-content: space-between;
-  gap: 8px;
-  font-size: 10px;
-  line-height: 1.2;
-}
-
-.map-context-marker__meta b {
-  color: #2563eb;
-  font-size: 10px;
-}
-
-.map-context-marker__meta small {
-  min-width: 0;
-  color: #64748b;
-  font-size: 10px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.map-context-marker__callout strong {
-  min-width: 0;
-  color: #1e293b;
-  font-size: 12px;
-  line-height: 1.25;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.map-context-marker__desc {
-  color: #475569;
-  font-size: 10.5px;
-  line-height: 1.35;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
 .map-event-connectors {
   position: absolute;
   inset: 0;
@@ -501,17 +401,6 @@ select:disabled {
     transform: scale(2.35);
     opacity: 0;
     box-shadow: 0 0 0 16px color-mix(in srgb, var(--event-pulse-color, #f97316) 0%, transparent);
-  }
-}
-
-@keyframes map-context-breathe {
-  0% {
-    opacity: 0.68;
-    transform: scale(0.7);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(1.55);
   }
 }
 
@@ -948,6 +837,13 @@ select:disabled {
   font-size: 12px;
 }
 
+.bottom-bar__year-hint {
+  color: var(--text-secondary);
+  font-size: 11px;
+  white-space: nowrap;
+  cursor: help;
+}
+
 @media (max-width: 900px) {
   .bottom-bar {
     left: 14px;
@@ -1117,7 +1013,7 @@ select:disabled {
 .polity-legend__row {
   width: 100%;
   display: grid;
-  grid-template-columns: 18px minmax(0, 1fr) auto;
+  grid-template-columns: 34px minmax(0, 1fr) auto;
   align-items: center;
   gap: 8px;
   padding: 6px 8px;
@@ -1139,11 +1035,23 @@ select:disabled {
   border-color: var(--accent);
 }
 
+.polity-legend__swatches {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  width: 34px;
+}
+
 .polity-legend__swatch {
   width: 14px;
   height: 14px;
   border-radius: 50%;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08) inset;
+}
+
+.polity-legend__swatch--influence {
+  border-radius: 3px;
+  background-color: rgba(255, 255, 255, 0.34);
 }
 
 /* 游牧：保留实心填充（与地图一致，色彩可对照），仅用虚线 outline 作 nomadic 暗示 */
@@ -1248,9 +1156,85 @@ select:disabled {
   line-height: 1.4;
 }
 
+.map-hover-tooltip__influence-note {
+  margin-top: 2px;
+  padding: 4px 6px;
+  border-radius: var(--radius-sm);
+  background: rgba(14, 165, 233, 0.14);
+  color: #0369a1;
+  font-size: 10.5px;
+  line-height: 1.4;
+}
+
 :root[data-theme="dark"] .map-hover-tooltip__nomadic-note {
   background: rgba(245, 158, 11, 0.22);
   color: #fbbf24;
+}
+
+:root[data-theme="dark"] .map-hover-tooltip__influence-note {
+  background: rgba(14, 165, 233, 0.24);
+  color: #7dd3fc;
+}
+
+.strategic-location-tooltip {
+  position: absolute;
+  z-index: 8;
+  pointer-events: none;
+  transform: translate(14px, -50%);
+  width: min(260px, calc(100vw - 36px));
+  display: grid;
+  gap: 4px;
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(245, 158, 11, 0.42);
+  background:
+    linear-gradient(180deg, rgba(245, 158, 11, 0.12), rgba(255, 255, 255, 0.02)),
+    var(--glass-surface-strong);
+  -webkit-backdrop-filter: var(--blur-glass);
+  backdrop-filter: var(--blur-glass);
+  box-shadow: var(--shadow-md);
+  animation: hoverTooltipIn 140ms ease-out;
+}
+
+.strategic-location-tooltip strong {
+  font-size: 13px;
+  font-weight: 720;
+  color: var(--text-primary);
+}
+
+.strategic-location-tooltip span,
+.strategic-location-tooltip small {
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.strategic-location-tooltip p {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 11.5px;
+  line-height: 1.45;
+}
+
+.coordinate-readout {
+  position: absolute;
+  right: 14px;
+  bottom: 98px;
+  z-index: 5;
+  display: grid;
+  gap: 3px;
+  min-width: 196px;
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--glass-border);
+  background:
+    linear-gradient(180deg, var(--glass-highlight), rgba(255, 255, 255, 0.02)),
+    var(--glass-surface);
+  -webkit-backdrop-filter: var(--blur-glass);
+  backdrop-filter: var(--blur-glass);
+  color: var(--text-secondary);
+  font-size: 11px;
+  font-feature-settings: "tnum";
+  pointer-events: none;
 }
 
 @keyframes hoverTooltipIn {
@@ -2567,6 +2551,62 @@ option {
   border-top: 1px solid var(--glass-border);
   border-radius: 0;
   color: var(--warning);
+}
+
+/* 数据源多选 picker：复用 story-picker 样式，但 item 变成 checkbox label。 */
+.dataset-picker-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+.dataset-picker-item input[type="checkbox"] {
+  flex: 0 0 auto;
+  width: 14px;
+  height: 14px;
+  accent-color: var(--accent, #60a5fa);
+  cursor: pointer;
+}
+.dataset-picker-item input[type="checkbox"]:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+.dataset-picker-item strong {
+  flex: 1 1 auto;
+}
+.dataset-picker-hint {
+  padding: 6px 8px 2px;
+  margin-top: 2px;
+  border-top: 1px solid var(--glass-border);
+}
+.dataset-picker-hint small {
+  color: var(--text-secondary);
+  font-size: 10.5px;
+  line-height: 1.4;
+}
+
+/* 侧栏卡片左上角小 badge：标注事件 / 典故来源数据源。 */
+.dataset-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 16px;
+  padding: 0 5px;
+  margin-right: 6px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+  vertical-align: middle;
+  letter-spacing: 0.5px;
+}
+.dataset-badge--cn {
+  background: #dc2626;
+}
+.dataset-badge--in {
+  background: #ea580c;
 }
 
 .story-player {

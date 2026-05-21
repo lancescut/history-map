@@ -1,8 +1,6 @@
 event_id,year,title,event_type,reason,source_titles,review_note
 generated_m643_polity_0100_start,-643,滥国建国,polity_start,missing_reliable_location,《左传·昭公二十一年》|中国社会科学出版社《中国历史年表数据库》,尚未找到可追溯主发生点，暂不进入播放事件流。
-generated_p330_polity_0001_start,330,丁零建国,polity_start,missing_reliable_location,《晋书》/《资治通鉴》|中国社会科学出版社《中国历史年表数据库》,尚未找到可追溯主发生点，暂不进入播放事件流。
 generated_p385_polity_0136_start,385,西秦建立,dynasty_start,missing_reliable_location,《晋书·乞伏国仁等载记》|中国社会科学出版社《中国历史年表数据库》,尚未找到可追溯主发生点，暂不进入播放事件流。
-generated_p392_polity_0001_end,392,丁零灭亡,polity_end,missing_reliable_location,《晋书》/《资治通鉴》|中国社会科学出版社《中国历史年表数据库》,尚未找到可追溯主发生点，暂不进入播放事件流。
 generated_p397_polity_0032_start,397,南凉建立,dynasty_start,missing_reliable_location,《晋书·秃发乌孤等载记》|中国社会科学出版社《中国历史年表数据库》,尚未找到可追溯主发生点，暂不进入播放事件流。
 generated_p414_polity_0032_end,414,南凉灭亡,dynasty_end,missing_reliable_location,《晋书·秃发乌孤等载记》|中国社会科学出版社《中国历史年表数据库》,尚未找到可追溯主发生点，暂不进入播放事件流。
 generated_p431_polity_0136_end,431,西秦灭亡,dynasty_end,missing_reliable_location,《晋书·乞伏国仁等载记》|中国社会科学出版社《中国历史年表数据库》,尚未找到可追溯主发生点，暂不进入播放事件流。

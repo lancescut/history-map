@@ -1,0 +1,23 @@
+{
+  "data_version": "vIndian",
+  "generated_at": "2026-05-21T07:51:32+00:00",
+  "year_min": -7000,
+  "year_max": 1990,
+  "year_count": 8990,
+  "has_year_zero": false,
+  "polity_count": 269,
+  "ruler_count": 1615,
+  "yearly_row_count": 84900,
+  "capital_event_count": 47,
+  "capital_polity_count": 47,
+  "capital_migration_count": 0,
+  "capital_migration_years": [],
+  "territory_polity_count": 71,
+  "territory_missing_count": 198,
+  "territory_low_confidence_count": 0,
+  "historical_event_count": 587,
+  "historical_anecdote_count": 17,
+  "strategic_location_count": 45,
+  "admin_boundary_source": "geoBoundaries gbOpen/IND",
+  "admin_boundary_license": "Open Data Commons Open Database License 1.0"
+}

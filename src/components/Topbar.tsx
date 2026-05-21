@@ -1,10 +1,22 @@
 import { Search } from "lucide-react";
 import type {
+  DatasetId,
   Metadata,
   SearchEntry,
   StoryPreset,
   StoryPresetsData
 } from "../types";
+
+const DATASET_LABELS: Record<DatasetId, { short: string; full: string }> = {
+  v03: { short: "中国", full: "中国史" },
+  vIndian: { short: "印度", full: "印度史" }
+};
+
+function datasetButtonLabel(active: DatasetId[]): string {
+  if (active.length === 0) return "选择数据源";
+  if (active.length === 1) return DATASET_LABELS[active[0]].full;
+  return active.map((id) => DATASET_LABELS[id].short).join(" + ");
+}
 
 export function Topbar({
   metadata,
@@ -22,7 +34,11 @@ export function Topbar({
   qualityPanelOpen,
   setQualityPanelOpen,
   sidePanelOpen,
-  setSidePanelOpen
+  setSidePanelOpen,
+  activeDatasets,
+  datasetPickerOpen,
+  setDatasetPickerOpen,
+  onToggleDataset
 }: {
   metadata: Metadata | null;
   searchText: string;
@@ -40,15 +56,25 @@ export function Topbar({
   setQualityPanelOpen: (next: boolean | ((prev: boolean) => boolean)) => void;
   sidePanelOpen: boolean;
   setSidePanelOpen: (next: boolean | ((prev: boolean) => boolean)) => void;
+  activeDatasets: DatasetId[];
+  datasetPickerOpen: boolean;
+  setDatasetPickerOpen: (next: boolean | ((prev: boolean) => boolean)) => void;
+  onToggleDataset: (id: DatasetId) => void;
 }) {
+  const datasetLabelMap: Record<DatasetId, string> = { v03: "中国史", vIndian: "印度史" };
+  const datasetTagInline = activeDatasets.map((id) => datasetLabelMap[id]).join(" + ");
+  const title = activeDatasets.length === 1 && activeDatasets[0] === "v03"
+    ? "中国朝代更迭地图"
+    : `世界历史地图 · ${datasetTagInline}`;
   return (
     <header className="topbar">
       <div>
-        <h1>中国朝代更迭地图</h1>
+        <h1>{title}</h1>
         <p>
-          v03 · {metadata?.polity_count ?? 0} 政权 · {metadata?.capital_event_count ?? 0} 都城事件 ·{" "}
+          {datasetTagInline} · {metadata?.polity_count ?? 0} 政权 · {metadata?.capital_event_count ?? 0} 都城事件 ·{" "}
           {metadata?.capital_migration_count ?? 0} 迁都事件 · {metadata?.historical_event_count ?? 0} 历史条目 ·{" "}
-          {metadata?.territory_polity_count ?? 0} 县级索引疆域
+          {metadata?.strategic_location_count ?? 0} 战略要地 ·{" "}
+          {metadata?.territory_polity_count ?? 0} 政权疆域
         </p>
       </div>
       <div className="search-box">
@@ -56,7 +82,7 @@ export function Topbar({
         <input
           value={searchText}
           onChange={(event) => setSearchText(event.target.value)}
-          placeholder="搜索年份、政权、君主或都城"
+          placeholder="搜索年份、政权、君主、都城或战略要地"
         />
         {searchResults.length > 0 && (
           <div className="search-results">
@@ -67,12 +93,56 @@ export function Topbar({
               >
                 <span>{entry.alias}</span>
                 <small>
-                  {entry.entity_type === "capital" ? "都城" : entry.entity_type === "ruler" ? "君主" : "政权/年份"}
+                  {entry.entity_type === "capital"
+                    ? "都城"
+                    : entry.entity_type === "ruler"
+                      ? "君主"
+                      : entry.entity_type === "strategic_location"
+                        ? "战略要地"
+                        : "政权/年份"}
                 </small>
               </button>
             ))}
           </div>
         )}
+      </div>
+      <div className="story-picker-wrap dataset-picker-wrap">
+        <button
+          type="button"
+          className={`story-picker-button ${activeDatasets.length > 1 ? "is-active" : ""}`}
+          onClick={() => setDatasetPickerOpen((open) => !open)}
+          title="选择播放数据源"
+          aria-label="选择播放数据源"
+        >
+          🌐 {datasetButtonLabel(activeDatasets)}
+        </button>
+        {datasetPickerOpen ? (
+          <div className="story-picker-menu" role="menu">
+            {(["v03", "vIndian"] as DatasetId[]).map((id) => {
+              const isLastChecked = activeDatasets.length === 1 && activeDatasets[0] === id;
+              const checked = activeDatasets.includes(id);
+              return (
+                <label
+                  key={id}
+                  className={`story-picker-item dataset-picker-item ${checked ? "is-active" : ""}`}
+                  title={isLastChecked ? "至少保留一个数据源" : undefined}
+                >
+                  <input
+                    type="checkbox"
+                    checked={checked}
+                    disabled={isLastChecked}
+                    onChange={() => onToggleDataset(id)}
+                  />
+                  <strong>{DATASET_LABELS[id].full}</strong>
+                  <small>{id}</small>
+                </label>
+              );
+            })}
+            <div className="dataset-picker-hint">
+              <small>多选时事件按 A-B-A-B 交错播放；同年所有事件播完才进下一年</small>
+            </div>
+          </div>
+        ) : null}
       </div>
       {storyPresets?.presets.length ? (
         <div className="story-picker-wrap">
@@ -97,7 +167,14 @@ export function Topbar({
                   title={preset.subtitle}
                   onClick={() => onSelectStory(preset)}
                 >
-                  <strong>{preset.title}</strong>
+                  <strong>
+                    {preset.dataset_id === "vIndian" ? (
+                      <span className="dataset-badge dataset-badge--in" style={{ marginRight: 6 }}>印</span>
+                    ) : (
+                      <span className="dataset-badge dataset-badge--cn" style={{ marginRight: 6 }}>中</span>
+                    )}
+                    {preset.title}
+                  </strong>
                   <small>
                     {preset.subtitle} · {preset.steps.length} 幕
                   </small>

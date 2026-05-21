@@ -6,6 +6,8 @@ export interface MapHoverState {
   polity: YearPolity;
   x: number;
   y: number;
+  controlLabel?: string;
+  controlType?: "direct" | "influence";
 }
 
 export function MapHoverTooltip({ state }: { state: MapHoverState | null }) {
@@ -25,13 +27,25 @@ export function MapHoverTooltip({ state }: { state: MapHoverState | null }) {
       }}
       role="tooltip"
     >
-      <strong>{polityDisplayName(polity)}</strong>
+      <strong>
+        {polity.dataset_id === "vIndian" ? (
+          <span className="dataset-badge dataset-badge--in" style={{ marginRight: 6 }}>印</span>
+        ) : polity.dataset_id === "v03" ? (
+          <span className="dataset-badge dataset-badge--cn" style={{ marginRight: 6 }}>中</span>
+        ) : null}
+        {polityDisplayName(polity)}
+      </strong>
       <span>
         {startLabel} – {endLabel}
       </span>
       <small>
-        {polity.polity_name_disambiguation || `${polity.macro_period} · ${polity.polity_type}`}
+        {polity.polity_name_disambiguation || `${polity.macro_period || ""}${polity.polity_type ? ` · ${polity.polity_type}` : ""}`}
       </small>
+      {state.controlLabel ? (
+        <small className={state.controlType === "influence" ? "map-hover-tooltip__influence-note" : ""}>
+          {state.controlLabel}
+        </small>
+      ) : null}
       {nomadic ? (
         <small className="map-hover-tooltip__nomadic-note">
           📐 游牧政权·实际活动范围可能超出图示

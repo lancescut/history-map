@@ -1,5 +1,4 @@
 polity_id,polity_name,has_structured_capital,capital_event_count,has_migration,has_disputed_capital,capital_modern_raw,coverage_note
-polity_0001,丁零,False,0,False,False,,暂无可解析都城资料
 polity_0002,东吴,True,1,False,False,,structured
 polity_0003,东周,True,1,False,False,,structured
 polity_0004,东周国,False,0,False,False,,暂无可解析都城资料
@@ -9,7 +8,6 @@ polity_0007,东虢国,False,0,False,False,,暂无可解析都城资料
 polity_0008,东魏,False,0,False,False,,暂无可解析都城资料
 polity_0009,中天八国王,False,0,False,False,,暂无可解析都城资料
 polity_0010,中山国,False,0,False,False,,暂无可解析都城资料
-polity_0011,仇池,False,0,False,False,,暂无可解析都城资料
 polity_0012,代国,False,0,False,False,,暂无可解析都城资料
 polity_0013,元朝,True,1,False,False,,structured
 polity_0014,六国,False,0,False,False,安徽省六安市北一带,暂无可解析都城资料
@@ -56,7 +54,6 @@ polity_0054,后金,False,0,False,False,,暂无可解析都城资料
 polity_0055,吕国,False,0,False,False,,暂无可解析都城资料
 polity_0056,吴国,True,2,True,False,前都梅里(今无锡)，后迁吴(今苏州),structured
 polity_0057,吴越,False,0,False,False,,暂无可解析都城资料
-polity_0058,周国,False,0,False,False,,暂无可解析都城资料
 polity_0059,唐朝,True,2,False,False,,structured
 polity_0060,宇文部,False,0,False,False,,暂无可解析都城资料
 polity_0061,宋国,False,0,False,False,,暂无可解析都城资料
@@ -85,7 +82,6 @@ polity_0083,梁朝,False,0,False,False,,暂无可解析都城资料
 polity_0084,楚国,False,0,False,False,,暂无可解析都城资料
 polity_0085,武周,False,0,False,False,,暂无可解析都城资料
 polity_0086,武平军,False,0,False,False,,暂无可解析都城资料
-polity_0087,段部,False,0,False,False,,暂无可解析都城资料
 polity_0088,段部鲜卑,False,0,False,False,,暂无可解析都城资料
 polity_0089,殷国,False,0,False,False,,暂无可解析都城资料
 polity_0090,毕国,False,0,False,False,,暂无可解析都城资料

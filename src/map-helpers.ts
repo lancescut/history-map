@@ -3,7 +3,10 @@ import polylabel from "polylabel";
 import type {
   AppState,
   CapitalEvent,
+  StrategicLocation,
+  StrategicLocationFeatureProperties,
   TerritoryFeatureProperties,
+  TerritoryHatchFeatureProperties,
   YearData,
   YearPolity
 } from "./types";
@@ -15,6 +18,99 @@ export const OCEAN_FILL = "#a8c6dd";
 export const LAKE_FILL = "#b9d6ea";
 export const RIVER_LINE = "#7aa5c8";
 export const GLACIER_FILL = "#f4f8fb";
+
+export interface GraticuleLineProperties {
+  graticule_type: "meridian" | "parallel";
+  value: number;
+  label: string;
+  is_major: boolean;
+}
+
+export interface GraticuleLabelProperties {
+  label: string;
+  graticule_type: "longitude" | "latitude";
+  value: number;
+}
+
+export function formatLongitude(value: number): string {
+  if (value === 0) return "0°";
+  return `${Math.abs(value)}°${value < 0 ? "W" : "E"}`;
+}
+
+export function formatLatitude(value: number): string {
+  if (value === 0) return "0°";
+  return `${Math.abs(value)}°${value < 0 ? "S" : "N"}`;
+}
+
+export function formatCoordinatePair(lng: number, lat: number): string {
+  return `${formatLongitude(Number(lng.toFixed(2)))} / ${formatLatitude(Number(lat.toFixed(2)))}`;
+}
+
+export function buildGraticule(): {
+  lines: GeoJSON.FeatureCollection<GeoJSON.LineString, GraticuleLineProperties>;
+  labels: GeoJSON.FeatureCollection<GeoJSON.Point, GraticuleLabelProperties>;
+} {
+  const lineFeatures: GeoJSON.Feature<GeoJSON.LineString, GraticuleLineProperties>[] = [];
+  const labelFeatures: GeoJSON.Feature<GeoJSON.Point, GraticuleLabelProperties>[] = [];
+  for (let longitude = -180; longitude <= 180; longitude += 10) {
+    const isMajor = longitude % 20 === 0;
+    const label = formatLongitude(longitude);
+    lineFeatures.push({
+      type: "Feature",
+      geometry: {
+        type: "LineString",
+        coordinates: [
+          [longitude, -80],
+          [longitude, 85]
+        ]
+      },
+      properties: {
+        graticule_type: "meridian",
+        value: longitude,
+        label,
+        is_major: isMajor
+      }
+    });
+    if (isMajor && longitude !== -180 && longitude !== 180) {
+      labelFeatures.push({
+        type: "Feature",
+        geometry: { type: "Point", coordinates: [longitude, 18] },
+        properties: { label, graticule_type: "longitude", value: longitude }
+      });
+    }
+  }
+  for (let latitude = -80; latitude <= 80; latitude += 10) {
+    const isMajor = latitude % 20 === 0;
+    const label = formatLatitude(latitude);
+    lineFeatures.push({
+      type: "Feature",
+      geometry: {
+        type: "LineString",
+        coordinates: [
+          [-180, latitude],
+          [180, latitude]
+        ]
+      },
+      properties: {
+        graticule_type: "parallel",
+        value: latitude,
+        label,
+        is_major: isMajor
+      }
+    });
+    if (isMajor) {
+      labelFeatures.push({
+        type: "Feature",
+        geometry: { type: "Point", coordinates: [142, latitude] },
+        properties: { label, graticule_type: "latitude", value: latitude }
+      });
+    }
+  }
+  return {
+    lines: { type: "FeatureCollection", features: lineFeatures },
+    labels: { type: "FeatureCollection", features: labelFeatures }
+  };
+}
 
 export const BASEMAP_STYLE: maplibregl.StyleSpecification = {
   version: 8,
@@ -199,10 +295,19 @@ const OKABE_ITO_PALETTE = [
 
 export type ColorPalette = "default" | "colorblind";
 
+// 多源场景下让印度政权与中国政权视觉分簇：
+//   v03 = 全色相均匀分布（默认值，不动既有色彩）
+//   vIndian = 偏暖色区间（hue 主要落在 10-100 / 320-360，红橙黄棕系），与印度文化的暖色直觉一致
+const DATASET_HUE_RANGE: Record<string, { offset: number; range: number }> = {
+  v03: { offset: 0, range: 360 },
+  vIndian: { offset: -25, range: 130 }
+};
+
 export function macroPeriodColor(
   macroPeriod: string,
   polityId: string,
-  palette: ColorPalette = "default"
+  palette: ColorPalette = "default",
+  datasetId?: string
 ): string {
   const mixed = mixHash(stableHash(polityId));
   if (palette === "colorblind") {
@@ -212,9 +317,10 @@ export function macroPeriodColor(
     return OKABE_ITO_PALETTE[index];
   }
   // 默认调色板：用 mixed hash 直接 [0,1) → [0,360) 均匀分布。
-  // 黄金角变种：在 [0,1) 上加 i*GOLDEN_RATIO，但这里每个 polity 独立，
-  // 直接 mixed/2^32 已经是充分散开的伪随机。
-  const hue = ((mixed >>> 0) / 4294967296) * 360;
+  // 多源场景给印度一个偏暖色色带，与中国全色相区分。
+  const range = DATASET_HUE_RANGE[datasetId ?? "v03"] ?? DATASET_HUE_RANGE.v03;
+  const normalized = (mixed >>> 0) / 4294967296;
+  const hue = (range.offset + normalized * range.range + 360) % 360;
   const baseSat = 60 + ((mixed >> 4) % 22); // 60-81
   const light = 44 + ((mixed >> 12) % 16); // 44-59
   const satBias = MACRO_PERIOD_SAT_BIAS[macroPeriod] ?? 0;
@@ -303,17 +409,18 @@ export function effectiveTerritoryColor(
   macroPeriod: string,
   polityId: string,
   isNomadic: boolean,
-  options: { palette?: ColorPalette; selected?: boolean } = {}
+  options: { palette?: ColorPalette; selected?: boolean; datasetId?: string } = {}
 ): string {
   void options.selected; // selected 不影响 fill 色（已改用 outline 区分）
-  const baseColor = macroPeriodColor(macroPeriod, polityId, options.palette ?? "default");
+  const baseColor = macroPeriodColor(macroPeriod, polityId, options.palette ?? "default", options.datasetId);
   if (!isNomadic) return baseColor;
   return blendOverLand(baseColor, 0.55);
 }
 
 export function isPolityNomadic(polity: YearPolity): boolean {
   if (typeof polity.is_nomadic === "boolean") return polity.is_nomadic;
-  const haystack = `${polity.polity_type}${polity.ethnicity_or_group ?? ""}${polity.ruling_family_or_clan ?? ""}`;
+  // 多源场景下 vIndian polity 缺 ethnicity_or_group / ruling_family_or_clan 字段，全程用 ?? 兜底
+  const haystack = `${polity.polity_type ?? ""}${polity.ethnicity_or_group ?? ""}${polity.ruling_family_or_clan ?? ""}`;
   return /游牧|匈奴|鲜卑|柔然|突厥|回鹘|丁零|高车|敕勒|乌孙|月氏|乌桓|吐谷浑/.test(haystack);
 }
 
@@ -328,12 +435,94 @@ export function emptyTerritoryCollection(): GeoJSON.FeatureCollection<
   return { type: "FeatureCollection", features: [] };
 }
 
+export function emptyHatchCollection(): GeoJSON.FeatureCollection<
+  GeoJSON.LineString,
+  TerritoryHatchFeatureProperties
+> {
+  return { type: "FeatureCollection", features: [] };
+}
+
 export function emptyLabelCollection(): GeoJSON.FeatureCollection<GeoJSON.Point> {
   return { type: "FeatureCollection", features: [] };
 }
 
 export function emptyFeatureCollection(): GeoJSON.FeatureCollection {
   return { type: "FeatureCollection", features: [] };
+}
+
+export function emptyStrategicLocationCollection(): GeoJSON.FeatureCollection<
+  GeoJSON.Point,
+  StrategicLocationFeatureProperties
+> {
+  return { type: "FeatureCollection", features: [] };
+}
+
+export function isStrategicLocationActive(location: StrategicLocation, year: number): boolean {
+  if (location.active_years.includes(year)) return true;
+  if (location.start_year != null && location.end_year != null && location.start_year === year && location.end_year === year) {
+    return true;
+  }
+  return location.active_year_ranges.some((range) => year >= range.start_year && year <= range.end_year);
+}
+
+export function strategicLocationFeatureCollection(
+  locations: StrategicLocation[] | null,
+  year: number,
+  options: { includeNonDefault?: boolean } = {}
+): GeoJSON.FeatureCollection<GeoJSON.Point, StrategicLocationFeatureProperties> {
+  if (!locations?.length) return emptyStrategicLocationCollection();
+  const includeNonDefault = options.includeNonDefault ?? false;
+  return {
+    type: "FeatureCollection",
+    features: locations
+      .filter((location) => includeNonDefault || location.default_visible)
+      .map((location) => {
+        const activeNow = isStrategicLocationActive(location, year);
+        return {
+          type: "Feature",
+          geometry: {
+            type: "Point",
+            coordinates: [location.longitude, location.latitude]
+          },
+          properties: {
+            location_id: location.location_id,
+            name: location.name,
+            aliases: location.aliases.join("|"),
+            category: location.category,
+            icon_key: location.icon_key,
+            importance_level: location.importance_level,
+            display_priority: location.display_priority,
+            start_year: location.start_year,
+            end_year: location.end_year,
+            active_years_raw: location.active_years_raw,
+            active_years: location.active_years.join("|"),
+            active_year_ranges: location.active_year_ranges
+              .map((range) => `${range.start_year}:${range.end_year}`)
+              .join("|"),
+            related_event_ids: location.related_event_ids.join("|"),
+            related_anecdote_ids: location.related_anecdote_ids.join("|"),
+            related_polity_ids: location.related_polity_ids.join("|"),
+            related_people: location.related_people.join("|"),
+            historical_name: location.historical_name,
+            modern_name: location.modern_name,
+            modern_admin_units_raw: location.modern_admin_units_raw,
+            location_precision: location.location_precision,
+            location_confidence_score: location.location_confidence_score,
+            strategic_summary: location.strategic_summary,
+            historical_significance: location.historical_significance,
+            source_titles: location.source_titles.join("|"),
+            source_urls: location.source_urls.join("|"),
+            source_type: location.source_type,
+            confidence_note: location.confidence_note,
+            review_status: location.review_status,
+            review_note: location.review_note,
+            default_visible: location.default_visible,
+            is_high_importance: location.is_high_importance,
+            active_now: activeNow
+          }
+        };
+      })
+  };
 }
 
 // 标签内点缓存：按 polity_id 算一次"难达极点"，比 centroid 更可靠地落在多边形内部
@@ -424,22 +613,26 @@ export function applyPhysicalBasemapVisibility(map: maplibregl.Map, layers: AppS
 export function territoryCollections(
   yearData: YearData | null,
   territoryGeoJSON: GeoJSON.FeatureCollection<GeoJSON.MultiPolygon, TerritoryFeatureProperties> | null,
+  hatchGeoJSON: GeoJSON.FeatureCollection<GeoJSON.LineString, TerritoryHatchFeatureProperties> | null,
   state: AppState,
   palette: ColorPalette = "default"
 ): {
   territories: GeoJSON.FeatureCollection<GeoJSON.MultiPolygon, TerritoryFeatureProperties>;
+  hatches: GeoJSON.FeatureCollection<GeoJSON.LineString, TerritoryHatchFeatureProperties>;
   labels: GeoJSON.FeatureCollection<GeoJSON.Point>;
   badges: GeoJSON.FeatureCollection<GeoJSON.Point>;
 } {
   if (!yearData || !territoryGeoJSON || !state.layers.territories) {
     return {
       territories: emptyTerritoryCollection(),
+      hatches: emptyHatchCollection(),
       labels: emptyLabelCollection(),
       badges: emptyLabelCollection()
     };
   }
   const polityById = new Map(yearData.polities.map((polity) => [polity.polity_id, polity]));
   const features: GeoJSON.Feature<GeoJSON.MultiPolygon, TerritoryFeatureProperties>[] = [];
+  const hatchFeatures: GeoJSON.Feature<GeoJSON.LineString, TerritoryHatchFeatureProperties>[] = [];
   const labelFeatures: GeoJSON.Feature<GeoJSON.Point>[] = [];
   const coverageByPolity = new Map<string, Set<string>>();
 
@@ -458,7 +651,32 @@ export function territoryCollections(
   const labeledPolities = new Set<string>();
   territoryGeoJSON.features.forEach((feature) => {
     const polity = polityById.get(feature.properties.polity_id);
-    if (!polity) return;
+    // 多源场景：feature 来自非 v03 数据源时（如 vIndian），其对应 polity 不在 v03 yearData.polities
+    // 中，但 feature.properties 自己携带 polity_start_year / polity_end_year / polity_name，
+    // 因此可以直接用 properties 走快速渲染路径。
+    if (!polity) {
+      const fp = feature.properties;
+      const zStart = fp.zone_start_year ?? fp.polity_start_year ?? yearData.year;
+      const zEnd = fp.zone_end_year ?? fp.polity_end_year ?? yearData.year;
+      if (yearData.year < zStart || yearData.year > zEnd) return;
+      if (state.filters.polity_types.length && fp.polity_type && !state.filters.polity_types.includes(fp.polity_type)) return;
+      if (state.filters.territory_status === "missing") return;
+      const color = macroPeriodColor(fp.macro_period ?? "", fp.polity_id, palette, fp.dataset_id);
+      const selected = fp.polity_id === state.selection.selected_polity_id;
+      features.push({
+        ...feature,
+        properties: {
+          ...fp,
+          color,
+          selected,
+          is_nomadic: Boolean(fp.is_nomadic)
+        }
+      });
+      return;
+    }
+    const zoneStart = feature.properties.zone_start_year ?? polity.polity_start_year ?? yearData.year;
+    const zoneEnd = feature.properties.zone_end_year ?? polity.polity_end_year ?? yearData.year;
+    if (yearData.year < zoneStart || yearData.year > zoneEnd) return;
     if (state.filters.polity_types.length && !state.filters.polity_types.includes(polity.polity_type)) return;
     if (state.filters.territory_status === "has_territory" && polity.territory.territory_status === "missing")
       return;
@@ -471,8 +689,8 @@ export function territoryCollections(
     const selected = polity.polity_id === state.selection.selected_polity_id;
     const displayName = polityDisplayName(polity);
     const properties = {
-      ...feature.properties,
       ...polity.territory,
+      ...feature.properties,
       polity_id: polity.polity_id,
       polity_name: polity.polity_name,
       polity_display_name: displayName,
@@ -515,6 +733,42 @@ export function territoryCollections(
     }
   });
 
+  hatchGeoJSON?.features.forEach((feature) => {
+    const polity = polityById.get(feature.properties.polity_id);
+    if (!polity) return;
+    const zoneStart = feature.properties.zone_start_year ?? polity.polity_start_year ?? yearData.year;
+    const zoneEnd = feature.properties.zone_end_year ?? polity.polity_end_year ?? yearData.year;
+    if (yearData.year < zoneStart || yearData.year > zoneEnd) return;
+    if (state.filters.polity_types.length && !state.filters.polity_types.includes(polity.polity_type)) return;
+    if (state.filters.territory_status === "has_territory" && polity.territory.territory_status === "missing")
+      return;
+    if (state.filters.territory_status === "missing") return;
+    if ((polity.confidence_score ?? 0) < state.filters.min_confidence_score) return;
+    if (!state.filters.show_disputed && polity.quality.has_dispute) return;
+    if (!state.filters.show_unmatched_ruler && polity.quality.has_unmatched_ruler) return;
+    const color = macroPeriodColor(polity.macro_period, polity.polity_id, palette);
+    const selected = polity.polity_id === state.selection.selected_polity_id;
+    hatchFeatures.push({
+      ...feature,
+      properties: {
+        ...polity.territory,
+        ...feature.properties,
+        polity_id: polity.polity_id,
+        polity_name: polity.polity_name,
+        polity_display_name: polityDisplayName(polity),
+        polity_name_disambiguation: polity.polity_name_disambiguation,
+        polity_name_review_status: polity.polity_name_review_status,
+        polity_name_risk_flags: polity.polity_name_risk_flags,
+        macro_period: polity.macro_period,
+        dynasty_name: polity.dynasty_name,
+        polity_type: polity.polity_type,
+        color,
+        selected,
+        is_nomadic: isPolityNomadic(polity)
+      }
+    });
+  });
+
   // 渲染顺序：大政权先画 → 小政权画在上层（visible）；选中政权强制最顶。
   // MapLibre 按 features 数组顺序绘制 (后绘制在上)。
   features.sort((a, b) => {
@@ -555,6 +809,7 @@ export function territoryCollections(
 
   return {
     territories: { type: "FeatureCollection", features },
+    hatches: { type: "FeatureCollection", features: hatchFeatures },
     labels: { type: "FeatureCollection", features: labelFeatures },
     badges: { type: "FeatureCollection", features: badgeFeatures }
   };

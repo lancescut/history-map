@@ -297,6 +297,11 @@ function HistoricalContextCard({ context }: { context: HistoricalContext | null 
       {context ? (
         <>
           <div className="event-stream-card__context-head">
+            {context.dataset_id === "vIndian" ? (
+              <span className="dataset-badge dataset-badge--in" title="印度史">印</span>
+            ) : context.dataset_id === "v03" ? (
+              <span className="dataset-badge dataset-badge--cn" title="中国史">中</span>
+            ) : null}
             <span>历史脉络</span>
             <strong>{rangeLabel}</strong>
           </div>
@@ -364,6 +369,11 @@ function EventListItem({
       </span>
       <div className="event-item__body">
         <div className="event-item__head-row">
+          {event.dataset_id === "vIndian" ? (
+            <span className="dataset-badge dataset-badge--in" title="印度史">印</span>
+          ) : event.dataset_id === "v03" ? (
+            <span className="dataset-badge dataset-badge--cn" title="中国史">中</span>
+          ) : null}
           <strong className="event-item__title">{event.title}</strong>
           <span className="event-item__year">{event.date_label || event.year_label}</span>
         </div>

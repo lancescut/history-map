@@ -1,0 +1,159 @@
+{
+  "data_version": "vIndian",
+  "checks": [
+    {
+      "check_name": "template_header_compatibility",
+      "status": "PASS",
+      "checked_count": "12",
+      "issue_count": "0",
+      "details": ""
+    },
+    {
+      "check_name": "polity_id_unique",
+      "status": "PASS",
+      "checked_count": "269",
+      "issue_count": "0",
+      "details": ""
+    },
+    {
+      "check_name": "ruler_id_unique",
+      "status": "PASS",
+      "checked_count": "1615",
+      "issue_count": "0",
+      "details": ""
+    },
+    {
+      "check_name": "event_id_unique",
+      "status": "PASS",
+      "checked_count": "587",
+      "issue_count": "0",
+      "details": ""
+    },
+    {
+      "check_name": "anecdote_id_unique",
+      "status": "PASS",
+      "checked_count": "5",
+      "issue_count": "0",
+      "details": ""
+    },
+    {
+      "check_name": "myth_id_unique",
+      "status": "PASS",
+      "checked_count": "12",
+      "issue_count": "0",
+      "details": ""
+    },
+    {
+      "check_name": "strategic_location_id_unique",
+      "status": "PASS",
+      "checked_count": "46",
+      "issue_count": "0",
+      "details": ""
+    },
+    {
+      "check_name": "source_id_unique",
+      "status": "PASS",
+      "checked_count": "60",
+      "issue_count": "0",
+      "details": ""
+    },
+    {
+      "check_name": "polity_year_ranges",
+      "status": "PASS",
+      "checked_count": "269",
+      "issue_count": "0",
+      "details": ""
+    },
+    {
+      "check_name": "year_within_polity_range",
+      "status": "PASS",
+      "checked_count": "84900",
+      "issue_count": "0",
+      "details": ""
+    },
+    {
+      "check_name": "polity_year_completeness",
+      "status": "PASS",
+      "checked_count": "269",
+      "issue_count": "0",
+      "details": ""
+    },
+    {
+      "check_name": "yearly_polity_id_join",
+      "status": "PASS",
+      "checked_count": "84900",
+      "issue_count": "0",
+      "details": ""
+    },
+    {
+      "check_name": "yearly_ruler_id_join",
+      "status": "PASS",
+      "checked_count": "84900",
+      "issue_count": "0",
+      "details": ""
+    },
+    {
+      "check_name": "ruler_polity_id_join",
+      "status": "PASS",
+      "checked_count": "1615",
+      "issue_count": "0",
+      "details": ""
+    },
+    {
+      "check_name": "polity_sources_present",
+      "status": "PASS",
+      "checked_count": "269",
+      "issue_count": "0",
+      "details": ""
+    },
+    {
+      "check_name": "confidence_scores_0_100",
+      "status": "PASS",
+      "checked_count": "2529",
+      "issue_count": "0",
+      "details": ""
+    },
+    {
+      "check_name": "historical_events_valid",
+      "status": "PASS",
+      "checked_count": "587",
+      "issue_count": "0",
+      "details": ""
+    },
+    {
+      "check_name": "historical_anecdotes_valid",
+      "status": "PASS",
+      "checked_count": "5",
+      "issue_count": "0",
+      "details": ""
+    },
+    {
+      "check_name": "mythological_timeline_valid",
+      "status": "PASS",
+      "checked_count": "12",
+      "issue_count": "0",
+      "details": ""
+    },
+    {
+      "check_name": "coordinate_ranges",
+      "status": "PASS",
+      "checked_count": "680",
+      "issue_count": "0",
+      "details": ""
+    },
+    {
+      "check_name": "strategic_locations_valid",
+      "status": "PASS",
+      "checked_count": "46",
+      "issue_count": "0",
+      "details": ""
+    },
+    {
+      "check_name": "sources_and_issues_valid",
+      "status": "PASS",
+      "checked_count": "69",
+      "issue_count": "0",
+      "details": ""
+    }
+  ]
+}

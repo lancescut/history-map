@@ -47,6 +47,7 @@ def main() -> None:
     historical_anecdotes = load_json(DATA_DIR / "anecdotes.json")
     historical_contexts = load_json(DATA_DIR / "contexts.json")
     territories = load_json(DATA_DIR / "territories" / "approx_polities.geojson")
+    territory_hatches = load_json(DATA_DIR / "territories" / "territory_influence_hatches.geojson")
     modern_admin_units = load_json(DATA_DIR / "territories" / "modern_admin_units.geojson")
     county_units = load_json(DATA_DIR / "territories" / "county_units.geojson")
     county_index = load_json(DATA_DIR / "territories" / "polity_county_index.json")
@@ -77,7 +78,17 @@ def main() -> None:
     assert_true(historical_contexts.get("covered_year_count") == len(expected_years), "contexts.json covered year count mismatch")
     assert_true(historical_contexts.get("full_year_coverage") is True, "contexts.json must report full year coverage")
     assert_true(metadata["capital_migration_count"] == len(capitals["capital_migrations"]), "migration count mismatch")
-    assert_true(metadata["territory_polity_count"] == len(territories["features"]), "territory feature count mismatch")
+    territory_feature_polity_ids = {
+        feature["properties"]["polity_id"]
+        for feature in territories["features"]
+        if feature["properties"].get("territory_status") != "missing"
+    }
+    assert_true(metadata["territory_polity_count"] == len(territory_feature_polity_ids), "territory polity count mismatch")
+    assert_true(metadata.get("territory_zone_count") == len(territories["features"]), "territory zone count mismatch")
+    assert_true(
+        metadata.get("territory_hatch_feature_count") == len(territory_hatches["features"]),
+        "territory hatch feature count mismatch",
+    )
     assert_true(metadata["admin_boundary_feature_count"] == len(county_units["features"]), "county boundary feature count mismatch")
     assert_true(
         metadata["modern_admin_reference_feature_count"] == len(modern_admin_units["features"]),
@@ -88,6 +99,8 @@ def main() -> None:
     assert_true(len(county_index["polities"]) == metadata["polity_count"], "county index polity count mismatch")
     assert_true(metadata["territory_geometry_quality"]["formal_rect_fixture"] is False, "formal boundary fixture must not be rectangular")
     assert_true((DATA_DIR / "territories" / "territory_match_report.csv").exists(), "territory report missing")
+    assert_true((DATA_DIR / "territories" / "territory_zone_audit_report.csv").exists(), "territory zone audit missing")
+    assert_true((DATA_DIR / "territories" / "territory_influence_hatches.geojson").exists(), "territory hatch layer missing")
     assert_true((DATA_DIR / "territories" / "admin_units_by_polity.geojson").exists(), "admin-unit debug layer missing")
     assert_true((DATA_DIR / "territories" / "county_units.geojson").exists(), "county-unit layer missing")
     assert_true((DATA_DIR / "territories" / "polity_county_index.json").exists(), "polity county index missing")
@@ -95,6 +108,9 @@ def main() -> None:
     for feature in territories["features"]:
         props = feature["properties"]
         polity_name = props["polity_name"]
+        assert_true(props.get("control_type") in {"direct", "influence"}, f"{polity_name} missing valid control_type")
+        assert_true(props.get("zone_id"), f"{polity_name} missing zone_id")
+        assert_true(props.get("zone_start_year") != 0 and props.get("zone_end_year") != 0, f"{polity_name} zone includes year 0")
         assert_true(coordinate_count(feature["geometry"]) > 20, f"{polity_name} still looks like a rectangle fixture")
         geometry_source = props.get("geometry_source", "")
         county_source = props.get("county_geometry_source", "")
@@ -370,6 +386,21 @@ def main() -> None:
             )
         else:
             assert_true(territory["territory_status"] == "missing", f"{polity_name} should explicitly lack territory")
+
+    west_han_early = next(
+        item for item in load_json(DATA_DIR / "years" / "-202.json")["polities"] if item["polity_name"] == "西汉"
+    )
+    assert_true(
+        "influence" not in west_han_early["territory"].get("active_control_types", []),
+        "西汉 should not show Western Regions influence in -202",
+    )
+    west_han_after_protectorate = next(
+        item for item in load_json(DATA_DIR / "years" / "-60.json")["polities"] if item["polity_name"] == "西汉"
+    )
+    assert_true(
+        "influence" in west_han_after_protectorate["territory"].get("active_control_types", []),
+        "西汉 should show Western Regions influence from -60",
+    )
 
     print("Dynamic capital and territory validation passed")
 

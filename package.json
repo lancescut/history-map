@@ -11,9 +11,14 @@
     "prepare:basemap": "python3 scripts/prepare_basemap.py",
     "prepare:neighbors": "python3 scripts/prepare_neighbor_boundaries.py",
     "audit:polity-names": "python3 scripts/audit_polity_names_v03.py",
-    "generate:events": "python3 scripts/audit_polity_names_v03.py && python3 scripts/add_republican_period_v03.py && python3 scripts/validate_v03.py && python3 scripts/build_historical_events_v03.py",
-    "generate:data": "python3 scripts/audit_polity_names_v03.py && python3 scripts/add_republican_period_v03.py && python3 scripts/validate_v03.py && python3 scripts/build_historical_events_v03.py && python3 scripts/prepare_admin_boundaries.py && python3 scripts/prepare_neighbor_boundaries.py && python3 scripts/generate_public_data.py",
-    "validate:data": "python3 scripts/validate_dynamic_capitals.py"
+    "generate:events": "python3 scripts/audit_polity_names_v03.py && python3 scripts/add_republican_period_v03.py && python3 scripts/validate_v03.py && python3 scripts/build_historical_events_v03.py && python3 scripts/validate_strategic_locations_v03.py",
+    "generate:data": "python3 scripts/audit_polity_names_v03.py && python3 scripts/add_republican_period_v03.py && python3 scripts/validate_v03.py && python3 scripts/build_historical_events_v03.py && python3 scripts/validate_strategic_locations_v03.py && python3 scripts/prepare_admin_boundaries.py && python3 scripts/prepare_neighbor_boundaries.py && python3 scripts/generate_public_data.py",
+    "prepare:boundaries:india": "python3 scripts/prepare_indian_admin_boundaries.py",
+    "prepare:neighbors:india": "python3 scripts/prepare_indian_neighbor_boundaries.py",
+    "generate:data:india": "python3 scripts/generate_world_history_yearly.py --dataset vIndian && python3 scripts/validate_world_history_dataset.py --dataset vIndian && python3 scripts/prepare_indian_admin_boundaries.py && python3 scripts/prepare_indian_neighbor_boundaries.py && python3 scripts/validate_territory_overrides_vindian.py && python3 scripts/build_vindian_public_data.py",
+    "validate:territory:india": "python3 scripts/validate_territory_overrides_vindian.py",
+    "generate:data:all": "npm run generate:data && npm run generate:data:india",
+    "validate:data": "python3 scripts/validate_dynamic_capitals.py && python3 scripts/validate_strategic_locations_v03.py && python3 scripts/validate_world_history_dataset.py --dataset vIndian && python3 scripts/validate_territory_overrides_vindian.py"
   },
   "dependencies": {
     "@types/polylabel": "^1.1.3",

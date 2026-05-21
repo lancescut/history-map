@@ -1,10 +1,30 @@
-import type { AppState, Metadata } from "./types";
+import type { AppState, DatasetId, Metadata } from "./types";
+import { DATASET_IDS } from "./types";
 import { clampPlayableYear } from "./data";
+
+// 跨数据源 year 范围的并集，用于 sanitizeState 在尚未合并多源 metadata 时的宽松 clamp。
+// vIndian metadata.year_min 实际为 -7000（取数据中最早事件，覆盖 manifest 的 -3300）。
+const KNOWN_YEAR_MIN = -7000;
+const KNOWN_YEAR_MAX = 1990;
 
 const APP_ID = "chinese-dynasty-history-map";
 const APP_VERSION = "0.3.0";
-const SCHEMA_VERSION = "2.5.0" as const;
+const SCHEMA_VERSION = "2.7.0" as const;
 const DATA_VERSION = "v03" as const;
+
+function sanitizeActiveDatasets(raw: unknown): DatasetId[] {
+  if (!Array.isArray(raw)) return ["v03"];
+  const seen = new Set<DatasetId>();
+  for (const value of raw) {
+    if (typeof value !== "string") continue;
+    if ((DATASET_IDS as readonly string[]).includes(value)) {
+      seen.add(value as DatasetId);
+    }
+  }
+  if (seen.size === 0) return ["v03"];
+  // 保持 DATASET_IDS 中定义的顺序（v03 在前），便于 round-robin 输出稳定。
+  return DATASET_IDS.filter((id) => seen.has(id));
+}
 const DB_NAME = "history-map-state";
 const DB_STORE = "app_state";
 const DB_KEY = "last_session";
@@ -121,6 +141,43 @@ const MIGRATIONS: MigrationStep[] = [
         schema_version: "2.5.0"
       };
     }
+  },
+  {
+    from: "2.5.0",
+    to: "2.6.0",
+    migrate: (raw) => {
+      const prevLayers = (raw.layers as Record<string, unknown> | undefined) ?? {};
+      return {
+        ...raw,
+        layers: {
+          ...prevLayers,
+          strategic_locations:
+            prevLayers.strategic_locations == null ? true : Boolean(prevLayers.strategic_locations),
+          strategic_location_labels:
+            prevLayers.strategic_location_labels == null ? false : Boolean(prevLayers.strategic_location_labels),
+          graticule: prevLayers.graticule == null ? true : Boolean(prevLayers.graticule),
+          graticule_labels: prevLayers.graticule_labels == null ? true : Boolean(prevLayers.graticule_labels)
+        },
+        schema_version: "2.6.0"
+      };
+    }
+  },
+  {
+    from: "2.6.0",
+    to: "2.7.0",
+    migrate: (raw) => {
+      // 多数据源播放：注入 datasets.active 默认 ["v03"]（中国史），ui.show_mythology=true。
+      const prevUi = (raw.ui as Record<string, unknown> | undefined) ?? {};
+      return {
+        ...raw,
+        datasets: { active: ["v03"] },
+        ui: {
+          ...prevUi,
+          show_mythology: prevUi.show_mythology == null ? true : Boolean(prevUi.show_mythology)
+        },
+        schema_version: "2.7.0"
+      };
+    }
   }
 ];
 
@@ -132,6 +189,9 @@ export function defaultAppState(metadata?: Metadata): StoredAppState {
     app_version: APP_VERSION,
     data_version: DATA_VERSION,
     updated_at: new Date().toISOString(),
+    datasets: {
+      active: ["v03"]
+    },
     timeline: {
       current_year: -221,
       is_playing: false,
@@ -159,8 +219,12 @@ export function defaultAppState(metadata?: Metadata): StoredAppState {
       physical_lakes: true,
       physical_glaciers: true,
       geographic_lines: false,
+      graticule: true,
+      graticule_labels: true,
       modern_country_boundaries: true,
-      cn_border_overlay: true
+      cn_border_overlay: true,
+      strategic_locations: true,
+      strategic_location_labels: false
     },
     filters: {
       polity_types: [],
@@ -175,6 +239,7 @@ export function defaultAppState(metadata?: Metadata): StoredAppState {
       // 默认关闭自动跟随：镜头由用户自己缩放/平移；演示路线启动时会临时启用。
       auto_follow_main_polity: false,
       show_historical_anecdotes: false,
+      show_mythology: true,
       panel_collapsed: {
         layers_polity: false,
         layers_physical: true,
@@ -277,16 +342,22 @@ function sanitizeState(
   const layers = (candidate.layers as Record<string, unknown> | undefined) ?? {};
   const filters = (candidate.filters as Record<string, unknown> | undefined) ?? {};
   const ui = (candidate.ui as Record<string, unknown> | undefined) ?? {};
+  const datasetsBlock = (candidate.datasets as Record<string, unknown> | undefined) ?? {};
+  const activeDatasets = sanitizeActiveDatasets(datasetsBlock.active);
 
   const rawYear = Number(timeline.current_year ?? fallback.timeline.current_year);
+  // 用 union(v03, vIndian) 作宽松范围：sanitize 在 StateStore 初始化时只看到 v03 metadata，
+  // 但持久化的 active 可能含 vIndian（其年份范围更宽）。直接用 v03 范围会把 -3000 错误地夹回 -1046。
+  const effectiveMin = Math.min(metadata.year_min, KNOWN_YEAR_MIN);
+  const effectiveMax = Math.max(metadata.year_max, KNOWN_YEAR_MAX);
   const clampedYear = clampPlayableYear(
     Number.isFinite(rawYear) ? rawYear : fallback.timeline.current_year,
-    metadata.year_min,
-    metadata.year_max
+    effectiveMin,
+    effectiveMax
   );
   if (clampedYear !== rawYear) {
     warnings.push(
-      `恢复时年份 ${rawYear} 超出数据范围（${metadata.year_min}–${metadata.year_max}），已跳到 ${clampedYear}。`
+      `恢复时年份 ${rawYear} 超出数据范围（${effectiveMin}–${effectiveMax}），已跳到 ${clampedYear}。`
     );
   }
 
@@ -308,6 +379,9 @@ function sanitizeState(
     app_version: APP_VERSION,
     data_version: DATA_VERSION,
     updated_at: typeof candidate.updated_at === "string" ? (candidate.updated_at as string) : new Date().toISOString(),
+    datasets: {
+      active: activeDatasets
+    },
     timeline: {
       current_year: clampedYear,
       is_playing: Boolean(timeline.is_playing ?? false),
@@ -336,11 +410,17 @@ function sanitizeState(
       physical_lakes: Boolean(layers.physical_lakes ?? fallback.layers.physical_lakes),
       physical_glaciers: Boolean(layers.physical_glaciers ?? fallback.layers.physical_glaciers),
       geographic_lines: Boolean(layers.geographic_lines ?? fallback.layers.geographic_lines),
+      graticule: Boolean(layers.graticule ?? fallback.layers.graticule),
+      graticule_labels: Boolean(layers.graticule_labels ?? fallback.layers.graticule_labels),
       modern_country_boundaries: Boolean(
         layers.modern_country_boundaries ?? fallback.layers.modern_country_boundaries
       ),
       cn_border_overlay: Boolean(
         layers.cn_border_overlay ?? fallback.layers.cn_border_overlay
+      ),
+      strategic_locations: Boolean(layers.strategic_locations ?? fallback.layers.strategic_locations),
+      strategic_location_labels: Boolean(
+        layers.strategic_location_labels ?? fallback.layers.strategic_location_labels
       )
     },
     filters: {
@@ -362,6 +442,8 @@ function sanitizeState(
         ui.show_historical_anecdotes == null
           ? fallback.ui.show_historical_anecdotes
           : Boolean(ui.show_historical_anecdotes),
+      show_mythology:
+        ui.show_mythology == null ? fallback.ui.show_mythology : Boolean(ui.show_mythology),
       panel_collapsed: {
         ...fallback.ui.panel_collapsed,
         ...((ui.panel_collapsed as Record<string, unknown> | undefined) ?? {})

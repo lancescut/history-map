@@ -1,0 +1,2525 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          67.6167,
+          29.3833
+        ]
+      },
+      "properties": {
+        "location_id": "strategic_ind_0001",
+        "name": "Mehrgarh",
+        "aliases": [],
+        "category": "cultural_allusion",
+        "icon_key": "early_agriculture",
+        "importance_level": 2,
+        "display_priority": 101,
+        "start_year": -7000,
+        "end_year": -2600,
+        "active_years_raw": "公元前7000年-公元前2600年",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": -7000,
+            "end_year": -2600
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [],
+        "related_people": [],
+        "historical_name": "Mehrgarh",
+        "modern_name": "Mehrgarh",
+        "modern_admin_units_raw": "South Asia modern location; see source and coordinate note.",
+        "longitude": 67.6167,
+        "latitude": 29.3833,
+        "location_precision": "city",
+        "location_confidence_score": 85.0,
+        "strategic_summary": "南亚早期农业和定居社会的重要遗址。",
+        "historical_significance": "南亚早期农业和定居社会的重要遗址。",
+        "source_titles": [
+          "Digital South Asia Library: A Historical Atlas of South Asia",
+          "Archaeological Survey of India"
+        ],
+        "source_urls": [
+          "https://dsal.uchicago.edu/reference/schwartzberg/bootstrap_index.html",
+          "https://asi.nic.in/"
+        ],
+        "source_type": "historical_atlas|official_archaeology_or_heritage",
+        "confidence_note": "Coordinate is for map placement; site-level precision varies by location.",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.8667,
+          30.6333
+        ]
+      },
+      "properties": {
+        "location_id": "strategic_ind_0002",
+        "name": "Harappa",
+        "aliases": [],
+        "category": "cultural_allusion",
+        "icon_key": "urban_site",
+        "importance_level": 2,
+        "display_priority": 102,
+        "start_year": -3300,
+        "end_year": -1300,
+        "active_years_raw": "公元前3300年-公元前1300年",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": -3300,
+            "end_year": -1300
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [],
+        "related_people": [],
+        "historical_name": "Harappa",
+        "modern_name": "Harappa",
+        "modern_admin_units_raw": "South Asia modern location; see source and coordinate note.",
+        "longitude": 72.8667,
+        "latitude": 30.6333,
+        "location_precision": "city",
+        "location_confidence_score": 85.0,
+        "strategic_summary": "印度河文明核心城市遗址之一。",
+        "historical_significance": "印度河文明核心城市遗址之一。",
+        "source_titles": [
+          "Digital South Asia Library: A Historical Atlas of South Asia",
+          "Archaeological Survey of India"
+        ],
+        "source_urls": [
+          "https://dsal.uchicago.edu/reference/schwartzberg/bootstrap_index.html",
+          "https://asi.nic.in/"
+        ],
+        "source_type": "historical_atlas|official_archaeology_or_heritage",
+        "confidence_note": "Coordinate is for map placement; site-level precision varies by location.",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          68.1389,
+          27.3294
+        ]
+      },
+      "properties": {
+        "location_id": "strategic_ind_0003",
+        "name": "Mohenjo-daro",
+        "aliases": [],
+        "category": "cultural_allusion",
+        "icon_key": "urban_site",
+        "importance_level": 2,
+        "display_priority": 103,
+        "start_year": -2600,
+        "end_year": -1900,
+        "active_years_raw": "公元前2600年-公元前1900年",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": -2600,
+            "end_year": -1900
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [],
+        "related_people": [],
+        "historical_name": "Mohenjo-daro",
+        "modern_name": "Mohenjo-daro",
+        "modern_admin_units_raw": "South Asia modern location; see source and coordinate note.",
+        "longitude": 68.1389,
+        "latitude": 27.3294,
+        "location_precision": "city",
+        "location_confidence_score": 85.0,
+        "strategic_summary": "成熟哈拉帕城市遗址，常用于展示印度河城市化。",
+        "historical_significance": "成熟哈拉帕城市遗址，常用于展示印度河城市化。",
+        "source_titles": [
+          "Digital South Asia Library: A Historical Atlas of South Asia",
+          "Archaeological Survey of India"
+        ],
+        "source_urls": [
+          "https://dsal.uchicago.edu/reference/schwartzberg/bootstrap_index.html",
+          "https://asi.nic.in/"
+        ],
+        "source_type": "historical_atlas|official_archaeology_or_heritage",
+        "confidence_note": "Coordinate is for map placement; site-level precision varies by location.",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          70.2142,
+          23.8876
+        ]
+      },
+      "properties": {
+        "location_id": "strategic_ind_0004",
+        "name": "Dholavira",
+        "aliases": [],
+        "category": "cultural_allusion",
+        "icon_key": "urban_site",
+        "importance_level": 2,
+        "display_priority": 104,
+        "start_year": -3000,
+        "end_year": -1500,
+        "active_years_raw": "公元前3000年-公元前1500年",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": -3000,
+            "end_year": -1500
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [],
+        "related_people": [],
+        "historical_name": "Dholavira",
+        "modern_name": "Dholavira",
+        "modern_admin_units_raw": "South Asia modern location; see source and coordinate note.",
+        "longitude": 70.2142,
+        "latitude": 23.8876,
+        "location_precision": "city",
+        "location_confidence_score": 85.0,
+        "strategic_summary": "古吉拉特哈拉帕城市遗址，UNESCO世界遗产。",
+        "historical_significance": "古吉拉特哈拉帕城市遗址，UNESCO世界遗产。",
+        "source_titles": [
+          "Digital South Asia Library: A Historical Atlas of South Asia",
+          "Archaeological Survey of India"
+        ],
+        "source_urls": [
+          "https://dsal.uchicago.edu/reference/schwartzberg/bootstrap_index.html",
+          "https://asi.nic.in/"
+        ],
+        "source_type": "historical_atlas|official_archaeology_or_heritage",
+        "confidence_note": "Coordinate is for map placement; site-level precision varies by location.",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.8397,
+          33.7463
+        ]
+      },
+      "properties": {
+        "location_id": "strategic_ind_0005",
+        "name": "Taxila",
+        "aliases": [],
+        "category": "transport_hub",
+        "icon_key": "city",
+        "importance_level": 2,
+        "display_priority": 105,
+        "start_year": -600,
+        "end_year": 500,
+        "active_years_raw": "公元前600年-500年",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": -600,
+            "end_year": 500
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [],
+        "related_people": [],
+        "historical_name": "Taxila",
+        "modern_name": "Taxila",
+        "modern_admin_units_raw": "South Asia modern location; see source and coordinate note.",
+        "longitude": 72.8397,
+        "latitude": 33.7463,
+        "location_precision": "city",
+        "location_confidence_score": 85.0,
+        "strategic_summary": "西北通道、犍陀罗和跨区域交流要地。",
+        "historical_significance": "西北通道、犍陀罗和跨区域交流要地。",
+        "source_titles": [
+          "Digital South Asia Library: A Historical Atlas of South Asia",
+          "Archaeological Survey of India"
+        ],
+        "source_urls": [
+          "https://dsal.uchicago.edu/reference/schwartzberg/bootstrap_index.html",
+          "https://asi.nic.in/"
+        ],
+        "source_type": "historical_atlas|official_archaeology_or_heritage",
+        "confidence_note": "Coordinate is for map placement; site-level precision varies by location.",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.421,
+          25.0277
+        ]
+      },
+      "properties": {
+        "location_id": "strategic_ind_0006",
+        "name": "Rajgir",
+        "aliases": [],
+        "category": "fortress_city",
+        "icon_key": "city",
+        "importance_level": 2,
+        "display_priority": 106,
+        "start_year": -600,
+        "end_year": -400,
+        "active_years_raw": "公元前600年-公元前400年",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": -600,
+            "end_year": -400
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [],
+        "related_people": [],
+        "historical_name": "Rajgir",
+        "modern_name": "Rajgir",
+        "modern_admin_units_raw": "South Asia modern location; see source and coordinate note.",
+        "longitude": 85.421,
+        "latitude": 25.0277,
+        "location_precision": "city",
+        "location_confidence_score": 85.0,
+        "strategic_summary": "早期摩揭陀政治中心。",
+        "historical_significance": "早期摩揭陀政治中心。",
+        "source_titles": [
+          "Digital South Asia Library: A Historical Atlas of South Asia",
+          "Archaeological Survey of India"
+        ],
+        "source_urls": [
+          "https://dsal.uchicago.edu/reference/schwartzberg/bootstrap_index.html",
+          "https://asi.nic.in/"
+        ],
+        "source_type": "historical_atlas|official_archaeology_or_heritage",
+        "confidence_note": "Coordinate is for map placement; site-level precision varies by location.",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.1376,
+          25.5941
+        ]
+      },
+      "properties": {
+        "location_id": "strategic_ind_0007",
+        "name": "Pataliputra",
+        "aliases": [],
+        "category": "fortress_city",
+        "icon_key": "capital",
+        "importance_level": 2,
+        "display_priority": 107,
+        "start_year": -400,
+        "end_year": 600,
+        "active_years_raw": "公元前400年-600年",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": -400,
+            "end_year": 600
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [],
+        "related_people": [],
+        "historical_name": "Pataliputra",
+        "modern_name": "Pataliputra",
+        "modern_admin_units_raw": "South Asia modern location; see source and coordinate note.",
+        "longitude": 85.1376,
+        "latitude": 25.5941,
+        "location_precision": "city",
+        "location_confidence_score": 85.0,
+        "strategic_summary": "摩揭陀、孔雀和笈多政治核心城市。",
+        "historical_significance": "摩揭陀、孔雀和笈多政治核心城市。",
+        "source_titles": [
+          "Digital South Asia Library: A Historical Atlas of South Asia",
+          "Archaeological Survey of India"
+        ],
+        "source_urls": [
+          "https://dsal.uchicago.edu/reference/schwartzberg/bootstrap_index.html",
+          "https://asi.nic.in/"
+        ],
+        "source_type": "historical_atlas|official_archaeology_or_heritage",
+        "confidence_note": "Coordinate is for map placement; site-level precision varies by location.",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.13,
+          25.98
+        ]
+      },
+      "properties": {
+        "location_id": "strategic_ind_0008",
+        "name": "Vaishali",
+        "aliases": [],
+        "category": "fortress_city",
+        "icon_key": "republic",
+        "importance_level": 2,
+        "display_priority": 108,
+        "start_year": -600,
+        "end_year": -300,
+        "active_years_raw": "公元前600年-公元前300年",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": -600,
+            "end_year": -300
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [],
+        "related_people": [],
+        "historical_name": "Vaishali",
+        "modern_name": "Vaishali",
+        "modern_admin_units_raw": "South Asia modern location; see source and coordinate note.",
+        "longitude": 85.13,
+        "latitude": 25.98,
+        "location_precision": "city",
+        "location_confidence_score": 85.0,
+        "strategic_summary": "跋耆/离车联盟重要中心。",
+        "historical_significance": "跋耆/离车联盟重要中心。",
+        "source_titles": [
+          "Digital South Asia Library: A Historical Atlas of South Asia",
+          "Archaeological Survey of India"
+        ],
+        "source_urls": [
+          "https://dsal.uchicago.edu/reference/schwartzberg/bootstrap_index.html",
+          "https://asi.nic.in/"
+        ],
+        "source_type": "historical_atlas|official_archaeology_or_heritage",
+        "confidence_note": "Coordinate is for map placement; site-level precision varies by location.",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          84.9913,
+          24.6951
+        ]
+      },
+      "properties": {
+        "location_id": "strategic_ind_0009",
+        "name": "Bodh Gaya",
+        "aliases": [],
+        "category": "cultural_allusion",
+        "icon_key": "religious_site",
+        "importance_level": 2,
+        "display_priority": 109,
+        "start_year": -528,
+        "end_year": 1990,
+        "active_years_raw": "公元前528年-1990年",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": -528,
+            "end_year": 1990
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [],
+        "related_people": [],
+        "historical_name": "Bodh Gaya",
+        "modern_name": "Bodh Gaya",
+        "modern_admin_units_raw": "South Asia modern location; see source and coordinate note.",
+        "longitude": 84.9913,
+        "latitude": 24.6951,
+        "location_precision": "city",
+        "location_confidence_score": 85.0,
+        "strategic_summary": "佛教圣地和历史记忆核心地点。",
+        "historical_significance": "佛教圣地和历史记忆核心地点。",
+        "source_titles": [
+          "Digital South Asia Library: A Historical Atlas of South Asia",
+          "Archaeological Survey of India"
+        ],
+        "source_urls": [
+          "https://dsal.uchicago.edu/reference/schwartzberg/bootstrap_index.html",
+          "https://asi.nic.in/"
+        ],
+        "source_type": "historical_atlas|official_archaeology_or_heritage",
+        "confidence_note": "Coordinate is for map placement; site-level precision varies by location.",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          83.022,
+          25.3811
+        ]
+      },
+      "properties": {
+        "location_id": "strategic_ind_0010",
+        "name": "Sarnath",
+        "aliases": [],
+        "category": "cultural_allusion",
+        "icon_key": "religious_site",
+        "importance_level": 2,
+        "display_priority": 110,
+        "start_year": -528,
+        "end_year": 1990,
+        "active_years_raw": "公元前528年-1990年",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": -528,
+            "end_year": 1990
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [],
+        "related_people": [],
+        "historical_name": "Sarnath",
+        "modern_name": "Sarnath",
+        "modern_admin_units_raw": "South Asia modern location; see source and coordinate note.",
+        "longitude": 83.022,
+        "latitude": 25.3811,
+        "location_precision": "city",
+        "location_confidence_score": 85.0,
+        "strategic_summary": "初转法轮传统相关地点。",
+        "historical_significance": "初转法轮传统相关地点。",
+        "source_titles": [
+          "Digital South Asia Library: A Historical Atlas of South Asia",
+          "Archaeological Survey of India"
+        ],
+        "source_urls": [
+          "https://dsal.uchicago.edu/reference/schwartzberg/bootstrap_index.html",
+          "https://asi.nic.in/"
+        ],
+        "source_type": "historical_atlas|official_archaeology_or_heritage",
+        "confidence_note": "Coordinate is for map placement; site-level precision varies by location.",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.7849,
+          23.1765
+        ]
+      },
+      "properties": {
+        "location_id": "strategic_ind_0011",
+        "name": "Ujjain",
+        "aliases": [],
+        "category": "transport_hub",
+        "icon_key": "city",
+        "importance_level": 2,
+        "display_priority": 111,
+        "start_year": -600,
+        "end_year": 1200,
+        "active_years_raw": "公元前600年-1200年",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": -600,
+            "end_year": 1200
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [],
+        "related_people": [],
+        "historical_name": "Ujjain",
+        "modern_name": "Ujjain",
+        "modern_admin_units_raw": "South Asia modern location; see source and coordinate note.",
+        "longitude": 75.7849,
+        "latitude": 23.1765,
+        "location_precision": "city",
+        "location_confidence_score": 85.0,
+        "strategic_summary": "摩腊婆、贸易和天文文化传统中心。",
+        "historical_significance": "摩腊婆、贸易和天文文化传统中心。",
+        "source_titles": [
+          "Digital South Asia Library: A Historical Atlas of South Asia",
+          "Archaeological Survey of India"
+        ],
+        "source_urls": [
+          "https://dsal.uchicago.edu/reference/schwartzberg/bootstrap_index.html",
+          "https://asi.nic.in/"
+        ],
+        "source_type": "historical_atlas|official_archaeology_or_heritage",
+        "confidence_note": "Coordinate is for map placement; site-level precision varies by location.",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6737,
+          27.4924
+        ]
+      },
+      "properties": {
+        "location_id": "strategic_ind_0012",
+        "name": "Mathura",
+        "aliases": [],
+        "category": "transport_hub",
+        "icon_key": "city",
+        "importance_level": 2,
+        "display_priority": 112,
+        "start_year": -600,
+        "end_year": 1200,
+        "active_years_raw": "公元前600年-1200年",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": -600,
+            "end_year": 1200
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [],
+        "related_people": [],
+        "historical_name": "Mathura",
+        "modern_name": "Mathura",
+        "modern_admin_units_raw": "South Asia modern location; see source and coordinate note.",
+        "longitude": 77.6737,
+        "latitude": 27.4924,
+        "location_precision": "city",
+        "location_confidence_score": 85.0,
+        "strategic_summary": "北印度宗教、交通和政治节点。",
+        "historical_significance": "北印度宗教、交通和政治节点。",
+        "source_titles": [
+          "Digital South Asia Library: A Historical Atlas of South Asia",
+          "Archaeological Survey of India"
+        ],
+        "source_urls": [
+          "https://dsal.uchicago.edu/reference/schwartzberg/bootstrap_index.html",
+          "https://asi.nic.in/"
+        ],
+        "source_type": "historical_atlas|official_archaeology_or_heritage",
+        "confidence_note": "Coordinate is for map placement; site-level precision varies by location.",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.918,
+          27.0514
+        ]
+      },
+      "properties": {
+        "location_id": "strategic_ind_0013",
+        "name": "Kannauj",
+        "aliases": [],
+        "category": "fortress_city",
+        "icon_key": "capital",
+        "importance_level": 2,
+        "display_priority": 113,
+        "start_year": 600,
+        "end_year": 1200,
+        "active_years_raw": "600年-1200年",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": 600,
+            "end_year": 1200
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [],
+        "related_people": [],
+        "historical_name": "Kannauj",
+        "modern_name": "Kannauj",
+        "modern_admin_units_raw": "South Asia modern location; see source and coordinate note.",
+        "longitude": 79.918,
+        "latitude": 27.0514,
+        "location_precision": "city",
+        "location_confidence_score": 85.0,
+        "strategic_summary": "后笈多和早期中世纪北印度争夺焦点。",
+        "historical_significance": "后笈多和早期中世纪北印度争夺焦点。",
+        "source_titles": [
+          "Digital South Asia Library: A Historical Atlas of South Asia",
+          "Archaeological Survey of India"
+        ],
+        "source_urls": [
+          "https://dsal.uchicago.edu/reference/schwartzberg/bootstrap_index.html",
+          "https://asi.nic.in/"
+        ],
+        "source_type": "historical_atlas|official_archaeology_or_heritage",
+        "confidence_note": "Coordinate is for map placement; site-level precision varies by location.",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.4448,
+          25.1357
+        ]
+      },
+      "properties": {
+        "location_id": "strategic_ind_0014",
+        "name": "Nalanda",
+        "aliases": [],
+        "category": "cultural_allusion",
+        "icon_key": "monastery",
+        "importance_level": 2,
+        "display_priority": 114,
+        "start_year": 400,
+        "end_year": 1200,
+        "active_years_raw": "400年-1200年",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": 400,
+            "end_year": 1200
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [],
+        "related_people": [],
+        "historical_name": "Nalanda",
+        "modern_name": "Nalanda",
+        "modern_admin_units_raw": "South Asia modern location; see source and coordinate note.",
+        "longitude": 85.4448,
+        "latitude": 25.1357,
+        "location_precision": "city",
+        "location_confidence_score": 85.0,
+        "strategic_summary": "佛教大学和跨区域学术网络象征。",
+        "historical_significance": "佛教大学和跨区域学术网络象征。",
+        "source_titles": [
+          "Digital South Asia Library: A Historical Atlas of South Asia",
+          "Archaeological Survey of India"
+        ],
+        "source_urls": [
+          "https://dsal.uchicago.edu/reference/schwartzberg/bootstrap_index.html",
+          "https://asi.nic.in/"
+        ],
+        "source_type": "historical_atlas|official_archaeology_or_heritage",
+        "confidence_note": "Coordinate is for map placement; site-level precision varies by location.",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.7036,
+          12.8342
+        ]
+      },
+      "properties": {
+        "location_id": "strategic_ind_0015",
+        "name": "Kanchipuram",
+        "aliases": [],
+        "category": "fortress_city",
+        "icon_key": "capital",
+        "importance_level": 2,
+        "display_priority": 115,
+        "start_year": 300,
+        "end_year": 900,
+        "active_years_raw": "300年-900年",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": 300,
+            "end_year": 900
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [],
+        "related_people": [],
+        "historical_name": "Kanchipuram",
+        "modern_name": "Kanchipuram",
+        "modern_admin_units_raw": "South Asia modern location; see source and coordinate note.",
+        "longitude": 79.7036,
+        "latitude": 12.8342,
+        "location_precision": "city",
+        "location_confidence_score": 85.0,
+        "strategic_summary": "帕拉瓦和南印度宗教文化中心。",
+        "historical_significance": "帕拉瓦和南印度宗教文化中心。",
+        "source_titles": [
+          "Digital South Asia Library: A Historical Atlas of South Asia",
+          "Archaeological Survey of India"
+        ],
+        "source_urls": [
+          "https://dsal.uchicago.edu/reference/schwartzberg/bootstrap_index.html",
+          "https://asi.nic.in/"
+        ],
+        "source_type": "historical_atlas|official_archaeology_or_heritage",
+        "confidence_note": "Coordinate is for map placement; site-level precision varies by location.",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.6768,
+          15.9149
+        ]
+      },
+      "properties": {
+        "location_id": "strategic_ind_0016",
+        "name": "Badami",
+        "aliases": [],
+        "category": "fortress_city",
+        "icon_key": "capital",
+        "importance_level": 2,
+        "display_priority": 116,
+        "start_year": 543,
+        "end_year": 753,
+        "active_years_raw": "543年-753年",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": 543,
+            "end_year": 753
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [],
+        "related_people": [],
+        "historical_name": "Badami",
+        "modern_name": "Badami",
+        "modern_admin_units_raw": "South Asia modern location; see source and coordinate note.",
+        "longitude": 75.6768,
+        "latitude": 15.9149,
+        "location_precision": "city",
+        "location_confidence_score": 85.0,
+        "strategic_summary": "巴达米遮娄其山地都城。",
+        "historical_significance": "巴达米遮娄其山地都城。",
+        "source_titles": [
+          "Digital South Asia Library: A Historical Atlas of South Asia",
+          "Archaeological Survey of India"
+        ],
+        "source_urls": [
+          "https://dsal.uchicago.edu/reference/schwartzberg/bootstrap_index.html",
+          "https://asi.nic.in/"
+        ],
+        "source_type": "historical_atlas|official_archaeology_or_heritage",
+        "confidence_note": "Coordinate is for map placement; site-level precision varies by location.",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.1637,
+          17.1745
+        ]
+      },
+      "properties": {
+        "location_id": "strategic_ind_0017",
+        "name": "Manyakheta",
+        "aliases": [],
+        "category": "fortress_city",
+        "icon_key": "capital",
+        "importance_level": 2,
+        "display_priority": 117,
+        "start_year": 753,
+        "end_year": 982,
+        "active_years_raw": "753年-982年",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": 753,
+            "end_year": 982
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [],
+        "related_people": [],
+        "historical_name": "Manyakheta",
+        "modern_name": "Manyakheta",
+        "modern_admin_units_raw": "South Asia modern location; see source and coordinate note.",
+        "longitude": 77.1637,
+        "latitude": 17.1745,
+        "location_precision": "city",
+        "location_confidence_score": 85.0,
+        "strategic_summary": "罗湿陀罗拘陀政治中心。",
+        "historical_significance": "罗湿陀罗拘陀政治中心。",
+        "source_titles": [
+          "Digital South Asia Library: A Historical Atlas of South Asia",
+          "Archaeological Survey of India"
+        ],
+        "source_urls": [
+          "https://dsal.uchicago.edu/reference/schwartzberg/bootstrap_index.html",
+          "https://asi.nic.in/"
+        ],
+        "source_type": "historical_atlas|official_archaeology_or_heritage",
+        "confidence_note": "Coordinate is for map placement; site-level precision varies by location.",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.1378,
+          10.7867
+        ]
+      },
+      "properties": {
+        "location_id": "strategic_ind_0018",
+        "name": "Thanjavur",
+        "aliases": [],
+        "category": "fortress_city",
+        "icon_key": "capital",
+        "importance_level": 2,
+        "display_priority": 118,
+        "start_year": 850,
+        "end_year": 1279,
+        "active_years_raw": "850年-1279年",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": 850,
+            "end_year": 1279
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [],
+        "related_people": [],
+        "historical_name": "Thanjavur",
+        "modern_name": "Thanjavur",
+        "modern_admin_units_raw": "South Asia modern location; see source and coordinate note.",
+        "longitude": 79.1378,
+        "latitude": 10.7867,
+        "location_precision": "city",
+        "location_confidence_score": 85.0,
+        "strategic_summary": "朱罗王朝核心都城和寺庙城市。",
+        "historical_significance": "朱罗王朝核心都城和寺庙城市。",
+        "source_titles": [
+          "Digital South Asia Library: A Historical Atlas of South Asia",
+          "Archaeological Survey of India"
+        ],
+        "source_urls": [
+          "https://dsal.uchicago.edu/reference/schwartzberg/bootstrap_index.html",
+          "https://asi.nic.in/"
+        ],
+        "source_type": "historical_atlas|official_archaeology_or_heritage",
+        "confidence_note": "Coordinate is for map placement; site-level precision varies by location.",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.209,
+          28.6139
+        ]
+      },
+      "properties": {
+        "location_id": "strategic_ind_0019",
+        "name": "Delhi",
+        "aliases": [],
+        "category": "fortress_city",
+        "icon_key": "capital",
+        "importance_level": 2,
+        "display_priority": 119,
+        "start_year": 1206,
+        "end_year": 1990,
+        "active_years_raw": "1206年-1990年",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": 1206,
+            "end_year": 1990
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [],
+        "related_people": [],
+        "historical_name": "Delhi",
+        "modern_name": "Delhi",
+        "modern_admin_units_raw": "South Asia modern location; see source and coordinate note.",
+        "longitude": 77.209,
+        "latitude": 28.6139,
+        "location_precision": "city",
+        "location_confidence_score": 85.0,
+        "strategic_summary": "德里苏丹国、莫卧儿后期、英属印度和共和国首都节点。",
+        "historical_significance": "德里苏丹国、莫卧儿后期、英属印度和共和国首都节点。",
+        "source_titles": [
+          "Digital South Asia Library: A Historical Atlas of South Asia",
+          "Archaeological Survey of India"
+        ],
+        "source_urls": [
+          "https://dsal.uchicago.edu/reference/schwartzberg/bootstrap_index.html",
+          "https://asi.nic.in/"
+        ],
+        "source_type": "historical_atlas|official_archaeology_or_heritage",
+        "confidence_note": "Coordinate is for map placement; site-level precision varies by location.",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.46,
+          15.335
+        ]
+      },
+      "properties": {
+        "location_id": "strategic_ind_0020",
+        "name": "Hampi",
+        "aliases": [],
+        "category": "fortress_city",
+        "icon_key": "capital",
+        "importance_level": 2,
+        "display_priority": 120,
+        "start_year": 1336,
+        "end_year": 1565,
+        "active_years_raw": "1336年-1565年",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": 1336,
+            "end_year": 1565
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [],
+        "related_people": [],
+        "historical_name": "Hampi",
+        "modern_name": "Hampi",
+        "modern_admin_units_raw": "South Asia modern location; see source and coordinate note.",
+        "longitude": 76.46,
+        "latitude": 15.335,
+        "location_precision": "city",
+        "location_confidence_score": 85.0,
+        "strategic_summary": "毗奢耶那伽罗帝国核心遗址。",
+        "historical_significance": "毗奢耶那伽罗帝国核心遗址。",
+        "source_titles": [
+          "Digital South Asia Library: A Historical Atlas of South Asia",
+          "Archaeological Survey of India"
+        ],
+        "source_urls": [
+          "https://dsal.uchicago.edu/reference/schwartzberg/bootstrap_index.html",
+          "https://asi.nic.in/"
+        ],
+        "source_type": "historical_atlas|official_archaeology_or_heritage",
+        "confidence_note": "Coordinate is for map placement; site-level precision varies by location.",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.8333,
+          17.3333
+        ]
+      },
+      "properties": {
+        "location_id": "strategic_ind_0021",
+        "name": "Gulbarga",
+        "aliases": [],
+        "category": "fortress_city",
+        "icon_key": "capital",
+        "importance_level": 2,
+        "display_priority": 121,
+        "start_year": 1347,
+        "end_year": 1425,
+        "active_years_raw": "1347年-1425年",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": 1347,
+            "end_year": 1425
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [],
+        "related_people": [],
+        "historical_name": "Gulbarga",
+        "modern_name": "Gulbarga",
+        "modern_admin_units_raw": "South Asia modern location; see source and coordinate note.",
+        "longitude": 76.8333,
+        "latitude": 17.3333,
+        "location_precision": "city",
+        "location_confidence_score": 85.0,
+        "strategic_summary": "巴赫曼尼早期都城。",
+        "historical_significance": "巴赫曼尼早期都城。",
+        "source_titles": [
+          "Digital South Asia Library: A Historical Atlas of South Asia",
+          "Archaeological Survey of India"
+        ],
+        "source_urls": [
+          "https://dsal.uchicago.edu/reference/schwartzberg/bootstrap_index.html",
+          "https://asi.nic.in/"
+        ],
+        "source_type": "historical_atlas|official_archaeology_or_heritage",
+        "confidence_note": "Coordinate is for map placement; site-level precision varies by location.",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.53,
+          17.9104
+        ]
+      },
+      "properties": {
+        "location_id": "strategic_ind_0022",
+        "name": "Bidar",
+        "aliases": [],
+        "category": "fortress_city",
+        "icon_key": "capital",
+        "importance_level": 2,
+        "display_priority": 122,
+        "start_year": 1425,
+        "end_year": 1527,
+        "active_years_raw": "1425年-1527年",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": 1425,
+            "end_year": 1527
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [],
+        "related_people": [],
+        "historical_name": "Bidar",
+        "modern_name": "Bidar",
+        "modern_admin_units_raw": "South Asia modern location; see source and coordinate note.",
+        "longitude": 77.53,
+        "latitude": 17.9104,
+        "location_precision": "city",
+        "location_confidence_score": 85.0,
+        "strategic_summary": "巴赫曼尼后期都城。",
+        "historical_significance": "巴赫曼尼后期都城。",
+        "source_titles": [
+          "Digital South Asia Library: A Historical Atlas of South Asia",
+          "Archaeological Survey of India"
+        ],
+        "source_urls": [
+          "https://dsal.uchicago.edu/reference/schwartzberg/bootstrap_index.html",
+          "https://asi.nic.in/"
+        ],
+        "source_type": "historical_atlas|official_archaeology_or_heritage",
+        "confidence_note": "Coordinate is for map placement; site-level precision varies by location.",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.71,
+          16.8302
+        ]
+      },
+      "properties": {
+        "location_id": "strategic_ind_0023",
+        "name": "Bijapur",
+        "aliases": [],
+        "category": "fortress_city",
+        "icon_key": "capital",
+        "importance_level": 2,
+        "display_priority": 123,
+        "start_year": 1490,
+        "end_year": 1686,
+        "active_years_raw": "1490年-1686年",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": 1490,
+            "end_year": 1686
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [],
+        "related_people": [],
+        "historical_name": "Bijapur",
+        "modern_name": "Bijapur",
+        "modern_admin_units_raw": "South Asia modern location; see source and coordinate note.",
+        "longitude": 75.71,
+        "latitude": 16.8302,
+        "location_precision": "city",
+        "location_confidence_score": 85.0,
+        "strategic_summary": "德干苏丹国重要都城。",
+        "historical_significance": "德干苏丹国重要都城。",
+        "source_titles": [
+          "Digital South Asia Library: A Historical Atlas of South Asia",
+          "Archaeological Survey of India"
+        ],
+        "source_urls": [
+          "https://dsal.uchicago.edu/reference/schwartzberg/bootstrap_index.html",
+          "https://asi.nic.in/"
+        ],
+        "source_type": "historical_atlas|official_archaeology_or_heritage",
+        "confidence_note": "Coordinate is for map placement; site-level precision varies by location.",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.4011,
+          17.3833
+        ]
+      },
+      "properties": {
+        "location_id": "strategic_ind_0024",
+        "name": "Golconda",
+        "aliases": [],
+        "category": "fortress_city",
+        "icon_key": "capital",
+        "importance_level": 2,
+        "display_priority": 124,
+        "start_year": 1518,
+        "end_year": 1687,
+        "active_years_raw": "1518年-1687年",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": 1518,
+            "end_year": 1687
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [],
+        "related_people": [],
+        "historical_name": "Golconda",
+        "modern_name": "Golconda",
+        "modern_admin_units_raw": "South Asia modern location; see source and coordinate note.",
+        "longitude": 78.4011,
+        "latitude": 17.3833,
+        "location_precision": "city",
+        "location_confidence_score": 85.0,
+        "strategic_summary": "钻石贸易和德干政治中心。",
+        "historical_significance": "钻石贸易和德干政治中心。",
+        "source_titles": [
+          "Digital South Asia Library: A Historical Atlas of South Asia",
+          "Archaeological Survey of India"
+        ],
+        "source_urls": [
+          "https://dsal.uchicago.edu/reference/schwartzberg/bootstrap_index.html",
+          "https://asi.nic.in/"
+        ],
+        "source_type": "historical_atlas|official_archaeology_or_heritage",
+        "confidence_note": "Coordinate is for map placement; site-level precision varies by location.",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.0081,
+          27.1767
+        ]
+      },
+      "properties": {
+        "location_id": "strategic_ind_0025",
+        "name": "Agra",
+        "aliases": [],
+        "category": "fortress_city",
+        "icon_key": "capital",
+        "importance_level": 2,
+        "display_priority": 125,
+        "start_year": 1526,
+        "end_year": 1707,
+        "active_years_raw": "1526年-1707年",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": 1526,
+            "end_year": 1707
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [],
+        "related_people": [],
+        "historical_name": "Agra",
+        "modern_name": "Agra",
+        "modern_admin_units_raw": "South Asia modern location; see source and coordinate note.",
+        "longitude": 78.0081,
+        "latitude": 27.1767,
+        "location_precision": "city",
+        "location_confidence_score": 85.0,
+        "strategic_summary": "莫卧儿核心都城之一。",
+        "historical_significance": "莫卧儿核心都城之一。",
+        "source_titles": [
+          "Digital South Asia Library: A Historical Atlas of South Asia",
+          "Archaeological Survey of India"
+        ],
+        "source_urls": [
+          "https://dsal.uchicago.edu/reference/schwartzberg/bootstrap_index.html",
+          "https://asi.nic.in/"
+        ],
+        "source_type": "historical_atlas|official_archaeology_or_heritage",
+        "confidence_note": "Coordinate is for map placement; site-level precision varies by location.",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6679,
+          27.0945
+        ]
+      },
+      "properties": {
+        "location_id": "strategic_ind_0026",
+        "name": "Fatehpur Sikri",
+        "aliases": [],
+        "category": "fortress_city",
+        "icon_key": "capital",
+        "importance_level": 2,
+        "display_priority": 126,
+        "start_year": 1571,
+        "end_year": 1585,
+        "active_years_raw": "1571年-1585年",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": 1571,
+            "end_year": 1585
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [],
+        "related_people": [],
+        "historical_name": "Fatehpur Sikri",
+        "modern_name": "Fatehpur Sikri",
+        "modern_admin_units_raw": "South Asia modern location; see source and coordinate note.",
+        "longitude": 77.6679,
+        "latitude": 27.0945,
+        "location_precision": "city",
+        "location_confidence_score": 85.0,
+        "strategic_summary": "阿克巴时期规划都城。",
+        "historical_significance": "阿克巴时期规划都城。",
+        "source_titles": [
+          "Digital South Asia Library: A Historical Atlas of South Asia",
+          "Archaeological Survey of India"
+        ],
+        "source_urls": [
+          "https://dsal.uchicago.edu/reference/schwartzberg/bootstrap_index.html",
+          "https://asi.nic.in/"
+        ],
+        "source_type": "historical_atlas|official_archaeology_or_heritage",
+        "confidence_note": "Coordinate is for map placement; site-level precision varies by location.",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8567,
+          18.5204
+        ]
+      },
+      "properties": {
+        "location_id": "strategic_ind_0027",
+        "name": "Pune",
+        "aliases": [],
+        "category": "transport_hub",
+        "icon_key": "capital",
+        "importance_level": 2,
+        "display_priority": 127,
+        "start_year": 1674,
+        "end_year": 1818,
+        "active_years_raw": "1674年-1818年",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": 1674,
+            "end_year": 1818
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [],
+        "related_people": [],
+        "historical_name": "Pune",
+        "modern_name": "Pune",
+        "modern_admin_units_raw": "South Asia modern location; see source and coordinate note.",
+        "longitude": 73.8567,
+        "latitude": 18.5204,
+        "location_precision": "city",
+        "location_confidence_score": 85.0,
+        "strategic_summary": "马拉塔政治中心。",
+        "historical_significance": "马拉塔政治中心。",
+        "source_titles": [
+          "Digital South Asia Library: A Historical Atlas of South Asia",
+          "Archaeological Survey of India"
+        ],
+        "source_urls": [
+          "https://dsal.uchicago.edu/reference/schwartzberg/bootstrap_index.html",
+          "https://asi.nic.in/"
+        ],
+        "source_type": "historical_atlas|official_archaeology_or_heritage",
+        "confidence_note": "Coordinate is for map placement; site-level precision varies by location.",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.3587,
+          31.5204
+        ]
+      },
+      "properties": {
+        "location_id": "strategic_ind_0028",
+        "name": "Lahore",
+        "aliases": [],
+        "category": "fortress_city",
+        "icon_key": "capital",
+        "importance_level": 2,
+        "display_priority": 128,
+        "start_year": 1799,
+        "end_year": 1849,
+        "active_years_raw": "1799年-1849年",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": 1799,
+            "end_year": 1849
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [],
+        "related_people": [],
+        "historical_name": "Lahore",
+        "modern_name": "Lahore",
+        "modern_admin_units_raw": "South Asia modern location; see source and coordinate note.",
+        "longitude": 74.3587,
+        "latitude": 31.5204,
+        "location_precision": "city",
+        "location_confidence_score": 85.0,
+        "strategic_summary": "锡克帝国都城和旁遮普重镇。",
+        "historical_significance": "锡克帝国都城和旁遮普重镇。",
+        "source_titles": [
+          "Digital South Asia Library: A Historical Atlas of South Asia",
+          "Archaeological Survey of India"
+        ],
+        "source_urls": [
+          "https://dsal.uchicago.edu/reference/schwartzberg/bootstrap_index.html",
+          "https://asi.nic.in/"
+        ],
+        "source_type": "historical_atlas|official_archaeology_or_heritage",
+        "confidence_note": "Coordinate is for map placement; site-level precision varies by location.",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.9635,
+          29.3909
+        ]
+      },
+      "properties": {
+        "location_id": "strategic_ind_0029",
+        "name": "Panipat",
+        "aliases": [],
+        "category": "battlefield",
+        "icon_key": "battle",
+        "importance_level": 2,
+        "display_priority": 129,
+        "start_year": 1526,
+        "end_year": 1761,
+        "active_years_raw": "1526年-1761年",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": 1526,
+            "end_year": 1761
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [],
+        "related_people": [],
+        "historical_name": "Panipat",
+        "modern_name": "Panipat",
+        "modern_admin_units_raw": "South Asia modern location; see source and coordinate note.",
+        "longitude": 76.9635,
+        "latitude": 29.3909,
+        "location_precision": "city",
+        "location_confidence_score": 85.0,
+        "strategic_summary": "三次帕尼帕特战役改变北印度政治格局。",
+        "historical_significance": "三次帕尼帕特战役改变北印度政治格局。",
+        "source_titles": [
+          "Digital South Asia Library: A Historical Atlas of South Asia",
+          "Archaeological Survey of India"
+        ],
+        "source_urls": [
+          "https://dsal.uchicago.edu/reference/schwartzberg/bootstrap_index.html",
+          "https://asi.nic.in/"
+        ],
+        "source_type": "historical_atlas|official_archaeology_or_heritage",
+        "confidence_note": "Coordinate is for map placement; site-level precision varies by location.",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.817,
+          29.9695
+        ]
+      },
+      "properties": {
+        "location_id": "strategic_ind_0030",
+        "name": "Tarain",
+        "aliases": [],
+        "category": "battlefield",
+        "icon_key": "battle",
+        "importance_level": 2,
+        "display_priority": 130,
+        "start_year": 1191,
+        "end_year": 1192,
+        "active_years_raw": "1191年-1192年",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": 1191,
+            "end_year": 1192
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [],
+        "related_people": [],
+        "historical_name": "Tarain",
+        "modern_name": "Tarain",
+        "modern_admin_units_raw": "South Asia modern location; see source and coordinate note.",
+        "longitude": 76.817,
+        "latitude": 29.9695,
+        "location_precision": "city",
+        "location_confidence_score": 85.0,
+        "strategic_summary": "古尔-乔汉战争转折地。",
+        "historical_significance": "古尔-乔汉战争转折地。",
+        "source_titles": [
+          "Digital South Asia Library: A Historical Atlas of South Asia",
+          "Archaeological Survey of India"
+        ],
+        "source_urls": [
+          "https://dsal.uchicago.edu/reference/schwartzberg/bootstrap_index.html",
+          "https://asi.nic.in/"
+        ],
+        "source_type": "historical_atlas|official_archaeology_or_heritage",
+        "confidence_note": "Coordinate is for map placement; site-level precision varies by location.",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.6269,
+          24.8887
+        ]
+      },
+      "properties": {
+        "location_id": "strategic_ind_0031",
+        "name": "Chittorgarh",
+        "aliases": [],
+        "category": "fortress_city",
+        "icon_key": "fort",
+        "importance_level": 2,
+        "display_priority": 131,
+        "start_year": 700,
+        "end_year": 1568,
+        "active_years_raw": "700年-1568年",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": 700,
+            "end_year": 1568
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [],
+        "related_people": [],
+        "historical_name": "Chittorgarh",
+        "modern_name": "Chittorgarh",
+        "modern_admin_units_raw": "South Asia modern location; see source and coordinate note.",
+        "longitude": 74.6269,
+        "latitude": 24.8887,
+        "location_precision": "city",
+        "location_confidence_score": 85.0,
+        "strategic_summary": "拉其普特城防和政治记忆重镇。",
+        "historical_significance": "拉其普特城防和政治记忆重镇。",
+        "source_titles": [
+          "Digital South Asia Library: A Historical Atlas of South Asia",
+          "Archaeological Survey of India"
+        ],
+        "source_urls": [
+          "https://dsal.uchicago.edu/reference/schwartzberg/bootstrap_index.html",
+          "https://asi.nic.in/"
+        ],
+        "source_type": "historical_atlas|official_archaeology_or_heritage",
+        "confidence_note": "Coordinate is for map placement; site-level precision varies by location.",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.6952,
+          24.8871
+        ]
+      },
+      "properties": {
+        "location_id": "strategic_ind_0032",
+        "name": "Haldighati",
+        "aliases": [],
+        "category": "battlefield",
+        "icon_key": "battle",
+        "importance_level": 2,
+        "display_priority": 132,
+        "start_year": 1576,
+        "end_year": 1576,
+        "active_years_raw": "1576年-1576年",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": 1576,
+            "end_year": 1576
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [],
+        "related_people": [],
+        "historical_name": "Haldighati",
+        "modern_name": "Haldighati",
+        "modern_admin_units_raw": "South Asia modern location; see source and coordinate note.",
+        "longitude": 73.6952,
+        "latitude": 24.8871,
+        "location_precision": "city",
+        "location_confidence_score": 85.0,
+        "strategic_summary": "莫卧儿与梅瓦尔冲突记忆地点。",
+        "historical_significance": "莫卧儿与梅瓦尔冲突记忆地点。",
+        "source_titles": [
+          "Digital South Asia Library: A Historical Atlas of South Asia",
+          "Archaeological Survey of India"
+        ],
+        "source_urls": [
+          "https://dsal.uchicago.edu/reference/schwartzberg/bootstrap_index.html",
+          "https://asi.nic.in/"
+        ],
+        "source_type": "historical_atlas|official_archaeology_or_heritage",
+        "confidence_note": "Coordinate is for map placement; site-level precision varies by location.",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          88.251,
+          23.781
+        ]
+      },
+      "properties": {
+        "location_id": "strategic_ind_0033",
+        "name": "Plassey",
+        "aliases": [],
+        "category": "battlefield",
+        "icon_key": "battle",
+        "importance_level": 2,
+        "display_priority": 133,
+        "start_year": 1757,
+        "end_year": 1757,
+        "active_years_raw": "1757年-1757年",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": 1757,
+            "end_year": 1757
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [],
+        "related_people": [],
+        "historical_name": "Plassey",
+        "modern_name": "Plassey",
+        "modern_admin_units_raw": "South Asia modern location; see source and coordinate note.",
+        "longitude": 88.251,
+        "latitude": 23.781,
+        "location_precision": "city",
+        "location_confidence_score": 85.0,
+        "strategic_summary": "公司统治转折战场。",
+        "historical_significance": "公司统治转折战场。",
+        "source_titles": [
+          "Digital South Asia Library: A Historical Atlas of South Asia",
+          "Archaeological Survey of India"
+        ],
+        "source_urls": [
+          "https://dsal.uchicago.edu/reference/schwartzberg/bootstrap_index.html",
+          "https://asi.nic.in/"
+        ],
+        "source_type": "historical_atlas|official_archaeology_or_heritage",
+        "confidence_note": "Coordinate is for map placement; site-level precision varies by location.",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          83.9808,
+          25.5647
+        ]
+      },
+      "properties": {
+        "location_id": "strategic_ind_0034",
+        "name": "Buxar",
+        "aliases": [],
+        "category": "battlefield",
+        "icon_key": "battle",
+        "importance_level": 2,
+        "display_priority": 134,
+        "start_year": 1764,
+        "end_year": 1764,
+        "active_years_raw": "1764年-1764年",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": 1764,
+            "end_year": 1764
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [],
+        "related_people": [],
+        "historical_name": "Buxar",
+        "modern_name": "Buxar",
+        "modern_admin_units_raw": "South Asia modern location; see source and coordinate note.",
+        "longitude": 83.9808,
+        "latitude": 25.5647,
+        "location_precision": "city",
+        "location_confidence_score": 85.0,
+        "strategic_summary": "公司财政权扩张前奏战场。",
+        "historical_significance": "公司财政权扩张前奏战场。",
+        "source_titles": [
+          "Digital South Asia Library: A Historical Atlas of South Asia",
+          "Archaeological Survey of India"
+        ],
+        "source_urls": [
+          "https://dsal.uchicago.edu/reference/schwartzberg/bootstrap_index.html",
+          "https://asi.nic.in/"
+        ],
+        "source_type": "historical_atlas|official_archaeology_or_heritage",
+        "confidence_note": "Coordinate is for map placement; site-level precision varies by location.",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.693,
+          12.4226
+        ]
+      },
+      "properties": {
+        "location_id": "strategic_ind_0035",
+        "name": "Srirangapatna",
+        "aliases": [],
+        "category": "fortress_city",
+        "icon_key": "capital",
+        "importance_level": 2,
+        "display_priority": 135,
+        "start_year": 1761,
+        "end_year": 1799,
+        "active_years_raw": "1761年-1799年",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": 1761,
+            "end_year": 1799
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [],
+        "related_people": [],
+        "historical_name": "Srirangapatna",
+        "modern_name": "Srirangapatna",
+        "modern_admin_units_raw": "South Asia modern location; see source and coordinate note.",
+        "longitude": 76.693,
+        "latitude": 12.4226,
+        "location_precision": "city",
+        "location_confidence_score": 85.0,
+        "strategic_summary": "迈索尔战争关键要塞。",
+        "historical_significance": "迈索尔战争关键要塞。",
+        "source_titles": [
+          "Digital South Asia Library: A Historical Atlas of South Asia",
+          "Archaeological Survey of India"
+        ],
+        "source_urls": [
+          "https://dsal.uchicago.edu/reference/schwartzberg/bootstrap_index.html",
+          "https://asi.nic.in/"
+        ],
+        "source_type": "historical_atlas|official_archaeology_or_heritage",
+        "confidence_note": "Coordinate is for map placement; site-level precision varies by location.",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          88.3639,
+          22.5726
+        ]
+      },
+      "properties": {
+        "location_id": "strategic_ind_0036",
+        "name": "Kolkata",
+        "aliases": [],
+        "category": "maritime_port",
+        "icon_key": "capital",
+        "importance_level": 2,
+        "display_priority": 136,
+        "start_year": 1690,
+        "end_year": 1911,
+        "active_years_raw": "1690年-1911年",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": 1690,
+            "end_year": 1911
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [],
+        "related_people": [],
+        "historical_name": "Kolkata",
+        "modern_name": "Kolkata",
+        "modern_admin_units_raw": "South Asia modern location; see source and coordinate note.",
+        "longitude": 88.3639,
+        "latitude": 22.5726,
+        "location_precision": "city",
+        "location_confidence_score": 85.0,
+        "strategic_summary": "公司和英属印度早期首都港市。",
+        "historical_significance": "公司和英属印度早期首都港市。",
+        "source_titles": [
+          "Digital South Asia Library: A Historical Atlas of South Asia",
+          "Archaeological Survey of India"
+        ],
+        "source_urls": [
+          "https://dsal.uchicago.edu/reference/schwartzberg/bootstrap_index.html",
+          "https://asi.nic.in/"
+        ],
+        "source_type": "historical_atlas|official_archaeology_or_heritage",
+        "confidence_note": "Coordinate is for map placement; site-level precision varies by location.",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.124,
+          15.2993
+        ]
+      },
+      "properties": {
+        "location_id": "strategic_ind_0037",
+        "name": "Goa",
+        "aliases": [],
+        "category": "maritime_port",
+        "icon_key": "colonial_port",
+        "importance_level": 2,
+        "display_priority": 137,
+        "start_year": 1510,
+        "end_year": 1961,
+        "active_years_raw": "1510年-1961年",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": 1510,
+            "end_year": 1961
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [],
+        "related_people": [],
+        "historical_name": "Goa",
+        "modern_name": "Goa",
+        "modern_admin_units_raw": "South Asia modern location; see source and coordinate note.",
+        "longitude": 74.124,
+        "latitude": 15.2993,
+        "location_precision": "city",
+        "location_confidence_score": 85.0,
+        "strategic_summary": "葡属印度核心港口和殖民飞地。",
+        "historical_significance": "葡属印度核心港口和殖民飞地。",
+        "source_titles": [
+          "Digital South Asia Library: A Historical Atlas of South Asia",
+          "Archaeological Survey of India"
+        ],
+        "source_urls": [
+          "https://dsal.uchicago.edu/reference/schwartzberg/bootstrap_index.html",
+          "https://asi.nic.in/"
+        ],
+        "source_type": "historical_atlas|official_archaeology_or_heritage",
+        "confidence_note": "Coordinate is for map placement; site-level precision varies by location.",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.8083,
+          11.9416
+        ]
+      },
+      "properties": {
+        "location_id": "strategic_ind_0038",
+        "name": "Puducherry",
+        "aliases": [],
+        "category": "maritime_port",
+        "icon_key": "colonial_port",
+        "importance_level": 2,
+        "display_priority": 138,
+        "start_year": 1674,
+        "end_year": 1954,
+        "active_years_raw": "1674年-1954年",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": 1674,
+            "end_year": 1954
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [],
+        "related_people": [],
+        "historical_name": "Puducherry",
+        "modern_name": "Puducherry",
+        "modern_admin_units_raw": "South Asia modern location; see source and coordinate note.",
+        "longitude": 79.8083,
+        "latitude": 11.9416,
+        "location_precision": "city",
+        "location_confidence_score": 85.0,
+        "strategic_summary": "法属印度核心据点。",
+        "historical_significance": "法属印度核心据点。",
+        "source_titles": [
+          "Digital South Asia Library: A Historical Atlas of South Asia",
+          "Archaeological Survey of India"
+        ],
+        "source_urls": [
+          "https://dsal.uchicago.edu/reference/schwartzberg/bootstrap_index.html",
+          "https://asi.nic.in/"
+        ],
+        "source_type": "historical_atlas|official_archaeology_or_heritage",
+        "confidence_note": "Coordinate is for map placement; site-level precision varies by location.",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.209,
+          28.6139
+        ]
+      },
+      "properties": {
+        "location_id": "strategic_ind_0039",
+        "name": "New Delhi",
+        "aliases": [],
+        "category": "fortress_city",
+        "icon_key": "capital",
+        "importance_level": 2,
+        "display_priority": 139,
+        "start_year": 1911,
+        "end_year": 1990,
+        "active_years_raw": "1911年-1990年",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": 1911,
+            "end_year": 1990
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [],
+        "related_people": [],
+        "historical_name": "New Delhi",
+        "modern_name": "New Delhi",
+        "modern_admin_units_raw": "South Asia modern location; see source and coordinate note.",
+        "longitude": 77.209,
+        "latitude": 28.6139,
+        "location_precision": "city",
+        "location_confidence_score": 85.0,
+        "strategic_summary": "殖民后期和共和国首都。",
+        "historical_significance": "殖民后期和共和国首都。",
+        "source_titles": [
+          "Digital South Asia Library: A Historical Atlas of South Asia",
+          "Archaeological Survey of India"
+        ],
+        "source_urls": [
+          "https://dsal.uchicago.edu/reference/schwartzberg/bootstrap_index.html",
+          "https://asi.nic.in/"
+        ],
+        "source_type": "historical_atlas|official_archaeology_or_heritage",
+        "confidence_note": "Coordinate is for map placement; site-level precision varies by location.",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.8723,
+          31.634
+        ]
+      },
+      "properties": {
+        "location_id": "strategic_ind_0040",
+        "name": "Amritsar",
+        "aliases": [],
+        "category": "cultural_allusion",
+        "icon_key": "city",
+        "importance_level": 2,
+        "display_priority": 140,
+        "start_year": 1800,
+        "end_year": 1984,
+        "active_years_raw": "1800年-1984年",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": 1800,
+            "end_year": 1984
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [],
+        "related_people": [],
+        "historical_name": "Amritsar",
+        "modern_name": "Amritsar",
+        "modern_admin_units_raw": "South Asia modern location; see source and coordinate note.",
+        "longitude": 74.8723,
+        "latitude": 31.634,
+        "location_precision": "city",
+        "location_confidence_score": 85.0,
+        "strategic_summary": "锡克宗教中心及近现代政治事件地点。",
+        "historical_significance": "锡克宗教中心及近现代政治事件地点。",
+        "source_titles": [
+          "Digital South Asia Library: A Historical Atlas of South Asia",
+          "Archaeological Survey of India"
+        ],
+        "source_urls": [
+          "https://dsal.uchicago.edu/reference/schwartzberg/bootstrap_index.html",
+          "https://asi.nic.in/"
+        ],
+        "source_type": "historical_atlas|official_archaeology_or_heritage",
+        "confidence_note": "Coordinate is for map placement; site-level precision varies by location.",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.7064,
+          28.9845
+        ]
+      },
+      "properties": {
+        "location_id": "strategic_ind_0041",
+        "name": "Meerut",
+        "aliases": [],
+        "category": "fortress_city",
+        "icon_key": "military_station",
+        "importance_level": 2,
+        "display_priority": 141,
+        "start_year": 1857,
+        "end_year": 1857,
+        "active_years_raw": "1857年-1857年",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": 1857,
+            "end_year": 1857
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [],
+        "related_people": [],
+        "historical_name": "Meerut",
+        "modern_name": "Meerut",
+        "modern_admin_units_raw": "South Asia modern location; see source and coordinate note.",
+        "longitude": 77.7064,
+        "latitude": 28.9845,
+        "location_precision": "city",
+        "location_confidence_score": 85.0,
+        "strategic_summary": "1857年起义重要爆发地。",
+        "historical_significance": "1857年起义重要爆发地。",
+        "source_titles": [
+          "Digital South Asia Library: A Historical Atlas of South Asia",
+          "Archaeological Survey of India"
+        ],
+        "source_urls": [
+          "https://dsal.uchicago.edu/reference/schwartzberg/bootstrap_index.html",
+          "https://asi.nic.in/"
+        ],
+        "source_type": "historical_atlas|official_archaeology_or_heritage",
+        "confidence_note": "Coordinate is for map placement; site-level precision varies by location.",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.8043,
+          20.887
+        ]
+      },
+      "properties": {
+        "location_id": "strategic_ind_0042",
+        "name": "Dandi",
+        "aliases": [],
+        "category": "cultural_allusion",
+        "icon_key": "national_movement",
+        "importance_level": 2,
+        "display_priority": 142,
+        "start_year": 1930,
+        "end_year": 1930,
+        "active_years_raw": "1930年-1930年",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": 1930,
+            "end_year": 1930
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [],
+        "related_people": [],
+        "historical_name": "Dandi",
+        "modern_name": "Dandi",
+        "modern_admin_units_raw": "South Asia modern location; see source and coordinate note.",
+        "longitude": 72.8043,
+        "latitude": 20.887,
+        "location_precision": "city",
+        "location_confidence_score": 85.0,
+        "strategic_summary": "盐行军终点。",
+        "historical_significance": "盐行军终点。",
+        "source_titles": [
+          "Digital South Asia Library: A Historical Atlas of South Asia",
+          "Archaeological Survey of India"
+        ],
+        "source_urls": [
+          "https://dsal.uchicago.edu/reference/schwartzberg/bootstrap_index.html",
+          "https://asi.nic.in/"
+        ],
+        "source_type": "historical_atlas|official_archaeology_or_heritage",
+        "confidence_note": "Coordinate is for map placement; site-level precision varies by location.",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.7973,
+          34.0837
+        ]
+      },
+      "properties": {
+        "location_id": "strategic_ind_0043",
+        "name": "Srinagar",
+        "aliases": [],
+        "category": "frontier_gate",
+        "icon_key": "frontier_city",
+        "importance_level": 2,
+        "display_priority": 143,
+        "start_year": 1947,
+        "end_year": 1990,
+        "active_years_raw": "1947年-1990年",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": 1947,
+            "end_year": 1990
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [],
+        "related_people": [],
+        "historical_name": "Srinagar",
+        "modern_name": "Srinagar",
+        "modern_admin_units_raw": "South Asia modern location; see source and coordinate note.",
+        "longitude": 74.7973,
+        "latitude": 34.0837,
+        "location_precision": "city",
+        "location_confidence_score": 85.0,
+        "strategic_summary": "克什米尔争议和喜马拉雅边疆核心城市。",
+        "historical_significance": "克什米尔争议和喜马拉雅边疆核心城市。",
+        "source_titles": [
+          "Digital South Asia Library: A Historical Atlas of South Asia",
+          "Archaeological Survey of India"
+        ],
+        "source_urls": [
+          "https://dsal.uchicago.edu/reference/schwartzberg/bootstrap_index.html",
+          "https://asi.nic.in/"
+        ],
+        "source_type": "historical_atlas|official_archaeology_or_heritage",
+        "confidence_note": "Coordinate is for map placement; site-level precision varies by location.",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          91.8662,
+          27.5861
+        ]
+      },
+      "properties": {
+        "location_id": "strategic_ind_0044",
+        "name": "Tawang",
+        "aliases": [],
+        "category": "frontier_gate",
+        "icon_key": "frontier",
+        "importance_level": 2,
+        "display_priority": 144,
+        "start_year": 1962,
+        "end_year": 1962,
+        "active_years_raw": "1962年-1962年",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": 1962,
+            "end_year": 1962
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [],
+        "related_people": [],
+        "historical_name": "Tawang",
+        "modern_name": "Tawang",
+        "modern_admin_units_raw": "South Asia modern location; see source and coordinate note.",
+        "longitude": 91.8662,
+        "latitude": 27.5861,
+        "location_precision": "city",
+        "location_confidence_score": 85.0,
+        "strategic_summary": "NEFA/阿鲁纳恰尔边境战争关键方向。",
+        "historical_significance": "NEFA/阿鲁纳恰尔边境战争关键方向。",
+        "source_titles": [
+          "Digital South Asia Library: A Historical Atlas of South Asia",
+          "Archaeological Survey of India"
+        ],
+        "source_urls": [
+          "https://dsal.uchicago.edu/reference/schwartzberg/bootstrap_index.html",
+          "https://asi.nic.in/"
+        ],
+        "source_type": "historical_atlas|official_archaeology_or_heritage",
+        "confidence_note": "Coordinate is for map placement; site-level precision varies by location.",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          90.4125,
+          23.8103
+        ]
+      },
+      "properties": {
+        "location_id": "strategic_ind_0046",
+        "name": "Dhaka",
+        "aliases": [],
+        "category": "fortress_city",
+        "icon_key": "capital",
+        "importance_level": 2,
+        "display_priority": 146,
+        "start_year": 1971,
+        "end_year": 1990,
+        "active_years_raw": "1971年-1990年",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": 1971,
+            "end_year": 1990
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [],
+        "related_people": [],
+        "historical_name": "Dhaka",
+        "modern_name": "Dhaka",
+        "modern_admin_units_raw": "South Asia modern location; see source and coordinate note.",
+        "longitude": 90.4125,
+        "latitude": 23.8103,
+        "location_precision": "city",
+        "location_confidence_score": 85.0,
+        "strategic_summary": "1971年战争和孟加拉国独立核心城市。",
+        "historical_significance": "1971年战争和孟加拉国独立核心城市。",
+        "source_titles": [
+          "Digital South Asia Library: A Historical Atlas of South Asia",
+          "Archaeological Survey of India"
+        ],
+        "source_urls": [
+          "https://dsal.uchicago.edu/reference/schwartzberg/bootstrap_index.html",
+          "https://asi.nic.in/"
+        ],
+        "source_type": "historical_atlas|official_archaeology_or_heritage",
+        "confidence_note": "Coordinate is for map placement; site-level precision varies by location.",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "data_version": "vIndian",
+  "comment": "vIndian 演示路线示例（每条 preset 含 dataset_id: vIndian，前端激活时自动把 active 切回 [vIndian]）。年份选取参考主要王朝兴衰节点。",
+  "presets": [
+    {
+      "preset_id": "india_six_millennia",
+      "title": "印度文明六千年",
+      "subtitle": "从印度河文明到独立 · 12 个关键节点",
+      "default_dwell_ms": 7000,
+      "dataset_id": "vIndian",
+      "steps": [
+        { "year": -2600, "narration": "印度河文明 (Indus Valley Civilization) 鼎盛期。摩亨佐-达罗 / 哈拉帕双城出现规划严整的下水道系统。" },
+        { "year": -1500, "narration": "印欧语系雅利安人迁入南亚北部，吠陀文化时期开始，《梨俱吠陀》在此后数百年口传成书。" },
+        { "year": -600, "narration": "Mahajanapadas（十六大国）并立。摩揭陀、迦尸、拘萨罗逐步成为东恒河流域强权。" },
+        { "year": -321, "narration": "旃陀罗笈多在考底利耶辅佐下推翻难陀王朝，建立孔雀帝国，首都华氏城。" },
+        { "year": -261, "narration": "阿育王征服羯陵伽，战争惨烈促其改宗佛教，刻立法柱遍布次大陆。" },
+        { "year": 320, "narration": "笈多王朝在恒河平原重建中央权力，开启南亚古典黄金期。" },
+        { "year": 711, "narration": "倭马亚阿拉伯军攻占信德省，南亚开始与伊斯兰世界正面接触。" },
+        { "year": 1206, "narration": "库特卜·丁·艾巴克在德里建立奴隶王朝，德里苏丹国时代开启。" },
+        { "year": 1526, "narration": "巴布尔在第一次帕尼帕特战役击败洛迪王朝，莫卧儿帝国建立。" },
+        { "year": 1757, "narration": "普拉西战役，英国东印度公司击败孟加拉那瓦布，开始事实统治印度。" },
+        { "year": 1857, "narration": "印度大起义席卷北印；次年东印度公司被解散，王室开启 British Raj。" },
+        { "year": 1947, "narration": "印巴分治，南亚两个独立国家诞生；1950 年印度共和国成立。" }
+      ]
+    },
+    {
+      "preset_id": "india_tamil_south",
+      "title": "南印度泰米尔之光",
+      "subtitle": "朱罗 · 帕拉瓦 · 潘地亚 · 1500 年南印度王朝",
+      "default_dwell_ms": 7000,
+      "dataset_id": "vIndian",
+      "steps": [
+        { "year": 100, "narration": "Sangam 文学时期。早期朱罗、潘地亚、切拉三大王国奠定泰米尔文明根基。" },
+        { "year": 600, "narration": "帕拉瓦王朝在甘吉布勒姆 (Kanchipuram) 兴盛，南印度寺庙建筑黄金期。" },
+        { "year": 985, "narration": "罗阇罗阇朱罗一世即位，朱罗王朝开始海上扩张。" },
+        { "year": 1010, "narration": "罗阇朱罗大帝建成坦贾武尔布里哈迪斯瓦拉神庙，至今仍是世界文化遗产。" },
+        { "year": 1025, "narration": "拉真陀朱罗一世远征三佛齐 (Srivijaya)，朱罗海军跨过孟加拉湾。" },
+        { "year": 1336, "narration": "毗奢耶那伽罗 (Vijayanagara) 帝国建立，南印度对抗北方苏丹国数百年。" },
+        { "year": 1565, "narration": "塔利科塔战役。德干苏丹国联军击败毗奢耶那伽罗，南印度政治格局重组。" },
+        { "year": 1690, "narration": "英国东印度公司在金奈 (Madras) 建堡，南印度殖民化加速。" }
+      ]
+    },
+    {
+      "preset_id": "india_mughal_to_independence",
+      "title": "莫卧儿到独立",
+      "subtitle": "1526 - 1947 · 莫卧儿盛世到分治前夜",
+      "default_dwell_ms": 6500,
+      "dataset_id": "vIndian",
+      "steps": [
+        { "year": 1526, "narration": "巴布尔在帕尼帕特击败洛迪，莫卧儿立国。" },
+        { "year": 1556, "narration": "阿克巴大帝即位，开启六十年文化与制度奠基。" },
+        { "year": 1632, "narration": "沙贾汗开始营建泰姬陵。" },
+        { "year": 1680, "narration": "马拉塔联盟首领希瓦吉去世，南印度抗莫卧儿斗争进入新阶段。" },
+        { "year": 1707, "narration": "奥朗则布去世，莫卧儿帝国开始解体，地方势力崛起。" },
+        { "year": 1757, "narration": "普拉西战役，英国东印度公司事实接管孟加拉。" },
+        { "year": 1857, "narration": "印度大起义，标志着英国直接统治时代的来临。" },
+        { "year": 1885, "narration": "印度国民大会党 (Indian National Congress) 成立。" },
+        { "year": 1919, "narration": "阿姆利则惨案，非暴力不合作运动兴起。" },
+        { "year": 1942, "narration": "退出印度运动 (Quit India)，独立运动进入最后阶段。" },
+        { "year": 1947, "narration": "印巴分治，南亚两个独立国家诞生。" }
+      ]
+    }
+  ]
+}
