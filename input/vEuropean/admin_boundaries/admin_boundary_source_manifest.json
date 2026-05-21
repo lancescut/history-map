@@ -1,0 +1,183 @@
+{
+  "source": "geoBoundaries",
+  "source_release": "gbOpen",
+  "pinned_commit": "9469f09",
+  "source_url": "https://www.geoboundaries.org/",
+  "source_license": "Open Data Commons Open Database License 1.0",
+  "source_attribution": "geoBoundaries",
+  "crs": "WGS84",
+  "admin_id_scheme": "ADM0 admin_id = ISO3 (e.g. FRA, DEU). ADM1 admin_id = ISO 3166-2 code if shapeISO present (e.g. DE-BY, IT-25), else `{ISO2}-{8-char alphanumeric slug of shapeName}` with collision suffix.",
+  "generated_at": "2026-05-21T10:25:26+00:00",
+  "build_date": "2026-05-21T10:25:26+00:00",
+  "cleaning_script_version": "2026-05-21-veuropean-multi-iso",
+  "cleaning_script_path": "scripts/prepare_european_admin_boundaries.py",
+  "cleaning_script_sha256": "f1c88b94e5c405e90cc3038d08717f7b680acc10d77dcb48fc339614ac0db6d3",
+  "adm0": {
+    "normalized_path": "input/vEuropean/admin_boundaries/eu_adm0_normalized.geojson",
+    "normalized_sha256": "4dc5ba403aa0f69753f4014f075b384cfa8d617db8764c0aa1e7dcce5b4f6a45",
+    "feature_count": 47,
+    "requested_countries": [
+      "ALB",
+      "AND",
+      "AUT",
+      "BEL",
+      "BGR",
+      "BIH",
+      "BLR",
+      "CHE",
+      "CYP",
+      "CZE",
+      "DEU",
+      "DNK",
+      "ESP",
+      "EST",
+      "FIN",
+      "FRA",
+      "GBR",
+      "GRC",
+      "HRV",
+      "HUN",
+      "IRL",
+      "ISL",
+      "ITA",
+      "LIE",
+      "LTU",
+      "LUX",
+      "LVA",
+      "MCO",
+      "MDA",
+      "MKD",
+      "MLT",
+      "MNE",
+      "NLD",
+      "NOR",
+      "POL",
+      "PRT",
+      "ROU",
+      "RUS",
+      "SMR",
+      "SRB",
+      "SVK",
+      "SVN",
+      "SWE",
+      "TUR",
+      "UKR",
+      "VAT",
+      "XKX"
+    ],
+    "missing_countries": []
+  },
+  "adm1": {
+    "federations": [
+      "AUT",
+      "BEL",
+      "CHE",
+      "DEU",
+      "ESP",
+      "GBR",
+      "ITA",
+      "NLD",
+      "POL",
+      "RUS"
+    ],
+    "per_federation": [
+      {
+        "iso3": "AUT",
+        "name_zh": "奥地利",
+        "feature_count": 9,
+        "raw_sha256": "b4a2304bac51b36a7f8463c91089e4b468ef8ee1faa529592673dbefc8cee69e",
+        "normalized_path": "input/vEuropean/admin_boundaries/aut_adm1_normalized.geojson",
+        "download_url": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/AUT/ADM1/geoBoundaries-AUT-ADM1_simplified.geojson",
+        "error": null
+      },
+      {
+        "iso3": "BEL",
+        "name_zh": "比利时",
+        "feature_count": 3,
+        "raw_sha256": "7af87f5035779f0aefe5bf930288572979e490ab0441fd9b92942a519bea0974",
+        "normalized_path": "input/vEuropean/admin_boundaries/bel_adm1_normalized.geojson",
+        "download_url": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/BEL/ADM1/geoBoundaries-BEL-ADM1_simplified.geojson",
+        "error": null
+      },
+      {
+        "iso3": "CHE",
+        "name_zh": "瑞士",
+        "feature_count": 26,
+        "raw_sha256": "c0a78aa1cc5ce4a50e08e72d6424d4744024eb7421b13aedd8c3dd1139285cef",
+        "normalized_path": "input/vEuropean/admin_boundaries/che_adm1_normalized.geojson",
+        "download_url": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/CHE/ADM1/geoBoundaries-CHE-ADM1_simplified.geojson",
+        "error": null
+      },
+      {
+        "iso3": "DEU",
+        "name_zh": "德国",
+        "feature_count": 16,
+        "raw_sha256": "511b3625ad4568d12a6bfcb1bdea4e877199e1923e502cb80224b8164128eb05",
+        "normalized_path": "input/vEuropean/admin_boundaries/deu_adm1_normalized.geojson",
+        "download_url": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/DEU/ADM1/geoBoundaries-DEU-ADM1_simplified.geojson",
+        "error": null
+      },
+      {
+        "iso3": "ESP",
+        "name_zh": "西班牙",
+        "feature_count": 19,
+        "raw_sha256": "b61a1bf661b90883763f633f5e9dbc27e7356309e42cbe56b60d2ceab5112f63",
+        "normalized_path": "input/vEuropean/admin_boundaries/esp_adm1_normalized.geojson",
+        "download_url": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/ESP/ADM1/geoBoundaries-ESP-ADM1_simplified.geojson",
+        "error": null
+      },
+      {
+        "iso3": "GBR",
+        "name_zh": "英国",
+        "feature_count": 4,
+        "raw_sha256": "85a05dc0e939aff5cca6d9b8bf0684efe6c098a54579b24531a3f5594a6e450e",
+        "normalized_path": "input/vEuropean/admin_boundaries/gbr_adm1_normalized.geojson",
+        "download_url": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/GBR/ADM1/geoBoundaries-GBR-ADM1_simplified.geojson",
+        "error": null
+      },
+      {
+        "iso3": "ITA",
+        "name_zh": "意大利",
+        "feature_count": 5,
+        "raw_sha256": "ff733cbd49b16f260360cd848361abf736de313e75c00cbe9ffad451a311d606",
+        "normalized_path": "input/vEuropean/admin_boundaries/ita_adm1_normalized.geojson",
+        "download_url": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/ITA/ADM1/geoBoundaries-ITA-ADM1_simplified.geojson",
+        "error": null
+      },
+      {
+        "iso3": "NLD",
+        "name_zh": "荷兰",
+        "feature_count": 12,
+        "raw_sha256": "16fcfe491a4fd6a3f977b743f23ce4116205c06880b2c521b02bc6c58f00b174",
+        "normalized_path": "input/vEuropean/admin_boundaries/nld_adm1_normalized.geojson",
+        "download_url": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/NLD/ADM1/geoBoundaries-NLD-ADM1_simplified.geojson",
+        "error": null
+      },
+      {
+        "iso3": "POL",
+        "name_zh": "波兰",
+        "feature_count": 16,
+        "raw_sha256": "865fbfb8fa98f806c9213a48d6538e7454b6a28db8969a796fc668b62b36a5a7",
+        "normalized_path": "input/vEuropean/admin_boundaries/pol_adm1_normalized.geojson",
+        "download_url": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/POL/ADM1/geoBoundaries-POL-ADM1_simplified.geojson",
+        "error": null
+      },
+      {
+        "iso3": "RUS",
+        "name_zh": "俄罗斯",
+        "feature_count": 83,
+        "raw_sha256": "47179a0b1f30097226bc057921e674d83a9ac9e2a44023e687351355cdb7fc1b",
+        "normalized_path": "input/vEuropean/admin_boundaries/rus_adm1_normalized.geojson",
+        "download_url": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/RUS/ADM1/geoBoundaries-RUS-ADM1_simplified.geojson",
+        "error": null
+      }
+    ]
+  },
+  "geometry_quality": {
+    "coord_precision_decimals": 5,
+    "min_coordinate_count": 7,
+    "max_coordinate_count": 85311
+  },
+  "license_notice_path": "input/vEuropean/admin_boundaries/ODbL-1.0-NOTICE.md",
+  "admin_id_reference_path": "input/vEuropean/admin_boundaries/ADMIN_ID_REFERENCE.md"
+}

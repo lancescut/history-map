@@ -295,12 +295,14 @@ const OKABE_ITO_PALETTE = [
 
 export type ColorPalette = "default" | "colorblind";
 
-// 多源场景下让印度政权与中国政权视觉分簇：
+// 多源场景下让各数据集视觉分簇：
 //   v03 = 全色相均匀分布（默认值，不动既有色彩）
 //   vIndian = 偏暖色区间（hue 主要落在 10-100 / 320-360，红橙黄棕系），与印度文化的暖色直觉一致
+//   vEuropean = 偏冷色区间（hue 落在 200-330，蓝紫青色系），与中国/印度明显区分
 const DATASET_HUE_RANGE: Record<string, { offset: number; range: number }> = {
   v03: { offset: 0, range: 360 },
-  vIndian: { offset: -25, range: 130 }
+  vIndian: { offset: -25, range: 130 },
+  vEuropean: { offset: 200, range: 130 }
 };
 
 export function macroPeriodColor(

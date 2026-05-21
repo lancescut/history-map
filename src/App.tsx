@@ -84,22 +84,33 @@ import { DATASET_IDS } from "./types";
 
 const PLAYBACK_SPEEDS = [0.5, 1, 2, 5, 10];
 
-// 各数据源的默认镜头：单选时飞各自中心；双选时飞两国中间俯视。
-// flyTo 仅在 active 集合变化时触发，不覆盖用户后续手动平移。
+// 各数据源的默认镜头：单选时飞各自中心；多选时飞所有 active 数据集的几何中心，
+// zoom 随跨度自适应。flyTo 仅在 active 集合变化时触发，不覆盖用户后续手动平移。
 const DATASET_CAMERA: Record<DatasetId, { center: [number, number]; zoom: number }> = {
   v03: { center: [105, 35], zoom: 3 },
-  vIndian: { center: [78, 22], zoom: 4 }
+  vIndian: { center: [78, 22], zoom: 4 },
+  vEuropean: { center: [12, 50], zoom: 3.5 }
 };
-const DUAL_CAMERA: { center: [number, number]; zoom: number } = {
-  center: [91.5, 28],
-  zoom: 2.6
+// 预定义多选组合相机：避免每次 lerp 出难看的中点（如 EU+CN 中心落到中亚沙漠）。
+const PAIR_CAMERA: Partial<Record<string, { center: [number, number]; zoom: number }>> = {
+  "v03+vIndian": { center: [91.5, 28], zoom: 2.6 },
+  "v03+vEuropean": { center: [60, 45], zoom: 1.9 },
+  "vIndian+vEuropean": { center: [45, 35], zoom: 2.4 }
+};
+// 三选：横跨欧亚大陆，zoom 拉到全球俯视。
+const TRIPLE_CAMERA: { center: [number, number]; zoom: number } = {
+  center: [60, 38],
+  zoom: 1.6
 };
 
 function cameraForDatasets(active: DatasetId[]): { center: [number, number]; zoom: number } {
+  if (active.length === 0) return DATASET_CAMERA.v03;
   if (active.length === 1) return DATASET_CAMERA[active[0]];
-  if (active.length >= 2) return DUAL_CAMERA;
-  // 兜底：active 空（理论上 sanitize 保证不会发生）→ 退回 v03 视角。
-  return DATASET_CAMERA.v03;
+  if (active.length === 2) {
+    const key = [...active].sort().join("+");
+    return PAIR_CAMERA[key] ?? TRIPLE_CAMERA;
+  }
+  return TRIPLE_CAMERA;
 }
 
 interface StrategicLocationHoverState {
@@ -126,13 +137,15 @@ function App() {
   // 从 active 集合移除时不卸载（保留 cache 便于二次切换瞬时恢复）。
   const [datasetBundles, setDatasetBundles] = useState<Record<DatasetId, DatasetBundle | null>>({
     v03: null,
-    vIndian: null
+    vIndian: null,
+    vEuropean: null
   });
   // 多源 yearData：每个 active dataset 独立 fetch /data/{id}/years/{Y}.json，
   // 派生 yearData 合并各源 polities / events / contexts，并给 polities 注入 dataset_id。
   const [yearDataByDataset, setYearDataByDataset] = useState<Record<DatasetId, YearData | null>>({
     v03: null,
-    vIndian: null
+    vIndian: null,
+    vEuropean: null
   });
   const [appState, setReactAppState] = useState<StoredAppState>(() => defaultAppState());
   const storeRef = useRef<StateStore | null>(null);

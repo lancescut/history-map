@@ -1,7 +1,7 @@
 // 已知数据源标识。新增数据源在此扩展，同时在 src/data.ts 的 getter / loadDataset 中
 // 加路径解析；StateStore migration 注入默认 `["v03"]`。
-export type DatasetId = "v03" | "vIndian";
-export const DATASET_IDS: readonly DatasetId[] = ["v03", "vIndian"] as const;
+export type DatasetId = "v03" | "vIndian" | "vEuropean";
+export const DATASET_IDS: readonly DatasetId[] = ["v03", "vIndian", "vEuropean"] as const;
 
 export interface Metadata {
   data_version: string;

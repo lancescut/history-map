@@ -17,8 +17,12 @@
     "prepare:neighbors:india": "python3 scripts/prepare_indian_neighbor_boundaries.py",
     "generate:data:india": "python3 scripts/generate_world_history_yearly.py --dataset vIndian && python3 scripts/validate_world_history_dataset.py --dataset vIndian && python3 scripts/prepare_indian_admin_boundaries.py && python3 scripts/prepare_indian_neighbor_boundaries.py && python3 scripts/validate_territory_overrides_vindian.py && python3 scripts/build_vindian_public_data.py",
     "validate:territory:india": "python3 scripts/validate_territory_overrides_vindian.py",
-    "generate:data:all": "npm run generate:data && npm run generate:data:india",
-    "validate:data": "python3 scripts/validate_dynamic_capitals.py && python3 scripts/validate_strategic_locations_v03.py && python3 scripts/validate_world_history_dataset.py --dataset vIndian && python3 scripts/validate_territory_overrides_vindian.py"
+    "prepare:boundaries:europe": "python3 scripts/prepare_european_admin_boundaries.py",
+    "prepare:neighbors:europe": "python3 scripts/prepare_european_neighbor_boundaries.py",
+    "generate:data:europe": "python3 scripts/generate_world_history_yearly.py --dataset vEuropean && python3 scripts/validate_world_history_dataset.py --dataset vEuropean && python3 scripts/prepare_european_admin_boundaries.py && python3 scripts/prepare_european_neighbor_boundaries.py && python3 scripts/validate_territory_overrides_european.py && python3 scripts/build_european_public_data.py",
+    "validate:territory:europe": "python3 scripts/validate_territory_overrides_european.py",
+    "generate:data:all": "npm run generate:data && npm run generate:data:india && npm run generate:data:europe",
+    "validate:data": "python3 scripts/validate_dynamic_capitals.py && python3 scripts/validate_strategic_locations_v03.py && python3 scripts/validate_world_history_dataset.py --dataset vIndian && python3 scripts/validate_territory_overrides_vindian.py && python3 scripts/validate_world_history_dataset.py --dataset vEuropean && python3 scripts/validate_territory_overrides_european.py"
   },
   "dependencies": {
     "@types/polylabel": "^1.1.3",

@@ -1,0 +1,23 @@
+{
+  "data_version": "vEuropean",
+  "generated_at": "2026-05-21T10:25:28+00:00",
+  "year_min": -3000,
+  "year_max": 1945,
+  "year_count": 4945,
+  "has_year_zero": false,
+  "polity_count": 0,
+  "ruler_count": 0,
+  "yearly_row_count": 0,
+  "capital_event_count": 0,
+  "capital_polity_count": 0,
+  "capital_migration_count": 0,
+  "capital_migration_years": [],
+  "territory_polity_count": 0,
+  "territory_missing_count": 0,
+  "territory_low_confidence_count": 0,
+  "historical_event_count": 0,
+  "historical_anecdote_count": 0,
+  "strategic_location_count": 0,
+  "admin_boundary_source": "geoBoundaries gbOpen (multi-ISO Europe aggregate)",
+  "admin_boundary_license": "Open Data Commons Open Database License 1.0"
+}

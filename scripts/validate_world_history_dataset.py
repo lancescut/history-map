@@ -77,8 +77,10 @@ def split_ids(raw: str) -> list[str]:
     return [part.strip() for part in (raw or "").split("|") if part.strip()]
 
 
-def load_manifest(dataset_dir: Path) -> dict:
-    for name in ("dataset_manifest_vIndian.json", "dataset_manifest.json"):
+def load_manifest(dataset_dir: Path, dataset_id: str) -> dict:
+    # Prefer the dataset-suffixed manifest (e.g. dataset_manifest_vEuropean.json), fall back to
+    # the legacy vIndian-named manifest, then to a generic dataset_manifest.json.
+    for name in (f"dataset_manifest_{dataset_id}.json", "dataset_manifest_vIndian.json", "dataset_manifest.json"):
         path = dataset_dir / name
         if path.exists():
             with path.open(encoding="utf-8") as f:
@@ -104,7 +106,7 @@ def main() -> int:
     args = parser.parse_args()
 
     dataset_dir = INPUT_ROOT / args.dataset
-    manifest = load_manifest(dataset_dir)
+    manifest = load_manifest(dataset_dir, args.dataset)
     files = manifest["files"]
 
     paths = {key: dataset_dir / value for key, value in files.items()}

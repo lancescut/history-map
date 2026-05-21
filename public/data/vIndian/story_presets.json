@@ -1,6 +1,6 @@
 {
   "data_version": "vIndian",
-  "generated_at": "2026-05-21T07:51:32+00:00",
+  "generated_at": "2026-05-21T10:25:49+00:00",
   "preset_count": 3,
   "comment": "vIndian 演示路线示例（每条 preset 含 dataset_id: vIndian，前端激活时自动把 active 切回 [vIndian]）。年份选取参考主要王朝兴衰节点。",
   "presets": [

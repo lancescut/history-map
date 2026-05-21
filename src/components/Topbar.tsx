@@ -6,10 +6,12 @@ import type {
   StoryPreset,
   StoryPresetsData
 } from "../types";
+import { DATASET_IDS } from "../types";
 
 const DATASET_LABELS: Record<DatasetId, { short: string; full: string }> = {
   v03: { short: "中国", full: "中国史" },
-  vIndian: { short: "印度", full: "印度史" }
+  vIndian: { short: "印度", full: "印度史" },
+  vEuropean: { short: "欧洲", full: "欧洲史" }
 };
 
 function datasetButtonLabel(active: DatasetId[]): string {
@@ -61,7 +63,7 @@ export function Topbar({
   setDatasetPickerOpen: (next: boolean | ((prev: boolean) => boolean)) => void;
   onToggleDataset: (id: DatasetId) => void;
 }) {
-  const datasetLabelMap: Record<DatasetId, string> = { v03: "中国史", vIndian: "印度史" };
+  const datasetLabelMap: Record<DatasetId, string> = { v03: "中国史", vIndian: "印度史", vEuropean: "欧洲史" };
   const datasetTagInline = activeDatasets.map((id) => datasetLabelMap[id]).join(" + ");
   const title = activeDatasets.length === 1 && activeDatasets[0] === "v03"
     ? "中国朝代更迭地图"
@@ -118,7 +120,7 @@ export function Topbar({
         </button>
         {datasetPickerOpen ? (
           <div className="story-picker-menu" role="menu">
-            {(["v03", "vIndian"] as DatasetId[]).map((id) => {
+            {DATASET_IDS.map((id) => {
               const isLastChecked = activeDatasets.length === 1 && activeDatasets[0] === id;
               const checked = activeDatasets.includes(id);
               return (

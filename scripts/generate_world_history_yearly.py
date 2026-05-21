@@ -138,23 +138,28 @@ def iter_years(start: int, end: int) -> range:
     return range(lo, hi + 1)
 
 
-def load_manifest(dataset_dir: Path) -> dict[str, str]:
-    manifest_path = dataset_dir / "dataset_manifest_vIndian.json"
-    generic_path = dataset_dir / "dataset_manifest.json"
-    path = manifest_path if manifest_path.exists() else generic_path
-    if not path.exists():
-        raise FileNotFoundError(f"Missing dataset manifest in {dataset_dir}")
-    with path.open(encoding="utf-8") as f:
-        return json.load(f)
+def load_manifest(dataset_dir: Path, dataset_id: str) -> dict[str, str]:
+    # Prefer the dataset-suffixed manifest (e.g. dataset_manifest_vEuropean.json), fall back to
+    # the legacy hardcoded vIndian name, then to a generic dataset_manifest.json.
+    candidates = [
+        dataset_dir / f"dataset_manifest_{dataset_id}.json",
+        dataset_dir / "dataset_manifest_vIndian.json",
+        dataset_dir / "dataset_manifest.json",
+    ]
+    for path in candidates:
+        if path.exists():
+            with path.open(encoding="utf-8") as f:
+                return json.load(f)
+    raise FileNotFoundError(f"Missing dataset manifest in {dataset_dir}; tried {[p.name for p in candidates]}")
 
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--dataset", required=True, help="Dataset directory under input/, e.g. vIndian")
+    parser.add_argument("--dataset", required=True, help="Dataset directory under input/, e.g. vIndian / vEuropean")
     args = parser.parse_args()
 
     dataset_dir = INPUT_ROOT / args.dataset
-    manifest = load_manifest(dataset_dir)
+    manifest = load_manifest(dataset_dir, args.dataset)
     files = manifest["files"]
 
     master_path = dataset_dir / files["polities_master"]
