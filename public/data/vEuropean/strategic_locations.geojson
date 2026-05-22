@@ -1,4 +1,1242 @@
 {
   "type": "FeatureCollection",
-  "features": []
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.1631,
+          35.298
+        ]
+      },
+      "properties": {
+        "location_id": "location_eur_0001",
+        "name": "Knossos",
+        "aliases": [],
+        "category": "capital",
+        "icon_key": "capital",
+        "importance_level": 2,
+        "display_priority": 100,
+        "start_year": -1900,
+        "end_year": -1450,
+        "active_years_raw": "-1900--1450",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": -1900,
+            "end_year": -1450
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [
+          "polity_eur_0001",
+          "polity_eur_0002"
+        ],
+        "related_people": [],
+        "historical_name": "Knossos",
+        "modern_name": "Knossos archaeological site",
+        "modern_admin_units_raw": "GRC",
+        "longitude": 25.1631,
+        "latitude": 35.298,
+        "location_precision": "city",
+        "location_confidence_score": 80.0,
+        "strategic_summary": "米诺斯文明最大宫殿建筑群，行政与宗教中心。",
+        "historical_significance": "米诺斯王宫与线性 A 文字主要发现地。",
+        "source_titles": [
+          "Encyclopaedia Britannica: Minoan civilization"
+        ],
+        "source_urls": [
+          "https://www.britannica.com/topic/Minoan-civilization"
+        ],
+        "source_type": "synthesized_secondary",
+        "confidence_note": "",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.7568,
+          37.73
+        ]
+      },
+      "properties": {
+        "location_id": "location_eur_0002",
+        "name": "Mycenae",
+        "aliases": [],
+        "category": "capital",
+        "icon_key": "capital",
+        "importance_level": 2,
+        "display_priority": 100,
+        "start_year": -1600,
+        "end_year": -1100,
+        "active_years_raw": "-1600--1100",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": -1600,
+            "end_year": -1100
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [
+          "polity_eur_0003"
+        ],
+        "related_people": [],
+        "historical_name": "Mycenae",
+        "modern_name": "Mycenae archaeological site",
+        "modern_admin_units_raw": "GRC",
+        "longitude": 22.7568,
+        "latitude": 37.73,
+        "location_precision": "city",
+        "location_confidence_score": 82.0,
+        "strategic_summary": "迈锡尼文明最重要的城堡型宫殿，狮门遗址。",
+        "historical_significance": "迈锡尼希腊政治军事中心；线性 B 文字主要发现地。",
+        "source_titles": [
+          "Encyclopaedia Britannica: Mycenaean civilization"
+        ],
+        "source_urls": [
+          "https://www.britannica.com/topic/Mycenaean-civilization"
+        ],
+        "source_type": "synthesized_secondary",
+        "confidence_note": "",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.2389,
+          39.9575
+        ]
+      },
+      "properties": {
+        "location_id": "location_eur_0003",
+        "name": "Troy",
+        "aliases": [],
+        "category": "strategic_city",
+        "icon_key": "strategic_city",
+        "importance_level": 2,
+        "display_priority": 100,
+        "start_year": -1700,
+        "end_year": -1180,
+        "active_years_raw": "-1700--1180",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": -1700,
+            "end_year": -1180
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [
+          "polity_eur_0004"
+        ],
+        "related_people": [],
+        "historical_name": "Troy",
+        "modern_name": "Hisarlık archaeological site",
+        "modern_admin_units_raw": "TUR",
+        "longitude": 26.2389,
+        "latitude": 39.9575,
+        "location_precision": "city",
+        "location_confidence_score": 72.0,
+        "strategic_summary": "达达尼尔海峡战略城邦，控制博斯普鲁斯通道。",
+        "historical_significance": "《伊利亚特》主角；考古发现至少九层叠加聚落。",
+        "source_titles": [
+          "Encyclopaedia Britannica: Greek civilization"
+        ],
+        "source_urls": [
+          "https://www.britannica.com/topic/ancient-Greek-civilization"
+        ],
+        "source_type": "synthesized_secondary",
+        "confidence_note": "",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.3232,
+          36.8531
+        ]
+      },
+      "properties": {
+        "location_id": "location_eur_0004",
+        "name": "Carthage",
+        "aliases": [],
+        "category": "capital",
+        "icon_key": "capital",
+        "importance_level": 2,
+        "display_priority": 100,
+        "start_year": -814,
+        "end_year": -146,
+        "active_years_raw": "-814--146",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": -814,
+            "end_year": -146
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [
+          "polity_eur_0013"
+        ],
+        "related_people": [],
+        "historical_name": "Carthage",
+        "modern_name": "Carthage",
+        "modern_admin_units_raw": "TUN",
+        "longitude": 10.3232,
+        "latitude": 36.8531,
+        "location_precision": "city",
+        "location_confidence_score": 82.0,
+        "strategic_summary": "布匿帝国首都，西地中海最大贸易城市。",
+        "historical_significance": "迦太基-罗马百余年争霸的政治军事中心。",
+        "source_titles": [
+          "Encyclopaedia Britannica: Carthage"
+        ],
+        "source_urls": [
+          "https://www.britannica.com/place/Carthage-ancient-city-Tunisia"
+        ],
+        "source_type": "synthesized_secondary",
+        "confidence_note": "",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.63,
+          37.6383
+        ]
+      },
+      "properties": {
+        "location_id": "location_eur_0005",
+        "name": "Olympia",
+        "aliases": [],
+        "category": "religious_site",
+        "icon_key": "religious_site",
+        "importance_level": 2,
+        "display_priority": 100,
+        "start_year": -1000,
+        "end_year": 393,
+        "active_years_raw": "-1000-393",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": -1000,
+            "end_year": 393
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [],
+        "related_people": [],
+        "historical_name": "Olympia",
+        "modern_name": "Olympia",
+        "modern_admin_units_raw": "GRC",
+        "longitude": 21.63,
+        "latitude": 37.6383,
+        "location_precision": "city",
+        "location_confidence_score": 80.0,
+        "strategic_summary": "奥林匹亚祭祀竞技中心。",
+        "historical_significance": "泛希腊宗教纽带与编年标志。",
+        "source_titles": [
+          "Encyclopaedia Britannica: Greek civilization"
+        ],
+        "source_urls": [
+          "https://www.britannica.com/topic/ancient-Greek-civilization"
+        ],
+        "source_type": "synthesized_secondary",
+        "confidence_note": "",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.5009,
+          38.4824
+        ]
+      },
+      "properties": {
+        "location_id": "location_eur_0006",
+        "name": "Delphi",
+        "aliases": [],
+        "category": "religious_site",
+        "icon_key": "religious_site",
+        "importance_level": 2,
+        "display_priority": 100,
+        "start_year": -800,
+        "end_year": 393,
+        "active_years_raw": "-800-393",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": -800,
+            "end_year": 393
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [],
+        "related_people": [],
+        "historical_name": "Delphi",
+        "modern_name": "Delphi",
+        "modern_admin_units_raw": "GRC",
+        "longitude": 22.5009,
+        "latitude": 38.4824,
+        "location_precision": "city",
+        "location_confidence_score": 82.0,
+        "strategic_summary": "阿波罗神谕中心，希腊世界宗教与外交枢纽。",
+        "historical_significance": "希腊各邦决策前必访神谕地。",
+        "source_titles": [
+          "Encyclopaedia Britannica: Greek civilization"
+        ],
+        "source_urls": [
+          "https://www.britannica.com/topic/ancient-Greek-civilization"
+        ],
+        "source_type": "synthesized_secondary",
+        "confidence_note": "",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.4964,
+          41.9028
+        ]
+      },
+      "properties": {
+        "location_id": "location_eur_0007",
+        "name": "Rome",
+        "aliases": [],
+        "category": "capital",
+        "icon_key": "capital",
+        "importance_level": 2,
+        "display_priority": 100,
+        "start_year": -753,
+        "end_year": 476,
+        "active_years_raw": "-753-476",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": -753,
+            "end_year": 476
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [
+          "polity_eur_0019",
+          "polity_eur_0032",
+          "polity_eur_0033"
+        ],
+        "related_people": [],
+        "historical_name": "Rome",
+        "modern_name": "Rome",
+        "modern_admin_units_raw": "ITA",
+        "longitude": 12.4964,
+        "latitude": 41.9028,
+        "location_precision": "city",
+        "location_confidence_score": 92.0,
+        "strategic_summary": "罗马王政、共和、帝国都城。",
+        "historical_significance": "地中海世界政治中心。",
+        "source_titles": [
+          "Encyclopaedia Britannica: Ancient Rome"
+        ],
+        "source_urls": [
+          "https://www.britannica.com/place/ancient-Rome"
+        ],
+        "source_type": "synthesized_secondary",
+        "confidence_note": "",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.9187,
+          31.2001
+        ]
+      },
+      "properties": {
+        "location_id": "location_eur_0008",
+        "name": "Alexandria",
+        "aliases": [],
+        "category": "capital",
+        "icon_key": "capital",
+        "importance_level": 2,
+        "display_priority": 100,
+        "start_year": -331,
+        "end_year": 641,
+        "active_years_raw": "-331-641",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": -331,
+            "end_year": 641
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [
+          "polity_eur_0030"
+        ],
+        "related_people": [],
+        "historical_name": "Alexandria",
+        "modern_name": "Alexandria",
+        "modern_admin_units_raw": "EGY",
+        "longitude": 29.9187,
+        "latitude": 31.2001,
+        "location_precision": "city",
+        "location_confidence_score": 88.0,
+        "strategic_summary": "希腊化最大文化、学术中心。",
+        "historical_significance": "亚历山大图书馆与法罗斯灯塔所在地。",
+        "source_titles": [
+          "Encyclopaedia Britannica: Greek civilization"
+        ],
+        "source_urls": [
+          "https://www.britannica.com/topic/ancient-Greek-civilization"
+        ],
+        "source_type": "synthesized_secondary",
+        "confidence_note": "",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.9784,
+          41.0082
+        ]
+      },
+      "properties": {
+        "location_id": "location_eur_0009",
+        "name": "Constantinople",
+        "aliases": [],
+        "category": "capital",
+        "icon_key": "capital",
+        "importance_level": 2,
+        "display_priority": 100,
+        "start_year": 330,
+        "end_year": 1453,
+        "active_years_raw": "330-1453",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": 330,
+            "end_year": 1453
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [
+          "polity_eur_0034",
+          "polity_eur_0036"
+        ],
+        "related_people": [],
+        "historical_name": "Constantinople",
+        "modern_name": "Istanbul",
+        "modern_admin_units_raw": "TUR",
+        "longitude": 28.9784,
+        "latitude": 41.0082,
+        "location_precision": "city",
+        "location_confidence_score": 92.0,
+        "strategic_summary": "新罗马，东罗马 / 拜占庭千年都城。",
+        "historical_significance": "基督教东方教会中心。",
+        "source_titles": [
+          "Encyclopaedia Britannica: Byzantine Empire"
+        ],
+        "source_urls": [
+          "https://www.britannica.com/place/Byzantine-Empire"
+        ],
+        "source_type": "synthesized_secondary",
+        "confidence_note": "",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.5266,
+          40.7572
+        ]
+      },
+      "properties": {
+        "location_id": "location_eur_0010",
+        "name": "Pella",
+        "aliases": [],
+        "category": "capital",
+        "icon_key": "capital",
+        "importance_level": 2,
+        "display_priority": 100,
+        "start_year": -400,
+        "end_year": -148,
+        "active_years_raw": "-400--148",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": -400,
+            "end_year": -148
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [
+          "polity_eur_0027",
+          "polity_eur_0028"
+        ],
+        "related_people": [],
+        "historical_name": "Pella",
+        "modern_name": "Pella",
+        "modern_admin_units_raw": "GRC",
+        "longitude": 22.5266,
+        "latitude": 40.7572,
+        "location_precision": "city",
+        "location_confidence_score": 82.0,
+        "strategic_summary": "马其顿王国首都，亚历山大大帝出生地。",
+        "historical_significance": "希腊化时代起源地。",
+        "source_titles": [
+          "Encyclopaedia Britannica: Greek civilization"
+        ],
+        "source_urls": [
+          "https://www.britannica.com/topic/ancient-Greek-civilization"
+        ],
+        "source_type": "synthesized_secondary",
+        "confidence_note": "",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0839,
+          50.7753
+        ]
+      },
+      "properties": {
+        "location_id": "location_eur_0011",
+        "name": "Aachen",
+        "aliases": [],
+        "category": "capital",
+        "icon_key": "capital",
+        "importance_level": 2,
+        "display_priority": 100,
+        "start_year": 794,
+        "end_year": 843,
+        "active_years_raw": "794-843",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": 794,
+            "end_year": 843
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [
+          "polity_eur_0044"
+        ],
+        "related_people": [],
+        "historical_name": "Aachen",
+        "modern_name": "Aachen",
+        "modern_admin_units_raw": "DEU|DE-NW",
+        "longitude": 6.0839,
+        "latitude": 50.7753,
+        "location_precision": "city",
+        "location_confidence_score": 88.0,
+        "strategic_summary": "加洛林帝国首都，查理曼宫廷与教堂所在地。",
+        "historical_significance": "加洛林文艺复兴中心。",
+        "source_titles": [
+          "Encyclopaedia Britannica: Carolingian dynasty"
+        ],
+        "source_urls": [
+          "https://www.britannica.com/topic/Carolingian-dynasty"
+        ],
+        "source_type": "synthesized_secondary",
+        "confidence_note": "",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.7794,
+          37.8882
+        ]
+      },
+      "properties": {
+        "location_id": "location_eur_0012",
+        "name": "Cordoba",
+        "aliases": [],
+        "category": "capital",
+        "icon_key": "capital",
+        "importance_level": 2,
+        "display_priority": 100,
+        "start_year": 756,
+        "end_year": 1031,
+        "active_years_raw": "756-1031",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": 756,
+            "end_year": 1031
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [
+          "polity_eur_0048"
+        ],
+        "related_people": [],
+        "historical_name": "Cordoba",
+        "modern_name": "Córdoba",
+        "modern_admin_units_raw": "ESP|ES-AN",
+        "longitude": -4.7794,
+        "latitude": 37.8882,
+        "location_precision": "city",
+        "location_confidence_score": 88.0,
+        "strategic_summary": "后倭马亚安达卢斯首都。",
+        "historical_significance": "十世纪欧洲最大、最繁荣的城市之一。",
+        "source_titles": [
+          "Encyclopaedia Britannica: Spain — History"
+        ],
+        "source_urls": [
+          "https://www.britannica.com/place/Spain/History"
+        ],
+        "source_type": "synthesized_secondary",
+        "confidence_note": "",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.5234,
+          50.4501
+        ]
+      },
+      "properties": {
+        "location_id": "location_eur_0013",
+        "name": "Kiev",
+        "aliases": [],
+        "category": "capital",
+        "icon_key": "capital",
+        "importance_level": 2,
+        "display_priority": 100,
+        "start_year": 882,
+        "end_year": 1240,
+        "active_years_raw": "882-1240",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": 882,
+            "end_year": 1240
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [
+          "polity_eur_0055"
+        ],
+        "related_people": [],
+        "historical_name": "Kiev",
+        "modern_name": "Kyiv",
+        "modern_admin_units_raw": "UKR",
+        "longitude": 30.5234,
+        "latitude": 50.4501,
+        "location_precision": "city",
+        "location_confidence_score": 88.0,
+        "strategic_summary": "基辅罗斯首都，东欧斯拉夫文明中心。",
+        "historical_significance": "东斯拉夫文明与东正教传播枢纽。",
+        "source_titles": [
+          "Encyclopaedia Britannica: Russia — History"
+        ],
+        "source_urls": [
+          "https://www.britannica.com/place/Russia/History"
+        ],
+        "source_type": "synthesized_secondary",
+        "confidence_note": "",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.3081,
+          51.0632
+        ]
+      },
+      "properties": {
+        "location_id": "location_eur_0014",
+        "name": "Winchester",
+        "aliases": [],
+        "category": "capital",
+        "icon_key": "capital",
+        "importance_level": 2,
+        "display_priority": 100,
+        "start_year": 519,
+        "end_year": 1066,
+        "active_years_raw": "519-1066",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": 519,
+            "end_year": 1066
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [
+          "polity_eur_0051"
+        ],
+        "related_people": [],
+        "historical_name": "Winchester",
+        "modern_name": "Winchester",
+        "modern_admin_units_raw": "GBR|GB-ENG",
+        "longitude": -1.3081,
+        "latitude": 51.0632,
+        "location_precision": "city",
+        "location_confidence_score": 82.0,
+        "strategic_summary": "韦塞克斯王国首都，盎格鲁-撒克逊英格兰行政中心。",
+        "historical_significance": "阿尔弗雷德大王所在。",
+        "source_titles": [
+          "Encyclopaedia Britannica: United Kingdom — History"
+        ],
+        "source_urls": [
+          "https://www.britannica.com/place/United-Kingdom/History"
+        ],
+        "source_type": "synthesized_secondary",
+        "confidence_note": "",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.8059,
+          43.9493
+        ]
+      },
+      "properties": {
+        "location_id": "location_eur_0015",
+        "name": "Avignon",
+        "aliases": [],
+        "category": "religious_seat",
+        "icon_key": "religious_seat",
+        "importance_level": 2,
+        "display_priority": 100,
+        "start_year": 1309,
+        "end_year": 1377,
+        "active_years_raw": "1309-1377",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": 1309,
+            "end_year": 1377
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [
+          "polity_eur_0071"
+        ],
+        "related_people": [],
+        "historical_name": "Avignon",
+        "modern_name": "Avignon",
+        "modern_admin_units_raw": "FRA|FR-PAC",
+        "longitude": 4.8059,
+        "latitude": 43.9493,
+        "location_precision": "city",
+        "location_confidence_score": 88.0,
+        "strategic_summary": "阿维尼翁教廷期间教皇驻地。",
+        "historical_significance": "罗马天主教权威外移的标志地。",
+        "source_titles": [
+          "Encyclopaedia Britannica: Italy — History"
+        ],
+        "source_urls": [
+          "https://www.britannica.com/place/Italy/History"
+        ],
+        "source_type": "synthesized_secondary",
+        "confidence_note": "",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.945,
+          50.0647
+        ]
+      },
+      "properties": {
+        "location_id": "location_eur_0016",
+        "name": "Krakow",
+        "aliases": [],
+        "category": "capital",
+        "icon_key": "capital",
+        "importance_level": 2,
+        "display_priority": 100,
+        "start_year": 1038,
+        "end_year": 1596,
+        "active_years_raw": "1038-1596",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": 1038,
+            "end_year": 1596
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [
+          "polity_eur_0075"
+        ],
+        "related_people": [],
+        "historical_name": "Krakow",
+        "modern_name": "Kraków",
+        "modern_admin_units_raw": "POL|PL-MA",
+        "longitude": 19.945,
+        "latitude": 50.0647,
+        "location_precision": "city",
+        "location_confidence_score": 88.0,
+        "strategic_summary": "波兰皮亚斯特与雅盖隆王朝首都。",
+        "historical_significance": "瓦维尔城堡所在。",
+        "source_titles": [
+          "Encyclopaedia Britannica: Poland — History"
+        ],
+        "source_urls": [
+          "https://www.britannica.com/place/Poland/History"
+        ],
+        "source_type": "synthesized_secondary",
+        "confidence_note": "",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.4378,
+          50.0755
+        ]
+      },
+      "properties": {
+        "location_id": "location_eur_0017",
+        "name": "Prague",
+        "aliases": [],
+        "category": "capital",
+        "icon_key": "capital",
+        "importance_level": 2,
+        "display_priority": 100,
+        "start_year": 1198,
+        "end_year": 1918,
+        "active_years_raw": "1198-1918",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": 1198,
+            "end_year": 1918
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [
+          "polity_eur_0078",
+          "polity_eur_0062"
+        ],
+        "related_people": [],
+        "historical_name": "Prague",
+        "modern_name": "Prague",
+        "modern_admin_units_raw": "CZE",
+        "longitude": 14.4378,
+        "latitude": 50.0755,
+        "location_precision": "city",
+        "location_confidence_score": 88.0,
+        "strategic_summary": "波西米亚王国首都，HRE 重要选侯国都。",
+        "historical_significance": "查理四世建为帝国第二都。",
+        "source_titles": [
+          "Encyclopaedia Britannica: Holy Roman Empire"
+        ],
+        "source_urls": [
+          "https://www.britannica.com/place/Holy-Roman-Empire"
+        ],
+        "source_type": "synthesized_secondary",
+        "confidence_note": "",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.7038,
+          40.4168
+        ]
+      },
+      "properties": {
+        "location_id": "location_eur_0018",
+        "name": "Madrid",
+        "aliases": [],
+        "category": "capital",
+        "icon_key": "capital",
+        "importance_level": 2,
+        "display_priority": 100,
+        "start_year": 1561,
+        "end_year": 2026,
+        "active_years_raw": "1561-2026",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": 1561,
+            "end_year": 2026
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [
+          "polity_eur_0088",
+          "polity_eur_0089"
+        ],
+        "related_people": [],
+        "historical_name": "Madrid",
+        "modern_name": "Madrid",
+        "modern_admin_units_raw": "ESP|ES-MD",
+        "longitude": -3.7038,
+        "latitude": 40.4168,
+        "location_precision": "city",
+        "location_confidence_score": 92.0,
+        "strategic_summary": "西班牙首都。",
+        "historical_significance": "哈布斯堡-波旁西班牙政治中心。",
+        "source_titles": [
+          "Encyclopaedia Britannica: Spain — History"
+        ],
+        "source_urls": [
+          "https://www.britannica.com/place/Spain/History"
+        ],
+        "source_type": "synthesized_secondary",
+        "confidence_note": "",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          16.3738,
+          48.2082
+        ]
+      },
+      "properties": {
+        "location_id": "location_eur_0019",
+        "name": "Vienna",
+        "aliases": [],
+        "category": "capital",
+        "icon_key": "capital",
+        "importance_level": 2,
+        "display_priority": 100,
+        "start_year": 1438,
+        "end_year": 2026,
+        "active_years_raw": "1438-2026",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": 1438,
+            "end_year": 2026
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [
+          "polity_eur_0090",
+          "polity_eur_0062"
+        ],
+        "related_people": [],
+        "historical_name": "Vienna",
+        "modern_name": "Vienna",
+        "modern_admin_units_raw": "AUT|AT-9",
+        "longitude": 16.3738,
+        "latitude": 48.2082,
+        "location_precision": "city",
+        "location_confidence_score": 92.0,
+        "strategic_summary": "哈布斯堡君主国与神圣罗马帝国晚期首都。",
+        "historical_significance": "中欧政治中心，多瑙河沿岸枢纽。",
+        "source_titles": [
+          "Encyclopaedia Britannica: Habsburg"
+        ],
+        "source_urls": [
+          "https://www.britannica.com/topic/House-of-Habsburg"
+        ],
+        "source_type": "synthesized_secondary",
+        "confidence_note": "",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.405,
+          52.52
+        ]
+      },
+      "properties": {
+        "location_id": "location_eur_0020",
+        "name": "Berlin",
+        "aliases": [],
+        "category": "capital",
+        "icon_key": "capital",
+        "importance_level": 2,
+        "display_priority": 100,
+        "start_year": 1701,
+        "end_year": 2026,
+        "active_years_raw": "1701-2026",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": 1701,
+            "end_year": 2026
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [
+          "polity_eur_0103",
+          "polity_eur_0104"
+        ],
+        "related_people": [],
+        "historical_name": "Berlin",
+        "modern_name": "Berlin",
+        "modern_admin_units_raw": "DEU|DE-BE",
+        "longitude": 13.405,
+        "latitude": 52.52,
+        "location_precision": "city",
+        "location_confidence_score": 92.0,
+        "strategic_summary": "普鲁士与德意志统一帝国首都。",
+        "historical_significance": "德意志近现代政治中心。",
+        "source_titles": [
+          "Encyclopaedia Britannica: Holy Roman Empire"
+        ],
+        "source_urls": [
+          "https://www.britannica.com/place/Holy-Roman-Empire"
+        ],
+        "source_type": "synthesized_secondary",
+        "confidence_note": "",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.3351,
+          59.9343
+        ]
+      },
+      "properties": {
+        "location_id": "location_eur_0021",
+        "name": "Saint Petersburg",
+        "aliases": [],
+        "category": "capital",
+        "icon_key": "capital",
+        "importance_level": 2,
+        "display_priority": 100,
+        "start_year": 1712,
+        "end_year": 1918,
+        "active_years_raw": "1712-1918",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": 1712,
+            "end_year": 1918
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [
+          "polity_eur_0099"
+        ],
+        "related_people": [],
+        "historical_name": "Saint Petersburg",
+        "modern_name": "Saint Petersburg",
+        "modern_admin_units_raw": "RUS|RU-SPE",
+        "longitude": 30.3351,
+        "latitude": 59.9343,
+        "location_precision": "city",
+        "location_confidence_score": 92.0,
+        "strategic_summary": "彼得大帝建立的俄罗斯帝国首都。",
+        "historical_significance": "俄罗斯朝西转向的标志。",
+        "source_titles": [
+          "Encyclopaedia Britannica: Russia — History"
+        ],
+        "source_urls": [
+          "https://www.britannica.com/place/Russia/History"
+        ],
+        "source_type": "synthesized_secondary",
+        "confidence_note": "",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.0122,
+          52.2297
+        ]
+      },
+      "properties": {
+        "location_id": "location_eur_0022",
+        "name": "Warsaw",
+        "aliases": [],
+        "category": "capital",
+        "icon_key": "capital",
+        "importance_level": 2,
+        "display_priority": 100,
+        "start_year": 1596,
+        "end_year": 2026,
+        "active_years_raw": "1596-2026",
+        "active_years": [],
+        "active_year_ranges": [
+          {
+            "start_year": 1596,
+            "end_year": 2026
+          }
+        ],
+        "related_event_ids": [],
+        "related_anecdote_ids": [],
+        "related_polity_ids": [
+          "polity_eur_0097"
+        ],
+        "related_people": [],
+        "historical_name": "Warsaw",
+        "modern_name": "Warsaw",
+        "modern_admin_units_raw": "POL|PL-MZ",
+        "longitude": 21.0122,
+        "latitude": 52.2297,
+        "location_precision": "city",
+        "location_confidence_score": 88.0,
+        "strategic_summary": "波兰-立陶宛联邦首都。",
+        "historical_significance": "近代波兰政治中心。",
+        "source_titles": [
+          "Encyclopaedia Britannica: Poland — History"
+        ],
+        "source_urls": [
+          "https://www.britannica.com/place/Poland/History"
+        ],
+        "source_type": "synthesized_secondary",
+        "confidence_note": "",
+        "review_status": "verified",
+        "review_note": "",
+        "default_visible": true,
+        "is_high_importance": true
+      }
+    }
+  ]
 }

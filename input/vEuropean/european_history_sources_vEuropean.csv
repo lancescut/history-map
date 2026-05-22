@@ -1,1 +1,36 @@
 ﻿source_id,topic,source_title,source_url,source_type,credibility_tier,covers_fields,notes
+source_eur_0001,encyclopedia,Encyclopaedia Britannica: History of Europe,https://www.britannica.com/topic/history-of-Europe,encyclopedia,B,overview|periodization,High-level cross-period overview of European history.
+source_eur_0002,encyclopedia,Encyclopaedia Britannica: Ancient Rome,https://www.britannica.com/place/ancient-Rome,encyclopedia,B,rome|republic|empire|rulers,Reference for Republican and Imperial Rome.
+source_eur_0003,encyclopedia,Encyclopaedia Britannica: Byzantine Empire,https://www.britannica.com/place/Byzantine-Empire,encyclopedia,B,byzantium|eastern_roman|rulers,Reference for Eastern Roman / Byzantine history.
+source_eur_0004,encyclopedia,Encyclopaedia Britannica: Holy Roman Empire,https://www.britannica.com/place/Holy-Roman-Empire,encyclopedia,B,hre|emperors|periodization,Reference for HRE chronology and structure.
+source_eur_0005,encyclopedia,Encyclopaedia Britannica: France — History,https://www.britannica.com/place/France/History,encyclopedia,B,france|capetian|valois|bourbon,Reference for French dynastic history.
+source_eur_0006,encyclopedia,Encyclopaedia Britannica: United Kingdom — History,https://www.britannica.com/place/United-Kingdom/History,encyclopedia,B,britain|england|monarchs,Reference for British dynastic history.
+source_eur_0007,encyclopedia,Encyclopaedia Britannica: Spain — History,https://www.britannica.com/place/Spain/History,encyclopedia,B,spain|iberia|reconquista|habsburg,Reference for Spanish history.
+source_eur_0008,encyclopedia,Encyclopaedia Britannica: Germany — History,https://www.britannica.com/place/Germany/History,encyclopedia,B,germany|prussia|empire,Reference for German history.
+source_eur_0009,encyclopedia,Encyclopaedia Britannica: Italy — History,https://www.britannica.com/place/Italy/History,encyclopedia,B,italy|city_states|unification,Reference for Italian history.
+source_eur_0010,encyclopedia,Encyclopaedia Britannica: Russia — History,https://www.britannica.com/place/Russia/History,encyclopedia,B,russia|muscovy|tsardom|romanov,Reference for Russian dynastic history.
+source_eur_0011,encyclopedia,Encyclopaedia Britannica: Greek civilization,https://www.britannica.com/topic/ancient-Greek-civilization,encyclopedia,B,greece|hellenistic|city_states,Reference for ancient Greece.
+source_eur_0012,encyclopedia,Encyclopaedia Britannica: Ottoman Empire,https://www.britannica.com/place/Ottoman-Empire,encyclopedia,B,ottoman|sultans|balkans,Reference for Ottoman history.
+source_eur_0013,encyclopedia,Encyclopaedia Britannica: Poland — History,https://www.britannica.com/place/Poland/History,encyclopedia,B,poland|piast|jagiellon|commonwealth,Reference for Polish history.
+source_eur_0014,encyclopedia,Encyclopaedia Britannica: Hungary — History,https://www.britannica.com/place/Hungary/History,encyclopedia,B,hungary|arpad|magyars,Reference for Hungarian history.
+source_eur_0015,encyclopedia,Encyclopaedia Britannica: Frankish kingdom,https://www.britannica.com/place/Frankish-kingdom,encyclopedia,B,franks|merovingian|carolingian,Reference for Frankish dynasties.
+source_eur_0016,encyclopedia,Encyclopaedia Britannica: Vikings,https://www.britannica.com/topic/Viking-people,encyclopedia,B,vikings|norse|scandinavia,Reference for Viking polities.
+source_eur_0017,heritage,UNESCO World Heritage Centre,https://whc.unesco.org/en/list/,heritage_record,A,strategic_locations|capitals,UNESCO records used for capital and strategic-site coordinates.
+source_eur_0018,encyclopedia,Encyclopaedia Britannica: Napoleonic Wars,https://www.britannica.com/event/Napoleonic-Wars,encyclopedia,B,napoleon|france|coalitions,Reference for Napoleonic period.
+source_eur_0019,encyclopedia,Encyclopaedia Britannica: World War I,https://www.britannica.com/event/World-War-I,encyclopedia,A,wwi|treaty_of_versailles,Reference for WWI and Versailles aftermath.
+source_eur_0020,encyclopedia,Encyclopaedia Britannica: World War II,https://www.britannica.com/event/World-War-II,encyclopedia,A,wwii|axis|allies,Reference for WWII.
+source_eur_0021,archaeology,Encyclopaedia Britannica: Minoan civilization,https://www.britannica.com/topic/Minoan-civilization,encyclopedia,B,minoan|bronze_age|crete,Reference for Minoan Bronze Age.
+source_eur_0022,archaeology,Encyclopaedia Britannica: Mycenaean civilization,https://www.britannica.com/topic/Mycenaean-civilization,encyclopedia,B,mycenaean|bronze_age|greece,Reference for Mycenaean Bronze Age.
+source_eur_0023,encyclopedia,Encyclopaedia Britannica: Carolingian dynasty,https://www.britannica.com/topic/Carolingian-dynasty,encyclopedia,B,carolingian|charlemagne,Reference for Carolingian dynasty.
+source_eur_0024,encyclopedia,Encyclopaedia Britannica: Carthage,https://www.britannica.com/place/Carthage-ancient-city-Tunisia,encyclopedia,B,carthage|phoenician|punic_wars,Reference for Carthage.
+source_eur_0025,encyclopedia,Encyclopaedia Britannica: Russian Empire,https://www.britannica.com/place/Russian-Empire,encyclopedia,B,russian_empire|romanov,Reference for Russian Empire.
+source_eur_0026,encyclopedia,Encyclopaedia Britannica: Crusades,https://www.britannica.com/event/Crusades,encyclopedia,B,crusades|holy_land,Reference for Crusades.
+source_eur_0027,encyclopedia,Encyclopaedia Britannica: Reformation,https://www.britannica.com/event/Reformation,encyclopedia,B,reformation|luther|wars_of_religion,Reference for Protestant Reformation.
+source_eur_0028,encyclopedia,Encyclopaedia Britannica: Thirty Years' War,https://www.britannica.com/event/Thirty-Years-War,encyclopedia,B,thirty_years_war|westphalia,Reference for Thirty Years' War.
+source_eur_0029,encyclopedia,Encyclopaedia Britannica: French Revolution,https://www.britannica.com/event/French-Revolution,encyclopedia,B,french_revolution|consulate,Reference for French Revolution.
+source_eur_0030,encyclopedia,Encyclopaedia Britannica: Italian unification,https://www.britannica.com/event/Italian-unification,encyclopedia,B,risorgimento|piedmont|cavour,Reference for Italian unification.
+source_eur_0031,encyclopedia,Encyclopaedia Britannica: Plantagenet,https://www.britannica.com/topic/Plantagenet-dynasty,encyclopedia,B,england|plantagenet,Reference for Plantagenet dynasty.
+source_eur_0032,encyclopedia,Encyclopaedia Britannica: Capetian dynasty,https://www.britannica.com/topic/Capetian-dynasty,encyclopedia,B,france|capet,Reference for Capetian dynasty.
+source_eur_0033,encyclopedia,Encyclopaedia Britannica: Habsburg,https://www.britannica.com/topic/House-of-Habsburg,encyclopedia,B,habsburg|austria|spain,Reference for Habsburg dynasty.
+source_eur_0034,encyclopedia,Encyclopaedia Britannica: Roman Empire,https://www.britannica.com/place/Roman-Empire,encyclopedia,A,roman_empire|julio_claudian|severan|tetrarchy,Reference for Roman Empire periodization.
+source_eur_0035,encyclopedia,Encyclopaedia Britannica: Achaemenian dynasty,https://www.britannica.com/topic/Achaemenian-dynasty,encyclopedia,B,persia|persian_wars,Persian context for Greek wars.

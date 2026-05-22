@@ -3,11 +3,11 @@
   "dataset_name": "欧洲史 vEuropean",
   "schema_family": "v03-compatible-world-history",
   "created_by": "scripts/bootstrap_european_dataset.py",
-  "generated_at": "",
+  "generated_at": "2026-05-21T23:58:03+00:00",
   "year_min": -3000,
   "year_max": 1945,
   "year_zero_policy": "no_year_zero",
-  "space_scope": "Europe from Bronze Age (-3000) through the end of WWII (1945). Includes Mediterranean (Greece, Rome, Carthage, Phoenicia), Iberian, Italian, French/Frankish, German/HRE, British Isles, Nordic, Slavic, Balkan, Russian, and Ottoman-in-Europe polities. Mediterranean/Levant/North-African neighbors are referenced where they intersect European history (Carthage, Byzantine East, Crusader states, Ottoman expansion). Post-1945 Cold War and EU states are out of scope.",
+  "space_scope": "Europe from Bronze Age (-3000) through the end of WWII (1945). Mediterranean / Levant / North-African neighbors referenced where they intersect European history (Carthage, Byzantine East, Crusader states, Ottoman expansion).",
   "files": {
     "polities_master": "european_history_polities_master_vEuropean.csv",
     "rulers_master": "european_history_rulers_master_vEuropean.csv",
@@ -36,12 +36,11 @@
     "validation_report": "validation_report_template.csv"
   },
   "field_notes": {
-    "macro_period": "Large chronological period (Bronze Age, Iron Age, Classical, Migration Period, Early Medieval, High Medieval, Late Medieval, Early Modern, Long 19th, World Wars). Not China-specific.",
-    "dynasty_name": "Dynasty, ruling house, civilization phase, or republic/constitutional regime label. For city-states and republics use the constitutional regime (e.g. 'Republican Rome', 'Venetian Republic', 'Florentine Republic'); for empires use the dynasty/house name (e.g. 'Julio-Claudian', 'Capetian', 'Hohenzollern', 'Habsburg-Lorraine').",
-    "modern_admin_units_raw": "Modern country and first-level administrative approximation; not a claim of exact historical borders. Use pipe-separated ISO3 country codes (FRA|DEU|ITA) and optional ADM1 codes for federations (DE-BY|IT-25|ES-CT).",
-    "ruler_temple_name": "East Asian style field; leave empty unless a culture has an equivalent formal name. European rulers typically use ruler_name (regnal name) and ruler_personal_name (birth name).",
+    "macro_period": "Large chronological period (Bronze Age, Iron Age, Classical, Migration Period, Early Medieval, High Medieval, Late Medieval, Early Modern, Long 19th, World Wars).",
+    "dynasty_name": "Dynasty, ruling house, civilization phase, or republic/constitutional regime label.",
+    "modern_admin_units_raw": "Pipe-separated ISO3 country codes (FRA|DEU|ITA) + optional ADM1 codes for federations (DE-BY|IT-25|ES-CT).",
+    "ruler_temple_name": "East Asian style field; leave empty for European rulers.",
     "v02_*": "Retained only for v03 compatibility; empty for non-v02 datasets.",
-    "historical_contexts": "Periodization metadata: which macro_period a given year falls under, large transitional events (fall of Rome, Reformation, French Revolution, etc.). Provides UI hints when the year scrubber crosses major boundaries.",
-    "ruler_continuity": "European succession rules vary widely (primogeniture, elective monarchy, papal election, republican magistracy). Use the polity's documented system when assigning reign years; for elective monarchies (HRE, Polish-Lithuanian), the gap between predecessor's death and successor's election may leave a year with row_granularity=year_polity_unmatched_ruler."
+    "ruler_continuity": "European succession rules vary (primogeniture, elective monarchy, papal election, republican magistracy). Use documented system per polity."
   }
 }

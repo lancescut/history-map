@@ -1,6 +1,6 @@
 {
   "data_version": "vEuropean",
-  "generated_at": "2026-05-21T10:25:28+00:00",
+  "generated_at": "2026-05-21T23:58:32+00:00",
   "preset_count": 0,
   "comment": "Empty stub. Story presets will be added after bootstrap_european_dataset.py populates the polity / event tables. Planned presets: Roman expansion, Carolingian inheritance, Reconquista, Crusades, Reformation, Thirty Years' War, French Revolution & Napoleon, Italian/German unifications, World Wars.",
   "presets": []

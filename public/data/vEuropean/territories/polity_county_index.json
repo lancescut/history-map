@@ -1,6 +1,3691 @@
 {
   "data_version": "vEuropean",
-  "generated_at": "2026-05-21T10:25:28+00:00",
+  "generated_at": "2026-05-21T23:58:32+00:00",
   "source": "territory_overrides_vEuropean.csv + eu_adm0_normalized.geojson + {iso3}_adm1_normalized.geojson",
-  "polities": {}
+  "polities": {
+    "polity_eur_0001": {
+      "polity_id": "polity_eur_0001",
+      "county_ids": [
+        "GRC"
+      ],
+      "summary_admin_ids": [
+        "GRC"
+      ],
+      "county_count": 1,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0002": {
+      "polity_id": "polity_eur_0002",
+      "county_ids": [
+        "GRC"
+      ],
+      "summary_admin_ids": [
+        "GRC"
+      ],
+      "county_count": 1,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0003": {
+      "polity_id": "polity_eur_0003",
+      "county_ids": [
+        "GRC"
+      ],
+      "summary_admin_ids": [
+        "GRC"
+      ],
+      "county_count": 1,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0004": {
+      "polity_id": "polity_eur_0004",
+      "county_ids": [
+        "TUR"
+      ],
+      "summary_admin_ids": [
+        "TUR"
+      ],
+      "county_count": 1,
+      "matched_resolution": "ADM0_NEIGHBOR",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0005": {
+      "polity_id": "polity_eur_0005",
+      "county_ids": [
+        "TUR",
+        "SYR"
+      ],
+      "summary_admin_ids": [
+        "TUR",
+        "SYR"
+      ],
+      "county_count": 2,
+      "matched_resolution": "ADM0_NEIGHBOR",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0006": {
+      "polity_id": "polity_eur_0006",
+      "county_ids": [
+        "GRC"
+      ],
+      "summary_admin_ids": [
+        "GRC"
+      ],
+      "county_count": 1,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0007": {
+      "polity_id": "polity_eur_0007",
+      "county_ids": [
+        "ITA"
+      ],
+      "summary_admin_ids": [
+        "ITA"
+      ],
+      "county_count": 1,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0008": {
+      "polity_id": "polity_eur_0008",
+      "county_ids": [
+        "ESP"
+      ],
+      "summary_admin_ids": [
+        "ESP"
+      ],
+      "county_count": 1,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0009": {
+      "polity_id": "polity_eur_0009",
+      "county_ids": [
+        "DNK",
+        "NOR",
+        "SWE"
+      ],
+      "summary_admin_ids": [
+        "DNK",
+        "NOR",
+        "SWE"
+      ],
+      "county_count": 3,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0010": {
+      "polity_id": "polity_eur_0010",
+      "county_ids": [
+        "DEU",
+        "AUT",
+        "CZE",
+        "HUN",
+        "POL"
+      ],
+      "summary_admin_ids": [
+        "DEU",
+        "AUT",
+        "CZE",
+        "HUN",
+        "POL"
+      ],
+      "county_count": 5,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0011": {
+      "polity_id": "polity_eur_0011",
+      "county_ids": [
+        "GRC"
+      ],
+      "summary_admin_ids": [
+        "GRC"
+      ],
+      "county_count": 1,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0012": {
+      "polity_id": "polity_eur_0012",
+      "county_ids": [
+        "LBN",
+        "SYR",
+        "ISR"
+      ],
+      "summary_admin_ids": [
+        "LBN",
+        "SYR",
+        "ISR"
+      ],
+      "county_count": 3,
+      "matched_resolution": "NEIGHBOR",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0013": {
+      "polity_id": "polity_eur_0013",
+      "county_ids": [
+        "TUN",
+        "DZA",
+        "ESP",
+        "ITA"
+      ],
+      "summary_admin_ids": [
+        "TUN",
+        "DZA",
+        "ESP",
+        "ITA"
+      ],
+      "county_count": 4,
+      "matched_resolution": "ADM0_NEIGHBOR",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0014": {
+      "polity_id": "polity_eur_0014",
+      "county_ids": [
+        "GRC"
+      ],
+      "summary_admin_ids": [
+        "GRC"
+      ],
+      "county_count": 1,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0015": {
+      "polity_id": "polity_eur_0015",
+      "county_ids": [
+        "GRC"
+      ],
+      "summary_admin_ids": [
+        "GRC"
+      ],
+      "county_count": 1,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0016": {
+      "polity_id": "polity_eur_0016",
+      "county_ids": [
+        "GRC"
+      ],
+      "summary_admin_ids": [
+        "GRC"
+      ],
+      "county_count": 1,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0017": {
+      "polity_id": "polity_eur_0017",
+      "county_ids": [
+        "GRC"
+      ],
+      "summary_admin_ids": [
+        "GRC"
+      ],
+      "county_count": 1,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0018": {
+      "polity_id": "polity_eur_0018",
+      "county_ids": [
+        "TUR"
+      ],
+      "summary_admin_ids": [
+        "TUR"
+      ],
+      "county_count": 1,
+      "matched_resolution": "ADM0_NEIGHBOR",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0019": {
+      "polity_id": "polity_eur_0019",
+      "county_ids": [
+        "ITA"
+      ],
+      "summary_admin_ids": [
+        "ITA"
+      ],
+      "county_count": 1,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0020": {
+      "polity_id": "polity_eur_0020",
+      "county_ids": [
+        "ITA"
+      ],
+      "summary_admin_ids": [
+        "ITA"
+      ],
+      "county_count": 1,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0021": {
+      "polity_id": "polity_eur_0021",
+      "county_ids": [
+        "AUT",
+        "DEU",
+        "CHE",
+        "FRA",
+        "CZE"
+      ],
+      "summary_admin_ids": [
+        "AUT",
+        "DEU",
+        "CHE",
+        "FRA",
+        "CZE"
+      ],
+      "county_count": 5,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0022": {
+      "polity_id": "polity_eur_0022",
+      "county_ids": [
+        "UKR",
+        "RUS",
+        "MDA",
+        "ROU"
+      ],
+      "summary_admin_ids": [
+        "UKR",
+        "RUS",
+        "MDA",
+        "ROU"
+      ],
+      "county_count": 4,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0023": {
+      "polity_id": "polity_eur_0023",
+      "county_ids": [
+        "BGR",
+        "GRC",
+        "TUR"
+      ],
+      "summary_admin_ids": [
+        "BGR",
+        "GRC",
+        "TUR"
+      ],
+      "county_count": 3,
+      "matched_resolution": "ADM0_NEIGHBOR",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0024": {
+      "polity_id": "polity_eur_0024",
+      "county_ids": [
+        "ALB",
+        "HRV",
+        "MNE",
+        "BIH"
+      ],
+      "summary_admin_ids": [
+        "ALB",
+        "HRV",
+        "MNE",
+        "BIH"
+      ],
+      "county_count": 4,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0025": {
+      "polity_id": "polity_eur_0025",
+      "county_ids": [
+        "ESP"
+      ],
+      "summary_admin_ids": [
+        "ESP"
+      ],
+      "county_count": 1,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0026": {
+      "polity_id": "polity_eur_0026",
+      "county_ids": [
+        "GRC"
+      ],
+      "summary_admin_ids": [
+        "GRC"
+      ],
+      "county_count": 1,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0027": {
+      "polity_id": "polity_eur_0027",
+      "county_ids": [
+        "GRC",
+        "MKD",
+        "BGR"
+      ],
+      "summary_admin_ids": [
+        "GRC",
+        "MKD",
+        "BGR"
+      ],
+      "county_count": 3,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0028": {
+      "polity_id": "polity_eur_0028",
+      "county_ids": [
+        "GRC",
+        "MKD"
+      ],
+      "summary_admin_ids": [
+        "GRC",
+        "MKD"
+      ],
+      "county_count": 2,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0029": {
+      "polity_id": "polity_eur_0029",
+      "county_ids": [
+        "TUR",
+        "SYR",
+        "IRQ",
+        "IRN"
+      ],
+      "summary_admin_ids": [
+        "TUR",
+        "SYR",
+        "IRQ",
+        "IRN"
+      ],
+      "county_count": 4,
+      "matched_resolution": "ADM0_NEIGHBOR",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0030": {
+      "polity_id": "polity_eur_0030",
+      "county_ids": [
+        "EGY",
+        "LBY",
+        "CYP"
+      ],
+      "summary_admin_ids": [
+        "EGY",
+        "LBY",
+        "CYP"
+      ],
+      "county_count": 3,
+      "matched_resolution": "ADM0_NEIGHBOR",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0031": {
+      "polity_id": "polity_eur_0031",
+      "county_ids": [
+        "TUR"
+      ],
+      "summary_admin_ids": [
+        "TUR"
+      ],
+      "county_count": 1,
+      "matched_resolution": "ADM0_NEIGHBOR",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0032": {
+      "polity_id": "polity_eur_0032",
+      "county_ids": [
+        "ITA",
+        "FRA",
+        "ESP",
+        "PRT",
+        "GRC",
+        "TUR",
+        "EGY",
+        "TUN",
+        "LBY",
+        "DZA",
+        "MAR",
+        "GBR",
+        "HRV",
+        "SVN",
+        "MKD",
+        "ALB",
+        "BGR",
+        "ROU"
+      ],
+      "summary_admin_ids": [
+        "ITA",
+        "FRA",
+        "ESP",
+        "PRT",
+        "GRC",
+        "TUR",
+        "EGY",
+        "TUN",
+        "LBY",
+        "DZA",
+        "MAR",
+        "GBR",
+        "HRV",
+        "SVN",
+        "MKD",
+        "ALB",
+        "BGR",
+        "ROU"
+      ],
+      "county_count": 18,
+      "matched_resolution": "ADM0_NEIGHBOR",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0033": {
+      "polity_id": "polity_eur_0033",
+      "county_ids": [
+        "ITA",
+        "FRA",
+        "ESP",
+        "PRT",
+        "GRC",
+        "TUR",
+        "EGY",
+        "TUN",
+        "LBY",
+        "DZA",
+        "MAR",
+        "GBR",
+        "HRV",
+        "SVN",
+        "MKD",
+        "ALB",
+        "BGR",
+        "ROU",
+        "SRB",
+        "BIH",
+        "CHE",
+        "AUT",
+        "HUN",
+        "DEU",
+        "BEL",
+        "NLD",
+        "LUX",
+        "SYR",
+        "LBN",
+        "ISR",
+        "JOR",
+        "IRQ",
+        "MDA"
+      ],
+      "summary_admin_ids": [
+        "ITA",
+        "FRA",
+        "ESP",
+        "PRT",
+        "GRC",
+        "TUR",
+        "EGY",
+        "TUN",
+        "LBY",
+        "DZA",
+        "MAR",
+        "GBR",
+        "HRV",
+        "SVN",
+        "MKD",
+        "ALB",
+        "BGR",
+        "ROU",
+        "SRB",
+        "BIH",
+        "CHE",
+        "AUT",
+        "HUN",
+        "DEU",
+        "BEL",
+        "NLD",
+        "LUX",
+        "SYR",
+        "LBN",
+        "ISR",
+        "JOR",
+        "IRQ",
+        "MDA"
+      ],
+      "county_count": 33,
+      "matched_resolution": "ADM0_NEIGHBOR",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0034": {
+      "polity_id": "polity_eur_0034",
+      "county_ids": [
+        "ITA",
+        "FRA",
+        "ESP",
+        "PRT",
+        "GRC",
+        "TUR",
+        "EGY",
+        "TUN",
+        "LBY",
+        "DZA",
+        "MAR",
+        "GBR",
+        "HRV",
+        "SVN",
+        "MKD",
+        "ALB",
+        "BGR",
+        "ROU",
+        "SRB",
+        "BIH",
+        "CHE",
+        "AUT",
+        "HUN",
+        "DEU",
+        "BEL",
+        "NLD",
+        "LUX",
+        "SYR",
+        "LBN",
+        "ISR",
+        "JOR"
+      ],
+      "summary_admin_ids": [
+        "ITA",
+        "FRA",
+        "ESP",
+        "PRT",
+        "GRC",
+        "TUR",
+        "EGY",
+        "TUN",
+        "LBY",
+        "DZA",
+        "MAR",
+        "GBR",
+        "HRV",
+        "SVN",
+        "MKD",
+        "ALB",
+        "BGR",
+        "ROU",
+        "SRB",
+        "BIH",
+        "CHE",
+        "AUT",
+        "HUN",
+        "DEU",
+        "BEL",
+        "NLD",
+        "LUX",
+        "SYR",
+        "LBN",
+        "ISR",
+        "JOR"
+      ],
+      "county_count": 31,
+      "matched_resolution": "ADM0_NEIGHBOR",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0035": {
+      "polity_id": "polity_eur_0035",
+      "county_ids": [
+        "ITA",
+        "FRA",
+        "ESP",
+        "PRT",
+        "GBR",
+        "TUN",
+        "DZA",
+        "MAR",
+        "CHE",
+        "AUT",
+        "DEU",
+        "BEL",
+        "NLD",
+        "LUX"
+      ],
+      "summary_admin_ids": [
+        "ITA",
+        "FRA",
+        "ESP",
+        "PRT",
+        "GBR",
+        "TUN",
+        "DZA",
+        "MAR",
+        "CHE",
+        "AUT",
+        "DEU",
+        "BEL",
+        "NLD",
+        "LUX"
+      ],
+      "county_count": 14,
+      "matched_resolution": "ADM0_NEIGHBOR",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0036": {
+      "polity_id": "polity_eur_0036",
+      "county_ids": [
+        "GRC",
+        "TUR",
+        "BGR",
+        "MKD",
+        "ALB",
+        "SRB",
+        "MNE",
+        "HRV",
+        "EGY",
+        "SYR",
+        "LBN",
+        "ISR",
+        "JOR",
+        "LBY",
+        "TUN",
+        "ITA"
+      ],
+      "summary_admin_ids": [
+        "GRC",
+        "TUR",
+        "BGR",
+        "MKD",
+        "ALB",
+        "SRB",
+        "MNE",
+        "HRV",
+        "EGY",
+        "SYR",
+        "LBN",
+        "ISR",
+        "JOR",
+        "LBY",
+        "TUN",
+        "ITA"
+      ],
+      "county_count": 16,
+      "matched_resolution": "ADM0_NEIGHBOR",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0037": {
+      "polity_id": "polity_eur_0037",
+      "county_ids": [
+        "ITA",
+        "SVN",
+        "HRV"
+      ],
+      "summary_admin_ids": [
+        "ITA",
+        "SVN",
+        "HRV"
+      ],
+      "county_count": 3,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0038": {
+      "polity_id": "polity_eur_0038",
+      "county_ids": [
+        "ESP",
+        "PRT",
+        "FRA"
+      ],
+      "summary_admin_ids": [
+        "ESP",
+        "PRT",
+        "FRA"
+      ],
+      "county_count": 3,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0039": {
+      "polity_id": "polity_eur_0039",
+      "county_ids": [
+        "TUN",
+        "DZA",
+        "LBY"
+      ],
+      "summary_admin_ids": [
+        "TUN",
+        "DZA",
+        "LBY"
+      ],
+      "county_count": 3,
+      "matched_resolution": "NEIGHBOR",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0040": {
+      "polity_id": "polity_eur_0040",
+      "county_ids": [
+        "FRA",
+        "BEL",
+        "NLD",
+        "LUX",
+        "DEU",
+        "CHE"
+      ],
+      "summary_admin_ids": [
+        "FRA",
+        "BEL",
+        "NLD",
+        "LUX",
+        "DEU",
+        "CHE"
+      ],
+      "county_count": 6,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0041": {
+      "polity_id": "polity_eur_0041",
+      "county_ids": [
+        "GBR",
+        "GB-ENG"
+      ],
+      "summary_admin_ids": [
+        "GBR",
+        "GB-ENG"
+      ],
+      "county_count": 2,
+      "matched_resolution": "ADM0_ADM1",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0042": {
+      "polity_id": "polity_eur_0042",
+      "county_ids": [
+        "IRN",
+        "IRQ",
+        "SYR",
+        "TUR",
+        "EGY"
+      ],
+      "summary_admin_ids": [
+        "IRN",
+        "IRQ",
+        "SYR",
+        "TUR",
+        "EGY"
+      ],
+      "county_count": 5,
+      "matched_resolution": "ADM0_NEIGHBOR",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0043": {
+      "polity_id": "polity_eur_0043",
+      "county_ids": [
+        "GRC",
+        "TUR",
+        "BGR",
+        "MKD",
+        "ALB",
+        "SRB",
+        "MNE",
+        "HRV",
+        "CYP",
+        "ITA",
+        "SYR",
+        "LBN",
+        "ISR",
+        "JOR"
+      ],
+      "summary_admin_ids": [
+        "GRC",
+        "TUR",
+        "BGR",
+        "MKD",
+        "ALB",
+        "SRB",
+        "MNE",
+        "HRV",
+        "CYP",
+        "ITA",
+        "SYR",
+        "LBN",
+        "ISR",
+        "JOR"
+      ],
+      "county_count": 14,
+      "matched_resolution": "ADM0_NEIGHBOR",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0044": {
+      "polity_id": "polity_eur_0044",
+      "county_ids": [
+        "FRA",
+        "DEU",
+        "BEL",
+        "NLD",
+        "LUX",
+        "CHE",
+        "AUT",
+        "ITA",
+        "ESP"
+      ],
+      "summary_admin_ids": [
+        "FRA",
+        "DEU",
+        "BEL",
+        "NLD",
+        "LUX",
+        "CHE",
+        "AUT",
+        "ITA",
+        "ESP"
+      ],
+      "county_count": 9,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0045": {
+      "polity_id": "polity_eur_0045",
+      "county_ids": [
+        "FRA",
+        "BEL"
+      ],
+      "summary_admin_ids": [
+        "FRA",
+        "BEL"
+      ],
+      "county_count": 2,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0046": {
+      "polity_id": "polity_eur_0046",
+      "county_ids": [
+        "DEU",
+        "AUT",
+        "CHE",
+        "NLD"
+      ],
+      "summary_admin_ids": [
+        "DEU",
+        "AUT",
+        "CHE",
+        "NLD"
+      ],
+      "county_count": 4,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0047": {
+      "polity_id": "polity_eur_0047",
+      "county_ids": [
+        "NLD",
+        "BEL",
+        "LUX",
+        "FRA",
+        "CHE",
+        "DEU",
+        "ITA"
+      ],
+      "summary_admin_ids": [
+        "NLD",
+        "BEL",
+        "LUX",
+        "FRA",
+        "CHE",
+        "DEU",
+        "ITA"
+      ],
+      "county_count": 7,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0048": {
+      "polity_id": "polity_eur_0048",
+      "county_ids": [
+        "ESP",
+        "PRT"
+      ],
+      "summary_admin_ids": [
+        "ESP",
+        "PRT"
+      ],
+      "county_count": 2,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0049": {
+      "polity_id": "polity_eur_0049",
+      "county_ids": [
+        "ESP"
+      ],
+      "summary_admin_ids": [
+        "ESP"
+      ],
+      "county_count": 1,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0050": {
+      "polity_id": "polity_eur_0050",
+      "county_ids": [
+        "ESP",
+        "FRA"
+      ],
+      "summary_admin_ids": [
+        "ESP",
+        "FRA"
+      ],
+      "county_count": 2,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0051": {
+      "polity_id": "polity_eur_0051",
+      "county_ids": [
+        "GBR",
+        "GB-ENG"
+      ],
+      "summary_admin_ids": [
+        "GBR",
+        "GB-ENG"
+      ],
+      "county_count": 2,
+      "matched_resolution": "ADM0_ADM1",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0052": {
+      "polity_id": "polity_eur_0052",
+      "county_ids": [
+        "NOR",
+        "ISL"
+      ],
+      "summary_admin_ids": [
+        "NOR",
+        "ISL"
+      ],
+      "county_count": 2,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0053": {
+      "polity_id": "polity_eur_0053",
+      "county_ids": [
+        "DNK",
+        "GB-ENG"
+      ],
+      "summary_admin_ids": [
+        "DNK",
+        "GB-ENG"
+      ],
+      "county_count": 2,
+      "matched_resolution": "ADM0_ADM1",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0054": {
+      "polity_id": "polity_eur_0054",
+      "county_ids": [
+        "SWE"
+      ],
+      "summary_admin_ids": [
+        "SWE"
+      ],
+      "county_count": 1,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0055": {
+      "polity_id": "polity_eur_0055",
+      "county_ids": [
+        "UKR",
+        "RUS",
+        "BLR"
+      ],
+      "summary_admin_ids": [
+        "UKR",
+        "RUS",
+        "BLR"
+      ],
+      "county_count": 3,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0056": {
+      "polity_id": "polity_eur_0056",
+      "county_ids": [
+        "CZE",
+        "SVK",
+        "HUN",
+        "POL"
+      ],
+      "summary_admin_ids": [
+        "CZE",
+        "SVK",
+        "HUN",
+        "POL"
+      ],
+      "county_count": 4,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0057": {
+      "polity_id": "polity_eur_0057",
+      "county_ids": [
+        "BGR",
+        "MKD",
+        "SRB",
+        "ROU"
+      ],
+      "summary_admin_ids": [
+        "BGR",
+        "MKD",
+        "SRB",
+        "ROU"
+      ],
+      "county_count": 4,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0058": {
+      "polity_id": "polity_eur_0058",
+      "county_ids": [
+        "HUN",
+        "SVK",
+        "ROU",
+        "HRV",
+        "SRB",
+        "SVN"
+      ],
+      "summary_admin_ids": [
+        "HUN",
+        "SVK",
+        "ROU",
+        "HRV",
+        "SRB",
+        "SVN"
+      ],
+      "county_count": 6,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0059": {
+      "polity_id": "polity_eur_0059",
+      "county_ids": [
+        "ITA",
+        "VAT"
+      ],
+      "summary_admin_ids": [
+        "ITA",
+        "VAT"
+      ],
+      "county_count": 2,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0060": {
+      "polity_id": "polity_eur_0060",
+      "county_ids": [
+        "IRQ",
+        "SYR",
+        "IRN",
+        "EGY",
+        "TUR"
+      ],
+      "summary_admin_ids": [
+        "IRQ",
+        "SYR",
+        "IRN",
+        "EGY",
+        "TUR"
+      ],
+      "county_count": 5,
+      "matched_resolution": "ADM0_NEIGHBOR",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0061": {
+      "polity_id": "polity_eur_0061",
+      "county_ids": [
+        "DEU",
+        "AUT",
+        "CHE",
+        "ITA",
+        "CZE",
+        "BEL",
+        "NLD",
+        "LUX",
+        "FRA"
+      ],
+      "summary_admin_ids": [
+        "DEU",
+        "AUT",
+        "CHE",
+        "ITA",
+        "CZE",
+        "BEL",
+        "NLD",
+        "LUX",
+        "FRA"
+      ],
+      "county_count": 9,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0062": {
+      "polity_id": "polity_eur_0062",
+      "county_ids": [
+        "DEU",
+        "AUT",
+        "CHE",
+        "CZE",
+        "BEL",
+        "NLD",
+        "LUX",
+        "ITA",
+        "FRA",
+        "SVN",
+        "HRV"
+      ],
+      "summary_admin_ids": [
+        "DEU",
+        "AUT",
+        "CHE",
+        "CZE",
+        "BEL",
+        "NLD",
+        "LUX",
+        "ITA",
+        "FRA",
+        "SVN",
+        "HRV"
+      ],
+      "county_count": 11,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0063": {
+      "polity_id": "polity_eur_0063",
+      "county_ids": [
+        "FRA",
+        "BEL",
+        "LUX"
+      ],
+      "summary_admin_ids": [
+        "FRA",
+        "BEL",
+        "LUX"
+      ],
+      "county_count": 3,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0064": {
+      "polity_id": "polity_eur_0064",
+      "county_ids": [
+        "GBR",
+        "GB-ENG",
+        "GB-WLS"
+      ],
+      "summary_admin_ids": [
+        "GBR",
+        "GB-ENG",
+        "GB-WLS"
+      ],
+      "county_count": 3,
+      "matched_resolution": "ADM0_ADM1",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0065": {
+      "polity_id": "polity_eur_0065",
+      "county_ids": [
+        "GBR",
+        "GB-SCT"
+      ],
+      "summary_admin_ids": [
+        "GBR",
+        "GB-SCT"
+      ],
+      "county_count": 2,
+      "matched_resolution": "ADM0_ADM1",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0066": {
+      "polity_id": "polity_eur_0066",
+      "county_ids": [
+        "ITA",
+        "HRV",
+        "GRC",
+        "CYP",
+        "MNE",
+        "ALB"
+      ],
+      "summary_admin_ids": [
+        "ITA",
+        "HRV",
+        "GRC",
+        "CYP",
+        "MNE",
+        "ALB"
+      ],
+      "county_count": 6,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0067": {
+      "polity_id": "polity_eur_0067",
+      "county_ids": [
+        "ITA",
+        "IT-NORDOVES"
+      ],
+      "summary_admin_ids": [
+        "ITA",
+        "IT-NORDOVES"
+      ],
+      "county_count": 2,
+      "matched_resolution": "ADM0_ADM1",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0068": {
+      "polity_id": "polity_eur_0068",
+      "county_ids": [
+        "ITA",
+        "FRA"
+      ],
+      "summary_admin_ids": [
+        "ITA",
+        "FRA"
+      ],
+      "county_count": 2,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0069": {
+      "polity_id": "polity_eur_0069",
+      "county_ids": [
+        "ITA"
+      ],
+      "summary_admin_ids": [
+        "ITA"
+      ],
+      "county_count": 1,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0070": {
+      "polity_id": "polity_eur_0070",
+      "county_ids": [
+        "ITA",
+        "IT-SUD",
+        "IT-ISOLE"
+      ],
+      "summary_admin_ids": [
+        "ITA",
+        "IT-SUD",
+        "IT-ISOLE"
+      ],
+      "county_count": 3,
+      "matched_resolution": "ADM0_ADM1",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0071": {
+      "polity_id": "polity_eur_0071",
+      "county_ids": [
+        "ITA",
+        "VAT"
+      ],
+      "summary_admin_ids": [
+        "ITA",
+        "VAT"
+      ],
+      "county_count": 2,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0072": {
+      "polity_id": "polity_eur_0072",
+      "county_ids": [
+        "ESP"
+      ],
+      "summary_admin_ids": [
+        "ESP"
+      ],
+      "county_count": 1,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0073": {
+      "polity_id": "polity_eur_0073",
+      "county_ids": [
+        "ESP",
+        "IT-ISOLE"
+      ],
+      "summary_admin_ids": [
+        "ESP",
+        "IT-ISOLE"
+      ],
+      "county_count": 2,
+      "matched_resolution": "ADM0_ADM1",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0074": {
+      "polity_id": "polity_eur_0074",
+      "county_ids": [
+        "PRT"
+      ],
+      "summary_admin_ids": [
+        "PRT"
+      ],
+      "county_count": 1,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0075": {
+      "polity_id": "polity_eur_0075",
+      "county_ids": [
+        "POL",
+        "UKR",
+        "BLR",
+        "LTU"
+      ],
+      "summary_admin_ids": [
+        "POL",
+        "UKR",
+        "BLR",
+        "LTU"
+      ],
+      "county_count": 4,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0076": {
+      "polity_id": "polity_eur_0076",
+      "county_ids": [
+        "LTU",
+        "BLR",
+        "UKR",
+        "POL",
+        "RUS"
+      ],
+      "summary_admin_ids": [
+        "LTU",
+        "BLR",
+        "UKR",
+        "POL",
+        "RUS"
+      ],
+      "county_count": 5,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0077": {
+      "polity_id": "polity_eur_0077",
+      "county_ids": [
+        "HUN",
+        "SVK",
+        "ROU",
+        "HRV",
+        "SRB",
+        "UKR",
+        "SVN"
+      ],
+      "summary_admin_ids": [
+        "HUN",
+        "SVK",
+        "ROU",
+        "HRV",
+        "SRB",
+        "UKR",
+        "SVN"
+      ],
+      "county_count": 7,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0078": {
+      "polity_id": "polity_eur_0078",
+      "county_ids": [
+        "CZE",
+        "SVK",
+        "POL",
+        "DEU"
+      ],
+      "summary_admin_ids": [
+        "CZE",
+        "SVK",
+        "POL",
+        "DEU"
+      ],
+      "county_count": 4,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0079": {
+      "polity_id": "polity_eur_0079",
+      "county_ids": [
+        "BGR",
+        "MKD",
+        "ROU",
+        "SRB"
+      ],
+      "summary_admin_ids": [
+        "BGR",
+        "MKD",
+        "ROU",
+        "SRB"
+      ],
+      "county_count": 4,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0080": {
+      "polity_id": "polity_eur_0080",
+      "county_ids": [
+        "SRB",
+        "MNE",
+        "MKD",
+        "ALB",
+        "BIH",
+        "GRC"
+      ],
+      "summary_admin_ids": [
+        "SRB",
+        "MNE",
+        "MKD",
+        "ALB",
+        "BIH",
+        "GRC"
+      ],
+      "county_count": 6,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0081": {
+      "polity_id": "polity_eur_0081",
+      "county_ids": [
+        "DNK",
+        "NOR",
+        "SWE",
+        "ISL"
+      ],
+      "summary_admin_ids": [
+        "DNK",
+        "NOR",
+        "SWE",
+        "ISL"
+      ],
+      "county_count": 4,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0082": {
+      "polity_id": "polity_eur_0082",
+      "county_ids": [
+        "IRL",
+        "GB-NIR"
+      ],
+      "summary_admin_ids": [
+        "IRL",
+        "GB-NIR"
+      ],
+      "county_count": 2,
+      "matched_resolution": "ADM0_ADM1",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0083": {
+      "polity_id": "polity_eur_0083",
+      "county_ids": [
+        "ISR",
+        "JOR",
+        "LBN",
+        "SYR"
+      ],
+      "summary_admin_ids": [
+        "ISR",
+        "JOR",
+        "LBN",
+        "SYR"
+      ],
+      "county_count": 4,
+      "matched_resolution": "NEIGHBOR",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0084": {
+      "polity_id": "polity_eur_0084",
+      "county_ids": [
+        "TUR",
+        "GRC"
+      ],
+      "summary_admin_ids": [
+        "TUR",
+        "GRC"
+      ],
+      "county_count": 2,
+      "matched_resolution": "ADM0_NEIGHBOR",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0085": {
+      "polity_id": "polity_eur_0085",
+      "county_ids": [
+        "TUR",
+        "BGR",
+        "GRC",
+        "MKD",
+        "ALB",
+        "SRB",
+        "BIH",
+        "HRV",
+        "ROU",
+        "MNE"
+      ],
+      "summary_admin_ids": [
+        "TUR",
+        "BGR",
+        "GRC",
+        "MKD",
+        "ALB",
+        "SRB",
+        "BIH",
+        "HRV",
+        "ROU",
+        "MNE"
+      ],
+      "county_count": 10,
+      "matched_resolution": "ADM0_NEIGHBOR",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0086": {
+      "polity_id": "polity_eur_0086",
+      "county_ids": [
+        "RUS",
+        "RU-MOW"
+      ],
+      "summary_admin_ids": [
+        "RUS",
+        "RU-MOW"
+      ],
+      "county_count": 2,
+      "matched_resolution": "ADM0_ADM1",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0087": {
+      "polity_id": "polity_eur_0087",
+      "county_ids": [
+        "RUS",
+        "UKR",
+        "MDA"
+      ],
+      "summary_admin_ids": [
+        "RUS",
+        "UKR",
+        "MDA"
+      ],
+      "county_count": 3,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0088": {
+      "polity_id": "polity_eur_0088",
+      "county_ids": [
+        "ESP",
+        "PRT",
+        "ITA",
+        "BEL",
+        "NLD",
+        "LUX"
+      ],
+      "summary_admin_ids": [
+        "ESP",
+        "PRT",
+        "ITA",
+        "BEL",
+        "NLD",
+        "LUX"
+      ],
+      "county_count": 6,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0089": {
+      "polity_id": "polity_eur_0089",
+      "county_ids": [
+        "ESP",
+        "PRT"
+      ],
+      "summary_admin_ids": [
+        "ESP",
+        "PRT"
+      ],
+      "county_count": 2,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0090": {
+      "polity_id": "polity_eur_0090",
+      "county_ids": [
+        "AUT",
+        "CZE",
+        "HUN",
+        "SVK",
+        "SVN",
+        "HRV",
+        "BEL",
+        "NLD",
+        "ITA",
+        "ROU",
+        "UKR",
+        "POL"
+      ],
+      "summary_admin_ids": [
+        "AUT",
+        "CZE",
+        "HUN",
+        "SVK",
+        "SVN",
+        "HRV",
+        "BEL",
+        "NLD",
+        "ITA",
+        "ROU",
+        "UKR",
+        "POL"
+      ],
+      "county_count": 12,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0091": {
+      "polity_id": "polity_eur_0091",
+      "county_ids": [
+        "TUR",
+        "GRC",
+        "BGR",
+        "MKD",
+        "ALB",
+        "SRB",
+        "MNE",
+        "BIH",
+        "HRV",
+        "HUN",
+        "ROU",
+        "MDA",
+        "UKR",
+        "CYP",
+        "SYR",
+        "LBN",
+        "ISR",
+        "JOR",
+        "EGY",
+        "LBY",
+        "TUN",
+        "DZA",
+        "IRQ"
+      ],
+      "summary_admin_ids": [
+        "TUR",
+        "GRC",
+        "BGR",
+        "MKD",
+        "ALB",
+        "SRB",
+        "MNE",
+        "BIH",
+        "HRV",
+        "HUN",
+        "ROU",
+        "MDA",
+        "UKR",
+        "CYP",
+        "SYR",
+        "LBN",
+        "ISR",
+        "JOR",
+        "EGY",
+        "LBY",
+        "TUN",
+        "DZA",
+        "IRQ"
+      ],
+      "county_count": 23,
+      "matched_resolution": "ADM0_NEIGHBOR",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0092": {
+      "polity_id": "polity_eur_0092",
+      "county_ids": [
+        "GBR",
+        "GB-ENG",
+        "GB-WLS",
+        "IRL"
+      ],
+      "summary_admin_ids": [
+        "GBR",
+        "GB-ENG",
+        "GB-WLS",
+        "IRL"
+      ],
+      "county_count": 4,
+      "matched_resolution": "ADM0_ADM1",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0093": {
+      "polity_id": "polity_eur_0093",
+      "county_ids": [
+        "GBR",
+        "GB-ENG",
+        "GB-SCT",
+        "GB-WLS",
+        "IRL"
+      ],
+      "summary_admin_ids": [
+        "GBR",
+        "GB-ENG",
+        "GB-SCT",
+        "GB-WLS",
+        "IRL"
+      ],
+      "county_count": 5,
+      "matched_resolution": "ADM0_ADM1",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0094": {
+      "polity_id": "polity_eur_0094",
+      "county_ids": [
+        "GBR",
+        "GB-ENG",
+        "GB-SCT",
+        "GB-WLS",
+        "IRL"
+      ],
+      "summary_admin_ids": [
+        "GBR",
+        "GB-ENG",
+        "GB-SCT",
+        "GB-WLS",
+        "IRL"
+      ],
+      "county_count": 5,
+      "matched_resolution": "ADM0_ADM1",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0095": {
+      "polity_id": "polity_eur_0095",
+      "county_ids": [
+        "GBR",
+        "GB-ENG",
+        "GB-SCT",
+        "GB-WLS",
+        "IRL"
+      ],
+      "summary_admin_ids": [
+        "GBR",
+        "GB-ENG",
+        "GB-SCT",
+        "GB-WLS",
+        "IRL"
+      ],
+      "county_count": 5,
+      "matched_resolution": "ADM0_ADM1",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0096": {
+      "polity_id": "polity_eur_0096",
+      "county_ids": [
+        "NLD"
+      ],
+      "summary_admin_ids": [
+        "NLD"
+      ],
+      "county_count": 1,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0097": {
+      "polity_id": "polity_eur_0097",
+      "county_ids": [
+        "POL",
+        "LTU",
+        "BLR",
+        "UKR",
+        "LVA"
+      ],
+      "summary_admin_ids": [
+        "POL",
+        "LTU",
+        "BLR",
+        "UKR",
+        "LVA"
+      ],
+      "county_count": 5,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0098": {
+      "polity_id": "polity_eur_0098",
+      "county_ids": [
+        "RUS",
+        "UKR",
+        "BLR"
+      ],
+      "summary_admin_ids": [
+        "RUS",
+        "UKR",
+        "BLR"
+      ],
+      "county_count": 3,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0099": {
+      "polity_id": "polity_eur_0099",
+      "county_ids": [
+        "RUS",
+        "UKR",
+        "BLR",
+        "FIN",
+        "EST",
+        "LVA",
+        "LTU",
+        "POL",
+        "MDA"
+      ],
+      "summary_admin_ids": [
+        "RUS",
+        "UKR",
+        "BLR",
+        "FIN",
+        "EST",
+        "LVA",
+        "LTU",
+        "POL",
+        "MDA"
+      ],
+      "county_count": 9,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0100": {
+      "polity_id": "polity_eur_0100",
+      "county_ids": [
+        "SWE",
+        "FIN",
+        "EST",
+        "LVA",
+        "RUS",
+        "DEU",
+        "POL"
+      ],
+      "summary_admin_ids": [
+        "SWE",
+        "FIN",
+        "EST",
+        "LVA",
+        "RUS",
+        "DEU",
+        "POL"
+      ],
+      "county_count": 7,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0101": {
+      "polity_id": "polity_eur_0101",
+      "county_ids": [
+        "DNK",
+        "NOR",
+        "ISL",
+        "DEU"
+      ],
+      "summary_admin_ids": [
+        "DNK",
+        "NOR",
+        "ISL",
+        "DEU"
+      ],
+      "county_count": 4,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0102": {
+      "polity_id": "polity_eur_0102",
+      "county_ids": [
+        "CHE",
+        "FRA",
+        "ITA",
+        "LIE"
+      ],
+      "summary_admin_ids": [
+        "CHE",
+        "FRA",
+        "ITA",
+        "LIE"
+      ],
+      "county_count": 4,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0103": {
+      "polity_id": "polity_eur_0103",
+      "county_ids": [
+        "DEU",
+        "POL",
+        "LTU",
+        "RUS"
+      ],
+      "summary_admin_ids": [
+        "DEU",
+        "POL",
+        "LTU",
+        "RUS"
+      ],
+      "county_count": 4,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0104": {
+      "polity_id": "polity_eur_0104",
+      "county_ids": [
+        "DEU",
+        "POL",
+        "LTU",
+        "RUS",
+        "BEL",
+        "FRA",
+        "CZE"
+      ],
+      "summary_admin_ids": [
+        "DEU",
+        "POL",
+        "LTU",
+        "RUS",
+        "BEL",
+        "FRA",
+        "CZE"
+      ],
+      "county_count": 7,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0105": {
+      "polity_id": "polity_eur_0105",
+      "county_ids": [
+        "ITA",
+        "IT-CENTRO"
+      ],
+      "summary_admin_ids": [
+        "ITA",
+        "IT-CENTRO"
+      ],
+      "county_count": 2,
+      "matched_resolution": "ADM0_ADM1",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0106": {
+      "polity_id": "polity_eur_0106",
+      "county_ids": [
+        "ITA",
+        "IT-SUD",
+        "IT-ISOLE"
+      ],
+      "summary_admin_ids": [
+        "ITA",
+        "IT-SUD",
+        "IT-ISOLE"
+      ],
+      "county_count": 3,
+      "matched_resolution": "ADM0_ADM1",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0107": {
+      "polity_id": "polity_eur_0107",
+      "county_ids": [
+        "ITA",
+        "FRA",
+        "CHE"
+      ],
+      "summary_admin_ids": [
+        "ITA",
+        "FRA",
+        "CHE"
+      ],
+      "county_count": 3,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0108": {
+      "polity_id": "polity_eur_0108",
+      "county_ids": [
+        "FRA",
+        "BEL",
+        "NLD",
+        "LUX",
+        "DEU",
+        "CHE",
+        "ITA"
+      ],
+      "summary_admin_ids": [
+        "FRA",
+        "BEL",
+        "NLD",
+        "LUX",
+        "DEU",
+        "CHE",
+        "ITA"
+      ],
+      "county_count": 7,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0109": {
+      "polity_id": "polity_eur_0109",
+      "county_ids": [
+        "FRA",
+        "BEL",
+        "NLD",
+        "LUX",
+        "DEU",
+        "CHE",
+        "ITA",
+        "ESP",
+        "HRV",
+        "SVN"
+      ],
+      "summary_admin_ids": [
+        "FRA",
+        "BEL",
+        "NLD",
+        "LUX",
+        "DEU",
+        "CHE",
+        "ITA",
+        "ESP",
+        "HRV",
+        "SVN"
+      ],
+      "county_count": 10,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0110": {
+      "polity_id": "polity_eur_0110",
+      "county_ids": [
+        "FRA"
+      ],
+      "summary_admin_ids": [
+        "FRA"
+      ],
+      "county_count": 1,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0111": {
+      "polity_id": "polity_eur_0111",
+      "county_ids": [
+        "FRA",
+        "DZA"
+      ],
+      "summary_admin_ids": [
+        "FRA",
+        "DZA"
+      ],
+      "county_count": 2,
+      "matched_resolution": "ADM0_NEIGHBOR",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0112": {
+      "polity_id": "polity_eur_0112",
+      "county_ids": [
+        "FRA"
+      ],
+      "summary_admin_ids": [
+        "FRA"
+      ],
+      "county_count": 1,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0113": {
+      "polity_id": "polity_eur_0113",
+      "county_ids": [
+        "FRA"
+      ],
+      "summary_admin_ids": [
+        "FRA"
+      ],
+      "county_count": 1,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0114": {
+      "polity_id": "polity_eur_0114",
+      "county_ids": [
+        "FRA",
+        "DZA",
+        "MAR",
+        "TUN",
+        "LBN",
+        "SYR"
+      ],
+      "summary_admin_ids": [
+        "FRA",
+        "DZA",
+        "MAR",
+        "TUN",
+        "LBN",
+        "SYR"
+      ],
+      "county_count": 6,
+      "matched_resolution": "ADM0_NEIGHBOR",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0115": {
+      "polity_id": "polity_eur_0115",
+      "county_ids": [
+        "GBR",
+        "GB-ENG",
+        "GB-SCT",
+        "GB-WLS",
+        "GB-NIR",
+        "IRL"
+      ],
+      "summary_admin_ids": [
+        "GBR",
+        "GB-ENG",
+        "GB-SCT",
+        "GB-WLS",
+        "GB-NIR",
+        "IRL"
+      ],
+      "county_count": 6,
+      "matched_resolution": "ADM0_ADM1",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0116": {
+      "polity_id": "polity_eur_0116",
+      "county_ids": [
+        "AUT",
+        "CZE",
+        "HUN",
+        "SVK",
+        "SVN",
+        "HRV",
+        "ITA",
+        "POL",
+        "UKR",
+        "ROU",
+        "BIH",
+        "SRB"
+      ],
+      "summary_admin_ids": [
+        "AUT",
+        "CZE",
+        "HUN",
+        "SVK",
+        "SVN",
+        "HRV",
+        "ITA",
+        "POL",
+        "UKR",
+        "ROU",
+        "BIH",
+        "SRB"
+      ],
+      "county_count": 12,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0117": {
+      "polity_id": "polity_eur_0117",
+      "county_ids": [
+        "AUT",
+        "HUN",
+        "CZE",
+        "SVK",
+        "SVN",
+        "HRV",
+        "ROU",
+        "UKR",
+        "POL",
+        "BIH",
+        "SRB",
+        "MNE",
+        "ITA"
+      ],
+      "summary_admin_ids": [
+        "AUT",
+        "HUN",
+        "CZE",
+        "SVK",
+        "SVN",
+        "HRV",
+        "ROU",
+        "UKR",
+        "POL",
+        "BIH",
+        "SRB",
+        "MNE",
+        "ITA"
+      ],
+      "county_count": 13,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0118": {
+      "polity_id": "polity_eur_0118",
+      "county_ids": [
+        "DEU",
+        "AUT",
+        "CHE",
+        "LIE",
+        "LUX",
+        "CZE",
+        "POL"
+      ],
+      "summary_admin_ids": [
+        "DEU",
+        "AUT",
+        "CHE",
+        "LIE",
+        "LUX",
+        "CZE",
+        "POL"
+      ],
+      "county_count": 7,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0119": {
+      "polity_id": "polity_eur_0119",
+      "county_ids": [
+        "DEU",
+        "POL"
+      ],
+      "summary_admin_ids": [
+        "DEU",
+        "POL"
+      ],
+      "county_count": 2,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0120": {
+      "polity_id": "polity_eur_0120",
+      "county_ids": [
+        "DEU",
+        "POL",
+        "FRA",
+        "LTU",
+        "RUS",
+        "DNK",
+        "BEL",
+        "LUX"
+      ],
+      "summary_admin_ids": [
+        "DEU",
+        "POL",
+        "FRA",
+        "LTU",
+        "RUS",
+        "DNK",
+        "BEL",
+        "LUX"
+      ],
+      "county_count": 8,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0121": {
+      "polity_id": "polity_eur_0121",
+      "county_ids": [
+        "ITA",
+        "HRV",
+        "SVN"
+      ],
+      "summary_admin_ids": [
+        "ITA",
+        "HRV",
+        "SVN"
+      ],
+      "county_count": 3,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0122": {
+      "polity_id": "polity_eur_0122",
+      "county_ids": [
+        "RUS",
+        "UKR",
+        "BLR",
+        "FIN",
+        "EST",
+        "LVA",
+        "LTU",
+        "POL",
+        "MDA"
+      ],
+      "summary_admin_ids": [
+        "RUS",
+        "UKR",
+        "BLR",
+        "FIN",
+        "EST",
+        "LVA",
+        "LTU",
+        "POL",
+        "MDA"
+      ],
+      "county_count": 9,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0123": {
+      "polity_id": "polity_eur_0123",
+      "county_ids": [
+        "TUR",
+        "GRC",
+        "BGR",
+        "MKD",
+        "ALB",
+        "SRB",
+        "MNE",
+        "BIH",
+        "HRV",
+        "ROU",
+        "MDA",
+        "UKR",
+        "CYP",
+        "SYR",
+        "LBN",
+        "ISR",
+        "JOR",
+        "EGY",
+        "LBY",
+        "TUN",
+        "DZA",
+        "IRQ"
+      ],
+      "summary_admin_ids": [
+        "TUR",
+        "GRC",
+        "BGR",
+        "MKD",
+        "ALB",
+        "SRB",
+        "MNE",
+        "BIH",
+        "HRV",
+        "ROU",
+        "MDA",
+        "UKR",
+        "CYP",
+        "SYR",
+        "LBN",
+        "ISR",
+        "JOR",
+        "EGY",
+        "LBY",
+        "TUN",
+        "DZA",
+        "IRQ"
+      ],
+      "county_count": 22,
+      "matched_resolution": "ADM0_NEIGHBOR",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0124": {
+      "polity_id": "polity_eur_0124",
+      "county_ids": [
+        "TUR",
+        "SYR",
+        "LBN",
+        "ISR",
+        "JOR",
+        "IRQ"
+      ],
+      "summary_admin_ids": [
+        "TUR",
+        "SYR",
+        "LBN",
+        "ISR",
+        "JOR",
+        "IRQ"
+      ],
+      "county_count": 6,
+      "matched_resolution": "ADM0_NEIGHBOR",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0125": {
+      "polity_id": "polity_eur_0125",
+      "county_ids": [
+        "GRC"
+      ],
+      "summary_admin_ids": [
+        "GRC"
+      ],
+      "county_count": 1,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0126": {
+      "polity_id": "polity_eur_0126",
+      "county_ids": [
+        "SRB",
+        "MKD",
+        "BIH"
+      ],
+      "summary_admin_ids": [
+        "SRB",
+        "MKD",
+        "BIH"
+      ],
+      "county_count": 3,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0127": {
+      "polity_id": "polity_eur_0127",
+      "county_ids": [
+        "ROU",
+        "MDA"
+      ],
+      "summary_admin_ids": [
+        "ROU",
+        "MDA"
+      ],
+      "county_count": 2,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0128": {
+      "polity_id": "polity_eur_0128",
+      "county_ids": [
+        "BGR"
+      ],
+      "summary_admin_ids": [
+        "BGR"
+      ],
+      "county_count": 1,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0129": {
+      "polity_id": "polity_eur_0129",
+      "county_ids": [
+        "BEL"
+      ],
+      "summary_admin_ids": [
+        "BEL"
+      ],
+      "county_count": 1,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0130": {
+      "polity_id": "polity_eur_0130",
+      "county_ids": [
+        "NLD"
+      ],
+      "summary_admin_ids": [
+        "NLD"
+      ],
+      "county_count": 1,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0131": {
+      "polity_id": "polity_eur_0131",
+      "county_ids": [
+        "CHE"
+      ],
+      "summary_admin_ids": [
+        "CHE"
+      ],
+      "county_count": 1,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0132": {
+      "polity_id": "polity_eur_0132",
+      "county_ids": [
+        "NOR"
+      ],
+      "summary_admin_ids": [
+        "NOR"
+      ],
+      "county_count": 1,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0133": {
+      "polity_id": "polity_eur_0133",
+      "county_ids": [
+        "SWE"
+      ],
+      "summary_admin_ids": [
+        "SWE"
+      ],
+      "county_count": 1,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0134": {
+      "polity_id": "polity_eur_0134",
+      "county_ids": [
+        "DNK"
+      ],
+      "summary_admin_ids": [
+        "DNK"
+      ],
+      "county_count": 1,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0135": {
+      "polity_id": "polity_eur_0135",
+      "county_ids": [
+        "POL",
+        "LTU",
+        "UKR",
+        "BLR"
+      ],
+      "summary_admin_ids": [
+        "POL",
+        "LTU",
+        "UKR",
+        "BLR"
+      ],
+      "county_count": 4,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0136": {
+      "polity_id": "polity_eur_0136",
+      "county_ids": [
+        "GBR",
+        "GB-ENG",
+        "GB-SCT",
+        "GB-WLS",
+        "GB-NIR"
+      ],
+      "summary_admin_ids": [
+        "GBR",
+        "GB-ENG",
+        "GB-SCT",
+        "GB-WLS",
+        "GB-NIR"
+      ],
+      "county_count": 5,
+      "matched_resolution": "ADM0_ADM1",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0137": {
+      "polity_id": "polity_eur_0137",
+      "county_ids": [
+        "DEU",
+        "POL"
+      ],
+      "summary_admin_ids": [
+        "DEU",
+        "POL"
+      ],
+      "county_count": 2,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0138": {
+      "polity_id": "polity_eur_0138",
+      "county_ids": [
+        "DEU",
+        "AUT",
+        "POL",
+        "CZE",
+        "FRA",
+        "BEL",
+        "NLD",
+        "LUX",
+        "DNK",
+        "NOR",
+        "GRC",
+        "HUN",
+        "UKR",
+        "BLR",
+        "RUS"
+      ],
+      "summary_admin_ids": [
+        "DEU",
+        "AUT",
+        "POL",
+        "CZE",
+        "FRA",
+        "BEL",
+        "NLD",
+        "LUX",
+        "DNK",
+        "NOR",
+        "GRC",
+        "HUN",
+        "UKR",
+        "BLR",
+        "RUS"
+      ],
+      "county_count": 15,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0139": {
+      "polity_id": "polity_eur_0139",
+      "county_ids": [
+        "AUT"
+      ],
+      "summary_admin_ids": [
+        "AUT"
+      ],
+      "county_count": 1,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0140": {
+      "polity_id": "polity_eur_0140",
+      "county_ids": [
+        "HUN"
+      ],
+      "summary_admin_ids": [
+        "HUN"
+      ],
+      "county_count": 1,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0141": {
+      "polity_id": "polity_eur_0141",
+      "county_ids": [
+        "CZE",
+        "SVK",
+        "UKR"
+      ],
+      "summary_admin_ids": [
+        "CZE",
+        "SVK",
+        "UKR"
+      ],
+      "county_count": 3,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0142": {
+      "polity_id": "polity_eur_0142",
+      "county_ids": [
+        "POL",
+        "UKR",
+        "BLR",
+        "LTU"
+      ],
+      "summary_admin_ids": [
+        "POL",
+        "UKR",
+        "BLR",
+        "LTU"
+      ],
+      "county_count": 4,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0143": {
+      "polity_id": "polity_eur_0143",
+      "county_ids": [
+        "SRB",
+        "HRV",
+        "SVN",
+        "BIH",
+        "MNE",
+        "MKD",
+        "XKX"
+      ],
+      "summary_admin_ids": [
+        "SRB",
+        "HRV",
+        "SVN",
+        "BIH",
+        "MNE",
+        "MKD",
+        "XKX"
+      ],
+      "county_count": 7,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0144": {
+      "polity_id": "polity_eur_0144",
+      "county_ids": [
+        "ROU",
+        "MDA",
+        "UKR"
+      ],
+      "summary_admin_ids": [
+        "ROU",
+        "MDA",
+        "UKR"
+      ],
+      "county_count": 3,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0145": {
+      "polity_id": "polity_eur_0145",
+      "county_ids": [
+        "BGR",
+        "MKD",
+        "GRC",
+        "SRB"
+      ],
+      "summary_admin_ids": [
+        "BGR",
+        "MKD",
+        "GRC",
+        "SRB"
+      ],
+      "county_count": 4,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0146": {
+      "polity_id": "polity_eur_0146",
+      "county_ids": [
+        "EST"
+      ],
+      "summary_admin_ids": [
+        "EST"
+      ],
+      "county_count": 1,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0147": {
+      "polity_id": "polity_eur_0147",
+      "county_ids": [
+        "LVA"
+      ],
+      "summary_admin_ids": [
+        "LVA"
+      ],
+      "county_count": 1,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0148": {
+      "polity_id": "polity_eur_0148",
+      "county_ids": [
+        "LTU",
+        "POL"
+      ],
+      "summary_admin_ids": [
+        "LTU",
+        "POL"
+      ],
+      "county_count": 2,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0149": {
+      "polity_id": "polity_eur_0149",
+      "county_ids": [
+        "FIN"
+      ],
+      "summary_admin_ids": [
+        "FIN"
+      ],
+      "county_count": 1,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0150": {
+      "polity_id": "polity_eur_0150",
+      "county_ids": [
+        "IRL"
+      ],
+      "summary_admin_ids": [
+        "IRL"
+      ],
+      "county_count": 1,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0151": {
+      "polity_id": "polity_eur_0151",
+      "county_ids": [
+        "ISL"
+      ],
+      "summary_admin_ids": [
+        "ISL"
+      ],
+      "county_count": 1,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0152": {
+      "polity_id": "polity_eur_0152",
+      "county_ids": [
+        "RUS",
+        "UKR",
+        "BLR",
+        "EST",
+        "LVA",
+        "LTU",
+        "POL",
+        "MDA",
+        "FIN",
+        "ROU"
+      ],
+      "summary_admin_ids": [
+        "RUS",
+        "UKR",
+        "BLR",
+        "EST",
+        "LVA",
+        "LTU",
+        "POL",
+        "MDA",
+        "FIN",
+        "ROU"
+      ],
+      "county_count": 10,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0153": {
+      "polity_id": "polity_eur_0153",
+      "county_ids": [
+        "ITA",
+        "LBY",
+        "ALB",
+        "GRC",
+        "HRV",
+        "SVN"
+      ],
+      "summary_admin_ids": [
+        "ITA",
+        "LBY",
+        "ALB",
+        "GRC",
+        "HRV",
+        "SVN"
+      ],
+      "county_count": 6,
+      "matched_resolution": "ADM0_NEIGHBOR",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0154": {
+      "polity_id": "polity_eur_0154",
+      "county_ids": [
+        "ITA",
+        "IT-NORDOVES",
+        "IT-NORDEST"
+      ],
+      "summary_admin_ids": [
+        "ITA",
+        "IT-NORDOVES",
+        "IT-NORDEST"
+      ],
+      "county_count": 3,
+      "matched_resolution": "ADM0_ADM1",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0155": {
+      "polity_id": "polity_eur_0155",
+      "county_ids": [
+        "FRA",
+        "DZA",
+        "MAR",
+        "TUN",
+        "SYR",
+        "LBN"
+      ],
+      "summary_admin_ids": [
+        "FRA",
+        "DZA",
+        "MAR",
+        "TUN",
+        "SYR",
+        "LBN"
+      ],
+      "county_count": 6,
+      "matched_resolution": "ADM0_NEIGHBOR",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0156": {
+      "polity_id": "polity_eur_0156",
+      "county_ids": [
+        "FRA",
+        "DZA"
+      ],
+      "summary_admin_ids": [
+        "FRA",
+        "DZA"
+      ],
+      "county_count": 2,
+      "matched_resolution": "ADM0_NEIGHBOR",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0157": {
+      "polity_id": "polity_eur_0157",
+      "county_ids": [
+        "ESP",
+        "MAR"
+      ],
+      "summary_admin_ids": [
+        "ESP",
+        "MAR"
+      ],
+      "county_count": 2,
+      "matched_resolution": "ADM0_NEIGHBOR",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0158": {
+      "polity_id": "polity_eur_0158",
+      "county_ids": [
+        "PRT"
+      ],
+      "summary_admin_ids": [
+        "PRT"
+      ],
+      "county_count": 1,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0159": {
+      "polity_id": "polity_eur_0159",
+      "county_ids": [
+        "SWE"
+      ],
+      "summary_admin_ids": [
+        "SWE"
+      ],
+      "county_count": 1,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0160": {
+      "polity_id": "polity_eur_0160",
+      "county_ids": [
+        "CHE"
+      ],
+      "summary_admin_ids": [
+        "CHE"
+      ],
+      "county_count": 1,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0161": {
+      "polity_id": "polity_eur_0161",
+      "county_ids": [
+        "HRV",
+        "BIH"
+      ],
+      "summary_admin_ids": [
+        "HRV",
+        "BIH"
+      ],
+      "county_count": 2,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    },
+    "polity_eur_0162": {
+      "polity_id": "polity_eur_0162",
+      "county_ids": [
+        "SVK"
+      ],
+      "summary_admin_ids": [
+        "SVK"
+      ],
+      "county_count": 1,
+      "matched_resolution": "ADM0",
+      "match_source": "modern_admin_units_raw_fallback",
+      "match_confidence": null,
+      "note": "",
+      "valid_from_year": null,
+      "valid_to_year": null
+    }
+  }
 }
