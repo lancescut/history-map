@@ -573,6 +573,57 @@ class Builder:
         })
         return sid
 
+    def add_anecdote(
+        self, year: int, dynasty: str, macro: str, title: str, *,
+        anecdote_type: str = "legend",
+        phrase: str = "",
+        short_description: str = "",
+        story_text: str = "",
+        source_id: str = "source_eur_0001",
+        source_section: str = "",
+        polity_keys: list[str] | None = None,
+        people: str = "",
+        location: str = "",
+        coverage_start: int | None = None,
+        coverage_end: int | None = None,
+        date_precision: str = "approx",
+        priority: int = 200,
+        review_status: str = "candidate",
+        review_note: str = "",
+    ) -> str:
+        aid = f"anecdote_eur_{self._anecdote_seq:04d}"
+        self._anecdote_seq += 1
+        source = SOURCE_BY_ID.get(source_id)
+        title_str = source.title if source else ""
+        url_str = source.url if source else ""
+        type_str = source.source_type if source else "synthesized_secondary"
+        related = "|".join(
+            self.polity_key_to_id[k] for k in polity_keys or [] if k in self.polity_key_to_id
+        )
+        lon, lat = COORDS.get(location, ("", ""))
+        self.anecdotes.append({
+            "anecdote_id": aid, "dynasty_name": dynasty, "macro_period": macro,
+            "year": str(year), "sort_order": str(self._anecdote_seq),
+            "date_label": year_label(year), "date_precision": date_precision,
+            "coverage_start_year": str(coverage_start if coverage_start is not None else year),
+            "coverage_end_year": str(coverage_end if coverage_end is not None else year),
+            "anecdote_type": anecdote_type,
+            "title": title, "phrase": phrase,
+            "short_description": short_description, "story_text": story_text or short_description,
+            "source_title": title_str, "source_section": source_section,
+            "source_url": url_str, "source_type": type_str,
+            "source_note": "Anecdote/context row; not used as sole chronology source.",
+            "related_polity_ids": related, "related_people": people,
+            "location_historical_name": location, "location_modern_name": location,
+            "longitude": str(lon), "latitude": str(lat),
+            "location_precision": "city" if location and lon != "" else "",
+            "primary_education_stage": "高中",
+            "education_stage_tags": "世界史|欧洲史",
+            "display_priority": str(priority),
+            "review_status": review_status, "review_note": review_note,
+        })
+        return aid
+
     def add_context(
         self, start: int, end: int, title: str, description: str, *,
         location_name: str = "", confidence: int = 80, note: str = "",
@@ -3899,6 +3950,211 @@ def _register_world_wars(b: Builder) -> None:
                   source_ids=src_wwii, confidence=95)
 
 
+def _register_anecdotes(b: Builder) -> None:
+    """30 European legends / myths / folk tales spanning cultural cycles.
+    All entered with anecdote_type=legend and review_status=candidate to
+    flag them as cultural-memory rows, not historical chronology evidence."""
+    # ---------- Greek myth (7) ----------
+    b.add_anecdote(year=-1200, dynasty="希腊神话", macro="古风时代",
+                   title="特洛伊木马（Trojan Horse）",
+                   phrase="木马屠城",
+                   short_description="希腊联军用巨大木马伪装作贡品送入特洛伊，夜间藏于其中的希腊战士打开城门，特洛伊陷落。",
+                   source_id="source_eur_0011", people="Odysseus; Priam; Helen",
+                   location="Troy", polity_keys=["trojan_kingdom", "mycenaean"])
+    b.add_anecdote(year=-1300, dynasty="希腊神话", macro="青铜时代",
+                   title="忒修斯与米诺陶（Theseus and the Minotaur）",
+                   phrase="阿里阿德涅之线",
+                   short_description="雅典王子忒修斯进入克里特迷宫斩杀牛头怪米诺陶，靠米诺斯公主阿里阿德涅赠予的线团走出迷宫。",
+                   source_id="source_eur_0021", people="Theseus; Minos; Ariadne; Minotaur",
+                   location="Knossos", polity_keys=["minoan_palatial", "athens_archaic"])
+    b.add_anecdote(year=-1200, dynasty="希腊神话", macro="青铜时代",
+                   title="赫拉克勒斯十二试炼（The Twelve Labors of Heracles）",
+                   phrase="大力神十二试炼",
+                   short_description="赫拉克勒斯为赎杀子之罪，受迈锡尼王欧律斯透斯命令完成十二项不可能的任务，包括尼米亚狮、勒拿水蛇、革律翁牛群等。",
+                   source_id="source_eur_0011", people="Heracles; Eurystheus",
+                   location="Mycenae", polity_keys=["mycenaean"])
+    b.add_anecdote(year=-1300, dynasty="希腊神话", macro="青铜时代",
+                   title="伊阿宋与金羊毛（Jason and the Argonauts）",
+                   phrase="阿尔戈号远征",
+                   short_description="伊阿宋率阿尔戈英雄团乘阿尔戈号远征科尔基斯（黑海东岸）夺取金羊毛，获美狄亚相助。",
+                   source_id="source_eur_0011", people="Jason; Medea; Argonauts",
+                   location="Pella", polity_keys=["mycenaean"])
+    b.add_anecdote(year=-700, dynasty="希腊神话", macro="古风时代",
+                   title="俄狄浦斯王（Oedipus Rex）",
+                   phrase="弑父娶母",
+                   short_description="底比斯王子俄狄浦斯不知情下杀父娶母，应验德尔斐神谕，揭示后自残双目流亡。索福克勒斯悲剧母题。",
+                   source_id="source_eur_0011", people="Oedipus; Laius; Jocasta",
+                   location="Thebes", polity_keys=["thebes_boeotia"])
+    b.add_anecdote(year=-1200, dynasty="希腊神话", macro="青铜时代",
+                   title="珀尔修斯与美杜莎（Perseus and Medusa）",
+                   phrase="斩蛇发美杜莎",
+                   short_description="阿耳戈斯王子珀尔修斯借雅典娜之盾与赫尔墨斯之剑斩下美杜莎之头，救埃塞俄比亚公主安德罗墨达。",
+                   source_id="source_eur_0011", people="Perseus; Medusa; Andromeda",
+                   location="Argos", polity_keys=["mycenaean"])
+    b.add_anecdote(year=-431, dynasty="希腊神话/历史交汇", macro="古典时代",
+                   title="伯里克利的悼词（Funeral Oration of Pericles）",
+                   phrase="雅典是希腊的学校",
+                   short_description="伯罗奔尼撒战争首年雅典阵亡将士葬礼上，伯里克利发表演说赞颂雅典民主与公民精神。修昔底德记录。",
+                   source_id="source_eur_0011", people="Pericles",
+                   location="Athens", polity_keys=["athens_classical"],
+                   anecdote_type="historical_memory")
+
+    # ---------- Roman legend (5) ----------
+    b.add_anecdote(year=-753, dynasty="罗马神话", macro="古风时代",
+                   title="罗慕路斯与雷穆斯（Romulus and Remus）",
+                   phrase="双子建罗马",
+                   short_description="战神玛尔斯与维斯塔贞女之子双胞胎被遗弃台伯河，由母狼哺育，长大后建罗马城；罗慕路斯杀雷穆斯成为首王。",
+                   source_id="source_eur_0002", people="Romulus; Remus",
+                   location="Rome", polity_keys=["roman_kingdom"])
+    b.add_anecdote(year=-509, dynasty="罗马传说", macro="古风时代",
+                   title="卢克丽霞之死（Lucretia）",
+                   phrase="贞女之耻",
+                   short_description="贵族卢克丽霞遭末王塔克文之子凌辱后自尽，引发布鲁图斯领导贵族驱逐塔克文王朝，建立共和。",
+                   source_id="source_eur_0002", people="Lucretia; Sextus Tarquinius; Lucius Junius Brutus",
+                   location="Rome", polity_keys=["roman_kingdom", "roman_republic"])
+    b.add_anecdote(year=-507, dynasty="罗马传说", macro="古风时代",
+                   title="贺拉提乌斯守桥（Horatius Cocles）",
+                   phrase="独守苏布利契亚桥",
+                   short_description="罗马英雄贺拉提乌斯·科克勒斯独立守桥抵御伊特鲁里亚军，给身后罗马人毁桥时间，自己跳河逃生。",
+                   source_id="source_eur_0002", people="Horatius Cocles; Lars Porsena",
+                   location="Rome", polity_keys=["roman_republic"])
+    b.add_anecdote(year=-458, dynasty="罗马传说", macro="古典时代",
+                   title="辛辛纳图斯归田（Cincinnatus）",
+                   phrase="十六天的独裁",
+                   short_description="独裁官辛辛纳图斯击败埃魁人后十六日卸任，回到自家小农场。共和制公民德行的典范。",
+                   source_id="source_eur_0002", people="Lucius Quinctius Cincinnatus",
+                   location="Rome", polity_keys=["roman_republic"])
+    b.add_anecdote(year=-390, dynasty="罗马传说", macro="古典时代",
+                   title="高卢人入侵罗马 — 卡庇托利的鹅（Brennus & the Geese）",
+                   phrase="高卢人来了！",
+                   short_description="布伦努斯率高卢人攻陷罗马，唯卡庇托山堡守住——夜袭被神庙群鹅鸣叫警觉。布伦努斯索贡时把剑掷上天平喊 'Vae victis'（败者无理）。",
+                   source_id="source_eur_0002", people="Brennus; Marcus Manlius",
+                   location="Rome", polity_keys=["roman_republic"])
+
+    # ---------- Norse myth (4) ----------
+    b.add_anecdote(year=-100, dynasty="北欧神话", macro="铁器时代",
+                   title="奥丁与世界树（Odin and Yggdrasil）",
+                   phrase="一只眼换智慧",
+                   short_description="主神奥丁挂在世界树 Yggdrasil 上九天九夜，自挽枪刃以换取卢恩字符的智慧；又在密米尔之泉献出一只眼以饮泉获洞见。",
+                   source_id="source_eur_0016", people="Odin; Mimir",
+                   location="Uppsala", polity_keys=["nordic_bronze"])
+    b.add_anecdote(year=900, dynasty="北欧神话", macro="中古时代",
+                   title="雷神之锤（Thor's Hammer Mjölnir）",
+                   phrase="姆约尼尔",
+                   short_description="雷神托尔的战锤姆约尼尔由侏儒锻造，能掷出击碎山岳又自动回到手中。维京船首与坠饰常见雷锤造型。",
+                   source_id="source_eur_0016", people="Thor; Loki; Sif",
+                   location="Uppsala", polity_keys=["viking_norway", "viking_sweden"])
+    b.add_anecdote(year=1000, dynasty="北欧神话", macro="中古时代",
+                   title="诸神黄昏（Ragnarök）",
+                   phrase="诸神之末日",
+                   short_description="末日预言：芬利尔狼吞噬奥丁、托尔与世界蛇耶梦加得同归于尽、世界树燃烧、九界沉海，而后新世界重生。",
+                   source_id="source_eur_0016", people="Odin; Thor; Loki; Fenrir; Jörmungandr",
+                   location="Uppsala", polity_keys=["viking_norway", "viking_denmark"])
+    b.add_anecdote(year=750, dynasty="盎格鲁-撒克逊/北欧叙事", macro="古典时代",
+                   title="贝奥武夫（Beowulf）",
+                   phrase="斩格伦德尔",
+                   short_description="高特族英雄贝奥武夫赴丹麦助赫罗斯加王斩怪物格伦德尔母子，晚年化龙之战中同归于尽。盎格鲁-撒克逊最古老英语史诗。",
+                   source_id="source_eur_0016", people="Beowulf; Grendel; Hrothgar",
+                   location="Roskilde", polity_keys=["anglo_saxon_wessex", "viking_denmark"])
+
+    # ---------- Arthurian (4) ----------
+    b.add_anecdote(year=500, dynasty="不列颠传说", macro="古典时代",
+                   title="石中剑与亚瑟王（Arthur Pulls the Sword from the Stone）",
+                   phrase="拔出石中剑者方为不列颠之王",
+                   short_description="少年亚瑟从教堂前石砧中拔出剑（不是 Excalibur），证明自己是合法的不列颠王。后获 Lady of the Lake 赠湖中剑 Excalibur。",
+                   source_id="source_eur_0006", people="Arthur; Merlin",
+                   location="Winchester", polity_keys=["anglo_saxon_wessex"])
+    b.add_anecdote(year=520, dynasty="不列颠传说", macro="古典时代",
+                   title="圆桌骑士（Knights of the Round Table）",
+                   phrase="圆桌无上下",
+                   short_description="亚瑟王在卡梅洛特设圆桌，使所有骑士席位平等。骑士团包括 Lancelot、Gawain、Galahad、Percival 等。",
+                   source_id="source_eur_0006", people="Arthur; Lancelot; Galahad; Gawain",
+                   location="Winchester")
+    b.add_anecdote(year=540, dynasty="不就传说", macro="古典时代",
+                   title="圣杯探求（The Quest for the Holy Grail）",
+                   phrase="圣杯",
+                   short_description="圆桌骑士寻求基督最后晚餐的圣杯，只有 Galahad、Percival、Bors 三纯洁骑士见到圣杯并升天。",
+                   source_id="source_eur_0006", people="Galahad; Percival; Bors",
+                   location="Winchester")
+    b.add_anecdote(year=550, dynasty="不列颠传说", macro="古典时代",
+                   title="特里斯坦与伊瑟（Tristan and Iseult）",
+                   phrase="爱情灵药",
+                   short_description="康沃尔骑士特里斯坦被派去爱尔兰为叔父马克王迎娶伊瑟公主，两人误饮爱情灵药生死相恋，悲剧收场。中世纪 courtly love 母题。",
+                   source_id="source_eur_0006", people="Tristan; Iseult; Mark of Cornwall",
+                   location="London")
+
+    # ---------- Carolingian cycle (3) ----------
+    b.add_anecdote(year=778, dynasty="加洛林叙事诗", macro="中古时代",
+                   title="罗兰之歌（La Chanson de Roland）",
+                   phrase="罗兰吹响奥利凡特号角",
+                   short_description="查理曼东征西班牙归途中，后卫罗兰在比利牛斯山隆塞斯瓦列斯关被巴斯克伏击；罗兰拒吹号求援直至临终时方吹奥利凡特，号声裂喉而亡。",
+                   source_id="source_eur_0023", people="Roland; Oliver; Charlemagne; Ganelon",
+                   location="Saragossa", polity_keys=["carolingian_empire", "umayyad_iberia"])
+    b.add_anecdote(year=800, dynasty="加洛林叙事诗", macro="中古时代",
+                   title="十二骑士（The Twelve Paladins of Charlemagne）",
+                   phrase="十二圣骑士",
+                   short_description="查理曼宫廷传说中的十二位主要骑士，包括 Roland、Oliver、Ogier the Dane、Renaud de Montauban 等。中世纪 chansons de geste 主角群。",
+                   source_id="source_eur_0023", people="Roland; Oliver; Ogier; Renaud",
+                   location="Aachen", polity_keys=["carolingian_empire"])
+    b.add_anecdote(year=850, dynasty="加洛林叙事诗", macro="中古时代",
+                   title="奥吉尔之歌（Ogier the Dane）",
+                   phrase="丹麦的奥吉尔",
+                   short_description="加洛林叙事诗中的丹麦骑士奥吉尔，先与查理曼对抗，后归顺成为加洛林十二骑士之一。法国与丹麦民间英雄。",
+                   source_id="source_eur_0023", people="Ogier the Dane; Charlemagne",
+                   location="Roskilde", polity_keys=["carolingian_empire", "viking_denmark"])
+
+    # ---------- Folk legends (5) ----------
+    b.add_anecdote(year=1190, dynasty="英格兰民间传说", macro="中世纪盛期",
+                   title="罗宾汉（Robin Hood）",
+                   phrase="劫富济贫",
+                   short_description="舍伍德森林绿衣神射手罗宾汉率快乐兄弟会反抗诺丁汉郡长的暴政，劫富济贫，等待狮心王理查回归。",
+                   source_id="source_eur_0006", people="Robin Hood; Little John; Maid Marian; Sheriff of Nottingham",
+                   location="York", polity_keys=["kingdom_england"])
+    b.add_anecdote(year=1307, dynasty="瑞士民间传说", macro="中世纪晚期",
+                   title="威廉·退尔（William Tell）",
+                   phrase="射苹果",
+                   short_description="瑞士神射手威廉·退尔拒向哈布斯堡奥地利总督 Gessler 之帽行礼，被罚射儿子头顶苹果；射中后刺杀 Gessler，引发瑞士独立。",
+                   source_id="source_eur_0001", people="William Tell; Gessler",
+                   location="Bern" if False else "",  # no coord
+                   polity_keys=["swiss_confederation"])
+    b.add_anecdote(year=1300, dynasty="德意志民间传说", macro="中世纪晚期",
+                   title="哈梅尔的吹笛人（The Pied Piper of Hamelin）",
+                   phrase="吹笛人带走 130 孩童",
+                   short_description="花衣吹笛人受雇于哈梅尔镇驱赶老鼠，事后不获报酬，吹笛诱走全镇 130 名孩童，消失于山中。可能反映 1284 年儿童东进运动的历史阴影。",
+                   source_id="source_eur_0001", people="Pied Piper",
+                   location="Hamelin" if False else "",
+                   polity_keys=["hre_early", "hre_late"])
+    b.add_anecdote(year=1480, dynasty="德意志民间传说", macro="中世纪晚期",
+                   title="浮士德博士（Doctor Faust）",
+                   phrase="灵魂交易",
+                   short_description="德意志学者浮士德博士与魔鬼梅菲斯特费勒斯签约，以灵魂换 24 年知识与享乐。歌德戏剧化为德意志最重要文学母题之一。",
+                   source_id="source_eur_0001", people="Doctor Faust; Mephistopheles",
+                   location="" if True else "Wittenberg",
+                   polity_keys=["hre_late"])
+    b.add_anecdote(year=1390, dynasty="瑞士民间传说", macro="中世纪晚期",
+                   title="阿诺德·冯·温克尔里德（Arnold von Winkelried）",
+                   phrase="给同志开路",
+                   short_description="森帕赫战役（1386）瑞士联军对阵奥地利重骑士，温克尔里德怀抱一束敌方长矛刺入自身胸膛为联军开路，使联军突破奥军方阵。",
+                   source_id="source_eur_0001", people="Arnold von Winkelried",
+                   location="", polity_keys=["swiss_confederation", "hre_late"])
+
+    # ---------- Other / additional (2) ----------
+    b.add_anecdote(year=1099, dynasty="十字军记忆", macro="中世纪盛期",
+                   title="十字军攻陷耶路撒冷的血雨（Sack of Jerusalem）",
+                   phrase="血流至马膝",
+                   short_description="第一次十字军攻陷耶路撒冷后大规模屠杀穆斯林与犹太居民。同时代编年史夸张写「血流至马膝」。中世纪基督教 / 伊斯兰记忆中长期回响。",
+                   source_id="source_eur_0026", people="Godfrey of Bouillon; Raymond of Toulouse",
+                   location="", polity_keys=["crusader_jerusalem"],
+                   anecdote_type="historical_memory")
+    b.add_anecdote(year=1453, dynasty="拜占庭遗民记忆", macro="中世纪晚期",
+                   title="末代皇帝消失于战场（Constantine XI's Last Stand）",
+                   phrase="紫衣帝最后一战",
+                   short_description="奥斯曼破城之日，末代皇帝君士坦丁十一世弃帝服披普通士兵盔甲冲入城门战死；尸首未被认出。拜占庭遗民传说他将在希腊复国之日复活。",
+                   source_id="source_eur_0003", people="Constantine XI Palaiologos; Mehmed II",
+                   location="Constantinople", polity_keys=["byzantine_late", "early_ottoman"],
+                   anecdote_type="historical_memory")
+
+
 def write_dataset(b: Builder) -> None:
     """Materialize Builder state to input/vEuropean/*.csv + manifest."""
     DATASET_DIR.mkdir(parents=True, exist_ok=True)
@@ -3910,7 +4166,11 @@ def write_dataset(b: Builder) -> None:
     write_csv(DATASET_DIR / DATASET_FILES["historical_anecdotes"], ANECDOTE_FIELDS, b.anecdotes)
     write_csv(DATASET_DIR / DATASET_FILES["historical_contexts"], CONTEXT_FIELDS, b.contexts)
     write_csv(DATASET_DIR / DATASET_FILES["strategic_locations"], STRATEGIC_FIELDS, b.strategic)
-    write_csv(DATASET_DIR / DATASET_FILES["territory_overrides"], TERRITORY_FIELDS, b.territories)
+    # territory_overrides_vEuropean.csv is hand-curated (peak-extent admin_ids
+    # for empire-class polities). Bootstrap should never overwrite it unless
+    # builder explicitly populated it (b.territories non-empty).
+    if b.territories:
+        write_csv(DATASET_DIR / DATASET_FILES["territory_overrides"], TERRITORY_FIELDS, b.territories)
     write_csv(DATASET_DIR / DATASET_FILES["issues"], ISSUE_FIELDS, b.issues)
     write_csv(
         DATASET_DIR / DATASET_FILES["sources"],
@@ -3946,13 +4206,15 @@ def main() -> int:
     _register_early_modern(b)
     _register_long_19th(b)
     _register_world_wars(b)
+    _register_anecdotes(b)
     write_dataset(b)
     print(
         f"[bootstrap_european_dataset] {len(b.polities)} polities, "
         f"{len(b.rulers)} rulers, {len(b.capitals)} capital events, "
-        f"{len(b.events)} events, {len(b.contexts)} contexts, "
+        f"{len(b.events)} events, {len(b.anecdotes)} anecdotes, "
+        f"{len(b.contexts)} contexts, "
         f"{len(b.strategic)} strategic locations, "
-        f"{len(b.territories)} territory overrides, "
+        f"{len(b.territories)} territory overrides (skipped write if 0), "
         f"{len(b.issues)} issues → input/vEuropean/"
     )
     return 0

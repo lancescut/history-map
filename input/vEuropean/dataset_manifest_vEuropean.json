@@ -3,7 +3,7 @@
   "dataset_name": "欧洲史 vEuropean",
   "schema_family": "v03-compatible-world-history",
   "created_by": "scripts/bootstrap_european_dataset.py",
-  "generated_at": "2026-05-21T23:58:03+00:00",
+  "generated_at": "2026-05-24T02:39:31+00:00",
   "year_min": -3000,
   "year_max": 1945,
   "year_zero_policy": "no_year_zero",

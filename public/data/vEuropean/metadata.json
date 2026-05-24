@@ -1,6 +1,6 @@
 {
   "data_version": "vEuropean",
-  "generated_at": "2026-05-21T23:58:32+00:00",
+  "generated_at": "2026-05-24T02:44:13+00:00",
   "year_min": -3000,
   "year_max": 2026,
   "year_count": 5026,
@@ -16,7 +16,7 @@
   "territory_missing_count": 0,
   "territory_low_confidence_count": 0,
   "historical_event_count": 85,
-  "historical_anecdote_count": 0,
+  "historical_anecdote_count": 30,
   "strategic_location_count": 22,
   "admin_boundary_source": "geoBoundaries gbOpen (multi-ISO Europe aggregate)",
   "admin_boundary_license": "Open Data Commons Open Database License 1.0"

@@ -72,9 +72,17 @@ Stable admin_id codes for use in `territory_overrides_vEuropean.csv`.
 
 | admin_id | name | shapeISO |
 |---|---|---|
-| BE-BRUSSELS | Brussels Hoofdstedelijk | BRU |
-| BE-VLAAMSGE | Vlaams Gewest | VLG |
-| BE-WALLONNE | Wallonne Gewest | WAL |
+| BE-BRU | Brussels | BE-BRU |
+| BE-VAN | Antwerpen | BE-VAN |
+| BE-VBR | Vlaams-Brabant | BE-VBR |
+| BE-VLI | Limburg | BE-VLI |
+| BE-VOV | Oost-Vlaanderen | BE-VOV |
+| BE-VWV | West-Vlaanderen | BE-VWV |
+| BE-WBR | Waals-Brabant | BE-WBR |
+| BE-WHT | Henegouwen | BE-WHT |
+| BE-WLG | Luik | BE-WLG |
+| BE-WLX | Luxemburg | BE-WLX |
+| BE-WNA | Namen | BE-WNA |
 
 ## ADM1: CHE (瑞士)
 
@@ -152,6 +160,24 @@ Stable admin_id codes for use in `territory_overrides_vEuropean.csv`.
 | ES-PRINCIPA | Principado de Asturias | ESP |
 | ES-REGIONDE | Región de Murcia | ESP |
 
+## ADM1: FRA (法国)
+
+| admin_id | name | shapeISO |
+|---|---|---|
+| FR-20R | Corse | FR-20R |
+| FR-ARA | Auvergne-Rhône-Alpes | FR-ARA |
+| FR-BFC | Bourgogne-Franche-Comté | FR-BFC |
+| FR-BRE | Bretagne | FR-BRE |
+| FR-CVL | Centre-Val de Loire | FR-CVL |
+| FR-GES | Grand Est | FR-GES |
+| FR-HDF | Hauts-de-France | FR-HDF |
+| FR-IDF | Île-de-France | FR-IDF |
+| FR-NAQ | Nouvelle-Aquitaine | FR-NAQ |
+| FR-NOR | Normandie | FR-NOR |
+| FR-OCC | Occitanie | FR-OCC |
+| FR-PAC | Provence-Alpes-Côte d'Azur | FR-PAC |
+| FR-PDL | Pays de la Loire | FR-PDL |
+
 ## ADM1: GBR (英国)
 
 | admin_id | name | shapeISO |
@@ -161,15 +187,43 @@ Stable admin_id codes for use in `territory_overrides_vEuropean.csv`.
 | GB-SCT | Scotland | GB-SCT |
 | GB-WLS | Wales | GB-WLS |
 
+## ADM1: GRC (希腊)
+
+| admin_id | name | shapeISO |
+|---|---|---|
+| GR-AI | Egean | GR-AI |
+| GR-AT | Attica | GR-AT |
+| GR-CR | Crete | GR-CR |
+| GR-EM | Epirus-Western Macedonia | GR-EM |
+| GR-MA | Agion Oros | GR-MA |
+| GR-MH | Macedonia-Thrace | GR-MH |
+| GR-PW | Peloponisos-W. Greece & Ionian | GR-PW |
+| GR-TC | Thessalia-Central Greece | GR-TC |
+
 ## ADM1: ITA (意大利)
 
 | admin_id | name | shapeISO |
 |---|---|---|
-| IT-CENTRO | Centro |  |
-| IT-ISOLE | Isole |  |
-| IT-NORDEST | Nord-Est |  |
-| IT-NORDOVES | Nord-Ovest |  |
-| IT-SUD | Sud |  |
+| IT-ABRUZZO | Abruzzo |  |
+| IT-BASILICA | Basilicata |  |
+| IT-CALABRIA | Calabria |  |
+| IT-CAMPANIA | Campania |  |
+| IT-EMILIARO | Emilia-Romagna |  |
+| IT-FRIULIVE | Friuli Venezia Giulia |  |
+| IT-LAZIO | Lazio |  |
+| IT-LIGURIA | Liguria |  |
+| IT-LOMBARDI | Lombardia |  |
+| IT-MARCHE | Marche |  |
+| IT-MOLISE | Molise |  |
+| IT-PIEMONTE | Piemonte |  |
+| IT-PUGLIA | Puglia |  |
+| IT-SARDEGNA | Sardegna |  |
+| IT-SICILIA | Sicilia |  |
+| IT-TOSCANA | Toscana |  |
+| IT-TRENTINO | Trentino-Alto Adige |  |
+| IT-UMBRIA | Umbria |  |
+| IT-VALLEDAO | Valle d'Aosta |  |
+| IT-VENETO | Veneto |  |
 
 ## ADM1: NLD (荷兰)
 

@@ -1,6 +1,137 @@
 {
   "data_version": "vEuropean",
-  "preset_count": 0,
-  "comment": "Empty stub. Story presets will be added after bootstrap_european_dataset.py populates the polity / event tables. Planned presets: Roman expansion, Carolingian inheritance, Reconquista, Crusades, Reformation, Thirty Years' War, French Revolution & Napoleon, Italian/German unifications, World Wars.",
-  "presets": []
+  "comment": "vEuropean 演示路线（每条 preset 含 dataset_id: vEuropean，前端激活时自动把 active 切回 [vEuropean]）。年份选取参考主要朝代兴衰与文明转折节点。",
+  "presets": [
+    {
+      "preset_id": "europe_rome_republic_to_empire",
+      "title": "罗马由共和到帝国",
+      "subtitle": "前 509 - 117 · 王政终结到图拉真鼎盛",
+      "default_dwell_ms": 7000,
+      "dataset_id": "vEuropean",
+      "steps": [
+        { "year": -509, "narration": "末王 Tarquinius Superbus 被驱逐，罗马进入共和制；Lucius Junius Brutus 领贵族建立元老院共治。" },
+        { "year": -390, "narration": "高卢人 Brennus 攻陷罗马，卡庇托山堡守住——夜袭被神庙群鹅鸣叫警觉。" },
+        { "year": -264, "narration": "第一次布匿战争爆发，罗马与迦太基为西西里争夺地中海西部霸权。" },
+        { "year": -218, "narration": "汉尼拔率军跨越阿尔卑斯山攻入意大利，第二次布匿战争开战。" },
+        { "year": -146, "narration": "第三次布匿战争结束，罗马彻底摧毁迦太基；同年罗马征服科林斯，希腊本土沦为罗马附庸。" },
+        { "year": -49, "narration": "凯撒率军渡卢比孔河，罗马内战开始：'Alea iacta est'（骰子已掷出）。" },
+        { "year": -44, "narration": "凯撒在元老院被布鲁图斯等共和派刺杀，引发后三头同盟内战。" },
+        { "year": -31, "narration": "屋大维舰队在阿克提乌姆击败安东尼与克利奥帕特拉，托勒密埃及亡。" },
+        { "year": -27, "narration": "屋大维受元老院授予 Augustus 称号，罗马帝国元首制成立。" },
+        { "year": 117, "narration": "图拉真去世，罗马帝国疆域达鼎盛：从不列颠到美索不达米亚。" }
+      ]
+    },
+    {
+      "preset_id": "europe_carolingian_to_hre",
+      "title": "加洛林到神圣罗马",
+      "subtitle": "732 - 1273 · 从图尔之战到 HRE 大空位时代",
+      "default_dwell_ms": 7000,
+      "dataset_id": "vEuropean",
+      "steps": [
+        { "year": 732, "narration": "图尔之战。Charles Martel 击败北上的倭马亚穆斯林军，阻止其向西欧深入。" },
+        { "year": 751, "narration": "Pepin the Short 取代墨洛温末王，加洛林王朝建立。" },
+        { "year": 800, "narration": "教皇 Leo III 在罗马为 Charlemagne 加冕罗马人皇帝，西方罗马帝国称号复活。" },
+        { "year": 843, "narration": "Verdun 条约将加洛林帝国划为西、中、东三部分，法兰西与德意志雏形初现。" },
+        { "year": 962, "narration": "Otto I 由教皇 John XII 加冕，神圣罗马帝国成立。" },
+        { "year": 1054, "narration": "东西教会大分裂。罗马教皇与君士坦丁堡牧首互相绝罚，基督教正式分裂。" },
+        { "year": 1077, "narration": "卡诺莎悔罪。Henry IV 跣足雪中向教皇 Gregory VII 请罪，授职权斗争达高潮。" },
+        { "year": 1122, "narration": "沃尔姆斯协约结束叙任权之争，世俗与教会权力划界。" },
+        { "year": 1190, "narration": "Frederick I Barbarossa 在第三次十字军溺亡于安纳托利亚河中。" },
+        { "year": 1250, "narration": "Frederick II 去世，HRE 进入大空位时代直至 1273 Rudolf I of Habsburg 即位。" }
+      ]
+    },
+    {
+      "preset_id": "europe_crusades",
+      "title": "十字军时代",
+      "subtitle": "1095 - 1291 · 圣地远征与地中海宗教冲突",
+      "default_dwell_ms": 6800,
+      "dataset_id": "vEuropean",
+      "steps": [
+        { "year": 1095, "narration": "教皇 Urban II 在克莱蒙公会议号召收复圣地。" },
+        { "year": 1099, "narration": "第一次十字军攻陷耶路撒冷，建立耶路撒冷王国。同时代编年史记载惊心动魄的屠杀。" },
+        { "year": 1147, "narration": "第二次十字军（Conrad III + Louis VII）。最终未能挽回 1144 失陷的埃德萨。" },
+        { "year": 1187, "narration": "Saladin 在哈丁角击溃十字军，三月后攻陷耶路撒冷。" },
+        { "year": 1192, "narration": "第三次十字军结束。Richard the Lionheart 与 Saladin 签 Jaffa 条约，基督徒获朝圣权。" },
+        { "year": 1204, "narration": "第四次十字军在威尼斯主使下转攻君士坦丁堡，建立短命的拉丁帝国。" },
+        { "year": 1261, "narration": "Michael VIII Palaiologos 收复君士坦丁堡，拜占庭复辟。" },
+        { "year": 1291, "narration": "马穆鲁克攻陷阿卡，十字军在圣地最后据点陷落，拉丁基督教退出黎凡特。" }
+      ]
+    },
+    {
+      "preset_id": "europe_reformation_to_westphalia",
+      "title": "宗教改革到威斯特伐利亚",
+      "subtitle": "1517 - 1648 · 路德到三十年战争终结",
+      "default_dwell_ms": 7000,
+      "dataset_id": "vEuropean",
+      "steps": [
+        { "year": 1517, "narration": "Martin Luther 在维滕贝格教堂门钉《九十五条论纲》，宗教改革开始。" },
+        { "year": 1521, "narration": "沃尔姆斯帝国会议。Luther 被宣布为异端但获德意志诸侯保护。" },
+        { "year": 1534, "narration": "Henry VIII 通过《至尊法案》使英格兰国王取代教皇成为英国教会元首。" },
+        { "year": 1545, "narration": "Council of Trent 召开，天主教反宗教改革开始。" },
+        { "year": 1555, "narration": "Augsburg 和约确立 'cuius regio, eius religio'（教随国定）原则。" },
+        { "year": 1572, "narration": "巴黎圣巴托罗缪之夜大屠杀。法国宗教战争中数千胡格诺派遭杀。" },
+        { "year": 1598, "narration": "Henry IV 颁《南特敕令》给予胡格诺派宗教自由，结束法国宗教战争。" },
+        { "year": 1618, "narration": "Defenestration of Prague 引发三十年战争。" },
+        { "year": 1631, "narration": "Breitenfeld 战役。瑞典国王 Gustavus Adolphus 击败帝国军，新教阵营反扑。" },
+        { "year": 1648, "narration": "Peace of Westphalia 签订，三十年战争结束，确立主权国家体系。" }
+      ]
+    },
+    {
+      "preset_id": "europe_napoleonic_era",
+      "title": "拿破仑战争",
+      "subtitle": "1789 - 1815 · 巴士底到滑铁卢",
+      "default_dwell_ms": 6500,
+      "dataset_id": "vEuropean",
+      "steps": [
+        { "year": 1789, "narration": "巴黎人民攻陷巴士底狱，法国大革命爆发。" },
+        { "year": 1793, "narration": "Louis XVI 被送上断头台；恐怖统治时期开始。" },
+        { "year": 1799, "narration": "Brumaire 政变。Napoleon Bonaparte 成为第一执政官，建立执政府。" },
+        { "year": 1804, "narration": "拿破仑在巴黎圣母院加冕为法兰西人皇帝。" },
+        { "year": 1805, "narration": "Austerlitz 三皇之战。法军击败奥俄联军，神圣罗马帝国次年解散。" },
+        { "year": 1806, "narration": "Confederation of the Rhine 建立，神圣罗马帝国正式终结。" },
+        { "year": 1812, "narration": "拿破仑率大军远征俄罗斯，最终撤退中损失惨重。" },
+        { "year": 1813, "narration": "Leipzig 民族大会战。第六次反法同盟击败拿破仑。" },
+        { "year": 1815, "narration": "Waterloo 战役结束拿破仑百日王朝。维也纳会议重画欧洲版图，1815 体系建立。" }
+      ]
+    },
+    {
+      "preset_id": "europe_italian_german_unification",
+      "title": "意大利与德意志统一",
+      "subtitle": "1848 - 1871 · 民族国家形成",
+      "default_dwell_ms": 6500,
+      "dataset_id": "vEuropean",
+      "steps": [
+        { "year": 1848, "narration": "Springtime of Nations。欧洲多国爆发自由主义与民族主义革命。" },
+        { "year": 1859, "narration": "第二次意大利独立战争。法皮联军在 Solferino 击败奥地利，伦巴第归入皮埃蒙特。" },
+        { "year": 1860, "narration": "Garibaldi 率千人红衫军（Spedizione dei Mille）登陆西西里，南意大利各邦归并。" },
+        { "year": 1861, "narration": "意大利王国正式宣告成立，Victor Emmanuel II 即位首王。" },
+        { "year": 1862, "narration": "Bismarck 出任普鲁士首相，开启 '铁血政策'。" },
+        { "year": 1866, "narration": "Königgrätz 战役。普鲁士击败奥地利，结束 HRE 终结后德意志的奥地利主导期。" },
+        { "year": 1870, "narration": "Sedan 战役。普军俘虏拿破仑三世，法兰西第二帝国垮台；意大利占领罗马。" },
+        { "year": 1871, "narration": "威廉一世在凡尔赛镜厅加冕德意志皇帝，德意志统一民族国家成立；罗马成为意大利首都。" }
+      ]
+    },
+    {
+      "preset_id": "europe_two_world_wars",
+      "title": "两次世界大战",
+      "subtitle": "1914 - 1945 · 萨拉热窝到 V-E Day",
+      "default_dwell_ms": 6500,
+      "dataset_id": "vEuropean",
+      "steps": [
+        { "year": 1914, "narration": "Gavrilo Princip 在萨拉热窝刺杀奥地利大公 Franz Ferdinand，第一次世界大战爆发。" },
+        { "year": 1916, "narration": "Verdun 与 Somme 两场战役吞噬数十万生命，西线僵局达极致。" },
+        { "year": 1917, "narration": "俄国二月与十月革命。沙皇 Nicholas II 退位；列宁布尔什维克掌权。" },
+        { "year": 1918, "narration": "11 月 11 日康边停战。德皇 Wilhelm II 退位，魏玛共和国成立。" },
+        { "year": 1919, "narration": "凡尔赛条约签订。德国失阿尔萨斯-洛林、波兰走廊等，赔款条款埋下二战隐患。" },
+        { "year": 1933, "narration": "Hindenburg 任命 Hitler 为德国总理，纳粹党迅速集中权力。" },
+        { "year": 1938, "narration": "慕尼黑协定割让苏台德给德国；同年德国吞并奥地利（Anschluss）。" },
+        { "year": 1939, "narration": "苏德互不侵犯条约签订；9 月 1 日德入侵波兰，二战爆发。" },
+        { "year": 1940, "narration": "法国沦陷。Pétain 维希政权成立，De Gaulle 在伦敦号召自由法国抵抗。" },
+        { "year": 1941, "narration": "Operation Barbarossa 6 月 22 日开始，纳粹德国及其盟友入侵苏联。" },
+        { "year": 1943, "narration": "2 月 2 日德第六集团军在斯大林格勒投降；东线战争转折点。" },
+        { "year": 1944, "narration": "6 月 6 日盟军在诺曼底登陆开辟西线第二战场。" },
+        { "year": 1945, "narration": "5 月 8 日纳粹德国无条件投降，欧洲二战结束（V-E Day）。" }
+      ]
+    }
+  ]
 }

@@ -51,7 +51,7 @@ GEOBOUNDARIES_RAW_BASE = (
     f"https://github.com/wmgeolab/geoBoundaries/raw/{GEOBOUNDARIES_PINNED_COMMIT}/releaseData/gbOpen"
 )
 
-SCRIPT_VERSION = "2026-05-21-veuropean-multi-iso"
+SCRIPT_VERSION = "2026-05-24-veuropean-per-country-fine-level"
 
 
 # ---------- Country list ----------
@@ -112,21 +112,31 @@ ADM0_COUNTRIES: dict[str, tuple[str, str]] = {
     "XKX": ("科索沃", "XK"),
 }
 
-# Federations that get ADM1 in addition to ADM0. Picked for historical depth
-# (HRE-relevant Länder, Italian regioni, Spanish comunidades, UK constituent
-# countries, Polish voivodeships, Russian federal subjects, etc.).
-ADM1_FEDERATIONS: list[str] = [
-    "AUT",
-    "BEL",
-    "CHE",
-    "DEU",
-    "ESP",
-    "GBR",
-    "ITA",
-    "NLD",
-    "POL",
-    "RUS",
-]
+# Countries that get a finer-than-ADM0 layer. For historical relevance we want
+# the level that yields recognizable regions (DEU Bundesländer / ITA regioni /
+# ESP comunidades / GBR constituent countries / etc.).
+#
+# geoBoundaries' "ADM1" varies by country: for some it's exactly what we want
+# (DEU/ESP/GBR/AUT/CHE/POL/RUS/NLD/AUT), for others it's a statistical macro
+# layer above the historically-named regions (ITA ADM1 = 5 macro-regions but
+# 20 regioni are at ADM2; BEL ADM1 = 3 political regions but 10 provinces at
+# ADM2). For each country we declare which source level to fetch, and write
+# the output to `{iso3}_adm1_normalized.geojson` regardless — `adm1` here means
+# "this dataset's first finer-than-country layer", not geoBoundaries ADM1.
+ADM_FINE_LEVEL_BY_ISO: dict[str, str] = {
+    "AUT": "ADM1",  # 9 Bundesländer
+    "BEL": "ADM2",  # 10 provinces (ADM1 = 3 political regions, too coarse)
+    "CHE": "ADM1",  # 26 cantons
+    "DEU": "ADM1",  # 16 Länder
+    "ESP": "ADM1",  # 19 comunidades autónomas
+    "FRA": "ADM1",  # 18 régions (Île-de-France, Bourgogne, Aquitaine, …)
+    "GBR": "ADM1",  # 4 constituent countries
+    "GRC": "ADM1",  # 13 περιφέρειες (administrative regions)
+    "ITA": "ADM2",  # 20 regioni (ADM1 = 5 statistical macro-regions, too coarse)
+    "NLD": "ADM1",  # 12 provinces
+    "POL": "ADM1",  # 16 voivodeships
+    "RUS": "ADM1",  # 83 federal subjects
+}
 
 
 # ---------- IO helpers (mirroring prepare_indian_admin_boundaries.py) ----------
@@ -210,8 +220,12 @@ def coordinate_count(geometry: dict[str, Any]) -> int:
     return len(geometry_points(geometry))
 
 
-# 5-decimal rounding → ~1.1 m at equator. Inherited from prepare_indian post-fix.
-COORD_PRECISION = 5
+# 4-decimal rounding → ~11 m at equator. Drops from the original 5-decimal
+# default to shrink approx_polities.geojson without visible degradation on a
+# continent-scale historical map. vIndian still uses 5 decimals because India
+# is rendered alone at higher zoom; vEuropean polities often span 30 ADM0
+# regions so geometry duplication compounds quickly.
+COORD_PRECISION = 4
 
 
 def round_coords(value: Any) -> Any:
@@ -322,22 +336,26 @@ def normalize_adm0(iso3: str, name_zh: str, iso2: str) -> dict[str, Any] | None:
     }
 
 
-# ---------- ADM1 ----------
+# ---------- Fine layer (ADM1 or ADM2 per country) ----------
 
 
-def adm1_url(iso3: str) -> str:
-    return f"{GEOBOUNDARIES_RAW_BASE}/{iso3}/ADM1/geoBoundaries-{iso3}-ADM1_simplified.geojson"
+def fine_url(iso3: str, source_level: str) -> str:
+    return f"{GEOBOUNDARIES_RAW_BASE}/{iso3}/{source_level}/geoBoundaries-{iso3}-{source_level}_simplified.geojson"
 
 
-def adm1_raw_path(iso3: str) -> Path:
-    return RAW_DIR / f"{iso3.lower()}_adm1.geojson"
+def fine_raw_path(iso3: str, source_level: str) -> Path:
+    return RAW_DIR / f"{iso3.lower()}_{source_level.lower()}.geojson"
 
 
-def adm1_normalized_path(iso3: str) -> Path:
+def fine_normalized_path(iso3: str) -> Path:
+    """Output file is always named `*_adm1_normalized.geojson` regardless of
+    source level, because downstream `build_european_public_data.py` globs
+    `*_adm1_normalized.geojson` for the project's "first finer-than-country"
+    layer. The actual source level is recorded in the feature properties."""
     return BOUNDARY_DIR / f"{iso3.lower()}_adm1_normalized.geojson"
 
 
-def adm1_admin_id(iso2: str, shape_iso: str, shape_name: str, used_ids: set[str]) -> str:
+def fine_admin_id(iso2: str, shape_iso: str, shape_name: str, used_ids: set[str]) -> str:
     """Prefer geoBoundaries `shapeISO` (typically `XX-YY` ISO 3166-2 form).
     Fall back to `{ISO2}-{slug-of-name}`. Disambiguate collisions by suffixing."""
     candidate = (shape_iso or "").strip().upper()
@@ -354,30 +372,32 @@ def adm1_admin_id(iso2: str, shape_iso: str, shape_name: str, used_ids: set[str]
     return final_id
 
 
-def normalize_adm1_for_country(iso3: str, name_zh: str, iso2: str) -> tuple[list[dict[str, Any]], dict[str, Any]]:
-    """Download + normalize ADM1 for one federation. Returns
+def normalize_fine_for_country(iso3: str, name_zh: str, iso2: str, source_level: str) -> tuple[list[dict[str, Any]], dict[str, Any]]:
+    """Download + normalize the fine ADM layer for one country. Returns
     (features, stats). On download failure, returns ([], stats with error)."""
-    raw_path = adm1_raw_path(iso3)
+    raw_path = fine_raw_path(iso3, source_level)
+    url = fine_url(iso3, source_level)
     stats: dict[str, Any] = {
         "iso3": iso3,
         "name_zh": name_zh,
+        "source_level": source_level,
         "feature_count": 0,
         "raw_sha256": "",
-        "normalized_path": str(adm1_normalized_path(iso3).relative_to(ROOT)),
-        "download_url": adm1_url(iso3),
+        "normalized_path": str(fine_normalized_path(iso3).relative_to(ROOT)),
+        "download_url": url,
         "error": None,
     }
     try:
-        download_if_missing(adm1_url(iso3), raw_path)
+        download_if_missing(url, raw_path)
     except Exception as error:  # noqa: BLE001
         stats["error"] = f"download failed: {error}"
-        print(f"  warn: {iso3} ADM1 download failed: {error}")
+        print(f"  warn: {iso3} {source_level} download failed: {error}")
         return [], stats
     try:
         raw = read_json(raw_path)
     except Exception as error:  # noqa: BLE001
         stats["error"] = f"invalid JSON: {error}"
-        print(f"  warn: {iso3} ADM1 invalid JSON: {error}")
+        print(f"  warn: {iso3} {source_level} invalid JSON: {error}")
         return [], stats
     feats: list[dict[str, Any]] = []
     used_ids: set[str] = set()
@@ -391,7 +411,7 @@ def normalize_adm1_for_country(iso3: str, name_zh: str, iso2: str) -> tuple[list
         shape_name = (props_in.get("shapeName") or "").strip()
         shape_iso = (props_in.get("shapeISO") or "").strip()
         shape_id = (props_in.get("shapeID") or "").strip()
-        admin_id = adm1_admin_id(iso2, shape_iso, shape_name, used_ids)
+        admin_id = fine_admin_id(iso2, shape_iso, shape_name, used_ids)
         used_ids.add(admin_id)
         aliases = unique([shape_name, shape_iso, admin_id])
         feats.append(
@@ -404,13 +424,13 @@ def normalize_adm1_for_country(iso3: str, name_zh: str, iso2: str) -> tuple[list
                     "parent_name": name_zh,
                     "name": shape_name,
                     "aliases": "|".join(aliases),
-                    "admin_level": "adm1",
+                    "admin_level": source_level.lower(),
                     "source_shape_name": shape_name,
                     "source_shape_iso": shape_iso,
                     "source_shape_id": shape_id,
                     "source": "geoBoundaries",
                     "source_release": "gbOpen",
-                    "source_layer": f"{iso3} ADM1 simplified",
+                    "source_layer": f"{iso3} {source_level} simplified",
                     "source_license": "Open Data Commons Open Database License 1.0",
                     "source_attribution": "geoBoundaries",
                     "crs": "WGS84",
@@ -446,13 +466,12 @@ European countries and {adm1_count} federation-level ADM1 layers.
 Derived files in this repository include:
 
 - `input/vEuropean/admin_boundaries/eu_adm0_normalized.geojson`
-- `input/vEuropean/admin_boundaries/{{iso3}}_adm1_normalized.geojson` (per federation)
-- `input/vEuropean/admin_boundaries/raw/{{iso3}}_adm0.geojson` (cached downloads)
-- `input/vEuropean/admin_boundaries/raw/{{iso3}}_adm1.geojson` (cached downloads)
+- `input/vEuropean/admin_boundaries/{{iso3}}_adm1_normalized.geojson` (per country, may be sourced from geoBoundaries ADM1 or ADM2 depending on which level yields historically relevant regions)
+- `input/vEuropean/admin_boundaries/raw/{{iso3}}_adm[1|2].geojson` (cached downloads, suffix reflects geoBoundaries source level)
 
 The normalized data adds stable project IDs (ISO3 for ADM0, ISO 3166-2 codes
-or fallback hashes for ADM1), Chinese display names, bbox/centroid metadata,
-coordinate counts, and 5-decimal coordinate rounding. Boundaries are MODERN
+or fallback hashes for fine-layer regions), Chinese display names, bbox/centroid
+metadata, coordinate counts, and 5-decimal coordinate rounding. Boundaries are MODERN
 administrative references, not historical exact territory boundaries. No
 endorsement by geoBoundaries or its upstream sources is implied.
 """
@@ -520,25 +539,26 @@ def main() -> int:
     if adm0_missing:
         print(f"  missing ADM0: {adm0_missing}")
 
-    adm1_features_by_country: dict[str, list[dict[str, Any]]] = {}
-    adm1_stats: list[dict[str, Any]] = []
-    print(f"\n== ADM1: {len(ADM1_FEDERATIONS)} federations ==")
-    for iso3 in sorted(ADM1_FEDERATIONS):
+    fine_features_by_country: dict[str, list[dict[str, Any]]] = {}
+    fine_stats: list[dict[str, Any]] = []
+    print(f"\n== Fine layer: {len(ADM_FINE_LEVEL_BY_ISO)} countries ==")
+    for iso3 in sorted(ADM_FINE_LEVEL_BY_ISO):
+        source_level = ADM_FINE_LEVEL_BY_ISO[iso3]
         name_zh, iso2 = ADM0_COUNTRIES.get(iso3, (iso3, iso3[:2]))
-        feats, stats = normalize_adm1_for_country(iso3, name_zh, iso2)
-        adm1_features_by_country[iso3] = feats
-        adm1_stats.append(stats)
+        feats, stats = normalize_fine_for_country(iso3, name_zh, iso2, source_level)
+        fine_features_by_country[iso3] = feats
+        fine_stats.append(stats)
         if not feats:
             continue
         collection = {
             "type": "FeatureCollection",
             "name": f"{iso3.lower()}_adm1_normalized",
-            "description": f"Modern {iso3} ADM1 boundaries normalized for vEuropean territory approximation. Modern administrative references, not historical territory boundaries.",
+            "description": f"Modern {iso3} {source_level} boundaries normalized for vEuropean territory approximation. Modern administrative references, not historical territory boundaries.",
             "properties": {
                 "source": "geoBoundaries",
                 "source_release": "gbOpen",
                 "pinned_commit": GEOBOUNDARIES_PINNED_COMMIT,
-                "source_layer": f"{iso3} ADM1 simplified",
+                "source_layer": f"{iso3} {source_level} simplified",
                 "source_license": "Open Data Commons Open Database License 1.0",
                 "source_attribution": "geoBoundaries",
                 "crs": "WGS84",
@@ -546,9 +566,9 @@ def main() -> int:
             },
             "features": feats,
         }
-        out_path = adm1_normalized_path(iso3)
+        out_path = fine_normalized_path(iso3)
         write_json(out_path, collection, compact=True)
-        print(f"  wrote {iso3} ADM1: {len(feats)} features → {out_path.relative_to(ROOT)}"
+        print(f"  wrote {iso3} {source_level}: {len(feats)} features → {out_path.relative_to(ROOT)}"
               f" ({out_path.stat().st_size / 1024:.1f} KiB)")
 
     # Manifest
@@ -578,9 +598,9 @@ def main() -> int:
             "requested_countries": sorted(ADM0_COUNTRIES),
             "missing_countries": adm0_missing,
         },
-        "adm1": {
-            "federations": ADM1_FEDERATIONS,
-            "per_federation": adm1_stats,
+        "fine_layer": {
+            "level_by_iso3": ADM_FINE_LEVEL_BY_ISO,
+            "per_country": fine_stats,
         },
         "geometry_quality": {
             "coord_precision_decimals": COORD_PRECISION,
@@ -591,8 +611,8 @@ def main() -> int:
         "admin_id_reference_path": str(ADMIN_ID_REFERENCE_PATH.relative_to(ROOT)),
     }
     write_json(MANIFEST_PATH, manifest)
-    write_odbl_notice(adm0_count=len(adm0_features), adm1_count=sum(1 for stats in adm1_stats if stats["feature_count"]))
-    write_admin_id_reference(adm0_features, adm1_features_by_country)
+    write_odbl_notice(adm0_count=len(adm0_features), adm1_count=sum(1 for stats in fine_stats if stats["feature_count"]))
+    write_admin_id_reference(adm0_features, fine_features_by_country)
     print(f"\nManifest → {MANIFEST_PATH.relative_to(ROOT)}")
     print(f"Admin ID reference → {ADMIN_ID_REFERENCE_PATH.relative_to(ROOT)}")
     print(f"ODbL notice → {ODBL_NOTICE_PATH.relative_to(ROOT)}")
